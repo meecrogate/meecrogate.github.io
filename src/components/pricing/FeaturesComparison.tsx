@@ -77,7 +77,7 @@ const FeaturesComparison = () => {
             </div>
             <div className="text-center">
               <CardTitle className="text-lg text-green-400">Business</CardTitle>
-              <p className="text-sm text-gray-400">199€/mois</p>
+              <p className="text-sm text-gray-400">Contactez-nous</p>
             </div>
           </div>
         </CardHeader>
@@ -88,7 +88,6 @@ const FeaturesComparison = () => {
                 <h3 className="font-semibold text-white">{category.category}</h3>
               </div>
               {category.items.map((item) => {
-                // Gestion des lignes spéciales pour le nombre d'APIs
                 if (category.category === "Limites d’APIs") {
                   return (
                     <div key={item.name} className="grid grid-cols-4 gap-4 px-6 py-3 border-t border-gray-700/50 hover:bg-gray-800/30">

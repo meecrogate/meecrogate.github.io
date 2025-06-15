@@ -48,8 +48,8 @@ const PricingCards = () => {
     {
       name: "Business",
       icon: <Rocket className="w-6 h-6" />,
-      price: "199€",
-      period: "par mois",
+      price: null, // Aucune mention de tarif
+      period: null, // Pas de période d’abonnement
       description: "Pour les déploiements critiques",
       badge: "Meilleure offre",
       features: [
@@ -98,9 +98,15 @@ const PricingCards = () => {
                 {plan.icon}
               </div>
               <CardTitle className="text-2xl text-white">{plan.name}</CardTitle>
-              <div className="flex items-baseline justify-center">
-                <span className="text-4xl font-bold text-white">{plan.price}</span>
-                <span className="text-gray-400 ml-2">/{plan.period}</span>
+              <div className="flex items-baseline justify-center min-h-[48px]">
+                {plan.name !== "Business" ? (
+                  <>
+                    <span className="text-4xl font-bold text-white">{plan.price}</span>
+                    <span className="text-gray-400 ml-2">/{plan.period}</span>
+                  </>
+                ) : (
+                  <span className="text-2xl font-bold text-white">Contactez-nous</span>
+                )}
               </div>
               <CardDescription className="text-gray-300 mt-2">
                 {plan.description}
@@ -143,3 +149,4 @@ const PricingCards = () => {
 };
 
 export default PricingCards;
+
