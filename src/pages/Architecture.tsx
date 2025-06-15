@@ -1,18 +1,18 @@
 
+import Architecture from "@/components/meecrogate/Architecture";
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/meecrogate/Hero";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const ArchitecturePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       <Navigation />
       <div className="pt-16">
-        <Hero />
+        <Architecture />
       </div>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default ArchitecturePage;
