@@ -1,11 +1,11 @@
 
-import { Design, Shield, Deploy } from "lucide-react";
+import { Pencil, Shield, Upload } from "lucide-react";
 
 const phases = [
   {
     title: "Design",
     description: "Créez votre API rapidement et graphiquement, sans écrire de code.",
-    icon: Design,
+    icon: Pencil,
     image: "/photo-1461749280684-dccba630e2f6.jpg",
     alt: "Écran de conception (code, design)"
   },
@@ -19,7 +19,7 @@ const phases = [
   {
     title: "Deploy",
     description: "Déployez et exécutez votre API sur le cloud en un clic, avec scalabilité automatique.",
-    icon: Deploy,
+    icon: Upload,
     image: "/photo-1487887235947-a955ef187fcc.jpg",
     alt: "Déploiement cloud (drone décolle)"
   },
@@ -58,3 +58,4 @@ const ProcessPhasesSection = () => (
 );
 
 export default ProcessPhasesSection;
+
