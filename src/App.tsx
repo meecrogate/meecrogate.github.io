@@ -10,6 +10,7 @@ import ArchitecturePage from "./pages/Architecture";
 import BenefitsPage from "./pages/Benefits";
 import UseCasesPage from "./pages/UseCases";
 import DemoPage from "./pages/Demo";
+import ControlStationPage from "./pages/ControlStation";
 import NotFound from "./pages/NotFound";
 
 // Use cases individual pages
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/usecases/deploiement-hybride" element={<DeploiementHybridePage />} />
           <Route path="/usecases/standardisation" element={<StandardisationPage />} />
           <Route path="/demo" element={<DemoPage />} />
+          <Route path="/control-station" element={<ControlStationPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
