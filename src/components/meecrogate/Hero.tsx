@@ -1,9 +1,42 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield, Settings, Layers, Zap, Monitor } from "lucide-react";
+import { ArrowRight, Shield, Settings, Layers, Zap, Monitor, Check, Rocket, Globe, Lock, BarChart3, Cloud } from "lucide-react";
 
 const Hero = () => {
+  const benefits = [
+    {
+      icon: Rocket,
+      title: "Déploiement rapide",
+      description: "Sans développeur"
+    },
+    {
+      icon: Cloud,
+      title: "Haute disponibilité",
+      description: "Scalabilité automatique"
+    },
+    {
+      icon: Lock,
+      title: "Gouvernance intégrée",
+      description: "Sécurité, accès, quotas"
+    },
+    {
+      icon: BarChart3,
+      title: "Surveillance native",
+      description: "Traçabilité complète"
+    },
+    {
+      icon: Globe,
+      title: "Architectures modernes",
+      description: "Microservices, serverless"
+    },
+    {
+      icon: Shield,
+      title: "No vendor lock-in",
+      description: "Liberté technologique"
+    }
+  ];
+
   return (
     <div className="relative overflow-hidden">
       {/* Modern gradient background */}
@@ -36,6 +69,27 @@ const Hero = () => {
             <Button variant="outline" size="lg" className="border-brand-light/30 bg-transparent text-brand-light hover:bg-brand-light/10 hover:border-brand-light/50 backdrop-blur-sm px-8 py-4 text-lg">
               Documentation
             </Button>
+          </div>
+
+          {/* Bénéfices clés section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-brand-light mb-8">🔷 Bénéfices clés</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {benefits.map((benefit, index) => (
+                <div 
+                  key={index}
+                  className="group hover:scale-105 transition-all duration-300"
+                >
+                  <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10 hover:border-brand-blue/30 transition-colors h-full">
+                    <div className="bg-gradient-to-br from-brand-blue/20 to-brand-orange/20 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <benefit.icon className="w-6 h-6 text-brand-light" />
+                    </div>
+                    <div className="text-lg font-bold text-brand-light mb-2">{benefit.title}</div>
+                    <div className="text-sm text-brand-light/60">{benefit.description}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Control Station Card with modern styling */}
