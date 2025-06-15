@@ -32,7 +32,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/architecture" element={<ArchitecturePage />} />
-          <Route path="/benefits" element={<BenefitsPage />} />
+          {/* <Route path="/benefits" element={<BenefitsPage />} /> */} {/* supprimé */}
           <Route path="/usecases" element={<UseCasesPage />} />
           <Route path="/usecases/portails-api" element={<PortailsApiPage />} />
           <Route path="/usecases/integration-rapide" element={<IntegrationRapidePage />} />
