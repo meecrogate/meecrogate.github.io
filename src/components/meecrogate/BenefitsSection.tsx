@@ -1,11 +1,6 @@
+
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield, Settings, Layers, Zap, Monitor, Rocket, Globe, Lock, BarChart3, Cloud } from "lucide-react";
-import BenefitsSection from "./BenefitsSection";
-import ControlStationCard from "./ControlStationCard";
-import MeecrogateComponentsGrid from "./MeecrogateComponentsGrid";
-import ProcessPhasesSection from "./ProcessPhasesSection";
+import { Rocket, Cloud, Lock, BarChart3, Globe, Shield } from "lucide-react";
 
 // Liste des bénéfices avec une description longue.
 const benefits = [
@@ -47,13 +42,12 @@ const benefits = [
   }
 ];
 
-// Petit composant d'affichage détaillé du bénéfice avec effet moderne
+// Affichage détaillé d'un bénéfice en surimpression (fade + scale)
 function BenefitDetailSection({ benefit, onClose }: { benefit: typeof benefits[number], onClose: () => void }) {
   if (!benefit) return null;
   return (
     <div
       className="fixed inset-0 z-30 flex items-center justify-center bg-black/60 backdrop-blur-[2px] animate-fade-in"
-      style={{}}
       onClick={onClose}
     >
       <div
@@ -77,60 +71,43 @@ function BenefitDetailSection({ benefit, onClose }: { benefit: typeof benefits[n
   );
 }
 
-const Hero = () => {
-  // On stocke l'index du bénéfice sélectionné, ou null.
+const BenefitsSection = () => {
   const [selectedBenefit, setSelectedBenefit] = useState<number | null>(null);
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/90 via-brand-blue/30 to-brand-dark/95 pointer-events-none -z-10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 to-transparent pointer-events-none -z-10" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="text-center">
-          <Badge className="mb-6 bg-brand-blue/20 text-brand-blue border-brand-blue/30 backdrop-blur-sm text-lg px-4 py-2">
-            🟦 Plateforme Cloud-Native Modulaire
-          </Badge>
-
-          <h1 className="text-6xl md:text-7xl font-bold text-brand-light mb-8">
-            <span className="block">Meecrogate</span>
-            <span className="block bg-gradient-to-r from-brand-blue via-brand-orange to-brand-blue bg-clip-text text-transparent text-4xl md:text-5xl mt-4">
-              La plateforme modulaire d'APIs cloud-native
-            </span>
-          </h1>
-
-          <p className="text-xl text-brand-light/80 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Solution modulaire composable pour l'exposition, la sécurisation et l'orchestration d'APIs. 
-            Conçue pour le cloud et les environnements traditionnels, entièrement configurable sans code.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button size="lg" className="bg-gradient-to-r from-brand-blue to-brand-blue/80 hover:from-brand-blue/90 hover:to-brand-blue/70 text-brand-light shadow-lg shadow-brand-blue/25 px-8 py-4 text-lg border-0">
-              Découvrir la démo
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="border-brand-light/30 bg-transparent text-brand-light hover:bg-brand-light/10 hover:border-brand-light/50 backdrop-blur-sm px-8 py-4 text-lg">
-              Documentation
-            </Button>
-          </div>
+    <section className="relative py-16 bg-brand-blue/10 backdrop-blur-[2px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-brand-blue mb-8 text-center">🔷 Bénéfices clés</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {benefits.map((benefit, index) => (
+            <button
+              key={index}
+              className="group hover:scale-105 transition-all duration-300 focus:outline-none"
+              style={{ animation: selectedBenefit === index ? "scale-in 0.2s" : undefined }}
+              onClick={() => setSelectedBenefit(index)}
+              aria-label={"Voir le détail du bénéfice : " + benefit.title}
+              tabIndex={0}
+            >
+              <div className="bg-white/80 dark:bg-brand-dark/80 rounded-2xl p-6 border border-brand-blue/10 shadow-lg hover:border-brand-orange/60 transition-colors h-full">
+                <div className="bg-gradient-to-br from-brand-blue/20 to-brand-orange/20 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <benefit.icon className="w-6 h-6 text-brand-blue group-hover:text-brand-orange transition-colors" />
+                </div>
+                <div className="text-lg font-bold text-brand-dark dark:text-brand-light mb-2 text-center">{benefit.title}</div>
+                <div className="text-sm text-brand-dark/70 dark:text-brand-light/60 text-center">{benefit.description}</div>
+              </div>
+            </button>
+          ))}
         </div>
       </div>
-
-      <BenefitsSection />
-
-      {/* SECTION COMPOSANTS MEECROGATE */}
-      <section className="relative py-16 bg-brand-dark/90">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Control Station Card */}
-          <ControlStationCard />
-          {/* Composants Meecrogate */}
-          <MeecrogateComponentsGrid />
-        </div>
-      </section>
-
-      <ProcessPhasesSection />
-    </div>
+      {/* Affichage du détail */}
+      {selectedBenefit !== null && (
+        <BenefitDetailSection
+          benefit={benefits[selectedBenefit]}
+          onClose={() => setSelectedBenefit(null)}
+        />
+      )}
+    </section>
   );
 };
 
-export default Hero;
+export default BenefitsSection;
