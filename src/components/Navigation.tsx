@@ -19,7 +19,6 @@ const Navigation = () => {
     { name: "Fonctionnalités", path: "/features" },
     { name: "Architecture", path: "/architecture" },
     { name: "Bénéfices", path: "/benefits" },
-    { name: "Control Station", path: "/control-station" },
   ];
 
   const useCaseItems = [
@@ -100,7 +99,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <Link to="/demo">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                Contactez-nous
+                Demander une démo
               </Button>
             </Link>
           </div>
@@ -159,7 +158,7 @@ const Navigation = () => {
               <div className="pt-2">
                 <Link to="/demo" onClick={() => setIsMenuOpen(false)}>
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">
-                    Contactez-nous
+                    Demander une démo
                   </Button>
                 </Link>
               </div>
