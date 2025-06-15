@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,6 +10,7 @@ import BenefitsPage from "./pages/Benefits";
 import UseCasesPage from "./pages/UseCases";
 import DemoPage from "./pages/Demo";
 import NotFound from "./pages/NotFound";
+import Pricing from "./pages/Pricing";
 
 // Use cases individual pages
 import PortailsApiPage from "./pages/usecases/PortailsApi";
@@ -33,6 +33,7 @@ const App = () => (
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/architecture" element={<ArchitecturePage />} />
           {/* <Route path="/benefits" element={<BenefitsPage />} /> */} {/* supprimé */}
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/usecases" element={<UseCasesPage />} />
           <Route path="/usecases/portails-api" element={<PortailsApiPage />} />
           <Route path="/usecases/integration-rapide" element={<IntegrationRapidePage />} />

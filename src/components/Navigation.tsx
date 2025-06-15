@@ -17,6 +17,7 @@ const Navigation = () => {
     { name: "Accueil", path: "/" },
     { name: "Fonctionnalités", path: "/features" },
     { name: "Architecture", path: "/architecture" },
+    { name: "Tarifs", path: "/pricing" },
   ];
 
   const useCaseItems = [
