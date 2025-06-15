@@ -1,12 +1,18 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import PricingHero from "@/components/pricing/PricingHero";
+import PricingCards from "@/components/pricing/PricingCards";
+import FeaturesComparison from "@/components/pricing/FeaturesComparison";
+import PricingFAQ from "@/components/pricing/PricingFAQ";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      <PricingHero />
+      <PricingCards />
+      <FeaturesComparison />
+      <PricingFAQ />
+      <Footer />
     </div>
   );
 };
