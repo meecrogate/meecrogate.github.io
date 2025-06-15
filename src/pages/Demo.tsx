@@ -1,14 +1,14 @@
 
-import CTA from "@/components/meecrogate/CTA";
+import ContactForm from "@/components/ContactForm";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const DemoPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-dark via-brand-blue to-brand-dark">
+    <div className="min-h-screen bg-gradient-to-br from-custom-dark via-custom-blue to-custom-dark">
       <Navigation />
       <div className="pt-16">
-        <CTA />
+        <ContactForm />
       </div>
       <Footer />
     </div>
