@@ -9,61 +9,61 @@ const PricingCards = () => {
     {
       name: "Developer",
       icon: <Zap className="w-6 h-6" />,
-      price: "$0",
-      period: "forever",
-      description: "Perfect for exploring and prototyping",
-      badge: "Most Popular",
+      price: "Gratuit",
+      period: "pour toujours",
+      description: "Idéal pour l’exploration et les prototypes",
+      badge: "Populaire",
       features: [
-        "Up to 10,000 API calls/month",
-        "2 JSON config files",
-        "Basic API Gateway",
-        "Community support",
-        "Standard orchestration",
-        "Basic authentication"
+        "Jusqu’à 2 APIs gérées",
+        "2 fichiers de configuration JSON",
+        "Passerelle API de base",
+        "Support communautaire",
+        "Orchestration standard",
+        "Authentification de base"
       ],
-      cta: "Start Free",
+      cta: "Commencer",
       ctaVariant: "outline" as const,
       popular: true
     },
     {
       name: "Startup",
       icon: <Building className="w-6 h-6" />,
-      price: "$49",
-      period: "per month",
-      description: "For growing teams and applications",
+      price: "49€",
+      period: "par mois",
+      description: "Pour les équipes en croissance",
       features: [
-        "Up to 1M API calls/month",
-        "Unlimited JSON configs",
-        "Advanced API Gateway",
-        "Email support",
-        "Advanced orchestration",
+        "Jusqu’à 10 APIs gérées",
+        "Fichiers JSON illimités",
+        "Passerelle API avancée",
+        "Support email",
+        "Orchestration avancée",
         "OAuth & JWT support",
-        "Basic analytics",
-        "Rate limiting"
+        "Analytique de base",
+        "Limitation de débit"
       ],
-      cta: "Start Trial",
+      cta: "Essai gratuit",
       ctaVariant: "default" as const,
       popular: false
     },
     {
       name: "Business",
       icon: <Rocket className="w-6 h-6" />,
-      price: "$199",
-      period: "per month",
-      description: "For production workloads and teams",
-      badge: "Best Value",
+      price: "199€",
+      period: "par mois",
+      description: "Pour les déploiements critiques",
+      badge: "Meilleure offre",
       features: [
-        "Up to 10M API calls/month",
-        "Unlimited everything",
-        "Enterprise API Gateway",
-        "Priority support",
-        "AI-powered orchestration",
-        "Advanced security",
-        "Real-time analytics",
-        "Custom integrations",
-        "SLA guarantee"
+        "APIs illimitées",
+        "Tout illimité",
+        "Passerelle API entreprise",
+        "Support prioritaire",
+        "Orchestration avec IA",
+        "Sécurité avancée",
+        "Analyses en temps réel",
+        "Intégrations personnalisées",
+        "SLA garanti"
       ],
-      cta: "Contact Sales",
+      cta: "Contactez-nous",
       ctaVariant: "default" as const,
       popular: false
     }
@@ -73,10 +73,10 @@ const PricingCards = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white mb-4">
-          Choose Your API Journey
+          Choisissez votre forfait
         </h2>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-          From prototype to production, we scale with your needs. All plans include our core four components.
+          Notre tarification est basée sur le nombre d’APIs que vous souhaitez gérer. Passez facilement d’un prototype à la production à votre rythme.
         </p>
       </div>
 
@@ -133,9 +133,9 @@ const PricingCards = () => {
       </div>
 
       <div className="text-center mt-12">
-        <p className="text-gray-400 mb-4">Need more than 10M calls per month?</p>
+        <p className="text-gray-400 mb-4">Vous avez besoin de gérer plus d’APIs ?</p>
         <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800">
-          Contact us for Enterprise pricing
+          Contactez-nous pour une offre Entreprise
         </Button>
       </div>
     </div>
