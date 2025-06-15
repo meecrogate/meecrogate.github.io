@@ -7,22 +7,26 @@ const Architecture = () => {
     {
       icon: <Cloud className="w-6 h-6 text-blue-400" />,
       title: "100% Stateless",
-      description: "Aucun stockage local, scalabilité horizontale native"
+      description: "Aucun stockage local, scalabilité horizontale native",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop&crop=center"
     },
     {
       icon: <Settings className="w-6 h-6 text-purple-400" />,
       title: "Configuration-driven",
-      description: "Logique métier via fichiers JSON ou interface graphique"
+      description: "Logique métier via fichiers JSON ou interface graphique",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&crop=center"
     },
     {
       icon: <Database className="w-6 h-6 text-green-400" />,
       title: "Interopérabilité native",
-      description: "REST, WebSocket, Kafka, JDBC"
+      description: "REST, WebSocket, Kafka, JDBC",
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop&crop=center"
     },
     {
       icon: <Monitor className="w-6 h-6 text-orange-400" />,
       title: "Monitoring centralisé",
-      description: "Logs, métriques et traces intégrés"
+      description: "Logs, métriques et traces intégrés",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop&crop=center"
     }
   ];
 
@@ -41,12 +45,20 @@ const Architecture = () => {
         {architecturePoints.map((point, index) => (
           <Card 
             key={index}
-            className="bg-gray-800/50 border-gray-700 backdrop-blur-sm text-center hover:bg-gray-800/70 transition-all duration-300"
+            className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 overflow-hidden"
           >
-            <CardHeader className="pb-4">
-              <div className="flex justify-center mb-3">
+            <div className="relative h-48 overflow-hidden">
+              <img 
+                src={point.image} 
+                alt={point.title}
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+              <div className="absolute top-4 left-4">
                 {point.icon}
               </div>
+            </div>
+            <CardHeader className="pb-4">
               <CardTitle className="text-lg text-white">{point.title}</CardTitle>
             </CardHeader>
             <CardContent>
