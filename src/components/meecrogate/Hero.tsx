@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Shield, Settings, Layers, Zap } from "lucide-react";
+import { ArrowRight, Shield, Settings, Layers, Zap, Monitor } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -31,6 +31,20 @@ const Hero = () => {
             <Button variant="outline" size="lg" className="border-brand-light text-brand-light hover:bg-brand-light/10 px-8 py-4 text-lg">
               Documentation
             </Button>
+          </div>
+
+          {/* Control Station Card */}
+          <div className="mb-12">
+            <div className="group hover:scale-105 transition-transform duration-300 max-w-2xl mx-auto">
+              <div className="bg-gradient-to-r from-brand-blue/20 to-brand-orange/20 backdrop-blur-sm rounded-xl p-8 border border-brand-light/30">
+                <Monitor className="w-12 h-12 text-brand-blue mx-auto mb-4" />
+                <div className="text-2xl font-bold text-white mb-3">Control Station</div>
+                <div className="text-brand-light/90 text-lg">
+                  Interface web centralisée pour configurer et administrer l'API Gateway, 
+                  le serveur d'identité, l'orchestrateur et le Process Executor
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
