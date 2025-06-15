@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 const DemoPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-custom-dark via-custom-blue to-custom-dark">
+    <div className="min-h-screen bg-brand-dark">
       <Navigation />
       <div className="pt-16">
         <ContactForm />

@@ -54,13 +54,13 @@ const ContactForm = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Informations de contact */}
-        <div className="bg-gradient-to-br from-custom-blue/20 to-custom-orange/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8">
+        <div className="bg-gradient-to-br from-brand-blue/20 to-brand-orange/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8">
           <h2 className="text-2xl font-bold text-white mb-8">Nos coordonnées</h2>
           
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
-              <div className="bg-custom-blue/20 p-3 rounded-lg">
-                <Mail className="w-6 h-6 text-custom-blue" />
+              <div className="bg-brand-blue/20 p-3 rounded-lg">
+                <Mail className="w-6 h-6 text-brand-blue" />
               </div>
               <div>
                 <h3 className="text-white font-semibold mb-1">Email</h3>
@@ -70,8 +70,8 @@ const ContactForm = () => {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="bg-custom-orange/20 p-3 rounded-lg">
-                <Phone className="w-6 h-6 text-custom-orange" />
+              <div className="bg-brand-orange/20 p-3 rounded-lg">
+                <Phone className="w-6 h-6 text-brand-orange" />
               </div>
               <div>
                 <h3 className="text-white font-semibold mb-1">Téléphone</h3>
@@ -81,8 +81,8 @@ const ContactForm = () => {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="bg-custom-blue/20 p-3 rounded-lg">
-                <MapPin className="w-6 h-6 text-custom-blue" />
+              <div className="bg-brand-blue/20 p-3 rounded-lg">
+                <MapPin className="w-6 h-6 text-brand-blue" />
               </div>
               <div>
                 <h3 className="text-white font-semibold mb-1">Adresse</h3>
@@ -92,7 +92,7 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div className="mt-8 p-4 bg-custom-dark/50 rounded-lg border border-gray-700">
+          <div className="mt-8 p-4 bg-brand-dark/50 rounded-lg border border-gray-700">
             <h3 className="text-white font-semibold mb-2">Horaires d'ouverture</h3>
             <div className="text-sm text-gray-300 space-y-1">
               <div className="flex justify-between">
@@ -112,7 +112,7 @@ const ContactForm = () => {
         </div>
 
         {/* Formulaire de contact */}
-        <div className="bg-gradient-to-br from-custom-dark/90 to-custom-blue/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8">
+        <div className="bg-gradient-to-br from-brand-dark/90 to-brand-blue/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8">
           <h2 className="text-2xl font-bold text-white mb-8">Envoyez-nous un message</h2>
           
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -213,7 +213,7 @@ const ContactForm = () => {
             <Button
               type="submit"
               size="lg"
-              className="w-full bg-custom-blue hover:bg-custom-blue/90 text-white"
+              className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white"
             >
               <Send className="mr-2 w-5 h-5" />
               Envoyer le message
