@@ -1,8 +1,8 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Shield, Settings, Layers, Zap, Monitor, Rocket, Globe, Lock, BarChart3, Cloud } from "lucide-react";
+import ProcessPhasesSection from "./ProcessPhasesSection";
 
 // Liste des bénéfices avec une description longue.
 const benefits = [
@@ -207,9 +207,11 @@ const Hero = () => {
           </div>
         </div>
       </section>
+
+      {/* SECTION PHASES */}
+      <ProcessPhasesSection />
     </div>
   );
 };
 
 export default Hero;
-
