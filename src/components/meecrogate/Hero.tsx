@@ -1,8 +1,8 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Shield, Settings, Layers, Zap, Monitor, Rocket, Globe, Lock, BarChart3, Cloud } from "lucide-react";
-import Arrow from "./Arrow";
 
 // Liste des bénéfices avec une description longue.
 const benefits = [
@@ -150,34 +150,21 @@ const Hero = () => {
       {/* SECTION COMPOSANTS MEECROGATE */}
       <section className="relative py-16 bg-brand-dark/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Container for flèches, position absolute, only show on md+ */}
-          <div className="relative hidden md:block" style={{height: 290}}>
-            {/* Les flèches sont positionnées par rapport au container des cards */}
-            {/* On positionne Control Station au centre en haut (y:0), les 4 target à la 2e ligne */}
-            {/* Exemples d'ancrage en pixels, à tweaker selon le design final */}
-            <Arrow from={{x: 424, y: 80}} to={{x: 85, y: 230}} />
-            <Arrow from={{x: 424, y: 80}} to={{x: 325, y: 230}} />
-            <Arrow from={{x: 424, y: 80}} to={{x: 556, y: 230}} />
-            <Arrow from={{x: 424, y: 80}} to={{x: 790, y: 230}} />
-          </div>
-
           {/* Control Station Card */}
-          <div className="group hover:scale-105 transition-all duration-300 max-w-2xl mx-auto mb-12 relative z-10">
+          <div className="group hover:scale-105 transition-all duration-300 max-w-2xl mx-auto mb-12">
             <div className="bg-gradient-to-br from-brand-blue/10 via-transparent to-brand-orange/10 backdrop-blur-md rounded-2xl p-8 border border-brand-light/20 shadow-xl shadow-brand-blue/10">
               <div className="bg-gradient-to-br from-brand-blue/20 to-brand-orange/20 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
                 <Monitor className="w-8 h-8 text-brand-light" />
               </div>
-              <div className="text-2xl font-bold text-brand-light mb-3">
-                Control Station
-              </div>
+              <div className="text-2xl font-bold text-brand-light mb-3">Control Station</div>
               <div className="text-brand-light/70 text-lg text-center">
-                Interface web centralisée pour configurer et administrer l&apos;API Gateway, 
-                le serveur d&apos;identité, l&apos;orchestrateur et le Process Executor
+                Interface web centralisée pour configurer et administrer l'API Gateway, 
+                le serveur d'identité, l'orchestrateur et le Process Executor
               </div>
             </div>
           </div>
-          {/* Grid composants */}
-          <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 text-center z-20">
+          {/* Composants Meecrogate */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="group hover:scale-105 transition-all duration-300">
               <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10 hover:border-brand-blue/30 transition-colors">
                 <div className="bg-gradient-to-br from-brand-blue/20 to-brand-blue/30 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -187,15 +174,17 @@ const Hero = () => {
                 <div className="text-sm text-brand-light/60">Sécurisation & Routage</div>
               </div>
             </div>
+            
             <div className="group hover:scale-105 transition-all duration-300">
               <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10 hover:border-brand-orange/30 transition-colors">
                 <div className="bg-gradient-to-br from-brand-orange/20 to-brand-orange/30 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Settings className="w-6 h-6 text-brand-light" />
                 </div>
-                <div className="text-lg font-bold text-brand-light mb-2">Serveur d&apos;identité</div>
+                <div className="text-lg font-bold text-brand-light mb-2">Serveur d'identité</div>
                 <div className="text-sm text-brand-light/60">Gestion des accès</div>
               </div>
             </div>
+            
             <div className="group hover:scale-105 transition-all duration-300">
               <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10 hover:border-brand-blue/30 transition-colors">
                 <div className="bg-gradient-to-br from-brand-blue/20 to-brand-blue/30 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -205,6 +194,7 @@ const Hero = () => {
                 <div className="text-sm text-brand-light/60">Synchrone & Asynchrone</div>
               </div>
             </div>
+            
             <div className="group hover:scale-105 transition-all duration-300">
               <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10 hover:border-brand-orange/30 transition-colors">
                 <div className="bg-gradient-to-br from-brand-orange/20 to-brand-orange/30 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -222,3 +212,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
