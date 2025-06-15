@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Mail, X } from "lucide-react";
@@ -151,10 +150,6 @@ const CTA = () => {
             </DialogContent>
           </Dialog>
           
-          <Button variant="outline" size="lg" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg">
-            <Download className="mr-2 w-5 h-5" />
-            Télécharger la documentation
-          </Button>
           <Button variant="outline" size="lg" className="border-brand-orange text-brand-orange hover:bg-brand-orange/10 px-8 py-4 text-lg">
             Essai gratuit
             <ArrowRight className="ml-2 w-5 h-5" />
