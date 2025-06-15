@@ -2,7 +2,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,10 +19,19 @@ const Navigation = () => {
     { name: "Fonctionnalités", path: "/features" },
     { name: "Architecture", path: "/architecture" },
     { name: "Bénéfices", path: "/benefits" },
-    { name: "Cas d'usage", path: "/usecases" },
+  ];
+
+  const useCaseItems = [
+    { name: "Portails API", path: "/usecases/portails-api" },
+    { name: "Intégration rapide", path: "/usecases/integration-rapide" },
+    { name: "Processus métiers", path: "/usecases/processus-metiers" },
+    { name: "Orchestration intelligente", path: "/usecases/orchestration" },
+    { name: "Déploiement hybride", path: "/usecases/deploiement-hybride" },
+    { name: "Standardisation API", path: "/usecases/standardisation" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isUseCaseActive = () => location.pathname.includes('/usecases');
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-gray-700">
@@ -45,6 +60,38 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Cas d'usage dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1 ${
+                  isUseCaseActive()
+                    ? "text-blue-400 bg-blue-400/10"
+                    : "text-gray-300 hover:text-white"
+                }`}>
+                  Cas d'usage
+                  <ChevronDown size={16} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-slate-800 border-gray-700">
+                  <DropdownMenuItem asChild>
+                    <Link
+                      to="/usecases"
+                      className="text-gray-300 hover:text-white w-full"
+                    >
+                      Vue d'ensemble
+                    </Link>
+                  </DropdownMenuItem>
+                  {useCaseItems.map((item) => (
+                    <DropdownMenuItem key={item.path} asChild>
+                      <Link
+                        to={item.path}
+                        className="text-gray-300 hover:text-white w-full"
+                      >
+                        {item.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
 
@@ -86,6 +133,28 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
+              
+              <div className="px-3 py-2">
+                <div className="text-gray-400 text-sm font-medium mb-2">Cas d'usage</div>
+                <Link
+                  to="/usecases"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-3 py-1 text-gray-300 hover:text-white text-sm"
+                >
+                  Vue d'ensemble
+                </Link>
+                {useCaseItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-1 text-gray-300 hover:text-white text-sm"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+              
               <div className="pt-2">
                 <Link to="/demo" onClick={() => setIsMenuOpen(false)}>
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">
