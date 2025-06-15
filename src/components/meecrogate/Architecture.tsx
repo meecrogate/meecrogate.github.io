@@ -1,6 +1,5 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Cloud, Database, Settings, Monitor } from "lucide-react";
+import { Cloud, Database, Settings, Monitor, GitBranch, Server, Workflow } from "lucide-react";
 
 const Architecture = () => {
   const architecturePoints = [
@@ -29,6 +28,48 @@ const Architecture = () => {
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop&crop=center"
     }
   ];
+
+  const GitOpsFlowDiagram = () => {
+    const steps = [
+      { id: 1, title: "Git Repository", icon: <GitBranch className="w-5 h-5" />, color: "bg-blue-500" },
+      { id: 2, title: "CI/CD Pipeline", icon: <Workflow className="w-5 h-5" />, color: "bg-purple-500" },
+      { id: 3, title: "Container Registry", icon: <Database className="w-5 h-5" />, color: "bg-green-500" },
+      { id: 4, title: "Kubernetes Cluster", icon: <Server className="w-5 h-5" />, color: "bg-orange-500" }
+    ];
+
+    return (
+      <div className="mt-6 p-4 bg-gray-900/50 rounded-lg">
+        <h5 className="text-white font-semibold mb-4 text-center">Flux GitOps avec Kubernetes</h5>
+        <div className="flex flex-col sm:flex-row items-center justify-between space-y-3 sm:space-y-0 sm:space-x-2">
+          {steps.map((step, index) => (
+            <div key={step.id} className="flex items-center">
+              <div className="flex flex-col items-center">
+                <div className={`${step.color} p-3 rounded-full text-white mb-2`}>
+                  {step.icon}
+                </div>
+                <span className="text-xs text-gray-300 text-center max-w-20">{step.title}</span>
+              </div>
+              {index < steps.length - 1 && (
+                <div className="hidden sm:block mx-2">
+                  <div className="w-8 h-0.5 bg-gray-600"></div>
+                  <div className="w-0 h-0 border-l-4 border-l-gray-600 border-t-2 border-t-transparent border-b-2 border-b-transparent ml-8 -mt-1"></div>
+                </div>
+              )}
+              {index < steps.length - 1 && (
+                <div className="sm:hidden">
+                  <div className="h-8 w-0.5 bg-gray-600 mx-auto"></div>
+                  <div className="w-0 h-0 border-t-4 border-t-gray-600 border-l-2 border-l-transparent border-r-2 border-r-transparent -mt-1"></div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 text-xs text-gray-400 text-center">
+          Code → Build → Deploy → Monitor
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -77,7 +118,7 @@ const Architecture = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="text-center">
-          <div className="grid md:grid-cols-3 gap-8 text-gray-300">
+          <div className="grid md:grid-cols-3 gap-8 text-gray-300 mb-6">
             <div>
               <h4 className="font-semibold text-blue-400 mb-2">Cloud-Native</h4>
               <p>Kubernetes, containers, auto-scaling</p>
@@ -91,6 +132,7 @@ const Architecture = () => {
               <p>Machines virtuelles traditionnelles</p>
             </div>
           </div>
+          <GitOpsFlowDiagram />
         </CardContent>
       </Card>
     </div>
