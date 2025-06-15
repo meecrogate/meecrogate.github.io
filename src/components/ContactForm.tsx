@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Send } from "lucide-react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +41,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Contactez-nous
@@ -52,174 +52,114 @@ const ContactForm = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Informations de contact */}
-        <div className="bg-gradient-to-br from-brand-blue/20 to-brand-orange/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8">
-          <h2 className="text-2xl font-bold text-white mb-8">Nos coordonnées</h2>
-          
-          <div className="space-y-6">
-            <div className="flex items-start space-x-4">
-              <div className="bg-brand-blue/20 p-3 rounded-lg">
-                <Mail className="w-6 h-6 text-brand-blue" />
-              </div>
-              <div>
-                <h3 className="text-white font-semibold mb-1">Email</h3>
-                <p className="text-gray-300">contact@meecrogate.com</p>
-                <p className="text-gray-300">support@meecrogate.com</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="bg-brand-orange/20 p-3 rounded-lg">
-                <Phone className="w-6 h-6 text-brand-orange" />
-              </div>
-              <div>
-                <h3 className="text-white font-semibold mb-1">Téléphone</h3>
-                <p className="text-gray-300">+33 1 23 45 67 89</p>
-                <p className="text-sm text-gray-400">Lun - Ven, 9h - 18h</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="bg-brand-blue/20 p-3 rounded-lg">
-                <MapPin className="w-6 h-6 text-brand-blue" />
-              </div>
-              <div>
-                <h3 className="text-white font-semibold mb-1">Adresse</h3>
-                <p className="text-gray-300">123 Avenue des Champs-Élysées</p>
-                <p className="text-gray-300">75008 Paris, France</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 p-4 bg-brand-dark/50 rounded-lg border border-gray-700">
-            <h3 className="text-white font-semibold mb-2">Horaires d'ouverture</h3>
-            <div className="text-sm text-gray-300 space-y-1">
-              <div className="flex justify-between">
-                <span>Lundi - Vendredi</span>
-                <span>9h00 - 18h00</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Samedi</span>
-                <span>10h00 - 16h00</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Dimanche</span>
-                <span>Fermé</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Formulaire de contact */}
-        <div className="bg-gradient-to-br from-brand-dark/90 to-brand-blue/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8">
-          <h2 className="text-2xl font-bold text-white mb-8">Envoyez-nous un message</h2>
-          
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="nom" className="text-gray-300">
-                  Nom complet *
-                </Label>
-                <Input
-                  id="nom"
-                  name="nom"
-                  value={formData.nom}
-                  onChange={handleInputChange}
-                  required
-                  className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                  placeholder="Votre nom complet"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="entreprise" className="text-gray-300">
-                  Entreprise *
-                </Label>
-                <Input
-                  id="entreprise"
-                  name="entreprise"
-                  value={formData.entreprise}
-                  onChange={handleInputChange}
-                  required
-                  className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                  placeholder="Nom de votre entreprise"
-                />
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-gray-300">
-                  Email *
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                  placeholder="votre.email@entreprise.com"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="telephone" className="text-gray-300">
-                  Téléphone
-                </Label>
-                <Input
-                  id="telephone"
-                  name="telephone"
-                  type="tel"
-                  value={formData.telephone}
-                  onChange={handleInputChange}
-                  className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                  placeholder="+33 1 23 45 67 89"
-                />
-              </div>
-            </div>
-            
+      {/* Formulaire de contact */}
+      <div className="bg-gradient-to-br from-brand-dark/90 to-brand-blue/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8 max-w-2xl mx-auto">
+        <h2 className="text-2xl font-bold text-white mb-8">Envoyez-nous un message</h2>
+        
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="sujet" className="text-gray-300">
-                Sujet *
+              <Label htmlFor="nom" className="text-gray-300">
+                Nom complet *
               </Label>
               <Input
-                id="sujet"
-                name="sujet"
-                value={formData.sujet}
+                id="nom"
+                name="nom"
+                value={formData.nom}
                 onChange={handleInputChange}
                 required
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                placeholder="Objet de votre demande"
+                placeholder="Votre nom complet"
               />
             </div>
-            
             <div className="space-y-2">
-              <Label htmlFor="message" className="text-gray-300">
-                Message *
+              <Label htmlFor="entreprise" className="text-gray-300">
+                Entreprise *
               </Label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
+              <Input
+                id="entreprise"
+                name="entreprise"
+                value={formData.entreprise}
                 onChange={handleInputChange}
                 required
-                rows={6}
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                placeholder="Décrivez votre projet, vos besoins ou vos questions en détail..."
+                placeholder="Nom de votre entreprise"
               />
             </div>
-            
-            <Button
-              type="submit"
-              size="lg"
-              className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white"
-            >
-              <Send className="mr-2 w-5 h-5" />
-              Envoyer le message
-            </Button>
-          </form>
-        </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-gray-300">
+                Email *
+              </Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+                placeholder="votre.email@entreprise.com"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="telephone" className="text-gray-300">
+                Téléphone
+              </Label>
+              <Input
+                id="telephone"
+                name="telephone"
+                type="tel"
+                value={formData.telephone}
+                onChange={handleInputChange}
+                className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+                placeholder="+33 1 23 45 67 89"
+              />
+            </div>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="sujet" className="text-gray-300">
+              Sujet *
+            </Label>
+            <Input
+              id="sujet"
+              name="sujet"
+              value={formData.sujet}
+              onChange={handleInputChange}
+              required
+              className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+              placeholder="Objet de votre demande"
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="message" className="text-gray-300">
+              Message *
+            </Label>
+            <Textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+              rows={6}
+              className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+              placeholder="Décrivez votre projet, vos besoins ou vos questions en détail..."
+            />
+          </div>
+          
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white"
+          >
+            <Send className="mr-2 w-5 h-5" />
+            Envoyer le message
+          </Button>
+        </form>
       </div>
     </div>
   );
