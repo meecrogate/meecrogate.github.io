@@ -40,7 +40,7 @@ const Features = () => {
     {
       icon: <Zap className="w-8 h-8 text-orange-400" />,
       title: "🧠 Process Executor",
-      description: "Processus métier exécutables comme APIs",
+      description: "Processus métier exécutables comme Services Web",
       capabilities: [
         "Intégration BPMN native",
         "Moteurs d'automatisation",
