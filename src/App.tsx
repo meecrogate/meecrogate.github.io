@@ -8,6 +8,7 @@ import FeaturesPage from "./pages/Features";
 import ArchitecturePage from "./pages/Architecture";
 import BenefitsPage from "./pages/Benefits";
 import UseCasesPage from "./pages/UseCases";
+import ClientProjects from "./pages/ClientProjects";
 import DemoPage from "./pages/Demo";
 import NotFound from "./pages/NotFound";
 import Pricing from "./pages/Pricing";
@@ -43,6 +44,10 @@ const App = () => (
           <Route path="/usecases/orchestration" element={<OrchestrationPage />} />
           <Route path="/usecases/deploiement-hybride" element={<DeploiementHybridePage />} />
           <Route path="/usecases/standardisation" element={<StandardisationPage />} />
+          <Route path="/projets-clients" element={<ClientProjects />} />
+          <Route path="/projets-clients/bancaire" element={<ClientProjects />} />
+          <Route path="/projets-clients/ecommerce" element={<ClientProjects />} />
+          <Route path="/projets-clients/sante" element={<ClientProjects />} />
           <Route path="/demo" element={<DemoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

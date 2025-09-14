@@ -32,6 +32,13 @@ const Navigation = () => {
     { name: "Standardisation API", path: "/usecases/standardisation" },
   ];
 
+  const clientProjectItems = [
+    { name: "Vue d'ensemble", path: "/projets-clients" },
+    { name: "Secteur bancaire", path: "/projets-clients/bancaire" },
+    { name: "E-commerce", path: "/projets-clients/ecommerce" },
+    { name: "Santé", path: "/projets-clients/sante" },
+  ];
+
   const isActive = (path: string) => location.pathname === path;
   const isUseCaseActive = () => location.pathname.includes('/usecases');
 
@@ -67,35 +74,56 @@ const Navigation = () => {
                 </Link>
               ))}
               
-              {/* Cas d'usage dropdown */}
+              {/* Solutions dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1 ${
-                  isUseCaseActive()
+                  isUseCaseActive() || location.pathname.includes('/projets-clients')
                     ? "text-blue-400 bg-blue-400/10"
                     : "text-gray-300 hover:text-white"
                 }`}>
-                  Cas d'usage
+                  Solutions
                   <ChevronDown size={16} />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-slate-800 border-gray-700">
-                  <DropdownMenuItem asChild>
-                    <Link
-                      to="/usecases"
-                      className="text-gray-300 hover:text-white w-full"
-                    >
-                      Vue d'ensemble
-                    </Link>
-                  </DropdownMenuItem>
-                  {useCaseItems.map((item) => (
-                    <DropdownMenuItem key={item.path} asChild>
+                  <div className="px-2 py-1">
+                    <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
+                      Cas d'usage
+                    </div>
+                    <DropdownMenuItem asChild>
                       <Link
-                        to={item.path}
+                        to="/usecases"
                         className="text-gray-300 hover:text-white w-full"
                       >
-                        {item.name}
+                        Vue d'ensemble
                       </Link>
                     </DropdownMenuItem>
-                  ))}
+                    {useCaseItems.map((item) => (
+                      <DropdownMenuItem key={item.path} asChild>
+                        <Link
+                          to={item.path}
+                          className="text-gray-300 hover:text-white w-full"
+                        >
+                          {item.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </div>
+                  <div className="border-t border-gray-700 my-1"></div>
+                  <div className="px-2 py-1">
+                    <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
+                      Projets clients
+                    </div>
+                    {clientProjectItems.map((item) => (
+                      <DropdownMenuItem key={item.path} asChild>
+                        <Link
+                          to={item.path}
+                          className="text-gray-300 hover:text-white w-full"
+                        >
+                          {item.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </div>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -141,24 +169,46 @@ const Navigation = () => {
               ))}
               
               <div className="px-3 py-2">
-                <div className="text-gray-400 text-sm font-medium mb-2">Cas d'usage</div>
-                <Link
-                  to="/usecases"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block px-3 py-1 text-gray-300 hover:text-white text-sm"
-                >
-                  Vue d'ensemble
-                </Link>
-                {useCaseItems.map((item) => (
+                <div className="text-gray-400 text-sm font-medium mb-2">Solutions</div>
+                
+                <div className="mb-3">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
+                    Cas d'usage
+                  </div>
                   <Link
-                    key={item.path}
-                    to={item.path}
+                    to="/usecases"
                     onClick={() => setIsMenuOpen(false)}
                     className="block px-3 py-1 text-gray-300 hover:text-white text-sm"
                   >
-                    {item.name}
+                    Vue d'ensemble
                   </Link>
-                ))}
+                  {useCaseItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block px-3 py-1 text-gray-300 hover:text-white text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <div>
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
+                    Projets clients
+                  </div>
+                  {clientProjectItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block px-3 py-1 text-gray-300 hover:text-white text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
               
               <div className="pt-2">
