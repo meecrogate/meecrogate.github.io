@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 const ArchitecturePage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-dark via-brand-blue to-brand-dark">
+    <div className="min-h-screen bg-slate-900">
       <Navigation />
       <div className="pt-16">
         <Architecture />

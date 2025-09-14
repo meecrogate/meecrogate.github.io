@@ -83,8 +83,7 @@ const Hero = () => {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/90 via-brand-blue/30 to-brand-dark/95 pointer-events-none -z-10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 to-transparent pointer-events-none -z-10" />
+      {/* Background layer removed */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center">

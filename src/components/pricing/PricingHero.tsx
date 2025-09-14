@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 const PricingHero = () => {
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20" />
+      {/* Background gradient removed */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center">
           <Badge className="mb-4 bg-blue-500/10 text-blue-300 border-blue-500/20">
