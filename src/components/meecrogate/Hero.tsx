@@ -93,7 +93,7 @@ const Hero = () => {
 
           <h1 className="text-6xl md:text-7xl font-bold text-brand-light mb-8">
             <span className="block">Meecrogate</span>
-            <span className="block bg-gradient-to-r from-brand-blue via-brand-orange to-brand-blue bg-clip-text text-transparent text-4xl md:text-5xl mt-4">
+            <span className="block text-[#FFB300] text-4xl md:text-5xl mt-4">
               La plateforme modulaire d'APIs cloud-native
             </span>
           </h1>
