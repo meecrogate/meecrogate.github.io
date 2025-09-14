@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import meecrogateLogoSvg from "@/assets/meecrogate-logo.svg";
 
 const Footer = () => {
   return (
@@ -7,7 +8,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-white mb-4">🟦 Meecrogate</h3>
+            <img 
+              src={meecrogateLogoSvg} 
+              alt="Meecrogate" 
+              className="h-8 mb-4"
+            />
             <p className="text-gray-400 mb-6 max-w-md">
               La plateforme modulaire d'APIs cloud-native. Solution composable pour 
               l'exposition, la sécurisation et l'orchestration d'APIs.
