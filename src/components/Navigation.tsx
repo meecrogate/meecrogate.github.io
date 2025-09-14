@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
+import meecrogateLogoSvg from "@/assets/meecrogate-logo.svg";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,7 +42,11 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/">
-              <h1 className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">🟦 Meecrogate</h1>
+              <img 
+                src={meecrogateLogoSvg} 
+                alt="Meecrogate" 
+                className="h-8 hover:opacity-80 transition-opacity"
+              />
             </Link>
           </div>
 
