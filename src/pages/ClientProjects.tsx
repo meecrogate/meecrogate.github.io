@@ -2,8 +2,43 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, Building2, ShoppingCart, Heart, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 const ClientProjects = () => {
+  const [visibleProjects, setVisibleProjects] = useState(new Set<number>());
+  
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setVisibleProjects(prev => new Set(prev).add(index));
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px'
+      }
+    );
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
+
+  const setProjectRef = (element: HTMLDivElement | null, index: number) => {
+    if (element && observerRef.current) {
+      element.setAttribute('data-index', index.toString());
+      observerRef.current.observe(element);
+    }
+  };
+
   const projects = [
     {
       id: "bancaire",
@@ -72,14 +107,22 @@ const ClientProjects = () => {
         {/* Projects Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="space-y-0">
+            <div className="space-y-8">
               {projects.map((project, index) => (
-                <div key={project.id}>
+                <div 
+                  key={project.id}
+                  ref={(el) => setProjectRef(el, index)}
+                  className={`transition-all duration-700 ease-out ${
+                    visibleProjects.has(index) 
+                      ? 'animate-fade-in opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-8'
+                  }`}
+                >
                   <Link 
                     to={project.link}
                     className="block group"
                   >
-                    <div className="bg-slate-800/50 hover:bg-slate-800 transition-all duration-300 border border-slate-700/50 hover:border-slate-600">
+                    <div className="bg-slate-800/50 hover:bg-slate-800 transition-all duration-300 border border-slate-700/50 hover:border-slate-600 rounded-lg overflow-hidden">
                       <div className="p-0 flex flex-col lg:flex-row justify-between">
                         <div className="flex items-center lg:flex-1">
                           <div className="p-8 lg:p-12">
@@ -122,9 +165,6 @@ const ClientProjects = () => {
                       </div>
                     </div>
                   </Link>
-                  {index < projects.length - 1 && (
-                    <div className="h-px bg-slate-700/50 my-0"></div>
-                  )}
                 </div>
               ))}
             </div>
