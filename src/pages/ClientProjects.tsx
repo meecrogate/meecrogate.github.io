@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
 const ClientProjects = () => {
-  const [visibleProjects, setVisibleProjects] = useState(new Set<number>([0])); // Show first project by default
+  const [visibleProjects, setVisibleProjects] = useState(new Set<number>());
   
   const observerRef = useRef<IntersectionObserver | null>(null);
   
@@ -109,15 +109,15 @@ const ClientProjects = () => {
           <div className="max-w-7xl mx-auto">
             <div className="space-y-8">
               {projects.map((project, index) => (
-                <div 
-                  key={project.id}
-                  ref={(el) => setProjectRef(el, index)}
-                  className={`transition-all duration-700 ease-out ${
-                    visibleProjects.has(index) 
-                      ? 'animate-fade-in opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                >
+                  <div 
+                    key={project.id}
+                    ref={(el) => setProjectRef(el, index)}
+                    className={`transition-all duration-700 ease-out ${
+                      visibleProjects.has(index) 
+                        ? 'animate-fade-in opacity-100 translate-y-0' 
+                        : 'opacity-100 translate-y-0'
+                    }`}
+                  >
                   <Link 
                     to={project.link}
                     className="block group"
