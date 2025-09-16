@@ -22,6 +22,11 @@ import OrchestrationPage from "./pages/usecases/Orchestration";
 import DeploiementHybridePage from "./pages/usecases/DeploiementHybride";
 import StandardisationPage from "./pages/usecases/Standardisation";
 
+// Client projects case studies
+import BancaireCaseStudy from "./pages/clientprojects/BancaireCaseStudy";
+import EcommerceCaseStudy from "./pages/clientprojects/EcommerceCaseStudy";
+import SanteCaseStudy from "./pages/clientprojects/SanteCaseStudy";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -45,9 +50,9 @@ const App = () => (
           <Route path="/usecases/deploiement-hybride" element={<DeploiementHybridePage />} />
           <Route path="/usecases/standardisation" element={<StandardisationPage />} />
           <Route path="/projets-clients" element={<ClientProjects />} />
-          <Route path="/projets-clients/bancaire" element={<ClientProjects />} />
-          <Route path="/projets-clients/ecommerce" element={<ClientProjects />} />
-          <Route path="/projets-clients/sante" element={<ClientProjects />} />
+          <Route path="/projets-clients/bancaire" element={<BancaireCaseStudy />} />
+          <Route path="/projets-clients/ecommerce" element={<EcommerceCaseStudy />} />
+          <Route path="/projets-clients/sante" element={<SanteCaseStudy />} />
           <Route path="/demo" element={<DemoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
