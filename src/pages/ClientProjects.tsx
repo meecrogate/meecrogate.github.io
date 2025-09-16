@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
 const ClientProjects = () => {
-  const [visibleProjects, setVisibleProjects] = useState(new Set<number>());
+  const [visibleProjects, setVisibleProjects] = useState(new Set<number>([0])); // Show first project by default
   
   const observerRef = useRef<IntersectionObserver | null>(null);
   
@@ -15,13 +15,13 @@ const ClientProjects = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = parseInt(entry.target.getAttribute('data-index') || '0');
-            setVisibleProjects(prev => new Set(prev).add(index));
+            setVisibleProjects(prev => new Set([...Array.from(prev), index]));
           }
         });
       },
       {
-        threshold: 0.2,
-        rootMargin: '0px 0px -10% 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -5% 0px'
       }
     );
 
