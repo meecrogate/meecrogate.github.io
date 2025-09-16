@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ArrowRight, Building2, ShoppingCart, Heart, CheckCircle } from "lucide-react";
+import { ArrowRight, Building2, ShoppingCart, Heart, CheckCircle, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
@@ -84,6 +84,21 @@ const ClientProjects = () => {
       ],
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=610&h=375",
       link: "/projets-clients/sante"
+    },
+    {
+      id: "paris",
+      title: "Portail citoyen IA - Ville de Paris",
+      description: "Meecrogate a permis l'intégration rapide et sécurisée de services IA (chatbot, traduction, recommandations) dans le portail citoyen, avec un gain de 40% sur les délais d'intégration.",
+      author: "Directeur Innovation Numérique",
+      company: "Ville de Paris",
+      icon: <MapPin className="w-14 h-14 text-purple-400" />,
+      metrics: [
+        { value: "40%", label: "Temps gagné sur intégration" },
+        { value: "RGPD", label: "Conformité renforcée" },
+        { value: "Quelques semaines", label: "Mise en service" }
+      ],
+      image: "https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=610&h=375",
+      link: "/projets-clients/paris"
     }
   ];
 

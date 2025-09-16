@@ -26,6 +26,7 @@ import StandardisationPage from "./pages/usecases/Standardisation";
 import BancaireCaseStudy from "./pages/clientprojects/BancaireCaseStudy";
 import EcommerceCaseStudy from "./pages/clientprojects/EcommerceCaseStudy";
 import SanteCaseStudy from "./pages/clientprojects/SanteCaseStudy";
+import ParisCaseStudy from "./pages/clientprojects/ParisCaseStudy";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/projets-clients/bancaire" element={<BancaireCaseStudy />} />
           <Route path="/projets-clients/ecommerce" element={<EcommerceCaseStudy />} />
           <Route path="/projets-clients/sante" element={<SanteCaseStudy />} />
+          <Route path="/projets-clients/paris" element={<ParisCaseStudy />} />
           <Route path="/demo" element={<DemoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
