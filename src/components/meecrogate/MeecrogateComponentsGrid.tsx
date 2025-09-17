@@ -41,7 +41,7 @@ const MeecrogateComponentsGrid = () => (
         <div className={`bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10 ${comp.border} transition-colors`}>
           <div className={`bg-gradient-to-br ${comp.gradient} w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4`}>
             {comp.icon === "image" ? (
-              <img src={comp.iconSrc} alt={comp.title} className="w-8 h-8" />
+              <img src={comp.iconSrc} alt={comp.title} className="w-8 h-8 bg-white/10 rounded-lg p-1" />
             ) : (
               <comp.icon className="w-6 h-6 text-brand-light" />
             )}
