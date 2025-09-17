@@ -1,9 +1,11 @@
 
-import { Shield, Settings, Layers, Zap } from "lucide-react";
+import { Settings, Layers, Zap } from "lucide-react";
+import apiGatewayIcon from "@/assets/api-gateway-icon.png";
 
 const components = [
   {
-    icon: Shield,
+    icon: "image",
+    iconSrc: apiGatewayIcon,
     title: "API Gateway",
     description: "Sécurisation & Routage",
     gradient: "from-brand-blue/20 to-brand-blue/30",
@@ -38,7 +40,11 @@ const MeecrogateComponentsGrid = () => (
       <div key={i} className={`group hover:scale-105 transition-all duration-300`}>
         <div className={`bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10 ${comp.border} transition-colors`}>
           <div className={`bg-gradient-to-br ${comp.gradient} w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4`}>
-            <comp.icon className="w-6 h-6 text-brand-light" />
+            {comp.icon === "image" ? (
+              <img src={comp.iconSrc} alt={comp.title} className="w-8 h-8" />
+            ) : (
+              <comp.icon className="w-6 h-6 text-brand-light" />
+            )}
           </div>
           <div className="text-lg font-bold text-brand-light mb-2">{comp.title}</div>
           <div className="text-sm text-brand-light/60">{comp.description}</div>
