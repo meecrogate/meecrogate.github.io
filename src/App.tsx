@@ -29,6 +29,12 @@ import EcommerceCaseStudy from "./pages/clientprojects/EcommerceCaseStudy";
 import SanteCaseStudy from "./pages/clientprojects/SanteCaseStudy";
 import ParisCaseStudy from "./pages/clientprojects/ParisCaseStudy";
 
+// Components individual pages
+import ApiGatewayPage from "./pages/components/ApiGateway";
+import IdentityServerPage from "./pages/components/IdentityServer";
+import OrchestratorPage from "./pages/components/Orchestrator";
+import ProcessExecutorPage from "./pages/components/ProcessExecutor";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -57,6 +63,10 @@ const App = () => (
           <Route path="/projets-clients/ecommerce" element={<EcommerceCaseStudy />} />
           <Route path="/projets-clients/sante" element={<SanteCaseStudy />} />
           <Route path="/projets-clients/paris" element={<ParisCaseStudy />} />
+          <Route path="/components/api-gateway" element={<ApiGatewayPage />} />
+          <Route path="/components/identity-server" element={<IdentityServerPage />} />
+          <Route path="/components/orchestrator" element={<OrchestratorPage />} />
+          <Route path="/components/process-executor" element={<ProcessExecutorPage />} />
           <Route path="/demo" element={<DemoPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
