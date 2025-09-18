@@ -13,6 +13,7 @@ import DemoPage from "./pages/Demo";
 import NotFound from "./pages/NotFound";
 import Pricing from "./pages/Pricing";
 import Service from "./pages/Service";
+import ComponentsPage from "./pages/Components";
 
 // Use cases individual pages
 import PortailsApiPage from "./pages/usecases/PortailsApi";
@@ -43,6 +44,7 @@ const App = () => (
           {/* <Route path="/benefits" element={<BenefitsPage />} /> */} {/* supprimé */}
           <Route path="/service" element={<Service />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/components" element={<ComponentsPage />} />
           <Route path="/usecases" element={<UseCasesPage />} />
           <Route path="/usecases/portails-api" element={<PortailsApiPage />} />
           <Route path="/usecases/integration-rapide" element={<IntegrationRapidePage />} />
