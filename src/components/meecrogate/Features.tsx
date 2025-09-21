@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Settings, Layers, Zap, Check } from "lucide-react";
+import MeecrogateComponentsGrid from "./MeecrogateComponentsGrid";
 
 const Features = () => {
   const features = [
@@ -61,7 +62,7 @@ const Features = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 mb-16">
         {features.map((feature, index) => (
           <Card 
             key={index}
@@ -89,6 +90,18 @@ const Features = () => {
           </Card>
         ))}
       </div>
+
+      {/* Section composants cliquables */}
+      <div className="text-center mb-12">
+        <h3 className="text-3xl font-bold text-white mb-4">
+          Explorer les composants
+        </h3>
+        <p className="text-lg text-gray-300 mb-8">
+          Cliquez sur un composant pour découvrir ses fonctionnalités détaillées
+        </p>
+      </div>
+      
+      <MeecrogateComponentsGrid />
     </div>
   );
 };
