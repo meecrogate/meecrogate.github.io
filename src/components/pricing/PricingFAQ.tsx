@@ -4,36 +4,36 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const PricingFAQ = () => {
   const faqs = [
     {
-      question: "What makes your API management solution different?",
-      answer: "Our solution is uniquely low-code, using only JSON configuration files. No complex setup, no proprietary languages - just simple JSON configs that power a complete API management stack with Gateway, Orchestrator, Access Server, and Process Executor."
+      question: "Qu'est-ce qui rend votre solution de gestion d'API différente ?",
+      answer: "Notre solution est uniquement low-code, utilisant seulement des fichiers de configuration JSON. Pas de configuration complexe, pas de langages propriétaires - juste des configs JSON simples qui alimentent une stack complète de gestion d'API avec Gateway, Orchestrateur, Serveur d'accès et Process Executor."
     },
     {
-      question: "How does the JSON configuration work?",
-      answer: "Everything is configured through intuitive JSON files. Define your API routes, authentication rules, orchestration workflows, and business processes all in JSON. Changes are applied in real-time without restarts or downtime."
+      question: "Comment fonctionne la configuration JSON ?",
+      answer: "Tout est configuré via des fichiers JSON intuitifs. Définissez vos routes d'API, règles d'authentification, workflows d'orchestration et processus métier, tout en JSON. Les changements sont appliqués en temps réel sans redémarrage ni temps d'arrêt."
     },
     {
-      question: "Can I migrate from other API management platforms?",
-      answer: "Absolutely! Our migration tools can help you convert existing configurations to our JSON format. We offer free migration assistance for Business plan customers and have detailed documentation for self-service migration."
+      question: "Puis-je migrer depuis d'autres plateformes de gestion d'API ?",
+      answer: "Absolument ! Nos outils de migration peuvent vous aider à convertir les configurations existantes vers notre format JSON. Nous offrons une assistance gratuite à la migration pour les clients du forfait Business et avons une documentation détaillée pour la migration en libre-service."
     },
     {
-      question: "What's included in the free Developer plan?",
-      answer: "The Developer plan includes all four core components (API Gateway, Orchestrator, Access Server, Process Executor) with up to 10,000 API calls per month, 2 JSON config files, and community support. Perfect for testing and small projects."
+      question: "Qu'est-ce qui est inclus dans le forfait Developer gratuit ?",
+      answer: "Le forfait Developer inclut les quatre composants principaux (API Gateway, Orchestrateur, Serveur d'accès, Process Executor) avec jusqu'à 10 000 appels d'API par mois, 2 fichiers de configuration JSON et le support communautaire. Parfait pour les tests et petits projets."
     },
     {
-      question: "How do you handle scaling and performance?",
-      answer: "Our platform automatically scales based on demand. The Business plan includes auto-scaling, load balancing, and performance optimization. We guarantee 99.9% uptime SLA for Business customers."
+      question: "Comment gérez-vous la montée en charge et les performances ?",
+      answer: "Notre plateforme s'adapte automatiquement selon la demande. Le forfait Business inclut l'auto-scaling, la répartition de charge et l'optimisation des performances. Nous garantissons un SLA de 99,9% de disponibilité pour les clients Business."
     },
     {
-      question: "Is there a long-term contract requirement?",
-      answer: "No long-term contracts required. All paid plans are month-to-month. You can upgrade, downgrade, or cancel anytime. We believe in earning your business every month with great service."
+      question: "Y a-t-il une exigence de contrat à long terme ?",
+      answer: "Aucun contrat à long terme requis. Tous les forfaits payants sont mois par mois. Vous pouvez upgrader, downgrader ou annuler à tout moment. Nous croyons qu'il faut mériter votre entreprise chaque mois avec un excellent service."
     },
     {
-      question: "What kind of support do you provide?",
-      answer: "Developer plan gets community support, Startup plan includes email support with 24-hour response time, and Business plan gets priority support with dedicated account management and phone support."
+      question: "Quel type de support fournissez-vous ?",
+      answer: "Le forfait Developer bénéficie du support communautaire, le forfait Startup inclut le support par email avec un temps de réponse de 24h, et le forfait Business obtient un support prioritaire avec gestion de compte dédiée et support téléphonique."
     },
     {
-      question: "Can I use this for microservices architecture?",
-      answer: "Yes! Our solution is perfect for microservices. The API Gateway handles service discovery and routing, the Orchestrator manages service communication, and the Process Executor handles distributed workflows - all configured via JSON."
+      question: "Puis-je utiliser ceci pour une architecture de microservices ?",
+      answer: "Oui ! Notre solution est parfaite pour les microservices. L'API Gateway gère la découverte et le routage des services, l'Orchestrateur gère la communication entre services, et le Process Executor gère les workflows distribués - tout configuré via JSON."
     }
   ];
 
@@ -41,10 +41,10 @@ const PricingFAQ = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white mb-4">
-          Frequently Asked Questions
+          Questions fréquemment posées
         </h2>
         <p className="text-xl text-gray-300">
-          Everything you need to know about our API management platform
+          Tout ce que vous devez savoir sur notre plateforme de gestion d'API
         </p>
       </div>
 
