@@ -29,26 +29,39 @@ const PricingHero = () => {
             aria-labelledby="pro-title" 
             className="bg-gradient-to-b from-brand-blue/20 to-brand-blue/10 rounded-lg p-5.5 shadow-xl border border-brand-blue/40"
           >
-            <h2 id="pro-title" className="text-lg font-semibold mb-1.5 text-brand-light">💼 Pro (recommandé)</h2>
+            <h2 id="pro-title" className="text-lg font-semibold mb-1.5 text-brand-light">🚀 Pro</h2>
             <p className="text-brand-light/70 mb-3.5">Pour PME/ETI qui passent en production</p>
             <div className="flex items-baseline gap-2 mb-3.5">
-              <span className="text-2xl font-bold text-brand-light">1 900 €</span>
+              <span className="text-2xl font-bold text-brand-light">1 500 - 2 500 €</span>
               <span className="text-brand-light/60 text-sm">HT / mois</span>
             </div>
-            <ul className="mb-4 ml-4 text-brand-light/90 space-y-1">
-              <li>Jusqu'à <strong>20 APIs</strong></li>
-              <li><strong>Souscriptions illimitées</strong></li>
-              <li>Sécurité avancée, quotas, analytics détaillés</li>
-              <li>Portail développeurs personnalisable</li>
-              <li><strong>2 jours d'intégration & formation</strong> inclus</li>
-              <li>SLA renforcé & support prioritaire</li>
-            </ul>
+            
+            <div className="mb-3">
+              <h3 className="text-sm font-semibold text-brand-light mb-2">Inclus:</h3>
+              <ul className="ml-4 text-brand-light/90 space-y-1 text-sm">
+                <li>Sécuriser <strong>10–20 APIs</strong></li>
+                <li><strong>5 jours d'intégration et onboarding</strong> inclus</li>
+                <li>Haute transparence</li>
+                <li>Support Standard par tickets</li>
+                <li><strong>2 instances</strong> Meecrogate Gateway dans votre infrastructure</li>
+              </ul>
+            </div>
+            
+            <div className="mb-4">
+              <h3 className="text-sm font-semibold text-brand-light mb-2">Options:</h3>
+              <ul className="ml-4 text-brand-light/80 space-y-1 text-sm">
+                <li>Licences pluriannuelles : 18 000–30 000 €/an</li>
+                <li>3 ans : 16 200–27 000 €/an</li>
+                <li>5 ans : 14 400–24 000 €/an</li>
+              </ul>
+            </div>
+            
             <div className="flex gap-2">
               <Button className="bg-gradient-to-r from-brand-blue to-brand-blue/80 hover:from-brand-blue/90 hover:to-brand-blue/70 text-brand-light border-0">
-                Tester la démo Pro
+                Choisir ce plan
               </Button>
               <Button variant="outline" className="border-brand-light/30 bg-transparent text-brand-light hover:bg-brand-light/10">
-                Comparer les offres
+                Contact commercial
               </Button>
             </div>
           </article>
@@ -61,17 +74,30 @@ const PricingHero = () => {
             <h2 id="enterprise-title" className="text-lg font-semibold mb-1.5 text-brand-light">🏢 Entreprise</h2>
             <p className="text-brand-light/70 mb-3.5">Grandes infrastructures / conformité / forte échelle</p>
             <div className="flex items-baseline gap-2 mb-3.5">
-              <span className="text-2xl font-bold text-brand-light">À partir de 5 000 €</span>
-              <span className="text-brand-light/60 text-sm">HT / mois (sur devis)</span>
+              <span className="text-2xl font-bold text-brand-light">Sur demande</span>
             </div>
-            <ul className="mb-4 ml-4 text-brand-light/90 space-y-1">
-              <li>APIs <strong>illimitées</strong> (selon besoin)</li>
-              <li>Souscriptions illimitées, trafic élevé</li>
-              <li>Observabilité, conformité & sécurité renforcées</li>
-              <li>Déploiement cloud / hybride / on-premise</li>
-              <li>SLA premium (support 24/7) + équipe dédiée</li>
-              <li>Accompagnement projet complet : migration, audit, formation</li>
-            </ul>
+            
+            <div className="mb-3">
+              <h3 className="text-sm font-semibold text-brand-light mb-2">Inclus:</h3>
+              <ul className="ml-4 text-brand-light/90 space-y-1 text-sm">
+                <li><strong>SLA sur mesure</strong></li>
+                <li>Gestion de l'identification: <strong>Meecrogate Serveur ID</strong></li>
+                <li><strong>Équipe de Projet d'intégration dédiée</strong></li>
+                <li>Support dédié</li>
+                <li><strong>Instances Meecrogate Gateway illimitées</strong></li>
+              </ul>
+            </div>
+            
+            <div className="mb-4">
+              <h3 className="text-sm font-semibold text-brand-light mb-2">Options:</h3>
+              <ul className="ml-4 text-brand-light/80 space-y-1 text-sm">
+                <li>Ajout de fonctionnalités Custom</li>
+                <li>Licences pluriannuelles</li>
+                <li>Migration et mode hybride</li>
+                <li>Support d'Industry Standard APIs (TMForum, OpenBanking...)</li>
+              </ul>
+            </div>
+            
             <div className="flex gap-2">
               <Button className="bg-gradient-to-r from-brand-blue to-brand-blue/80 hover:from-brand-blue/90 hover:to-brand-blue/70 text-brand-light border-0">
                 Demander un devis
@@ -97,39 +123,39 @@ const PricingHero = () => {
               </thead>
               <tbody className="text-brand-light/90">
                 <tr>
-                  <td className="py-3 px-4 border-t border-brand-light/10">APIs incluses</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">20</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">APIs sécurisées</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">10–20</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Illimité</td>
                 </tr>
                 <tr>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Souscriptions (dev/users)</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">Instances Gateway</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">2</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Illimité</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Illimité</td>
                 </tr>
                 <tr>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Sécurité & quotas</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Avancé</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Avancé + conformité</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">Intégration & onboarding</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">5 jours inclus</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">Équipe dédiée</td>
                 </tr>
                 <tr>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Analytics</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Détaillé</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Temps réel / observabilité</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">Support</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">Standard par tickets</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">Support dédié</td>
                 </tr>
                 <tr>
-                  <td className="py-3 px-4 border-t border-brand-light/10">SLA & support</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Prioritaire</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Premium 24/7</td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Intégration incluse</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">2 jours</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">SLA</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">Standard</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Sur mesure</td>
                 </tr>
                 <tr>
+                  <td className="py-3 px-4 border-t border-brand-light/10">Serveur ID</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">—</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">✓ Inclus</td>
+                </tr>
+                <tr>
                   <td className="py-3 px-4 border-t border-brand-light/10">Prix (HT / mois)</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">1 900 €</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">À partir de 5 000 € (sur devis)</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">1 500 - 2 500 €</td>
+                  <td className="py-3 px-4 border-t border-brand-light/10">Sur demande</td>
                 </tr>
               </tbody>
             </table>
