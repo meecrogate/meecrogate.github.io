@@ -5,9 +5,9 @@ import PricingHero from "@/components/pricing/PricingHero";
 
 const Pricing = () => {
   return (
-    <div className="bg-background min-h-screen flex flex-col">
+    <div className="bg-slate-900 min-h-screen flex flex-col">
       <Navigation />
-      <main className="flex-1">
+      <main className="flex-1 pt-16">
         <PricingHero />
       </main>
       <Footer />
