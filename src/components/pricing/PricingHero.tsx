@@ -23,35 +23,7 @@ const PricingHero = () => {
         </header>
 
         {/* Pricing cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-5">
-          {/* Starter */}
-          <article 
-            aria-labelledby="starter-title" 
-            className="bg-brand-dark/90 text-brand-light rounded-lg p-5 shadow-lg border border-brand-light/20"
-          >
-            <h2 id="starter-title" className="text-lg font-semibold mb-1.5 text-brand-light">🚀 Starter</h2>
-            <p className="text-brand-light/70 mb-3.5">Pour prototyper et tester en production légère</p>
-            <div className="flex items-baseline gap-2 mb-3.5">
-              <span className="text-2xl font-bold text-brand-light">490 €</span>
-              <span className="text-brand-light/60 text-sm">HT / mois</span>
-            </div>
-            <ul className="mb-4 ml-4 text-brand-light/90 space-y-1">
-              <li>Jusqu'à <strong>5 APIs</strong></li>
-              <li>Jusqu'à <strong>200 souscriptions</strong></li>
-              <li>Portail développeurs & monitoring de base</li>
-              <li>SLA standard (support heures ouvrées)</li>
-              <li><strong>½ journée d'intégration</strong> incluse (ou option 300 €)</li>
-            </ul>
-            <div className="flex gap-2">
-              <Button className="bg-gradient-to-r from-brand-blue to-brand-blue/80 hover:from-brand-blue/90 hover:to-brand-blue/70 text-brand-light border-0">
-                Demander une démo
-              </Button>
-              <Button variant="outline" className="border-brand-light/30 bg-transparent text-brand-light hover:bg-brand-light/10">
-                Contact commercial
-              </Button>
-            </div>
-          </article>
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5">
           {/* Pro */}
           <article 
             aria-labelledby="pro-title" 
@@ -116,10 +88,9 @@ const PricingHero = () => {
           <h3 className="text-lg font-semibold mb-3 text-brand-light">Tableau comparatif</h3>
           <div className="overflow-auto rounded-lg bg-brand-dark/90 border border-brand-light/20 shadow-sm">
             <table className="w-full border-collapse min-w-[720px]">
-              <thead className="bg-brand-blue/20 text-brand-light text-left">
+            <thead className="bg-brand-blue/20 text-brand-light text-left">
                 <tr>
                   <th className="py-3.5 px-4 font-semibold">Fonctionnalité</th>
-                  <th className="py-3.5 px-4 font-semibold">Starter</th>
                   <th className="py-3.5 px-4 font-semibold">Pro</th>
                   <th className="py-3.5 px-4 font-semibold">Entreprise</th>
                 </tr>
@@ -127,43 +98,36 @@ const PricingHero = () => {
               <tbody className="text-brand-light/90">
                 <tr>
                   <td className="py-3 px-4 border-t border-brand-light/10">APIs incluses</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">5</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">20</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Illimité</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 border-t border-brand-light/10">Souscriptions (dev/users)</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">200 max</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Illimité</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Illimité</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 border-t border-brand-light/10">Sécurité & quotas</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Basique</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Avancé</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Avancé + conformité</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 border-t border-brand-light/10">Analytics</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Standard</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Détaillé</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Temps réel / observabilité</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 border-t border-brand-light/10">SLA & support</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">Standard (Hch)</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Prioritaire</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Premium 24/7</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 border-t border-brand-light/10">Intégration incluse</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">½ jour</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">2 jours</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">Sur mesure</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 border-t border-brand-light/10">Prix (HT / mois)</td>
-                  <td className="py-3 px-4 border-t border-brand-light/10">490 €</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">1 900 €</td>
                   <td className="py-3 px-4 border-t border-brand-light/10">À partir de 5 000 € (sur devis)</td>
                 </tr>
