@@ -1,4 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 // --- Définitions SVG Lucide ---
 
@@ -38,8 +45,51 @@ const Plus = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const PricingHero = () => {
+    const { toast } = useToast();
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [selectedPlan, setSelectedPlan] = useState<string>("");
+    const [formData, setFormData] = useState({
+        nom: "",
+        email: "",
+        entreprise: "",
+        telephone: "",
+        sujet: "",
+        message: ""
+    });
+
     // Classes de survol partagées pour un effet interactif
     const hoverClasses = "transition-all duration-300 hover:scale-[1.01] hover:shadow-indigo-500/50 hover:border-indigo-400 cursor-pointer";
+
+    const handleOpenDialog = (plan: string) => {
+        setSelectedPlan(plan);
+        setFormData(prev => ({ ...prev, sujet: `Demande d'information - Plan ${plan}` }));
+        setIsDialogOpen(true);
+    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        toast({
+            title: "Message envoyé !",
+            description: "Nous vous recontacterons bientôt.",
+        });
+        setIsDialogOpen(false);
+        setFormData({
+            nom: "",
+            email: "",
+            entreprise: "",
+            telephone: "",
+            sujet: "",
+            message: ""
+        });
+    };
 
     return (
         <section 
@@ -125,7 +175,10 @@ const PricingHero = () => {
                         </div>
                         
                         <div className="flex mt-auto pt-6"> 
-                            <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white border-0 shadow-lg">
+                            <Button 
+                                onClick={() => handleOpenDialog("Pro")}
+                                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white border-0 shadow-lg"
+                            >
                                 Choisir ce plan
                             </Button>
                         </div>
@@ -196,7 +249,10 @@ const PricingHero = () => {
                         </div>
                         
                         <div className="flex mt-auto pt-6">
-                            <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white border-0 shadow-lg">
+                            <Button 
+                                onClick={() => handleOpenDialog("Entreprise")}
+                                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white border-0 shadow-lg"
+                            >
                                 Nous contacter
                             </Button>
                         </div>
@@ -314,18 +370,142 @@ const PricingHero = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-3 items-center md:items-end">
-                        <Button className="w-full bg-white text-indigo-700 hover:bg-white/90 font-bold border-0 shadow-md">
+                        <Button 
+                            onClick={() => handleOpenDialog("Contact commercial")}
+                            className="w-full bg-white text-indigo-700 hover:bg-white/90 font-bold border-0 shadow-md"
+                        >
                             Contact commercial
                         </Button>
                         <Button 
+                            asChild
                             variant="outline" 
                             className="w-full border-white/50 bg-transparent text-white hover:bg-white/10 font-bold"
                         >
-                            Appeler +33 1 23 45 67 89
+                            <a href="tel:+33123456789">Appeler +33 1 23 45 67 89</a>
                         </Button>
                     </div>
                 </footer>
             </div>
+
+            {/* Dialog de contact */}
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogContent className="bg-slate-800 border-indigo-500/50 text-slate-200 max-w-2xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                        <DialogTitle className="text-2xl font-bold text-indigo-300">
+                            Demande de contact
+                        </DialogTitle>
+                        <DialogDescription className="text-slate-300">
+                            {selectedPlan && `Vous êtes intéressé par le plan ${selectedPlan}. `}
+                            Remplissez ce formulaire et notre équipe vous contactera rapidement.
+                        </DialogDescription>
+                    </DialogHeader>
+                    
+                    <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <Label htmlFor="nom" className="text-slate-300">
+                                    Nom complet *
+                                </Label>
+                                <Input
+                                    id="nom"
+                                    name="nom"
+                                    value={formData.nom}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                                    placeholder="Votre nom complet"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="entreprise" className="text-slate-300">
+                                    Entreprise *
+                                </Label>
+                                <Input
+                                    id="entreprise"
+                                    name="entreprise"
+                                    value={formData.entreprise}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                                    placeholder="Nom de votre entreprise"
+                                />
+                            </div>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <Label htmlFor="email" className="text-slate-300">
+                                    Email *
+                                </Label>
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                                    placeholder="votre.email@entreprise.com"
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="telephone" className="text-slate-300">
+                                    Téléphone
+                                </Label>
+                                <Input
+                                    id="telephone"
+                                    name="telephone"
+                                    type="tel"
+                                    value={formData.telephone}
+                                    onChange={handleInputChange}
+                                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                                    placeholder="+33 1 23 45 67 89"
+                                />
+                            </div>
+                        </div>
+                        
+                        <div className="space-y-2">
+                            <Label htmlFor="sujet" className="text-slate-300">
+                                Sujet *
+                            </Label>
+                            <Input
+                                id="sujet"
+                                name="sujet"
+                                value={formData.sujet}
+                                onChange={handleInputChange}
+                                required
+                                className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                                placeholder="Objet de votre demande"
+                            />
+                        </div>
+                        
+                        <div className="space-y-2">
+                            <Label htmlFor="message" className="text-slate-300">
+                                Message *
+                            </Label>
+                            <Textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                required
+                                rows={5}
+                                className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                                placeholder="Décrivez votre projet, vos besoins ou vos questions..."
+                            />
+                        </div>
+                        
+                        <Button
+                            type="submit"
+                            size="lg"
+                            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white"
+                        >
+                            <Send className="mr-2 w-5 h-5" />
+                            Envoyer le message
+                        </Button>
+                    </form>
+                </DialogContent>
+            </Dialog>
         </section>
     );
 };
