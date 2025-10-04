@@ -80,7 +80,7 @@ const Benefits = () => {
               return (
                 <div 
                   key={index}
-                  className="flex items-start space-x-6 group transition-all duration-500 transform bg-gray-800/80 p-6 rounded-2xl border border-gray-800 shadow-xl hover:scale-[1.03] hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.3),0_4px_6px_-2px_rgba(0,0,0,0.2),0_0_40px_-5px_rgba(255,179,0,0.6)] hover:border-[#ffb300] hover:bg-gray-800/90"
+                  className="flex items-start space-x-6 group transition-all duration-500 transform bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 shadow-xl hover:scale-[1.03] hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.3),0_4px_6px_-2px_rgba(0,0,0,0.2),0_0_40px_-5px_rgba(255,179,0,0.6)] hover:border-[#ffb300] hover:from-gray-800/70 hover:to-gray-900/70"
                 >
                   <div className="flex-shrink-0">
                     <div className={`w-12 h-12 ${classes.bg} rounded-xl flex items-center justify-center border border-gray-700/50`}>
