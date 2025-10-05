@@ -1,18 +1,24 @@
-
 import { Monitor } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const ControlStationCard = () => (
-  <div className="group hover:scale-105 transition-all duration-300 max-w-2xl mx-auto mb-12">
-    <div className="bg-gradient-to-br from-brand-blue/10 via-transparent to-brand-orange/10 backdrop-blur-md rounded-2xl p-8 border border-brand-light/20 shadow-xl shadow-brand-blue/10">
-      <div className="bg-gradient-to-br from-brand-blue/20 to-brand-orange/20 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
-        <Monitor className="w-8 h-8 text-brand-light" />
+  <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl shadow-2xl border border-gray-700 mb-16 relative overflow-hidden">
+    <div className="flex flex-col lg:flex-row justify-between items-center relative z-10">
+      <div className="lg:w-2/3 text-center lg:text-left mb-6 lg:mb-0">
+        <h2 className="text-4xl font-extrabold text-white mb-3">
+          Le Control Station Central
+        </h2>
+        <p className="text-xl text-gray-300 max-w-xl">
+          Gérez, configurez et surveillez l'intégralité de votre plateforme Meecrogate depuis une interface graphique unique.
+        </p>
       </div>
-      <div className="text-2xl font-bold text-brand-light mb-3">Control Station</div>
-      <div className="text-brand-light/70 text-lg text-center">
-        Interface web centralisée pour configurer et administrer l'API Gateway, 
-        le serveur d'identité, l'orchestrateur et le Process Executor
+      <div className="lg:w-1/3 flex justify-center lg:justify-end">
+        <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20 px-8 py-4 text-lg h-auto">
+          Interface D'Administration
+        </Button>
       </div>
     </div>
+    <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-xl"></div>
   </div>
 );
 

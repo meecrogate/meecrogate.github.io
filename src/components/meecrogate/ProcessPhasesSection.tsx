@@ -1,57 +1,68 @@
+import { Layers, Settings, Rocket, Monitor } from "lucide-react";
 
-import { Pencil, Shield, Upload } from "lucide-react";
-
-const phases = [
-  {
-    title: "Design",
-    description: "Créez votre API rapidement et graphiquement, sans écrire de code.",
-    icon: Pencil,
-    image: "/photo-1461749280684-dccba630e2f6.jpg",
-    alt: "Écran de conception (code, design)"
+const steps = [
+  { 
+    title: "Conception", 
+    description: "Modélisez vos APIs et processus via l'interface sans écrire une ligne de code.", 
+    icon: Layers, 
+    image_url: "https://placehold.co/400x200/294D8A/E6E6FA?text=Blueprint+Model&font=roboto"
   },
-  {
-    title: "Secure",
-    description: "Ajoutez la sécurité, la gouvernance, et la gestion des accès simplement.",
-    icon: Shield,
-    image: "/photo-1518770660439-4636190af475.jpg",
-    alt: "Sécurisation API (circuit board, sécurité)"
+  { 
+    title: "Configuration", 
+    description: "Définissez les règles de sécurité, les quotas et les orchestrations en quelques clics.", 
+    icon: Settings, 
+    image_url: "https://placehold.co/400x200/182A4D/ADD8E6?text=Config+Panel+CLI&font=roboto"
   },
-  {
-    title: "Deploy",
-    description: "Déployez et exécutez votre API sur le cloud en un clic, avec scalabilité automatique.",
-    icon: Upload,
-    image: "/photo-1487887235947-a955ef187fcc.jpg",
-    alt: "Déploiement cloud (drone décolle)"
+  { 
+    title: "Déploiement", 
+    description: "Déployez en production instantanément et bénéficiez de la scalabilité cloud-native.", 
+    icon: Rocket, 
+    image_url: "https://placehold.co/400x200/0C3A6E/F0F8FF?text=API+Deployment+Flow&font=roboto"
   },
+  { 
+    title: "Surveillance", 
+    description: "Obtenez une vue en temps réel de la performance et du comportement de vos services.", 
+    icon: Monitor, 
+    image_url: "https://placehold.co/400x200/0A2540/D3D3D3?text=Live+Monitoring+Charts&font=roboto"
+  }
 ];
 
 const ProcessPhasesSection = () => (
-  <section className="relative py-16 bg-gradient-to-b from-brand-blue/10 to-brand-dark/0">
+  <section className="bg-gray-950 py-20">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-bold text-brand-blue mb-10 text-center">
-        🚀 3 phases pour une API prête à l'emploi
+      <h2 className="text-center text-4xl font-bold text-white mb-16">
+        Cycle de Vie d'un Processus
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {phases.map((phase, idx) => (
-          <div key={idx} className="group flex flex-col items-center bg-white/70 dark:bg-brand-dark/70 rounded-2xl shadow-lg hover:shadow-xl backdrop-blur-md border border-brand-blue/10 px-6 py-8 transition-all duration-300 hover:scale-105">
-            <div className="relative w-full h-48 mb-6">
-              {/* Illustration de la phase */}
-              <img
-                src={phase.image}
-                alt={phase.alt}
-                className="absolute inset-0 w-full h-full object-cover rounded-xl shadow group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-              <span className="absolute -top-5 left-1/2 -translate-x-1/2 z-10 bg-gradient-to-br from-brand-blue/20 to-brand-orange/40 w-14 h-14 rounded-xl flex items-center justify-center shadow-lg border border-white/30 dark:border-brand-dark/40">
-                <phase.icon className="w-8 h-8 text-brand-blue group-hover:text-brand-orange transition-colors" />
-              </span>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        {steps.map((step, index) => {
+          const Icon = step.icon;
+          return (
+            <div 
+              key={index} 
+              className="relative text-center p-6 rounded-xl overflow-hidden shadow-xl border border-gray-700 
+                         bg-cover bg-center transition-transform duration-300 hover:scale-[1.03]"
+              style={{ backgroundImage: `url(${step.image_url})` }}
+            >
+              <div className="absolute inset-0 bg-gray-900/80 hover:bg-gray-900/70 transition-colors duration-300"></div>
+              
+              <div className="relative z-10">
+                <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary/10 border-2 border-primary/20">
+                  <Icon className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  {index + 1}. {step.title}
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  {step.description}
+                </p>
+              </div>
+
+              {index < steps.length - 1 && (
+                <div className="absolute hidden lg:block top-1/2 left-[calc(100%+6px)] w-8 h-px bg-gray-700"></div>
+              )}
             </div>
-            <div className="text-2xl font-bold text-brand-dark dark:text-brand-light mb-2">{phase.title}</div>
-            <div className="text-base text-brand-dark/70 dark:text-brand-light/70 text-center">
-              {phase.description}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>

@@ -75,31 +75,36 @@ const BenefitsSection = () => {
   const [selectedBenefit, setSelectedBenefit] = useState<number | null>(null);
 
   return (
-    <section className="relative py-16 bg-brand-blue/10 backdrop-blur-[2px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-brand-blue mb-8 text-center">🔷 Bénéfices clés</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {benefits.map((benefit, index) => (
-            <button
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 className="text-center text-4xl font-bold text-white mb-12">
+        Avantages Clés de Meecrogate
+      </h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8">
+        {benefits.map((benefit, index) => {
+          const Icon = benefit.icon;
+          return (
+            <div
               key={index}
-              className="group hover:scale-105 transition-all duration-300 focus:outline-none"
-              style={{ animation: selectedBenefit === index ? "scale-in 0.2s" : undefined }}
               onClick={() => setSelectedBenefit(index)}
-              aria-label={"Voir le détail du bénéfice : " + benefit.title}
-              tabIndex={0}
+              className="flex flex-col items-center text-center p-6 rounded-xl border border-gray-800 bg-blue-950/30 cursor-pointer 
+                        hover:bg-blue-900/50 transition-all duration-300 transform hover:shadow-2xl hover:shadow-primary/15"
             >
-              <div className="bg-white/80 dark:bg-brand-dark/80 rounded-2xl p-6 border border-brand-blue/10 shadow-lg hover:border-brand-orange/60 transition-colors h-full">
-                <div className="bg-gradient-to-br from-brand-blue/20 to-brand-orange/20 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="w-6 h-6 text-brand-blue group-hover:text-brand-orange transition-colors" />
-                </div>
-                <div className="text-lg font-bold text-brand-dark dark:text-brand-light mb-2 text-center">{benefit.title}</div>
-                <div className="text-sm text-brand-dark/70 dark:text-brand-light/60 text-center">{benefit.description}</div>
+              <span className="flex-shrink-0 mb-4 w-10 h-10 rounded-lg flex items-center justify-center bg-primary/10">
+                <Icon className="w-6 h-6 text-primary" />
+              </span>
+              
+              <div className="w-full">
+                <h3 className="text-xl font-semibold text-white mb-1">{benefit.title}</h3>
+                <p className="text-sm text-gray-400">{benefit.description}</p>
               </div>
-            </button>
-          ))}
-        </div>
+              
+              <div className="mt-4 w-full text-sm font-medium text-gray-500 group-hover:text-white flex items-center justify-center">
+                Détails
+              </div>
+            </div>
+          );
+        })}
       </div>
-      {/* Affichage du détail */}
       {selectedBenefit !== null && (
         <BenefitDetailSection
           benefit={benefits[selectedBenefit]}
