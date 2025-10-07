@@ -18,7 +18,6 @@ const ControlStationCard = () => (
         </Button>
       </div>
     </div>
-    <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-xl"></div>
   </div>
 );
 
