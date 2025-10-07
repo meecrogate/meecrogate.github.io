@@ -25,7 +25,7 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button size="lg" className="bg-[#FFB300] hover:bg-[#FFB300]/90 text-gray-900 shadow-lg shadow-[#FFB300]/25 px-8 py-4 text-lg h-auto border-0 font-semibold">
+            <Button size="lg" className="bg-[#FFB300] text-gray-900 px-8 py-4 text-lg h-auto border-0 font-semibold">
               Demander une démo
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>

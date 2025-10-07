@@ -13,7 +13,7 @@ const ControlStationCard = () => (
         </p>
       </div>
       <div className="lg:w-1/3 flex justify-center lg:justify-end">
-        <Button size="lg" className="bg-[#FFB300] hover:bg-[#FFB300]/90 text-gray-900 shadow-xl shadow-[#FFB300]/20 px-8 py-4 text-lg h-auto font-semibold">
+        <Button size="lg" className="bg-[#FFB300] text-gray-900 px-8 py-4 text-lg h-auto font-semibold">
           Interface D'Administration
         </Button>
       </div>
