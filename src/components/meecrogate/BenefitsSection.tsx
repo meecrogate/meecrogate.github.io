@@ -89,8 +89,8 @@ const BenefitsSection = () => {
               className="flex flex-col items-center text-center p-6 rounded-xl border border-gray-800 bg-blue-950/30 cursor-pointer 
                         hover:bg-blue-900/50 transition-all duration-300 transform"
             >
-              <span className="flex-shrink-0 mb-4 w-10 h-10 rounded-lg flex items-center justify-center bg-[#FFB300]/20">
-                <Icon className="w-6 h-6 text-[#FFB300]" />
+              <span className="flex-shrink-0 mb-4 w-10 h-10 rounded-lg flex items-center justify-center bg-primary/10">
+                <Icon className="w-6 h-6 text-primary" />
               </span>
               
               <div className="w-full">
