@@ -46,8 +46,8 @@ const ProcessPhasesSection = () => (
               <div className="absolute inset-0 bg-gray-900/80 hover:bg-gray-900/70 transition-colors duration-300"></div>
               
               <div className="relative z-10">
-                <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary/10 border-2 border-primary/20">
-                  <Icon className="w-7 h-7 text-primary" />
+                <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#FFB300]/20 border-2 border-[#FFB300]/30">
+                  <Icon className="w-7 h-7 text-[#FFB300]" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {index + 1}. {step.title}
