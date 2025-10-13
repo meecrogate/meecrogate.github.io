@@ -31,7 +31,7 @@ const ProcessPhasesSection = () => (
   <section className="bg-gray-950 py-20">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-center text-4xl font-bold text-white mb-16">
-        Cycle de Vie d'un Processus
+        Accélérer votre roadmap
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
         {steps.map((step, index) => {
