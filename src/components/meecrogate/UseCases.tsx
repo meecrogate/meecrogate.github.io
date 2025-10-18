@@ -1,5 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Zap, Workflow, Shuffle, Cloud, FileCode } from "lucide-react";
+import portailsApiImg from "@/assets/usecases/portails-api.jpg";
+import integrationRapideImg from "@/assets/usecases/integration-rapide.jpg";
+import processusMetiersImg from "@/assets/usecases/processus-metiers.jpg";
+import orchestrationImg from "@/assets/usecases/orchestration.jpg";
+import deploiementHybrideImg from "@/assets/usecases/deploiement-hybride.jpg";
+import standardisationImg from "@/assets/usecases/standardisation.jpg";
 
 const UseCases = () => {
   const useCases = [
@@ -7,37 +12,37 @@ const UseCases = () => {
       title: "Portails API sécurisés",
       description: "Pour partenaires ou clients externes",
       details: "Exposition contrôlée avec authentification, quotas et monitoring",
-      icon: Shield
+      image: portailsApiImg
     },
     {
       title: "Intégration rapide",
       description: "Systèmes existants sans code",
       details: "Connectez vos applications legacy en quelques configurations JSON",
-      icon: Zap
+      image: integrationRapideImg
     },
     {
       title: "Processus métiers",
       description: "Comme APIs REST",
       details: "Transformez vos workflows BPMN en services web accessibles",
-      icon: Workflow
+      image: processusMetiersImg
     },
     {
       title: "Orchestration intelligente",
       description: "APIs internes ou partenaires",
       details: "Chaînage automatique avec conditions et transformations",
-      icon: Shuffle
+      image: orchestrationImg
     },
     {
       title: "Déploiement hybride",
       description: "Cloud + datacenter interne",
       details: "Flexibilité totale selon vos contraintes de sécurité",
-      icon: Cloud
+      image: deploiementHybrideImg
     },
     {
       title: "Standardisation d'API",
       description: "Gouvernance unifiée",
       details: "Politiques cohérentes sur l'ensemble de votre SI",
-      icon: FileCode
+      image: standardisationImg
     }
   ];
 
@@ -53,28 +58,29 @@ const UseCases = () => {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {useCases.map((useCase, index) => {
-          const Icon = useCase.icon;
-          return (
-            <Card 
-              key={index}
-              className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 hover:scale-105"
-            >
-              <CardHeader>
-                <div className="w-12 h-12 mb-3 flex items-center justify-center rounded-lg bg-[#FFB300]/20 border-2 border-[#FFB300]/30">
-                  <Icon className="w-6 h-6 text-[#FFB300]" />
-                </div>
-                <CardTitle className="text-xl text-white">{useCase.title}</CardTitle>
-                <CardDescription className="text-blue-400 font-medium">
-                  {useCase.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">{useCase.details}</p>
-              </CardContent>
-            </Card>
-          );
-        })}
+        {useCases.map((useCase, index) => (
+          <Card 
+            key={index}
+            className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 hover:scale-105"
+          >
+            <CardHeader>
+              <div className="w-20 h-20 mb-3 mx-auto rounded-lg overflow-hidden bg-gray-900/50 border-2 border-[#FFB300]/30">
+                <img 
+                  src={useCase.image} 
+                  alt={useCase.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardTitle className="text-xl text-white">{useCase.title}</CardTitle>
+              <CardDescription className="text-blue-400 font-medium">
+                {useCase.description}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-300">{useCase.details}</p>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
   );
