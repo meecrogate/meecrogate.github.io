@@ -12,11 +12,11 @@ const OrchestratorPage = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="bg-gradient-to-br from-brand-blue/20 to-brand-blue/30 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
+                <div className="bg-brand-blue/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
                   <Layers className="w-12 h-12 text-brand-light" />
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-brand-blue to-brand-orange bg-clip-text text-transparent">
+                  <span className="text-brand-blue">
                     Orchestrateur
                   </span>
                 </h1>
@@ -30,7 +30,7 @@ const OrchestratorPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="/demo"
-                    className="bg-gradient-to-r from-brand-blue to-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                    className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     Demander une démo
                   </a>
@@ -42,7 +42,7 @@ const OrchestratorPage = () => {
                   </a>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-8 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-8 border border-brand-light/10">
                 <h2 className="text-2xl font-bold text-brand-light mb-6">Capacités principales</h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -79,42 +79,42 @@ const OrchestratorPage = () => {
               Fonctionnalités avancées
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Workflow className="w-8 h-8 text-brand-blue mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Patterns Saga</h3>
                 <p className="text-brand-light/80">
                   Gestion des transactions distribuées avec compensation automatique en cas d'échec.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <GitBranch className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Routage conditionnel</h3>
                 <p className="text-brand-light/80">
                   Logique de routage sophistiquée basée sur le contenu et les règles métier.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <RefreshCw className="w-8 h-8 text-brand-blue mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Retry intelligent</h3>
                 <p className="text-brand-light/80">
                   Stratégies de retry configurables avec backoff exponentiel et circuit breaker.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <MessageSquare className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Message Brokers</h3>
                 <p className="text-brand-light/80">
                   Intégration native avec RabbitMQ, Apache Kafka et Azure Service Bus.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Activity className="w-8 h-8 text-brand-blue mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Monitoring temps réel</h3>
                 <p className="text-brand-light/80">
                   Dashboard en temps réel avec métriques de performance et alertes configurables.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Layers className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Parallélisation</h3>
                 <p className="text-brand-light/80">
@@ -132,7 +132,7 @@ const OrchestratorPage = () => {
               Patterns d'architecture supportés
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 rounded-xl p-8 border border-brand-blue/20">
+              <div className="bg-brand-blue/15 rounded-xl p-8 border border-brand-blue/20">
                 <h3 className="text-2xl font-bold text-brand-light mb-4">Orchestration synchrone</h3>
                 <div className="space-y-3">
                   <div className="flex items-center">
@@ -153,7 +153,7 @@ const OrchestratorPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-brand-orange/10 to-brand-orange/20 rounded-xl p-8 border border-brand-orange/20">
+              <div className="bg-brand-orange/15 rounded-xl p-8 border border-brand-orange/20">
                 <h3 className="text-2xl font-bold text-brand-light mb-4">Orchestration asynchrone</h3>
                 <div className="space-y-3">
                   <div className="flex items-center">
@@ -186,13 +186,13 @@ const OrchestratorPage = () => {
             </h2>
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">E-commerce</h3>
                   <p className="text-brand-light/80">
                     Orchestration complète du parcours client : validation commande, paiement, stock, livraison et facturation.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">Services financiers</h3>
                   <p className="text-brand-light/80">
                     Gestion des transactions complexes avec validation, enrichissement et notification multi-canaux.
@@ -200,13 +200,13 @@ const OrchestratorPage = () => {
                 </div>
               </div>
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">Intégration ERP</h3>
                   <p className="text-brand-light/80">
                     Synchronisation des données métier entre systèmes hétérogènes avec transformation et validation.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">IoT & Télémétrie</h3>
                   <p className="text-brand-light/80">
                     Traitement en temps réel des flux IoT avec agrégation, analyse et déclenchement d'actions.
