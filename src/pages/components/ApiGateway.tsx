@@ -13,7 +13,7 @@ const ApiGatewayPage = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="bg-gradient-to-br from-brand-blue/20 to-brand-blue/30 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
+                <div className="bg-brand-blue/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
                   <img 
                     src={apiGatewayIcon} 
                     alt="API Gateway" 
@@ -21,7 +21,7 @@ const ApiGatewayPage = () => {
                   />
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-brand-blue to-brand-orange bg-clip-text text-transparent">
+                  <span className="text-brand-blue">
                     API Gateway
                   </span>
                 </h1>
@@ -35,7 +35,7 @@ const ApiGatewayPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="/demo"
-                    className="bg-gradient-to-r from-brand-blue to-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                    className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     Demander une démo
                   </a>
@@ -47,7 +47,7 @@ const ApiGatewayPage = () => {
                   </a>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-8 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-8 border border-brand-light/10">
                 <h2 className="text-2xl font-bold text-brand-light mb-6">Avantages clés</h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -84,42 +84,42 @@ const ApiGatewayPage = () => {
               Fonctionnalités avancées
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Lock className="w-8 h-8 text-brand-blue mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Authentification centralisée</h3>
                 <p className="text-brand-light/80">
                   Gestion unifiée de l'authentification avec support OAuth 2.0, JWT et intégration SSO.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Settings className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Rate Limiting</h3>
                 <p className="text-brand-light/80">
                   Protection contre les abus avec limitation de débit configurable par client ou endpoint.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Globe className="w-8 h-8 text-brand-blue mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Routage intelligent</h3>
                 <p className="text-brand-light/80">
                   Routage basé sur le contenu, la géolocalisation ou les règles métier personnalisées.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Zap className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Transformation de données</h3>
                 <p className="text-brand-light/80">
                   Modification des requêtes et réponses à la volée pour adapter les formats de données.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <BarChart3 className="w-8 h-8 text-brand-blue mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Analytics avancées</h3>
                 <p className="text-brand-light/80">
                   Tableaux de bord détaillés avec métriques de performance et d'utilisation.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Shield className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Cache multi-niveaux</h3>
                 <p className="text-brand-light/80">
@@ -138,13 +138,13 @@ const ApiGatewayPage = () => {
             </h2>
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">Architecture microservices</h3>
                   <p className="text-brand-light/80">
                     Simplifiez l'accès aux microservices avec un point d'entrée unique et une gestion centralisée de la sécurité.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">APIs partenaires</h3>
                   <p className="text-brand-light/80">
                     Exposez vos APIs à des partenaires externes avec contrôle d'accès granulaire et facturation.
@@ -152,13 +152,13 @@ const ApiGatewayPage = () => {
                 </div>
               </div>
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">Applications mobiles</h3>
                   <p className="text-brand-light/80">
                     Optimisez les échanges mobile-backend avec compression, cache et adaptation des formats.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">Intégration legacy</h3>
                   <p className="text-brand-light/80">
                     Modernisez l'accès aux systèmes legacy en exposant des APIs REST modernes.
