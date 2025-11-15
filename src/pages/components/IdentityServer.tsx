@@ -12,11 +12,11 @@ const IdentityServerPage = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="bg-gradient-to-br from-brand-orange/20 to-brand-orange/30 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
+                <div className="bg-brand-orange/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
                   <Settings className="w-12 h-12 text-brand-light" />
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-brand-orange to-brand-blue bg-clip-text text-transparent">
+                  <span className="text-brand-orange">
                     Serveur d'identité
                   </span>
                 </h1>
@@ -30,7 +30,7 @@ const IdentityServerPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="/demo"
-                    className="bg-gradient-to-r from-brand-orange to-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                    className="bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     Demander une démo
                   </a>
@@ -42,7 +42,7 @@ const IdentityServerPage = () => {
                   </a>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-8 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-8 border border-brand-light/10">
                 <h2 className="text-2xl font-bold text-brand-light mb-6">Bénéfices immédiats</h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -79,42 +79,42 @@ const IdentityServerPage = () => {
               Fonctionnalités complètes
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Users className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Single Sign-On (SSO)</h3>
                 <p className="text-brand-light/80">
                   Authentification unique pour accéder à toutes les applications de l'écosystème.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Shield className="w-8 h-8 text-brand-blue mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Gestion RBAC</h3>
                 <p className="text-brand-light/80">
                   Contrôle d'accès basé sur les rôles avec permissions granulaires et héritages.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Smartphone className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Authentification MFA</h3>
                 <p className="text-brand-light/80">
                   Sécurité renforcée avec authentification multi-facteurs (SMS, TOTP, biométrie).
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Settings className="w-8 h-8 text-brand-blue mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Intégration LDAP/AD</h3>
                 <p className="text-brand-light/80">
                   Connexion transparente avec vos annuaires d'entreprise existants.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Lock className="w-8 h-8 text-brand-orange mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Standards ouverts</h3>
                 <p className="text-brand-light/80">
                   Support complet OAuth 2.0, OpenID Connect, SAML 2.0 et JWT.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                 <Key className="w-8 h-8 text-brand-blue mb-4" />
                 <h3 className="text-xl font-bold text-brand-light mb-3">Cycle de vie utilisateur</h3>
                 <p className="text-brand-light/80">
@@ -132,19 +132,19 @@ const IdentityServerPage = () => {
               Protocoles et standards supportés
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-gradient-to-br from-brand-orange/10 to-brand-orange/20 rounded-xl p-6 text-center border border-brand-orange/20">
+              <div className="bg-brand-orange/15 rounded-xl p-6 text-center border border-brand-orange/20">
                 <h3 className="text-xl font-bold text-brand-light mb-2">OAuth 2.0</h3>
                 <p className="text-brand-light/70 text-sm">Autorisation sécurisée pour APIs</p>
               </div>
-              <div className="bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 rounded-xl p-6 text-center border border-brand-blue/20">
+              <div className="bg-brand-blue/15 rounded-xl p-6 text-center border border-brand-blue/20">
                 <h3 className="text-xl font-bold text-brand-light mb-2">OpenID Connect</h3>
                 <p className="text-brand-light/70 text-sm">Couche d'identité sur OAuth 2.0</p>
               </div>
-              <div className="bg-gradient-to-br from-brand-orange/10 to-brand-orange/20 rounded-xl p-6 text-center border border-brand-orange/20">
+              <div className="bg-brand-orange/15 rounded-xl p-6 text-center border border-brand-orange/20">
                 <h3 className="text-xl font-bold text-brand-light mb-2">SAML 2.0</h3>
                 <p className="text-brand-light/70 text-sm">Fédération d'identités enterprise</p>
               </div>
-              <div className="bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 rounded-xl p-6 text-center border border-brand-blue/20">
+              <div className="bg-brand-blue/15 rounded-xl p-6 text-center border border-brand-blue/20">
                 <h3 className="text-xl font-bold text-brand-light mb-2">JWT/JWS/JWE</h3>
                 <p className="text-brand-light/70 text-sm">Tokens sécurisés et signés</p>
               </div>
@@ -160,13 +160,13 @@ const IdentityServerPage = () => {
             </h2>
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">Portail collaborateur</h3>
                   <p className="text-brand-light/80">
                     Accès unifié aux applications RH, outils collaboratifs et systèmes métier avec SSO complet.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">Portail client/partenaire</h3>
                   <p className="text-brand-light/80">
                     Gestion sécurisée des accès externes avec séparation des domaines et audit complet.
@@ -174,13 +174,13 @@ const IdentityServerPage = () => {
                 </div>
               </div>
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">Applications B2C</h3>
                   <p className="text-brand-light/80">
                     Inscription et connexion simplifiées avec réseaux sociaux et self-service complet.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-brand-dark/60 to-brand-dark/40 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
+                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
                   <h3 className="text-xl font-bold text-brand-light mb-3">Migration cloud</h3>
                   <p className="text-brand-light/80">
                     Modernisation des systèmes d'authentification legacy vers des standards cloud-native.
