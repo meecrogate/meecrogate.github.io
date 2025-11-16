@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import BenefitsSection from "./BenefitsSection";
 import ControlStationCard from "./ControlStationCard";
 import MeecrogateComponentsGrid from "./MeecrogateComponentsGrid";
@@ -25,10 +26,12 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button size="lg" className="bg-[#FFB300] text-gray-900 px-8 py-4 text-lg h-auto border-0 font-semibold">
-              Demander une démo
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link to="/demo">
+              <Button size="lg" className="bg-[#FFB300] text-gray-900 px-8 py-4 text-lg h-auto border-0 font-semibold">
+                Demander une démo
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
