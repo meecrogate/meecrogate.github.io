@@ -10,32 +10,33 @@ import { useState } from "react";
 
 const Service = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    company: "",
+    nom: "",
     email: "",
-    phone: "",
+    entreprise: "",
+    telephone: "",
     message: ""
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form data:", formData);
+    console.log("Formulaire soumis:", formData);
     toast({
       title: "Demande envoyée",
       description: "Nous vous contacterons rapidement pour discuter de votre projet d'intégration.",
     });
     setFormData({
-      name: "",
-      company: "",
+      nom: "",
       email: "",
-      phone: "",
+      entreprise: "",
+      telephone: "",
       message: ""
     });
   };
@@ -72,42 +73,52 @@ const Service = () => {
             <div className="mt-10 text-center">
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 text-lg">
+                  <Button size="lg" className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-3 text-lg font-semibold">
                     Discuter de mon projet d'intégration
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[500px] bg-background border-border">
+                <DialogContent className="sm:max-w-[500px] bg-brand-dark border-gray-700">
                   <DialogHeader>
-                    <DialogTitle className="text-foreground">Demande d'intégration</DialogTitle>
-                    <DialogDescription className="text-muted-foreground">
-                      Parlez-nous de votre projet et nous vous contacterons rapidement.
-                    </DialogDescription>
+                    <DialogTitle className="text-white text-xl font-bold">
+                      Demande d'intégration
+                    </DialogTitle>
                   </DialogHeader>
-                  <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-                    <div>
-                      <Label htmlFor="name" className="text-foreground">Nom *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="mt-1 bg-background border-border text-foreground"
-                      />
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="nom" className="text-gray-300">
+                          Nom *
+                        </Label>
+                        <Input
+                          id="nom"
+                          name="nom"
+                          value={formData.nom}
+                          onChange={handleInputChange}
+                          required
+                          className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+                          placeholder="Votre nom"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="entreprise" className="text-gray-300">
+                          Entreprise *
+                        </Label>
+                        <Input
+                          id="entreprise"
+                          name="entreprise"
+                          value={formData.entreprise}
+                          onChange={handleInputChange}
+                          required
+                          className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+                          placeholder="Nom de l'entreprise"
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <Label htmlFor="company" className="text-foreground">Entreprise *</Label>
-                      <Input
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        required
-                        className="mt-1 bg-background border-border text-foreground"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="email" className="text-foreground">Email *</Label>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-gray-300">
+                        Email *
+                      </Label>
                       <Input
                         id="email"
                         name="email"
@@ -115,35 +126,49 @@ const Service = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="mt-1 bg-background border-border text-foreground"
+                        className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+                        placeholder="votre.email@entreprise.com"
                       />
                     </div>
-                    <div>
-                      <Label htmlFor="phone" className="text-foreground">Téléphone</Label>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="telephone" className="text-gray-300">
+                        Téléphone
+                      </Label>
                       <Input
-                        id="phone"
-                        name="phone"
+                        id="telephone"
+                        name="telephone"
                         type="tel"
-                        value={formData.phone}
+                        value={formData.telephone}
                         onChange={handleInputChange}
-                        className="mt-1 bg-background border-border text-foreground"
+                        className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+                        placeholder="+33 1 23 45 67 89"
                       />
                     </div>
-                    <div>
-                      <Label htmlFor="message" className="text-foreground">Décrivez votre projet *</Label>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-gray-300">
+                        Message
+                      </Label>
                       <Textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        required
                         rows={4}
-                        className="mt-1 bg-background border-border text-foreground"
+                        className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
+                        placeholder="Décrivez vos besoins ou questions..."
                       />
                     </div>
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                      Envoyer la demande
-                    </Button>
+                    
+                    <div className="flex gap-3 pt-4">
+                      <Button
+                        type="submit"
+                        className="flex-1 bg-brand-blue hover:bg-brand-blue/90 text-white"
+                      >
+                        Envoyer la demande
+                      </Button>
+                    </div>
                   </form>
                 </DialogContent>
               </Dialog>
