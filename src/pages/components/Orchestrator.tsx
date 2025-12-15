@@ -12,8 +12,8 @@ const OrchestratorPage = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="bg-brand-blue/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
-                  <Layers className="w-12 h-12 text-brand-light" />
+                <div className="bg-brand-blue/20 w-24 h-24 rounded-2xl flex items-center justify-center mb-6">
+                  <Workflow className="w-14 h-14 text-brand-blue" />
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
                   <span className="text-brand-blue">
