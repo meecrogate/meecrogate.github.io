@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import meecrogateLogoSvg from "@/assets/meecrogate-logo.svg";
 
@@ -27,10 +28,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-white mb-4">Composants</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">API Gateway</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Serveur d'identité</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Orchestrateur</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Process Executor</a></li>
+              <li><Link to="/components/api-gateway" className="hover:text-white transition-colors">API Gateway</Link></li>
+              <li><Link to="/components/identity-server" className="hover:text-white transition-colors">Serveur d'identité</Link></li>
+              <li><Link to="/components/orchestrator" className="hover:text-white transition-colors">Orchestrateur</Link></li>
+              <li><Link to="/components/process-executor" className="hover:text-white transition-colors">Process Executor</Link></li>
             </ul>
           </div>
           
