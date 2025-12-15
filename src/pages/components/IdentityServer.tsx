@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Settings, Shield, Users, Key, Lock, Smartphone } from "lucide-react";
+import { Settings, Shield, Users, Key, Lock, Smartphone, ShieldCheck } from "lucide-react";
 
 const IdentityServerPage = () => {
   return (
@@ -12,8 +12,8 @@ const IdentityServerPage = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="bg-brand-orange/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
-                  <Settings className="w-12 h-12 text-brand-light" />
+                <div className="bg-brand-orange/20 w-24 h-24 rounded-2xl flex items-center justify-center mb-6">
+                  <ShieldCheck className="w-14 h-14 text-brand-orange" />
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
                   <span className="text-brand-orange">
