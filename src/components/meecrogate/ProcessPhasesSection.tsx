@@ -1,29 +1,33 @@
 import { Layers, Settings, Rocket, Monitor } from "lucide-react";
+import conceptionImg from "@/assets/process/conception.jpg";
+import configurationImg from "@/assets/process/configuration.jpg";
+import deploiementImg from "@/assets/process/deploiement.jpg";
+import surveillanceImg from "@/assets/process/surveillance.jpg";
 
 const steps = [
   { 
     title: "Conception", 
     description: "Modélisez vos APIs et processus via l'interface sans écrire une ligne de code.", 
     icon: Layers, 
-    image_url: "https://placehold.co/400x200/294D8A/E6E6FA?text=Blueprint+Model&font=roboto"
+    image: conceptionImg
   },
   { 
     title: "Configuration", 
     description: "Définissez les règles de sécurité, les quotas et les orchestrations en quelques clics.", 
     icon: Settings, 
-    image_url: "https://placehold.co/400x200/182A4D/ADD8E6?text=Config+Panel+CLI&font=roboto"
+    image: configurationImg
   },
   { 
     title: "Déploiement", 
     description: "Déployez en production instantanément et bénéficiez de la scalabilité cloud-native.", 
     icon: Rocket, 
-    image_url: "https://placehold.co/400x200/0C3A6E/F0F8FF?text=API+Deployment+Flow&font=roboto"
+    image: deploiementImg
   },
   { 
     title: "Surveillance", 
     description: "Obtenez une vue en temps réel de la performance et du comportement de vos services.", 
     icon: Monitor, 
-    image_url: "https://placehold.co/400x200/0A2540/D3D3D3?text=Live+Monitoring+Charts&font=roboto"
+    image: surveillanceImg
   }
 ];
 
@@ -41,7 +45,7 @@ const ProcessPhasesSection = () => (
               key={index} 
               className="relative text-center p-6 rounded-xl overflow-hidden shadow-xl border border-gray-700 
                          bg-cover bg-center transition-transform duration-300 hover:scale-[1.03]"
-              style={{ backgroundImage: `url(${step.image_url})` }}
+              style={{ backgroundImage: `url(${step.image})` }}
             >
               <div className="absolute inset-0 bg-gray-900/80 hover:bg-gray-900/70 transition-colors duration-300"></div>
               
