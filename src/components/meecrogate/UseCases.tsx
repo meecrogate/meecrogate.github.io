@@ -1,48 +1,49 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import portailsApiImg from "@/assets/usecases/portails-api.jpg";
-import integrationRapideImg from "@/assets/usecases/integration-rapide.jpg";
-import processusMetiersImg from "@/assets/usecases/processus-metiers.jpg";
-import orchestrationImg from "@/assets/usecases/orchestration.jpg";
-import deploiementHybrideImg from "@/assets/usecases/deploiement-hybride.jpg";
-import standardisationImg from "@/assets/usecases/standardisation.jpg";
+import { ShieldCheck, Zap, Workflow, Layers, CloudCog, FileCode, LucideIcon } from "lucide-react";
 
 const UseCases = () => {
-  const useCases = [
+  const useCases: { title: string; description: string; details: string; icon: LucideIcon; color: string }[] = [
     {
       title: "Portails API sécurisés",
       description: "Pour partenaires ou clients externes",
       details: "Exposition contrôlée avec authentification, quotas et monitoring",
-      image: portailsApiImg
+      icon: ShieldCheck,
+      color: "text-emerald-400"
     },
     {
       title: "Intégration rapide",
       description: "Systèmes existants sans code",
       details: "Connectez vos applications legacy en quelques configurations JSON",
-      image: integrationRapideImg
+      icon: Zap,
+      color: "text-yellow-400"
     },
     {
       title: "Processus métiers",
       description: "Comme APIs REST",
       details: "Transformez vos workflows BPMN en services web accessibles",
-      image: processusMetiersImg
+      icon: Workflow,
+      color: "text-purple-400"
     },
     {
       title: "Orchestration intelligente",
       description: "APIs internes ou partenaires",
       details: "Chaînage automatique avec conditions et transformations",
-      image: orchestrationImg
+      icon: Layers,
+      color: "text-blue-400"
     },
     {
       title: "Déploiement hybride",
       description: "Cloud + datacenter interne",
       details: "Flexibilité totale selon vos contraintes de sécurité",
-      image: deploiementHybrideImg
+      icon: CloudCog,
+      color: "text-cyan-400"
     },
     {
       title: "Standardisation d'API",
       description: "Gouvernance unifiée",
       details: "Politiques cohérentes sur l'ensemble de votre SI",
-      image: standardisationImg
+      icon: FileCode,
+      color: "text-orange-400"
     }
   ];
 
@@ -64,12 +65,8 @@ const UseCases = () => {
             className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 hover:scale-105"
           >
             <CardHeader>
-              <div className="w-20 h-20 mb-3 mx-auto rounded-lg overflow-hidden bg-gray-900/50 border-2 border-[#FFB300]/30">
-                <img 
-                  src={useCase.image} 
-                  alt={useCase.title}
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-16 h-16 mb-3 mx-auto rounded-xl flex items-center justify-center bg-gray-900/50 border-2 border-[#FFB300]/30">
+                <useCase.icon className={`w-8 h-8 ${useCase.color}`} />
               </div>
               <CardTitle className="text-xl text-white">{useCase.title}</CardTitle>
               <CardDescription className="text-blue-400 font-medium">
