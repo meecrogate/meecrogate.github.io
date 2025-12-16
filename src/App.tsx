@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import Pricing from "./pages/Pricing";
 import Service from "./pages/Service";
 import ComponentsPage from "./pages/Components";
+import ControlStation from "./pages/ControlStation";
 
 // Use cases individual pages
 import PortailsApiPage from "./pages/usecases/PortailsApi";
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/service" element={<Service />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/components" element={<ComponentsPage />} />
+          <Route path="/control-station" element={<ControlStation />} />
           <Route path="/usecases" element={<UseCasesPage />} />
           <Route path="/usecases/portails-api" element={<PortailsApiPage />} />
           <Route path="/usecases/integration-rapide" element={<IntegrationRapidePage />} />
