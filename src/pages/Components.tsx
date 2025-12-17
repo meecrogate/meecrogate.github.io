@@ -1,13 +1,12 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Settings, Layers, Zap, Shield, Database, Workflow, Cpu } from "lucide-react";
-import apiGatewayIcon from "@/assets/api-gateway-icon.png";
+import { Network, ShieldCheck, Workflow, Zap, Shield } from "lucide-react";
 
 const ComponentsPage = () => {
   const components = [
     {
-      icon: "image",
-      iconSrc: apiGatewayIcon,
+      icon: Network,
+      iconColor: "text-brand-blue",
       title: "API Gateway",
       subtitle: "Sécurisation & Routage",
       description: "Point d'entrée unique pour toutes vos APIs, assurant la sécurité, le routage intelligent et la gestion du trafic.",
@@ -29,7 +28,8 @@ const ComponentsPage = () => {
       border: "border-brand-blue/30"
     },
     {
-      icon: Settings,
+      icon: ShieldCheck,
+      iconColor: "text-brand-orange",
       title: "Serveur d'identité",
       subtitle: "Gestion des accès",
       description: "Solution complète de gestion d'identité et d'accès (IAM) pour sécuriser vos applications et services.",
@@ -51,7 +51,8 @@ const ComponentsPage = () => {
       border: "border-brand-orange/30"
     },
     {
-      icon: Layers,
+      icon: Workflow,
+      iconColor: "text-brand-blue",
       title: "Orchestrateur",
       subtitle: "Synchrone & Asynchrone",
       description: "Moteur d'orchestration intelligent pour coordonner vos services et processus métier complexes.",
@@ -74,6 +75,7 @@ const ComponentsPage = () => {
     },
     {
       icon: Zap,
+      iconColor: "text-brand-orange",
       title: "Process Executor",
       subtitle: "BPMN & Automatisation",
       description: "Moteur d'exécution de processus métier basé sur les standards BPMN pour automatiser vos workflows.",
@@ -103,10 +105,8 @@ const ComponentsPage = () => {
         {/* Hero Section */}
         <section className="py-20 px-6">
           <div className="container mx-auto max-w-6xl text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-brand-blue to-brand-orange bg-clip-text text-transparent">
-                Composants Meecrogate
-              </span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-brand-blue">
+              Composants Meecrogate
             </h1>
             <p className="text-xl text-brand-light/80 max-w-3xl mx-auto">
               Découvrez en détail chaque composant de notre plateforme d'intégration et leurs fonctionnalités avancées
@@ -122,15 +122,7 @@ const ComponentsPage = () => {
                 <div key={index} className="grid lg:grid-cols-2 gap-12 items-center">
                   <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                     <div className={`bg-gradient-to-br ${component.gradient} w-20 h-20 rounded-2xl flex items-center justify-center mb-6`}>
-                      {component.icon === "image" ? (
-                        <img 
-                          src={component.iconSrc} 
-                          alt={component.title} 
-                          className="w-12 h-12 bg-white/10 rounded-lg p-2" 
-                        />
-                      ) : (
-                        <component.icon className="w-10 h-10 text-brand-light" />
-                      )}
+                      <component.icon className={`w-10 h-10 ${component.iconColor}`} />
                     </div>
                     <h2 className="text-3xl font-bold text-brand-light mb-2">
                       {component.title}
@@ -194,7 +186,7 @@ const ComponentsPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/demo"
-                className="bg-gradient-to-r from-brand-blue to-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-brand-blue/90 transition-all duration-300"
               >
                 Demander une démo
               </a>
