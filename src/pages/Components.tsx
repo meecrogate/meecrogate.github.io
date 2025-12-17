@@ -112,12 +112,88 @@ const ComponentsPage = () => {
             <p className="text-xl text-brand-light/80 max-w-3xl mx-auto mb-12">
               Découvrez en détail chaque composant de notre plateforme d'intégration et leurs fonctionnalités avancées
             </p>
-            <div className="max-w-2xl mx-auto">
-              <img 
-                src={componentsHero} 
-                alt="Plateforme Meecrogate - API Management et déploiement hybride" 
-                className="w-full h-auto rounded-2xl shadow-2xl border border-brand-light/10"
-              />
+            
+            {/* Image with arrows to components */}
+            <div className="relative max-w-4xl mx-auto">
+              {/* Central image */}
+              <div className="max-w-2xl mx-auto relative z-10">
+                <img 
+                  src={componentsHero} 
+                  alt="Plateforme Meecrogate - API Management et déploiement hybride" 
+                  className="w-full h-auto rounded-2xl shadow-2xl border border-brand-light/10"
+                />
+              </div>
+              
+              {/* Component icons with arrows */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+                {/* API Gateway - Blue arrow */}
+                <div className="flex flex-col items-center">
+                  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
+                    <path 
+                      d="M32 0 L32 40 M24 32 L32 40 L40 32" 
+                      stroke="#007AFF" 
+                      strokeWidth="3" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <div className="bg-brand-blue/20 w-16 h-16 rounded-2xl flex items-center justify-center">
+                    <Network className="w-8 h-8 text-brand-blue" />
+                  </div>
+                  <span className="text-brand-light mt-2 text-sm font-medium">API Gateway</span>
+                </div>
+                
+                {/* Identity Server - Yellow arrow */}
+                <div className="flex flex-col items-center">
+                  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
+                    <path 
+                      d="M32 0 L32 40 M24 32 L32 40 L40 32" 
+                      stroke="#FFB300" 
+                      strokeWidth="3" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <div className="bg-brand-orange/20 w-16 h-16 rounded-2xl flex items-center justify-center">
+                    <ShieldCheck className="w-8 h-8 text-brand-orange" />
+                  </div>
+                  <span className="text-brand-light mt-2 text-sm font-medium">Serveur d'identité</span>
+                </div>
+                
+                {/* Orchestrator - Gray arrow */}
+                <div className="flex flex-col items-center">
+                  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
+                    <path 
+                      d="M32 0 L32 40 M24 32 L32 40 L40 32" 
+                      stroke="#9CA3AF" 
+                      strokeWidth="3" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <div className="bg-gray-500/20 w-16 h-16 rounded-2xl flex items-center justify-center">
+                    <Workflow className="w-8 h-8 text-gray-400" />
+                  </div>
+                  <span className="text-brand-light mt-2 text-sm font-medium">Orchestrateur</span>
+                </div>
+                
+                {/* Process Executor - Black arrow */}
+                <div className="flex flex-col items-center">
+                  <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
+                    <path 
+                      d="M32 0 L32 40 M24 32 L32 40 L40 32" 
+                      stroke="#1F2937" 
+                      strokeWidth="3" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <div className="bg-gray-800/50 w-16 h-16 rounded-2xl flex items-center justify-center border border-gray-600">
+                    <Zap className="w-8 h-8 text-gray-300" />
+                  </div>
+                  <span className="text-brand-light mt-2 text-sm font-medium">Process Executor</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
