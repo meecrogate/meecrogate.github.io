@@ -112,7 +112,7 @@ const ComponentsPage = () => {
             <p className="text-xl text-brand-light/80 max-w-3xl mx-auto mb-12">
               Découvrez en détail chaque composant de notre plateforme d'intégration et leurs fonctionnalités avancées
             </p>
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-2xl mx-auto">
               <img 
                 src={componentsHero} 
                 alt="Plateforme Meecrogate - API Management et déploiement hybride" 
