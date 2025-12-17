@@ -19,7 +19,7 @@ const Footer = () => {
               l'exposition, la sécurisation et l'orchestration d'APIs.
             </p>
             <div className="flex space-x-4">
-              <Button variant="outline" size="sm" className="border-gray-600 text-gray-300 hover:bg-gray-800">
+              <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
                 Support
               </Button>
             </div>
