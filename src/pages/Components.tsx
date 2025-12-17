@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Network, ShieldCheck, Workflow, Zap, Shield } from "lucide-react";
+import componentsHero from "@/assets/components-hero.png";
 
 const ComponentsPage = () => {
   const components = [
@@ -108,9 +109,16 @@ const ComponentsPage = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-brand-blue">
               Composants Meecrogate
             </h1>
-            <p className="text-xl text-brand-light/80 max-w-3xl mx-auto">
+            <p className="text-xl text-brand-light/80 max-w-3xl mx-auto mb-12">
               Découvrez en détail chaque composant de notre plateforme d'intégration et leurs fonctionnalités avancées
             </p>
+            <div className="max-w-4xl mx-auto">
+              <img 
+                src={componentsHero} 
+                alt="Plateforme Meecrogate - API Management et déploiement hybride" 
+                className="w-full h-auto rounded-2xl shadow-2xl border border-brand-light/10"
+              />
+            </div>
           </div>
         </section>
 
