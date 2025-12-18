@@ -75,8 +75,8 @@ const Navigation = () => {
               ))}
               
               {/* Solutions dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1 ${
+              <DropdownMenu modal={false}>
+                <DropdownMenuTrigger className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1 outline-none ${
                   isUseCaseActive() || location.pathname.includes('/projets-clients')
                     ? "text-blue-400 bg-blue-400/10"
                     : "text-gray-300 hover:text-white"
@@ -84,7 +84,7 @@ const Navigation = () => {
                   Solutions
                   <ChevronDown size={16} />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-slate-800 border-gray-700">
+                <DropdownMenuContent align="start" sideOffset={8} className="bg-slate-800 border-gray-700 z-50">
                   <div className="px-2 py-1">
                     <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
                       Cas d'usage
