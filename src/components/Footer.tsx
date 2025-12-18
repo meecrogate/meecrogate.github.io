@@ -19,9 +19,11 @@ const Footer = () => {
               l'exposition, la sécurisation et l'orchestration d'APIs.
             </p>
             <div className="flex space-x-4">
-              <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
-                Support
-              </Button>
+              <Link to="/demo">
+                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+                  Support
+                </Button>
+              </Link>
             </div>
           </div>
           
