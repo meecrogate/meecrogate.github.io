@@ -36,6 +36,10 @@ import IdentityServerPage from "./pages/components/IdentityServer";
 import OrchestratorPage from "./pages/components/Orchestrator";
 import ProcessExecutorPage from "./pages/components/ProcessExecutor";
 
+// Legal pages
+import MentionsLegales from "./pages/MentionsLegales";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -70,6 +74,8 @@ const App = () => (
           <Route path="/components/orchestrator" element={<OrchestratorPage />} />
           <Route path="/components/process-executor" element={<ProcessExecutorPage />} />
           <Route path="/demo" element={<DemoPage />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

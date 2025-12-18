@@ -51,8 +51,8 @@ const Footer = () => {
             © 2024 Meecrogate. Tous droits réservés.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Mentions légales</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Politique de confidentialité</a>
+            <Link to="/mentions-legales" className="text-gray-400 hover:text-white text-sm transition-colors">Mentions légales</Link>
+            <Link to="/politique-confidentialite" className="text-gray-400 hover:text-white text-sm transition-colors">Politique de confidentialité</Link>
           </div>
         </div>
       </div>
