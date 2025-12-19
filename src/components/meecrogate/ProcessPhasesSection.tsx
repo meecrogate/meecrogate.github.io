@@ -115,7 +115,7 @@ const ProcessPhasesSection = () => {
                     variant="outline"
                     size="sm"
                     onClick={() => setOpenDialog(index)}
-                    className="border-[#FFB300]/50 text-[#FFB300] hover:bg-[#FFB300]/10 hover:text-[#FFB300]"
+                    className="bg-transparent border-[#FFB300]/50 text-[#FFB300] hover:bg-[#FFB300]/10 hover:text-[#FFB300]"
                   >
                     <Info className="w-4 h-4 mr-2" />
                     En savoir plus
