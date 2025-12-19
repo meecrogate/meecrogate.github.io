@@ -369,21 +369,12 @@ const PricingHero = () => {
                             Équipe dédiée, migration, conformité RGPD, ou déploiement on-premise : parlons-en.
                         </div>
                     </div>
-                    <div className="flex flex-col gap-3 items-center md:items-end">
-                        <Button 
-                            onClick={() => handleOpenDialog("Contact commercial")}
-                            className="w-full bg-white text-indigo-700 hover:bg-white/90 font-bold border-0 shadow-md"
-                        >
-                            Contact commercial
-                        </Button>
-                        <Button 
-                            asChild
-                            variant="outline" 
-                            className="w-full border-white/50 bg-transparent text-white hover:bg-white/10 font-bold"
-                        >
-                            <a href="tel:+33123456789">Appeler +33 1 23 45 67 89</a>
-                        </Button>
-                    </div>
+                    <Button 
+                        onClick={() => handleOpenDialog("Contact commercial")}
+                        className="bg-white text-indigo-700 hover:bg-white/90 font-bold border-0 shadow-md"
+                    >
+                        Contact commercial
+                    </Button>
                 </footer>
             </div>
 
