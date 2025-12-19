@@ -13,9 +13,7 @@ import {
   Settings, 
   BarChart3, 
   Users, 
-  Lock,
-  Download,
-  RefreshCw
+  Lock
 } from "lucide-react";
 import controlStationHero from "@/assets/control-station-hero.jpg";
 
@@ -211,18 +209,6 @@ const ControlStation = () => {
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent>
-                      <div className="flex gap-3">
-                        <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800">
-                          <Download className="w-4 h-4 mr-2" />
-                          Template
-                        </Button>
-                        <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800">
-                          <RefreshCw className="w-4 h-4 mr-2" />
-                          Générer
-                        </Button>
-                      </div>
-                    </CardContent>
                   </Card>
                 );
               })}
