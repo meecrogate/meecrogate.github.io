@@ -118,7 +118,7 @@ const ControlStation = () => {
                   </Button>
                 </Link>
                 <Link to="/architecture">
-                  <Button size="lg" variant="outline" className="border-gray-600 text-white hover:bg-gray-800">
+                  <Button size="lg" className="bg-[#007AFF] text-white hover:bg-[#007AFF]/90">
                     Voir l'architecture
                   </Button>
                 </Link>
