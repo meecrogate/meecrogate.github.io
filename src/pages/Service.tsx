@@ -71,7 +71,7 @@ const Service = () => {
               </li>
             </ul>
             <div className="mt-10 text-center">
-              <Dialog>
+              <Dialog modal={false}>
                 <DialogTrigger asChild>
                   <Button size="lg" className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-3 text-lg font-semibold">
                     Discuter de mon projet d'intégration
