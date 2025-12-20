@@ -115,7 +115,7 @@ const architecturePoints = [
     icon: <Cloud className="w-6 h-6 text-indigo-500" />,
     title: "100% Stateless",
     description: "Aucun stockage local, scalabilité horizontale native",
-    image: SHARED_ABSTRACT_IMAGE
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center"
   },
   {
     icon: <Settings className="w-6 h-6 text-amber-500" />,
