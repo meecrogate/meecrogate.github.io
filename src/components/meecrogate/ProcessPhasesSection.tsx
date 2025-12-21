@@ -135,7 +135,7 @@ const ProcessPhasesSection = () => {
       {steps.map((step, index) => {
         const Icon = step.icon;
         return (
-          <Dialog key={index} open={openDialog === index} onOpenChange={(open) => setOpenDialog(open ? index : null)}>
+          <Dialog key={index} open={openDialog === index} onOpenChange={(open) => setOpenDialog(open ? index : null)} modal={false}>
             <DialogContent className="bg-gray-900 border-gray-700 text-white max-w-lg">
               <DialogHeader>
                 <div className="flex items-center gap-4 mb-2">
