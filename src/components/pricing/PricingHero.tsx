@@ -379,7 +379,7 @@ const PricingHero = () => {
             </div>
 
             {/* Dialog de contact */}
-            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen} modal={false}>
                 <DialogContent className="bg-slate-800 border-indigo-500/50 text-slate-200 max-w-2xl max-h-[90vh] overflow-y-auto">
                     <DialogHeader>
                         <DialogTitle className="text-2xl font-bold text-indigo-300">
