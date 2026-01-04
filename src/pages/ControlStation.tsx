@@ -52,7 +52,8 @@ const ControlStation = () => {
       description: "Générez des configurations JSON pour exposer, sécuriser et monitorer vos APIs.",
       color: "text-blue-400",
       bgColor: "bg-blue-500/10",
-      borderColor: "border-blue-500/30"
+      borderColor: "border-blue-500/30",
+      href: "/components/api-gateway"
     },
     {
       icon: Fingerprint,
@@ -60,7 +61,8 @@ const ControlStation = () => {
       description: "Créez des configurations pour l'authentification OAuth2, OIDC et la gestion des tokens.",
       color: "text-emerald-400",
       bgColor: "bg-emerald-500/10",
-      borderColor: "border-emerald-500/30"
+      borderColor: "border-emerald-500/30",
+      href: "/components/identity-server"
     },
     {
       icon: Layers,
@@ -68,7 +70,8 @@ const ControlStation = () => {
       description: "Configurez des workflows d'orchestration pour chaîner vos services de manière intelligente.",
       color: "text-purple-400",
       bgColor: "bg-purple-500/10",
-      borderColor: "border-purple-500/30"
+      borderColor: "border-purple-500/30",
+      href: "/components/orchestrator"
     },
     {
       icon: Zap,
@@ -76,7 +79,8 @@ const ControlStation = () => {
       description: "Générez des configurations BPMN pour automatiser vos processus métiers.",
       color: "text-amber-400",
       bgColor: "bg-amber-500/10",
-      borderColor: "border-amber-500/30"
+      borderColor: "border-amber-500/30",
+      href: "/components/process-executor"
     }
   ];
 
@@ -190,26 +194,27 @@ const ControlStation = () => {
               {templates.map((template, index) => {
                 const Icon = template.icon;
                 return (
-                  <Card 
-                    key={index} 
-                    className={`${template.bgColor} ${template.borderColor} border-2 hover:scale-[1.02] transition-all cursor-pointer`}
-                  >
-                    <CardHeader>
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gray-900/50`}>
-                            <Icon className={`w-7 h-7 ${template.color}`} />
-                          </div>
-                          <div>
-                            <CardTitle className="text-white text-xl">{template.title}</CardTitle>
-                            <CardDescription className="text-gray-400 mt-1">
-                              {template.description}
-                            </CardDescription>
+                  <Link to={template.href} key={index}>
+                    <Card 
+                      className={`${template.bgColor} ${template.borderColor} border-2 hover:scale-[1.02] transition-all cursor-pointer h-full`}
+                    >
+                      <CardHeader>
+                        <div className="flex items-start justify-between">
+                          <div className="flex items-center gap-4">
+                            <div className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gray-900/50`}>
+                              <Icon className={`w-7 h-7 ${template.color}`} />
+                            </div>
+                            <div>
+                              <CardTitle className="text-white text-xl">{template.title}</CardTitle>
+                              <CardDescription className="text-gray-400 mt-1">
+                                {template.description}
+                              </CardDescription>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </CardHeader>
-                  </Card>
+                      </CardHeader>
+                    </Card>
+                  </Link>
                 );
               })}
             </div>
