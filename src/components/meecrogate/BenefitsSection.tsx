@@ -1,6 +1,12 @@
-
 import { useState } from "react";
 import { Rocket, Cloud, Lock, BarChart3, Globe, Shield } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 // Liste des bénéfices avec une description longue.
 const benefits = [
@@ -42,35 +48,6 @@ const benefits = [
   }
 ];
 
-// Affichage détaillé d'un bénéfice en surimpression (fade + scale)
-function BenefitDetailSection({ benefit, onClose }: { benefit: typeof benefits[number], onClose: () => void }) {
-  if (!benefit) return null;
-  return (
-    <div
-      className="fixed inset-0 z-30 flex items-center justify-center bg-black/60 backdrop-blur-[2px] animate-fade-in"
-      onClick={onClose}
-    >
-      <div
-        className="bg-white dark:bg-brand-dark rounded-3xl shadow-2xl p-8 max-w-md w-full relative animate-scale-in"
-        onClick={e => e.stopPropagation()}
-      >
-        <button onClick={onClose} className="absolute top-4 right-4 text-brand-blue hover:text-brand-orange transition-colors text-xl font-bold">
-          ×
-        </button>
-        <div className="flex flex-col items-center mb-4">
-          <span className="mb-2 bg-gradient-to-br from-brand-blue/20 to-brand-orange/20 w-14 h-14 rounded-xl flex items-center justify-center">
-            <benefit.icon className="w-8 h-8 text-brand-blue" />
-          </span>
-          <h3 className="text-2xl font-bold text-brand-dark dark:text-brand-light mb-1">{benefit.title}</h3>
-          <div className="text-base text-brand-dark/70 dark:text-brand-light/70">{benefit.description}</div>
-        </div>
-        <hr className="border-brand-blue/10 dark:border-brand-blue/40 mb-4" />
-        <div className="text-lg text-brand-dark/90 dark:text-brand-light/90">{benefit.details}</div>
-      </div>
-    </div>
-  );
-}
-
 const BenefitsSection = () => {
   const [selectedBenefit, setSelectedBenefit] = useState<number | null>(null);
 
@@ -105,12 +82,34 @@ const BenefitsSection = () => {
           );
         })}
       </div>
-      {selectedBenefit !== null && (
-        <BenefitDetailSection
-          benefit={benefits[selectedBenefit]}
-          onClose={() => setSelectedBenefit(null)}
-        />
-      )}
+
+      {/* Dialogs for each benefit */}
+      {benefits.map((benefit, index) => {
+        const Icon = benefit.icon;
+        return (
+          <Dialog key={index} open={selectedBenefit === index} onOpenChange={(open) => setSelectedBenefit(open ? index : null)} modal={false}>
+            <DialogContent className="bg-gray-900 border-gray-700 text-white max-w-lg">
+              <DialogHeader>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#FFB300]/20 border-2 border-[#FFB300]/30">
+                    <Icon className="w-6 h-6 text-[#FFB300]" />
+                  </div>
+                  <DialogTitle className="text-2xl font-bold text-white">
+                    {benefit.title}
+                  </DialogTitle>
+                </div>
+                <DialogDescription className="text-gray-400 text-base">
+                  {benefit.description}
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="mt-4">
+                <p className="text-gray-300 leading-relaxed">{benefit.details}</p>
+              </div>
+            </DialogContent>
+          </Dialog>
+        );
+      })}
     </section>
   );
 };
