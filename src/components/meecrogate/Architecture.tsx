@@ -1,42 +1,72 @@
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Cloud, Database, Settings, Monitor, GitBranch, Server, Workflow, Repeat2, ArrowRight } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Cloud, Database, Settings, Monitor, GitBranch, Server, Workflow, Repeat2, ArrowRight, CheckCircle2 } from "lucide-react";
 
-// Composant pour une carte d'architecture avec effet hover
+// Composant pour une carte d'architecture avec effet hover et dialog
 const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <Card 
-      className="bg-slate-800/70 border-slate-700/30 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:bg-slate-800/90 hover:scale-[1.01] hover:shadow-lg hover:shadow-indigo-500/20 cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="relative h-48 overflow-hidden">
-        <img 
-          src={point.image} 
-          alt={point.title}
-          className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : ''}`}
-          onError={(e) => { 
-            const target = e.target as HTMLImageElement;
-            target.onerror = null; 
-            target.src = "https://placehold.co/400x300/1f2937/d1d5db?text=Image"; 
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
-        <div className="absolute top-4 left-4 z-10">
-          {point.icon}
+    <>
+      <Card 
+        className="bg-slate-800/70 border-slate-700/30 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:bg-slate-800/90 hover:scale-[1.01] hover:shadow-lg hover:shadow-indigo-500/20 cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={() => setIsDialogOpen(true)}
+      >
+        <div className="relative h-48 overflow-hidden">
+          <img 
+            src={point.image} 
+            alt={point.title}
+            className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : ''}`}
+            onError={(e) => { 
+              const target = e.target as HTMLImageElement;
+              target.onerror = null; 
+              target.src = "https://placehold.co/400x300/1f2937/d1d5db?text=Image"; 
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
+          <div className="absolute top-4 left-4 z-10">
+            {point.icon}
+          </div>
         </div>
-      </div>
-      <CardHeader className="pb-4">
-        <CardTitle className="text-lg text-white">{point.title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="text-slate-300">
-          {point.description}
-        </CardDescription>
-      </CardContent>
-    </Card>
+        <CardHeader className="pb-4">
+          <CardTitle className="text-lg text-white">{point.title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription className="text-slate-300">
+            {point.description}
+          </CardDescription>
+        </CardContent>
+      </Card>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen} modal={false}>
+        <DialogContent className="bg-slate-800 border-slate-700 text-slate-200 max-w-lg">
+          <DialogHeader>
+            <div className="flex items-center gap-3 mb-2">
+              {point.icon}
+              <DialogTitle className="text-xl text-white">{point.title}</DialogTitle>
+            </div>
+            <DialogDescription className="text-slate-300 text-base">
+              {point.description}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-4 space-y-4">
+            <h4 className="text-indigo-400 font-semibold">Avantages clés</h4>
+            <ul className="space-y-3">
+              {point.benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-slate-300">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 
@@ -115,25 +145,49 @@ const architecturePoints = [
     icon: <Cloud className="w-6 h-6 text-indigo-500" />,
     title: "100% Stateless",
     description: "Aucun stockage local, scalabilité horizontale native",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+    benefits: [
+      "Scalabilité illimitée : ajoutez ou retirez des instances à la volée selon la charge",
+      "Haute disponibilité : aucune perte de données en cas de redémarrage d'une instance",
+      "Déploiement simplifié : chaque instance est identique et interchangeable",
+      "Coûts optimisés : ne payez que pour les ressources réellement utilisées"
+    ]
   },
   {
     icon: <Settings className="w-6 h-6 text-amber-500" />,
     title: "Configuration-driven",
     description: "Logique métier via fichiers JSON ou interface graphique",
-    image: SHARED_ABSTRACT_IMAGE
+    image: SHARED_ABSTRACT_IMAGE,
+    benefits: [
+      "Zéro code : modifiez le comportement sans recompilation ni redéploiement",
+      "Versioning complet : historique des configurations via Git",
+      "Rollback instantané : revenez à une configuration précédente en secondes",
+      "Collaboration facilitée : les équipes métier peuvent participer à la configuration"
+    ]
   },
   {
     icon: <Database className="w-6 h-6 text-indigo-500" />,
     title: "Interopérabilité native",
     description: "REST, WebSocket, Kafka, JDBC",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop&crop=center",
+    benefits: [
+      "Connectivité universelle : intégrez tous vos systèmes existants sans middleware additionnel",
+      "Temps réel : support natif des WebSockets pour les communications bidirectionnelles",
+      "Event-driven : consommez et produisez des événements Kafka nativement",
+      "Bases de données : connectez-vous directement via JDBC sans passer par des APIs"
+    ]
   },
   {
     icon: <Monitor className="w-6 h-6 text-amber-500" />,
     title: "Monitoring centralisé",
     description: "Logs, métriques et traces intégrés",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop&crop=center",
+    benefits: [
+      "Visibilité complète : suivez chaque requête de bout en bout",
+      "Alertes proactives : soyez notifié avant que les problèmes n'impactent vos utilisateurs",
+      "Debugging facilité : traces distribuées pour identifier rapidement les goulots d'étranglement",
+      "Conformité : logs d'audit pour répondre aux exigences réglementaires"
+    ]
   }
 ];
 
