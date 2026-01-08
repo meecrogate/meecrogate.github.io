@@ -42,7 +42,7 @@ const Service = () => {
   };
 
   return (
-    <div className="bg-slate-900 min-h-screen flex flex-col">
+    <div className="bg-slate-900 min-h-screen flex flex-col overflow-x-hidden">
       <Navigation />
       <main className="flex-1">
         <section className="max-w-3xl mx-auto px-4 py-24 text-center">
