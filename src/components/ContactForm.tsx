@@ -1,12 +1,13 @@
-
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 
 const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     nom: "",
     email: "",
@@ -16,6 +17,10 @@ const ContactForm = () => {
     message: ""
   });
 
+  // ⚠️ Remplacez par votre vraie URL générée par Google Apps Script
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/a/macros/yupiik.com/s/AKfycbxdoxQ-ExatbykLTNvKVoRwixMUvz_fnUPhH5bCjOEFFzf_h6ZAga1nyZf1_3-k81ZP/exec";
+  
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -24,20 +29,41 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Formulaire de contact soumis:", formData);
-    // Ici on pourrait envoyer les données vers un backend
-    alert("Merci pour votre message ! Nous vous recontacterons bientôt.");
-    // Reset form
-    setFormData({
-      nom: "",
-      email: "",
-      entreprise: "",
-      telephone: "",
-      sujet: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        // On envoie directement notre objet formData complet
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        toast.success("Votre message a bien été envoyé ! Nous vous recontacterons très vite.");
+        // On vide le formulaire après succès
+        setFormData({
+          nom: "",
+          email: "",
+          entreprise: "",
+          telephone: "",
+          sujet: "",
+          message: ""
+        });
+      } else {
+        toast.error("Erreur lors de l'envoi du message.");
+      }
+    } catch (error) {
+      toast.error("Impossible de joindre le serveur. Veuillez réessayer plus tard.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -70,6 +96,7 @@ const ContactForm = () => {
                 required
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
                 placeholder="Votre nom complet"
+                disabled={isSubmitting}
               />
             </div>
             <div className="space-y-2">
@@ -84,6 +111,7 @@ const ContactForm = () => {
                 required
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
                 placeholder="Nom de votre entreprise"
+                disabled={isSubmitting}
               />
             </div>
           </div>
@@ -102,6 +130,7 @@ const ContactForm = () => {
                 required
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
                 placeholder="votre.email@entreprise.com"
+                disabled={isSubmitting}
               />
             </div>
             <div className="space-y-2">
@@ -116,6 +145,7 @@ const ContactForm = () => {
                 onChange={handleInputChange}
                 className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
                 placeholder="+33 1 23 45 67 89"
+                disabled={isSubmitting}
               />
             </div>
           </div>
@@ -132,6 +162,7 @@ const ContactForm = () => {
               required
               className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
               placeholder="Objet de votre demande"
+              disabled={isSubmitting}
             />
           </div>
           
@@ -148,6 +179,7 @@ const ContactForm = () => {
               rows={6}
               className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
               placeholder="Décrivez votre projet, vos besoins ou vos questions en détail..."
+              disabled={isSubmitting}
             />
           </div>
           
@@ -155,9 +187,19 @@ const ContactForm = () => {
             type="submit"
             size="lg"
             className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white"
+            disabled={isSubmitting}
           >
-            <Send className="mr-2 w-5 h-5" />
-            Envoyer le message
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 w-5 h-5 animate-spin" />
+                Envoi en cours...
+              </>
+            ) : (
+              <>
+                <Send className="mr-2 w-5 h-5" />
+                Envoyer le message
+              </>
+            )}
           </Button>
         </form>
       </div>
