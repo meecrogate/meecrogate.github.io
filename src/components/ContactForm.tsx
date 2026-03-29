@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send, Loader2 } from "lucide-react";
+import { Send, Loader2,CheckCircle } from "lucide-react";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
     nom: "",
     email: "",
@@ -54,6 +55,7 @@ const ContactForm = () => {
 
       if (result.success) {
         toast.success("Votre message a bien été envoyé ! Nous vous recontacterons très vite.");
+        setIsSuccess(true);
         // On vide le formulaire après succès
         setFormData({
           nom: "",
@@ -90,7 +92,31 @@ const ContactForm = () => {
       {/* Formulaire de contact */}
       <div className="bg-gradient-to-br from-brand-dark/90 to-brand-blue/20 backdrop-blur-sm rounded-3xl border border-gray-700 p-8 max-w-2xl mx-auto">
         <h2 className="text-2xl font-bold text-white mb-8">Envoyez-nous un message</h2>
-        
+        {isSuccess ? (
+          /* --- ÉCRAN DE SUCCÈS --- */
+          <div className="text-center py-16 animate-in fade-in zoom-in duration-500">
+            <CheckCircle className="w-20 h-20 text-green-400 mx-auto mb-6" />
+            <h3 className="text-3xl font-bold text-white mb-4">Message envoyé !</h3>
+            <p className="text-lg text-gray-300 mb-8">
+              Merci de nous avoir contactés. Notre équipe a bien reçu votre demande et reviendra vers vous très rapidement.
+            </p>
+            <Button 
+              onClick={() => setIsSuccess(false)} 
+              variant="outline" 
+              className="bg-transparent text-white border-gray-600 hover:bg-gray-800"
+            >
+              Envoyer un autre message
+            </Button>
+          </div>
+        ) : (
+          /* --- LE FORMULAIRE CLASSIQUE --- */
+          <>
+            <h2 className="text-2xl font-bold text-white mb-8">Envoyez-nous un message</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* ... Gardez tout votre code de formulaire ici sans y toucher ... */}
+            </form>
+          </>
+        )}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
