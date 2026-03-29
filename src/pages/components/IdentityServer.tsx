@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Settings, Shield, Users, Key, Lock, Smartphone, ShieldCheck } from "lucide-react";
+import { Settings, Shield, Users, Key, Lock, Smartphone, ShieldCheck, Link } from "lucide-react";
 
 const IdentityServerPage = () => {
   return (
@@ -24,22 +24,22 @@ const IdentityServerPage = () => {
                   Gestion des accès & Single Sign-On
                 </p>
                 <p className="text-brand-light/80 text-lg leading-relaxed mb-8">
-                  Solution complète de gestion d'identité et d'accès (IAM) offrant une sécurité renforcée, 
+                  Solution complète de gestion d'identité et d'accès (IAM) offrant une sécurité renforcée,
                   une expérience utilisateur optimisée et une conformité réglementaire pour toutes vos applications.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="/demo"
+                  <Link
+                    to="/demo"
                     className="bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     Demander une démo
-                  </a>
-                  <a
-                    href="/components"
+                  </Link>
+                  <Link
+                    to="/components"
                     className="border border-brand-light/20 text-brand-light px-8 py-4 rounded-lg font-semibold hover:bg-brand-light/5 transition-all duration-300"
                   >
                     Tous les composants
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-8 border border-brand-light/10">

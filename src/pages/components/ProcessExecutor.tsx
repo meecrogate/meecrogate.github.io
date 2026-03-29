@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Zap, Workflow, Clock, Users, Settings, BarChart3 } from "lucide-react";
+import { Zap, Workflow, Clock, Users, Settings, BarChart3, Link } from "lucide-react";
 
 const ProcessExecutorPage = () => {
   return (
@@ -24,22 +24,22 @@ const ProcessExecutorPage = () => {
                   BPMN & Automatisation
                 </p>
                 <p className="text-brand-light/80 text-lg leading-relaxed mb-8">
-                  Moteur d'exécution de processus métier basé sur les standards BPMN 2.0. 
+                  Moteur d'exécution de processus métier basé sur les standards BPMN 2.0.
                   Automatisez vos workflows complexes avec une interface graphique intuitive et une traçabilité complète.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="/demo"
+                  <Link
+                    to="/demo"
                     className="bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     Demander une démo
-                  </a>
-                  <a
-                    href="/components"
+                  </Link>
+                  <Link
+                    to="/components"
                     className="border border-brand-light/20 text-brand-light px-8 py-4 rounded-lg font-semibold hover:bg-brand-light/5 transition-all duration-300"
                   >
                     Tous les composants
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-8 border border-brand-light/10">
