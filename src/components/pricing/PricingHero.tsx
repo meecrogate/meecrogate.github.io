@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react"; // <-- Ajout de Loader2
 import { useToast } from "@/hooks/use-toast";
 
 // --- Définitions SVG Lucide ---
@@ -47,6 +47,7 @@ const Plus = (props: React.SVGProps<SVGSVGElement>) => (
 const PricingHero = () => {
     const { toast } = useToast();
     const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false); // <-- Nouvel état de chargement
     const [selectedPlan, setSelectedPlan] = useState<string>("");
     const [formData, setFormData] = useState({
         nom: "",
@@ -56,6 +57,9 @@ const PricingHero = () => {
         sujet: "",
         message: ""
     });
+
+    // 🔑 Clé d'accès Web3Forms
+    const WEB3FORMS_ACCESS_KEY = "081aaa9f-94c9-4b5b-8688-df70b9f15bb6";
 
     // Classes de survol partagées pour un effet interactif
     const hoverClasses = "transition-all duration-300 hover:scale-[1.01] hover:shadow-indigo-500/50 hover:border-indigo-400 cursor-pointer";
@@ -74,21 +78,59 @@ const PricingHero = () => {
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        toast({
-            title: "Message envoyé !",
-            description: "Nous vous recontacterons bientôt.",
-        });
-        setIsDialogOpen(false);
-        setFormData({
-            nom: "",
-            email: "",
-            entreprise: "",
-            telephone: "",
-            sujet: "",
-            message: ""
-        });
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    subject: `[Tarifs Meecrogate] Demande pour le plan ${selectedPlan} par ${formData.nom}`,
+                    from_name: formData.nom,
+                    ...formData
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                toast({
+                    title: "Message envoyé !",
+                    description: "Nous avons bien reçu votre demande et vous recontacterons très vite.",
+                    // Variante par défaut ou "success" selon la configuration de votre useToast
+                });
+                
+                setIsDialogOpen(false);
+                setFormData({
+                    nom: "",
+                    email: "",
+                    entreprise: "",
+                    telephone: "",
+                    sujet: "",
+                    message: ""
+                });
+            } else {
+                toast({
+                    title: "Erreur",
+                    description: "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+                    variant: "destructive",
+                });
+            }
+        } catch (error) {
+            toast({
+                title: "Erreur réseau",
+                description: "Impossible de joindre le serveur d'envoi.",
+                variant: "destructive",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -403,6 +445,7 @@ const PricingHero = () => {
                                     value={formData.nom}
                                     onChange={handleInputChange}
                                     required
+                                    disabled={isSubmitting}
                                     className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                                     placeholder="Votre nom complet"
                                 />
@@ -417,6 +460,7 @@ const PricingHero = () => {
                                     value={formData.entreprise}
                                     onChange={handleInputChange}
                                     required
+                                    disabled={isSubmitting}
                                     className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                                     placeholder="Nom de votre entreprise"
                                 />
@@ -435,6 +479,7 @@ const PricingHero = () => {
                                     value={formData.email}
                                     onChange={handleInputChange}
                                     required
+                                    disabled={isSubmitting}
                                     className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                                     placeholder="votre.email@entreprise.com"
                                 />
@@ -449,6 +494,7 @@ const PricingHero = () => {
                                     type="tel"
                                     value={formData.telephone}
                                     onChange={handleInputChange}
+                                    disabled={isSubmitting}
                                     className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                                     placeholder="+33 1 23 45 67 89"
                                 />
@@ -465,6 +511,7 @@ const PricingHero = () => {
                                 value={formData.sujet}
                                 onChange={handleInputChange}
                                 required
+                                disabled={isSubmitting}
                                 className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                                 placeholder="Objet de votre demande"
                             />
@@ -480,6 +527,7 @@ const PricingHero = () => {
                                 value={formData.message}
                                 onChange={handleInputChange}
                                 required
+                                disabled={isSubmitting}
                                 rows={5}
                                 className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
                                 placeholder="Décrivez votre projet, vos besoins ou vos questions..."
@@ -489,10 +537,14 @@ const PricingHero = () => {
                         <Button
                             type="submit"
                             size="lg"
+                            disabled={isSubmitting}
                             className="w-full bg-indigo-600 hover:bg-indigo-700 text-white"
                         >
-                            <Send className="mr-2 w-5 h-5" />
-                            Envoyer le message
+                            {isSubmitting ? (
+                                <><Loader2 className="mr-2 w-5 h-5 animate-spin" /> Envoi en cours...</>
+                            ) : (
+                                <><Send className="mr-2 w-5 h-5" /> Envoyer la demande</>
+                            )}
                         </Button>
                     </form>
                 </DialogContent>
