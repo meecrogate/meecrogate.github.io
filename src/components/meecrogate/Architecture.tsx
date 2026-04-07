@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Cloud, Database, Settings, Monitor, GitBranch, Server, Workflow, Repeat2, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Cloud, Database, Settings, Monitor, GitBranch, Server, Workflow, Repeat2, ArrowRight, CheckCircle2, Terminal, Shield, Network, FileJson } from "lucide-react";
 
 // Composant pour une carte d'architecture avec effet hover et dialog
 const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) => {
@@ -70,7 +70,7 @@ const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) =>
   );
 };
 
-// Composant pour le cycle GitOps
+// L'ancien composant pour le cycle GitOps (conservé)
 const GitOpsMeecrogateCycle = () => {
   const phases = [
     {
@@ -130,8 +130,173 @@ const GitOpsMeecrogateCycle = () => {
         ))}
       </div>
       
-      <div className="text-indigo-400 text-sm mt-6 text-center">
+      <div className="text-indigo-400 text-sm mt-6 text-center mb-8">
         L'infrastructure et l'application sont déclarées, versionnées et auto-déployées.
+      </div>
+
+      {/* Ajout du nouveau schéma interactif en dessous */}
+      <InteractiveGitOpsCycle />
+
+    </div>
+  );
+};
+
+// Le nouveau composant Interactif pour le cycle GitOps (Version Fluide)
+const InteractiveGitOpsCycle = () => {
+  const [selectedId, setSelectedId] = useState('station');
+  const [dashOffset, setDashOffset] = useState(0);
+  const animationRef = useRef<number>();
+
+  // Moteur d'animation 60fps pour la fluidité parfaite des flux
+  useEffect(() => {
+    let lastTime = performance.now();
+    const speed = 0.05; // Ajustez cette valeur pour modifier la vitesse globale
+
+    const animate = (time: number) => {
+      const deltaTime = time - lastTime;
+      lastTime = time;
+
+      setDashOffset((prev) => (prev - speed * deltaTime) % 24); // 24 = taille du pattern (6 + 18)
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationRef.current!);
+  }, []);
+
+  const components = [
+    { 
+      id: 'station', label: 'Control Station', icon: <Terminal size={24} />, x: 80, y: 200, color: '#3b82f6', 
+      desc: "L'interface d'administration (UI) où les opérateurs définissent les configurations globales de manière visuelle (Low-Code). Les changements sont générés en JSON et poussés vers un dépôt Git.", phase: "Configuration Source" 
+    },
+    { 
+      id: 'git', label: 'Git Repository', icon: <GitBranch size={24} />, x: 250, y: 200, color: '#22c55e', 
+      desc: "La source de vérité unique (Single Source of Truth). Chaque modification est versionnée ici, offrant une traçabilité complète (audit trail) et des capacités de rollback instantanées.", phase: "Version Control" 
+    },
+    { 
+      id: 'operator', label: 'Meecrogate Operator', icon: <Settings size={24} />, x: 440, y: 200, color: '#eab308', 
+      desc: "Un contrôleur Kubernetes autonome. Il surveille le dépôt Git, détecte les différences (drift) avec l'état du cluster, et télécharge les nouvelles configurations de manière sécurisée (Zero Trust).", phase: "Sync & Reconcile" 
+    },
+    { 
+      id: 'config', label: 'ConfigMap', icon: <FileJson size={24} />, x: 600, y: 200, color: '#a855f7', 
+      desc: "L'objet Kubernetes natif (ConfigMap). Il stocke les paramètres synchronisés dans un format dynamique virtuellement monté à l'intérieur des conteneurs.", phase: "In-Cluster Config" 
+    },
+    { 
+      id: 'pod1', label: 'Gateway', icon: <Server size={24} />, x: 750, y: 100, color: '#8b5cf6', 
+      desc: "La passerelle API. Elle détecte la mise à jour du ConfigMap et recharge sa logique de routage en mémoire (Hot Reload) avec Zéro Seconde de coupure.", phase: "Runtime Deployment" 
+    },
+    { 
+      id: 'pod2', label: 'ID Server', icon: <Shield size={24} />, x: 750, y: 200, color: '#8b5cf6', 
+      desc: "Le serveur d'identité. Il gère les jetons d'authentification et met à jour ses politiques de sécurité en temps réel grâce au flux GitOps.", phase: "Runtime Deployment" 
+    },
+    { 
+      id: 'pod3', label: 'Orchestrator', icon: <Network size={24} />, x: 750, y: 300, color: '#8b5cf6', 
+      desc: "L'orchestrateur de services. Il coordonne les microservices internes selon la dernière topologie définie, le tout mis à jour à chaud.", phase: "Runtime Deployment" 
+    }
+  ];
+
+  const links = [
+    { id: 'l1', path: 'M80,200 L250,200' },
+    { id: 'l2', path: 'M250,200 L440,200' },
+    { id: 'l3', path: 'M440,200 L600,200' },
+    { id: 'l4', path: 'M600,200 L600,100 L750,100' },
+    { id: 'l5', path: 'M600,200 L750,200' },
+    { id: 'l6', path: 'M600,200 L600,300 L750,300' }
+  ];
+
+  const selected = components.find(c => c.id === selectedId) || components[0];
+
+  return (
+    <div className="flex flex-col border border-slate-700/50 rounded-xl overflow-hidden bg-slate-900/50 shadow-2xl">
+
+      {/* Zone Diagramme (Top) */}
+      <div className="relative p-2 sm:p-6 overflow-x-auto">
+        <svg viewBox="0 0 850 400" className="min-w-[700px] w-full h-auto drop-shadow-lg">
+          
+          {/* Fond Kubernetes Cluster */}
+          <g>
+            <rect x="360" y="40" width="460" height="320" rx="16" fill="rgba(30, 41, 59, 0.4)" stroke="#475569" strokeWidth="2" strokeDasharray="6,6" />
+            <text x="590" y="70" textAnchor="middle" fill="#94a3b8" className="text-sm font-bold tracking-wider font-sans">
+              KUBERNETES CLUSTER
+            </text>
+          </g>
+
+          {/* Liens et flux fluides */}
+          <g>
+            {links.map(link => (
+              <g key={link.id}>
+                {/* Ligne de fond */}
+                <path d={link.path} stroke="#475569" strokeWidth="3" fill="none" />
+                {/* Flux animé (Pointillés bleus) piloté par React */}
+                <path 
+                  d={link.path} 
+                  stroke="#60a5fa" 
+                  strokeWidth="3" 
+                  fill="none" 
+                  strokeDasharray="6, 18" 
+                  strokeDashoffset={dashOffset}
+                  strokeLinecap="round"
+                />
+              </g>
+            ))}
+          </g>
+
+          {/* Noeuds interactifs */}
+          <g>
+            {components.map(node => {
+              const isSelected = selectedId === node.id;
+              return (
+                <g 
+                  key={node.id} 
+                  transform={`translate(${node.x}, ${node.y})`} 
+                  className="cursor-pointer group"
+                  onClick={() => setSelectedId(node.id)}
+                >
+                  <circle 
+                    r={32} 
+                    fill="#1e293b" 
+                    stroke={isSelected ? node.color : "#475569"} 
+                    strokeWidth={isSelected ? 4 : 2}
+                    className="transition-all duration-300 group-hover:stroke-slate-300"
+                  />
+                  {/* Icône (rendu via React Lucide) */}
+                  <foreignObject x="-12" y="-12" width="24" height="24" className="pointer-events-none">
+                    <div style={{ color: isSelected ? '#ffffff' : '#94a3b8' }} className="transition-colors duration-300 flex items-center justify-center h-full">
+                      {node.icon}
+                    </div>
+                  </foreignObject>
+                  <text 
+                    y="48" 
+                    textAnchor="middle" 
+                    fill={isSelected ? '#ffffff' : '#cbd5e1'} 
+                    className="text-[13px] font-medium font-sans pointer-events-none transition-colors duration-300"
+                  >
+                    {node.label}
+                  </text>
+                </g>
+              );
+            })}
+          </g>
+        </svg>
+      </div>
+
+      {/* Panneau d'Information (Bottom) */}
+      <div className="bg-slate-800/80 p-6 sm:p-8 border-t border-slate-700 backdrop-blur-md transition-all duration-300 text-left">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
+          <div 
+            className="p-3 rounded-lg flex items-center justify-center shadow-inner shrink-0 w-fit" 
+            style={{ backgroundColor: `${selected.color}20`, color: selected.color }}
+          >
+            {selected.icon}
+          </div>
+          <h3 className="text-2xl text-white font-semibold m-0 text-left">{selected.label}</h3>
+          <span className="sm:ml-auto w-fit text-xs font-bold px-3 py-1.5 bg-slate-900 rounded-full text-indigo-300 uppercase tracking-wider border border-indigo-500/30 shadow-sm">
+            {selected.phase}
+          </span>
+        </div>
+        <p className="text-slate-300 leading-relaxed text-base sm:text-lg text-left m-0">
+          {selected.desc}
+        </p>
       </div>
     </div>
   );
@@ -215,7 +380,7 @@ const Architecture = () => {
       </div>
 
       {/* Deployment Card */}
-      <Card className="bg-slate-800/70 border-slate-700/30 backdrop-blur-sm max-w-4xl mx-auto">
+      <Card className="bg-slate-800/70 border-slate-700/30 backdrop-blur-sm max-w-5xl mx-auto">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl text-white mb-4">
             Déploiement flexible
@@ -237,7 +402,9 @@ const Architecture = () => {
             </div>
           </div>
           
+          {/* L'ancien cycle (statique) + Le nouveau schéma interactif (fluide) */}
           <GitOpsMeecrogateCycle />
+          
         </CardContent>
       </Card>
     </div>
