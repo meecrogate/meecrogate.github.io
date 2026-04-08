@@ -41,6 +41,14 @@ import ProcessExecutorPage from "./pages/components/ProcessExecutor";
 import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
+import { createInstance, MatomoProvider } from '@datapunt/matomo-tracker-react';
+
+// Configuration de l'instance avec les variables d'environnement Vite
+const instance = createInstance({
+  urlBase: import.meta.env.VITE_MATOMO_URL as string,
+  siteId: Number(import.meta.env.VITE_MATOMO_SITE_ID),
+});
+
 const queryClient = new QueryClient();
 
 const App = () => (

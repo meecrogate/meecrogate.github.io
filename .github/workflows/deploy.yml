@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # 1. JOB DE CONSTRUCTION (Génère le dossier dist et l'upload)
+  # 1. JOB DE CONSTRUCTION
   build:
     runs-on: ubuntu-latest
     steps:
@@ -31,7 +31,11 @@ jobs:
         run: npm ci
 
       - name: Build the site
+        # Injection des variables Matomo depuis les GitHub Secrets
         run: npm run build
+        env:
+          VITE_MATOMO_URL: ${{ secrets.VITE_MATOMO_URL }}
+          VITE_MATOMO_SITE_ID: ${{ secrets.VITE_MATOMO_SITE_ID }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -41,13 +45,13 @@ jobs:
         with:
           path: './dist' 
 
-  # 2. JOB DE DÉPLOIEMENT (Prend l'artefact du job précédent et le met en ligne)
+  # 2. JOB DE DÉPLOIEMENT
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build # 👈 IMPORTANT : Dit à ce job d'attendre que 'build' soit terminé
+    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
