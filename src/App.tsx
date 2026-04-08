@@ -42,6 +42,9 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
 import { createInstance, MatomoProvider } from '@datapunt/matomo-tracker-react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 
 // Configuration de l'instance avec les variables d'environnement Vite
 const instance = createInstance({
@@ -51,15 +54,35 @@ const instance = createInstance({
 
 const queryClient = new QueryClient();
 
+
+
+
+const MatomoTracker = () => {
+  const location = useLocation();
+  const { trackPageView } = useMatomo();
+
+  useEffect(() => {
+    // On force l'URL complète pour que le HashRouter soit bien interprété
+    trackPageView({
+      href: window.location.href,
+    });
+  }, [location, trackPageView]);
+
+  return null;
+};
+
+
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <HashRouter>
-        {/* ScrollToTop MUST be inside the Router so it can access useLocation */}
-      <ScrollToTop />
-        <Routes>
+  /* @ts-ignore - Ignore l'erreur de type 'children' sur React 18 */
+  <MatomoProvider value={instance}>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <HashRouter>
+          <MatomoTracker /> {/* 2. On suit les changements de routes ici */}
+          <ScrollToTop />
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/architecture" element={<ArchitecturePage />} />
@@ -93,6 +116,7 @@ const App = () => (
       </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
+  </MatomoProvider>
 );
 
 export default App;

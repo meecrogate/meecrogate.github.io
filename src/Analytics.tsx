@@ -2,14 +2,12 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 
-export const Analytics = () => {
+export const MatomoTracker = () => {
   const location = useLocation();
   const { trackPageView } = useMatomo();
 
   useEffect(() => {
-    // On suit la page à chaque changement de hash
-    // On utilise window.location.pathname + window.location.hash 
-    // pour que Matomo voit bien "/#/projects" par exemple.
+    console.log("Matomo: Tracking page view pour", window.location.hash); // Ajoutez ce log !
     trackPageView({
       href: window.location.href,
     });
