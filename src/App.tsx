@@ -89,7 +89,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <HashRouter>
-          <MatomoTracker /> {/* 2. On suit les changements de routes ici */}
+          {instance && <MatomoTracker />}
           <ScrollToTop />
           <Routes>
           <Route path="/" element={<Index />} />
