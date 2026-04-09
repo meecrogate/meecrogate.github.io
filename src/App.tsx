@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Index from "./pages/Index";
 import FeaturesPage from "./pages/Features";
 import ArchitecturePage from "./pages/Architecture";
@@ -15,6 +15,7 @@ import Pricing from "./pages/Pricing";
 import Service from "./pages/Service";
 import ComponentsPage from "./pages/Components";
 import ControlStation from "./pages/ControlStation";
+import ScrollToTop from "./components/ScrollTop";
 
 // Use cases individual pages
 import PortailsApiPage from "./pages/usecases/PortailsApi";
@@ -40,15 +41,48 @@ import ProcessExecutorPage from "./pages/components/ProcessExecutor";
 import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
+import { createInstance, MatomoProvider } from '@datapunt/matomo-tracker-react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
+
+// Configuration de l'instance avec les variables d'environnement Vite
+const instance = createInstance({
+  urlBase: import.meta.env.VITE_MATOMO_URL as string,
+  siteId: Number(import.meta.env.VITE_MATOMO_SITE_ID),
+});
+
 const queryClient = new QueryClient();
 
+
+
+
+const MatomoTracker = () => {
+  const location = useLocation();
+  const { trackPageView } = useMatomo();
+
+  useEffect(() => {
+    // On force l'URL complète pour que le HashRouter soit bien interprété
+    trackPageView({
+      href: window.location.href,
+    });
+  }, [location, trackPageView]);
+
+  return null;
+};
+
+
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
+  /* @ts-ignore - Ignore l'erreur de type 'children' sur React 18 */
+  <MatomoProvider value={instance}>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <HashRouter>
+          <MatomoTracker /> {/* 2. On suit les changements de routes ici */}
+          <ScrollToTop />
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/architecture" element={<ArchitecturePage />} />
@@ -79,9 +113,10 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
+  </MatomoProvider>
 );
 
 export default App;

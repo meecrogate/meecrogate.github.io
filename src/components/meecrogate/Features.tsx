@@ -41,8 +41,7 @@ const Features = () => {
       icon: <Zap className="w-8 h-8" style={{ color: '#007AFF' }} />,
       title: "Process Executor",
       description: "Processus métier exécutables comme Services Web",
-      capabilities: [
-        "Intégration BPMN native",
+      capabilities: [        
         "Moteurs d'automatisation",
         "Service web sans code",
         "Observabilité complète"
@@ -51,7 +50,7 @@ const Features = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 py-24">
+    <div className="min-h-screen bg-slate-900 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">

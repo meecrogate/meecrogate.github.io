@@ -8,7 +8,7 @@ const SovereigntySection = () => {
             Conçu et maintenu en France. Solution européenne respectant les normes RGPD
             et offrant un contrôle total sur vos données.
             <span className="ml-2 text-xl align-middle inline-block transform translate-y-[-1px]">
-              🇫🇷
+              🇪🇺
             </span>
           </p>
         </div>

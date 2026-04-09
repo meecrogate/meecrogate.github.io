@@ -76,7 +76,7 @@ const ControlStation = () => {
     {
       icon: Zap,
       title: "Process Executor",
-      description: "Générez des configurations BPMN pour automatiser vos processus métiers.",
+      description: "Définisser des configurations JSON pour automatiser vos processus métiers.",
       color: "text-amber-400",
       bgColor: "bg-amber-500/10",
       borderColor: "border-amber-500/30",

@@ -3,14 +3,14 @@ import Footer from "@/components/Footer";
 
 const PolitiqueConfidentialite = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-slate-900 overflow-x-hidden">
       <Navigation />
       
-      <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold mb-8">Politique de Confidentialité</h1>
+      <div className="pt-16">
+        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h1 className="text-3xl font-bold mb-8 text-white">Politique de Confidentialité</h1>
           
-          <div className="space-y-8 text-gray-300">
+          <div className="space-y-8 text-slate-300">
             <section>
               <h2 className="text-xl font-semibold text-white mb-4">1. Introduction</h2>
               <p>
@@ -25,8 +25,8 @@ const PolitiqueConfidentialite = () => {
               <h2 className="text-xl font-semibold text-white mb-4">2. Responsable du traitement</h2>
               <p>
                 Le responsable du traitement des données personnelles est :<br />
-                <strong>Meecrogate SAS</strong><br />
-                [Adresse complète]<br />
+                <strong className="text-white">Meecrogate SAS</strong><br />
+                2 RUE DE LA REPUBLIQUE 34160 SAINT-DREZERY<br />
                 Email : dpo@meecrogate.com
               </p>
             </section>
@@ -95,12 +95,12 @@ const PolitiqueConfidentialite = () => {
               <h2 className="text-xl font-semibold text-white mb-4">8. Vos droits</h2>
               <p>Conformément au RGPD, vous disposez des droits suivants :</p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                <li><strong>Droit d'accès :</strong> obtenir la confirmation que vos données sont traitées et en obtenir une copie</li>
-                <li><strong>Droit de rectification :</strong> demander la correction de données inexactes</li>
-                <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données</li>
-                <li><strong>Droit à la limitation :</strong> demander la limitation du traitement</li>
-                <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
-                <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos données</li>
+                <li><strong className="text-white">Droit d'accès :</strong> obtenir la confirmation que vos données sont traitées et en obtenir une copie</li>
+                <li><strong className="text-white">Droit de rectification :</strong> demander la correction de données inexactes</li>
+                <li><strong className="text-white">Droit à l'effacement :</strong> demander la suppression de vos données</li>
+                <li><strong className="text-white">Droit à la limitation :</strong> demander la limitation du traitement</li>
+                <li><strong className="text-white">Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
+                <li><strong className="text-white">Droit d'opposition :</strong> vous opposer au traitement de vos données</li>
               </ul>
               <p className="mt-4">
                 Pour exercer ces droits, contactez-nous à : dpo@meecrogate.com
@@ -142,13 +142,13 @@ const PolitiqueConfidentialite = () => {
                 Cette politique de confidentialité peut être mise à jour périodiquement. 
                 La date de dernière mise à jour est indiquée ci-dessous.
               </p>
-              <p className="mt-4 text-gray-400">
+              <p className="mt-4 text-slate-400">
                 Dernière mise à jour : Décembre 2024
               </p>
             </section>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
       
       <Footer />
     </div>

@@ -5,22 +5,22 @@ const components = [
   {
     icon: Shield,
     title: "API Gateway",
-    href: "/components/api-gateway"
+    href: "/components/api-gateway#"
   },
   {
     icon: Fingerprint,
     title: "Serveur d'identité & souscription",
-    href: "/components/identity-server"
+    href: "/components/identity-server#"
   },
   {
     icon: Layers,
     title: "Orchestrateur d'APIs",
-    href: "/components/orchestrator"
+    href: "/components/orchestrator#"
   },
   {
     icon: Zap,
     title: "Process Executor",
-    href: "/components/process-executor"
+    href: "/components/process-executor#"
   }
 ];
 

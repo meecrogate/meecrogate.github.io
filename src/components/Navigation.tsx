@@ -108,7 +108,7 @@ const Navigation = () => {
                       </DropdownMenuItem>
                     ))}
                   </div>
-                  <div className="border-t border-gray-700 my-1"></div>
+                 {/*  <div className="border-t border-gray-700 my-1"></div>
                   <div className="px-2 py-1">
                     <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
                       Projets clients
@@ -123,7 +123,7 @@ const Navigation = () => {
                         </Link>
                       </DropdownMenuItem>
                     ))}
-                  </div>
+                  </div> */}
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

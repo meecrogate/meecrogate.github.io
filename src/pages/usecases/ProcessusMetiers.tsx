@@ -8,7 +8,7 @@ const ProcessusMetiersPage = () => {
   const features = [
     {
       icon: GitBranch,
-      title: "Workflows BPMN",
+      title: "Processus métiers",
       description: "Transformez vos processus métiers en services web accessibles"
     },
     {
@@ -38,7 +38,7 @@ const ProcessusMetiersPage = () => {
               Processus métiers comme APIs
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Transformez vos workflows BPMN complexes en services web REST simples à utiliser.
+              Transformez vos processus métiers complexes en services web simples à utiliser.
             </p>
           </div>
 

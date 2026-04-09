@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Network, ShieldCheck, Workflow, Zap, Shield } from "lucide-react";
+import { Network, ShieldCheck, Workflow, Zap, Shield, Component } from "lucide-react";
 import componentsHero from "@/assets/components-hero.png";
 
 const ComponentsPage = () => {
@@ -78,11 +79,9 @@ const ComponentsPage = () => {
       icon: Zap,
       iconColor: "text-brand-orange",
       title: "Process Executor",
-      subtitle: "BPMN & Automatisation",
-      description: "Moteur d'exécution de processus métier basé sur les standards BPMN pour automatiser vos workflows.",
+      subtitle: "Process Automatisation",
+      description: "Moteur d'exécution de processus pour automatiser vos workflows.",
       features: [
-        "Exécution de processus BPMN 2.0",
-        "Designer graphique de workflows",
         "Tasks automatiques et humaines",
         "Gestion des deadlines et escalations",
         "Intégration avec systèmes externes",
@@ -100,7 +99,7 @@ const ComponentsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-slate-900">
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}
@@ -112,28 +111,28 @@ const ComponentsPage = () => {
             <p className="text-xl text-brand-light/80 max-w-3xl mx-auto mb-12">
               Découvrez en détail chaque composant de notre plateforme d'intégration et leurs fonctionnalités avancées
             </p>
-            
+
             {/* Image with arrows to components */}
             <div className="relative max-w-4xl mx-auto">
               {/* Central image */}
               <div className="max-w-2xl mx-auto relative z-10">
-                <img 
-                  src={componentsHero} 
-                  alt="Plateforme Meecrogate - API Management et déploiement hybride" 
+                <img
+                  src={componentsHero}
+                  alt="Plateforme Meecrogate - API Management et déploiement hybride"
                   className="w-full h-auto rounded-2xl shadow-2xl border border-brand-light/10"
                 />
               </div>
-              
+
               {/* Component icons with arrows */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
                 {/* API Gateway - Blue arrow */}
                 <div className="flex flex-col items-center">
                   <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
-                    <path 
-                      d="M32 0 L32 40 M24 32 L32 40 L40 32" 
-                      stroke="#007AFF" 
-                      strokeWidth="3" 
-                      strokeLinecap="round" 
+                    <path
+                      d="M32 0 L32 40 M24 32 L32 40 L40 32"
+                      stroke="#007AFF"
+                      strokeWidth="3"
+                      strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
@@ -142,15 +141,15 @@ const ComponentsPage = () => {
                   </div>
                   <span className="text-brand-light mt-2 text-sm font-medium">API Gateway</span>
                 </div>
-                
+
                 {/* Identity Server - Yellow arrow */}
                 <div className="flex flex-col items-center">
                   <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
-                    <path 
-                      d="M32 0 L32 40 M24 32 L32 40 L40 32" 
-                      stroke="#FFB300" 
-                      strokeWidth="3" 
-                      strokeLinecap="round" 
+                    <path
+                      d="M32 0 L32 40 M24 32 L32 40 L40 32"
+                      stroke="#FFB300"
+                      strokeWidth="3"
+                      strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
@@ -159,32 +158,36 @@ const ComponentsPage = () => {
                   </div>
                   <span className="text-brand-light mt-2 text-sm font-medium">Serveur d'identité</span>
                 </div>
-                
+
                 {/* Orchestrator - Gray arrow */}
                 <div className="flex flex-col items-center">
                   <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
-                    <path 
-                      d="M32 0 L32 40 M24 32 L32 40 L40 32" 
-                      stroke="#9CA3AF" 
-                      strokeWidth="3" 
-                      strokeLinecap="round" 
+                    <path
+                      d="M32 0 L32 40 M24 32 L32 40 L40 32"
+                      stroke="#d15325"
+                      strokeWidth="3"
+                      strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <div className="bg-gray-500/20 w-16 h-16 rounded-2xl flex items-center justify-center">
-                    <Workflow className="w-8 h-8 text-gray-400" />
+                  <div
+                    style={{ backgroundColor: '#d78262' }}
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                  >                    
+                    <Component className="w-8 h-8 text-brand-orange" />
                   </div>
+                  
                   <span className="text-brand-light mt-2 text-sm font-medium">Orchestrateur</span>
+
                 </div>
-                
                 {/* Process Executor - Black arrow */}
                 <div className="flex flex-col items-center">
                   <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
-                    <path 
-                      d="M32 0 L32 40 M24 32 L32 40 L40 32" 
-                      stroke="#1F2937" 
-                      strokeWidth="3" 
-                      strokeLinecap="round" 
+                    <path
+                      d="M32 0 L32 40 M24 32 L32 40 L40 32"
+                      stroke="#1F2937"
+                      strokeWidth="3"
+                      strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
@@ -267,19 +270,19 @@ const ComponentsPage = () => {
             <p className="text-brand-light/80 text-lg mb-8">
               Demandez une démonstration personnalisée pour voir comment ces composants peuvent transformer votre architecture
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/demo"
-                className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-brand-blue/90 transition-all duration-300"
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/demo"
+                className="bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
               >
                 Demander une démo
-              </a>
-              <a
-                href="/architecture"
+              </Link>
+              <Link
+                to="/architecture"
                 className="border border-brand-light/20 text-brand-light px-8 py-4 rounded-lg font-semibold hover:bg-brand-light/5 transition-all duration-300"
               >
                 Voir l'architecture
-              </a>
+              </Link>
             </div>
           </div>
         </section>

@@ -23,7 +23,7 @@ const steps = [
       subtitle: "Comment Meecrogate vous aide",
       benefits: [
         "Interface visuelle drag-and-drop pour concevoir vos APIs",
-        "Modélisation BPMN intégrée pour vos processus métiers",
+        "Modélisation JSON de vos processus métiers",
         "Génération automatique de la documentation OpenAPI",
         "Validation en temps réel de la cohérence de vos schémas",
         "Templates prédéfinis pour accélérer le démarrage"

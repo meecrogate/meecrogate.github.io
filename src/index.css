@@ -117,3 +117,9 @@
     animation-delay: 2s;
   }
 }
+
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+}

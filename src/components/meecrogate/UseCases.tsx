@@ -26,7 +26,7 @@ const UseCases = () => {
     {
       title: "Processus métiers",
       description: "Comme APIs REST",
-      details: "Transformez vos workflows BPMN en services web accessibles",
+      details: "Transformez vos workflows en services web accessibles",
       image: processusMetiersImg,
       link: "/usecases/processus-metiers"
     },
