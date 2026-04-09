@@ -20,9 +20,9 @@ const MentionsLegales = () => {
                   Siège social : 2 A RUE DE LA RÉPUBLIQUE
                   34160 SAINT-DREZERY
                 <br />
-                RCS : [Ville] [Numéro RCS]<br />
-                SIRET : [Numéro SIRET]<br />
-                TVA Intracommunautaire : [Numéro TVA]
+                NAF/APE : 62.01Z<br />
+                SIRET : 90057145600020<br />
+                TVA Intracommunautaire : FR55900571456
               </p>
             </section>
 

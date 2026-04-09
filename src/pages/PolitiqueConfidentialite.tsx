@@ -26,7 +26,7 @@ const PolitiqueConfidentialite = () => {
               <p>
                 Le responsable du traitement des données personnelles est :<br />
                 <strong className="text-white">Meecrogate SAS</strong><br />
-                [Adresse complète]<br />
+                2 RUE DE LA REPUBLIQUE 34160 SAINT-DREZERY<br />
                 Email : dpo@meecrogate.com
               </p>
             </section>
