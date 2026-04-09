@@ -108,6 +108,17 @@ const Navigation = () => {
                       </DropdownMenuItem>
                     ))}
                   </div>
+                  <div className="border-t border-gray-700 my-1"></div>
+                  <div className="px-2 py-1">
+                    <DropdownMenuItem asChild>
+                      <Link
+                        to="/comparatifs"
+                        className="text-gray-300 hover:text-white w-full font-medium"
+                      >
+                        📊 Comparatifs avec les autres solutions
+                      </Link>
+                    </DropdownMenuItem>
+                  </div>
                  {/*  <div className="border-t border-gray-700 my-1"></div>
                   <div className="px-2 py-1">
                     <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
