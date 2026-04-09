@@ -48,8 +48,8 @@ import { useMatomo } from '@datapunt/matomo-tracker-react';
 
 // Configuration de l'instance avec les variables d'environnement Vite
 const instance = createInstance({
-  urlBase: import.meta.env.VITE_MATOMO_URL as string,
-  siteId: Number(import.meta.env.VITE_MATOMO_SITE_ID),
+  urlBase: (import.meta.env.VITE_MATOMO_URL as string) || 'https://placeholder.matomo.cloud',
+  siteId: Number(import.meta.env.VITE_MATOMO_SITE_ID) || 1,
 });
 
 const queryClient = new QueryClient();
