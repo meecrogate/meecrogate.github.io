@@ -12,7 +12,7 @@ const StatusIcon = ({ status }: { status: "good" | "warning" | "bad" }) => {
 
 const techRows = [
   { feature: "Philosophie", gravitee: "Monolithique / Riche", kong: "Performance / DevOps", cloud: "Écosystème captif (Lock-in)", meecrogate: "Lean / Modulaire" },
-  { feature: "Poids & Ressources", gravitee: "Lourd (JVM / RAM++)", kong: "Léger (Lua-Nginx / Go)", cloud: "Géré par le Cloud", meecrogate: "Ultra-Léger (Go-based)" },
+  { feature: "Poids & Ressources", gravitee: "Lourd (dépendances tiers)", kong: "Léger (Lua-Nginx / Go)", cloud: "Géré par le Cloud", meecrogate: "Léger (Java-based)" },
   { feature: "Mode de Déploiement", gravitee: "VM / K8s", kong: "VM / K8s / Docker", cloud: "Cloud Only", meecrogate: "VM, K8s & Cloud Agnostic" },
   { feature: "Approche Config", gravitee: "UI de gestion dense", kong: "YAML / CLI / Scripts Lua", cloud: "Console Cloud / Terraform", meecrogate: "Low-Code Visuel" },
   { feature: "Audibilité", gravitee: "Binaire / Base de données", kong: "YAML complexe", cloud: "Propriétaire", meecrogate: "JSON Humain & Auditable" },
