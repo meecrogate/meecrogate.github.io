@@ -24,6 +24,7 @@ import ProcessusMetiersPage from "./pages/usecases/ProcessusMetiers";
 import OrchestrationPage from "./pages/usecases/Orchestration";
 import DeploiementHybridePage from "./pages/usecases/DeploiementHybride";
 import StandardisationPage from "./pages/usecases/Standardisation";
+import ComparatifsPage from "./pages/Comparatifs";
 
 // Client projects case studies
 import BancaireCaseStudy from "./pages/clientprojects/BancaireCaseStudy";
@@ -107,6 +108,7 @@ const App = () => (
           <Route path="/usecases/orchestration" element={<OrchestrationPage />} />
           <Route path="/usecases/deploiement-hybride" element={<DeploiementHybridePage />} />
           <Route path="/usecases/standardisation" element={<StandardisationPage />} />
+          <Route path="/comparatifs" element={<ComparatifsPage />} />
           <Route path="/projets-clients" element={<ClientProjects />} />
           <Route path="/projets-clients/bancaire" element={<BancaireCaseStudy />} />
           <Route path="/projets-clients/ecommerce" element={<EcommerceCaseStudy />} />
