@@ -123,9 +123,10 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
+    </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
-  </MatomoProvider>
+  </MatomoWrapper>
 );
 
 export default App;
