@@ -24,6 +24,10 @@ import ProcessusMetiersPage from "./pages/usecases/ProcessusMetiers";
 import OrchestrationPage from "./pages/usecases/Orchestration";
 import DeploiementHybridePage from "./pages/usecases/DeploiementHybride";
 import StandardisationPage from "./pages/usecases/Standardisation";
+<<<<<<< HEAD
+=======
+import ComparatifsPage from "./pages/Comparatifs";
+>>>>>>> source-repo/main
 
 // Client projects case studies
 import BancaireCaseStudy from "./pages/clientprojects/BancaireCaseStudy";
@@ -42,6 +46,7 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
 import { createInstance, MatomoProvider } from '@datapunt/matomo-tracker-react';
+<<<<<<< HEAD
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
@@ -57,12 +62,38 @@ const queryClient = new QueryClient();
 
 
 
+=======
+import { useEffect, type ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
+
+const matomoUrl = import.meta.env.VITE_MATOMO_URL as string;
+const matomoSiteId = import.meta.env.VITE_MATOMO_SITE_ID;
+
+let instance: ReturnType<typeof createInstance> | null = null;
+try {
+  if (matomoUrl && matomoSiteId) {
+    instance = createInstance({
+      urlBase: matomoUrl,
+      siteId: Number(matomoSiteId),
+    });
+  }
+} catch (e) {
+  console.warn('Matomo initialization failed:', e);
+}
+
+const queryClient = new QueryClient();
+
+>>>>>>> source-repo/main
 const MatomoTracker = () => {
   const location = useLocation();
   const { trackPageView } = useMatomo();
 
   useEffect(() => {
+<<<<<<< HEAD
     // On force l'URL complète pour que le HashRouter soit bien interprété
+=======
+>>>>>>> source-repo/main
     trackPageView({
       href: window.location.href,
     });
@@ -71,16 +102,31 @@ const MatomoTracker = () => {
   return null;
 };
 
+<<<<<<< HEAD
 
 const App = () => (
   /* @ts-ignore - Ignore l'erreur de type 'children' sur React 18 */
   <MatomoProvider value={instance}>
+=======
+const MatomoWrapper = ({ children }: { children: ReactNode }) => {
+  if (!instance) return <>{children}</>;
+  // @ts-ignore - React 18 children type
+  return <MatomoProvider value={instance}>{children}</MatomoProvider>;
+};
+
+const App = () => (
+  <MatomoWrapper>
+>>>>>>> source-repo/main
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <HashRouter>
+<<<<<<< HEAD
           <MatomoTracker /> {/* 2. On suit les changements de routes ici */}
+=======
+          {instance && <MatomoTracker />}
+>>>>>>> source-repo/main
           <ScrollToTop />
           <Routes>
           <Route path="/" element={<Index />} />
@@ -98,6 +144,10 @@ const App = () => (
           <Route path="/usecases/orchestration" element={<OrchestrationPage />} />
           <Route path="/usecases/deploiement-hybride" element={<DeploiementHybridePage />} />
           <Route path="/usecases/standardisation" element={<StandardisationPage />} />
+<<<<<<< HEAD
+=======
+          <Route path="/comparatifs" element={<ComparatifsPage />} />
+>>>>>>> source-repo/main
           <Route path="/projets-clients" element={<ClientProjects />} />
           <Route path="/projets-clients/bancaire" element={<BancaireCaseStudy />} />
           <Route path="/projets-clients/ecommerce" element={<EcommerceCaseStudy />} />
@@ -113,10 +163,17 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+<<<<<<< HEAD
       </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
   </MatomoProvider>
+=======
+        </HashRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </MatomoWrapper>
+>>>>>>> source-repo/main
 );
 
 export default App;
