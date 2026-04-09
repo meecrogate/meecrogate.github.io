@@ -42,27 +42,32 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
 import { createInstance, MatomoProvider } from '@datapunt/matomo-tracker-react';
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 
-// Configuration de l'instance avec les variables d'environnement Vite
-const instance = createInstance({
-  urlBase: (import.meta.env.VITE_MATOMO_URL as string) || 'https://placeholder.matomo.cloud',
-  siteId: Number(import.meta.env.VITE_MATOMO_SITE_ID) || 1,
-});
+const matomoUrl = import.meta.env.VITE_MATOMO_URL as string;
+const matomoSiteId = import.meta.env.VITE_MATOMO_SITE_ID;
+
+let instance: ReturnType<typeof createInstance> | null = null;
+try {
+  if (matomoUrl && matomoSiteId) {
+    instance = createInstance({
+      urlBase: matomoUrl,
+      siteId: Number(matomoSiteId),
+    });
+  }
+} catch (e) {
+  console.warn('Matomo initialization failed:', e);
+}
 
 const queryClient = new QueryClient();
-
-
-
 
 const MatomoTracker = () => {
   const location = useLocation();
   const { trackPageView } = useMatomo();
 
   useEffect(() => {
-    // On force l'URL complète pour que le HashRouter soit bien interprété
     trackPageView({
       href: window.location.href,
     });
@@ -71,16 +76,20 @@ const MatomoTracker = () => {
   return null;
 };
 
+const MatomoWrapper = ({ children }: { children: ReactNode }) => {
+  if (!instance) return <>{children}</>;
+  // @ts-ignore - React 18 children type
+  return <MatomoProvider value={instance}>{children}</MatomoProvider>;
+};
 
 const App = () => (
-  /* @ts-ignore - Ignore l'erreur de type 'children' sur React 18 */
-  <MatomoProvider value={instance}>
+  <MatomoWrapper>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <HashRouter>
-          <MatomoTracker /> {/* 2. On suit les changements de routes ici */}
+          {instance && <MatomoTracker />}
           <ScrollToTop />
           <Routes>
           <Route path="/" element={<Index />} />
@@ -113,10 +122,10 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </HashRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-  </MatomoProvider>
+        </HashRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </MatomoWrapper>
 );
 
 export default App;
