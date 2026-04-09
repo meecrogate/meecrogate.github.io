@@ -4,19 +4,17 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, Loader2 } from "lucide-react"; // <-- Ajout de Loader2
+import { Send, Loader2 } from "lucide-react"; 
 import { useToast } from "@/hooks/use-toast";
 
 // --- Définitions SVG Lucide ---
 
-// Icône Zap (Éclair / Vitesse pour Pro)
 const Zap = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
     </svg>
 );
 
-// Icône Building2 (Bâtiment pour Entreprise)
 const Building2 = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <path d="M4 22V4a2 2 0 0 1 2-2h8.5L20 7.5V22h2"></path>
@@ -27,7 +25,6 @@ const Building2 = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
-// Icône Check (Coche dans un cercle / Inclus)
 const Check = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <circle cx="12" cy="12" r="10" />
@@ -35,7 +32,6 @@ const Check = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
-// Icône Plus (Plus dans un cercle / Options)
 const Plus = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <circle cx="12" cy="12" r="10"/>
@@ -47,7 +43,7 @@ const Plus = (props: React.SVGProps<SVGSVGElement>) => (
 const PricingHero = () => {
     const { toast } = useToast();
     const [isDialogOpen, setIsDialogOpen] = useState(false);
-    const [isSubmitting, setIsSubmitting] = useState(false); // <-- Nouvel état de chargement
+    const [isSubmitting, setIsSubmitting] = useState(false); 
     const [selectedPlan, setSelectedPlan] = useState<string>("");
     const [formData, setFormData] = useState({
         nom: "",
@@ -58,10 +54,8 @@ const PricingHero = () => {
         message: ""
     });
 
-    // 🔑 Clé d'accès Web3Forms
     const WEB3FORMS_ACCESS_KEY = "081aaa9f-94c9-4b5b-8688-df70b9f15bb6";
 
-    // Classes de survol partagées pour un effet interactif
     const hoverClasses = "transition-all duration-300 hover:scale-[1.01] hover:shadow-indigo-500/50 hover:border-indigo-400 cursor-pointer";
 
     const handleOpenDialog = (plan: string) => {
@@ -103,7 +97,6 @@ const PricingHero = () => {
                 toast({
                     title: "Message envoyé !",
                     description: "Nous avons bien reçu votre demande et vous recontacterons très vite.",
-                    // Variante par défaut ou "success" selon la configuration de votre useToast
                 });
                 
                 setIsDialogOpen(false);
@@ -190,6 +183,10 @@ const PricingHero = () => {
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
                                         4 instances Meecrogate Gateway en production
                                     </li>
+                                    <li className="flex items-start">
+                                        <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
+                                        Control Station: 3 rôles utilisateurs Builders , rôles "Lecteur" illimités
+                                    </li>
                                 </ul>
                             </div>
                             
@@ -198,19 +195,19 @@ const PricingHero = () => {
                                 <ul className="space-y-2 text-slate-200 text-sm">
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Gestion des Identités: Meecrogate Serveur ID
+                                        Meecrogate Serveur ID
                                     </li>
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Licences pluriannuelles : 18 000–30 000 €/an
+                                        Orchestrateur
                                     </li>
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        3 ans : 16 200–27 000 €/an
+                                        Process Executor
                                     </li>
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        5 ans : 14 400–24 000 €/an
+                                        Licences pluriannuelles (18k-30k€/an)
                                     </li>
                                 </ul>
                             </div>
@@ -250,10 +247,6 @@ const PricingHero = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Gestion de l'identification: Meecrogate Serveur ID
-                                    </li>
-                                    <li className="flex items-start">
-                                        <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
                                         Équipe de Projet d'intégration dédiée
                                     </li>
                                     <li className="flex items-start">
@@ -262,29 +255,33 @@ const PricingHero = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Instances Meecrogate Gateway illimitées
+                                        Audit et réalisation d'un pilote de 4 à 6 semaines pour valider l'adéquation de Meecrogate à votre contexte
                                     </li>
                                 </ul>
                             </div>
                             
                             <div className="mb-6 text-left">
-                                <h3 className="text-sm font-semibold text-indigo-300 mb-2 border-b border-indigo-700 pb-1">Options:</h3>
+                                <h3 className="text-sm font-semibold text-indigo-300 mb-2 border-b border-indigo-700 pb-1">Composition à la carte de votre solution avec les modules Meecrogate</h3>
                                 <ul className="space-y-2 text-slate-200 text-sm">
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Ajout de fonctionnalités Custom
+                                        Meecrogate Serveur ID
                                     </li>
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Licences pluriannuelles
+                                        Orchestrateur
                                     </li>
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Migration et mode hybride
+                                        Process Executor
                                     </li>
                                     <li className="flex items-start">
                                         <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        Support d'Industry Standard APIs (TMForum, OpenBanking...)
+                                        Control Station
+                                    </li>
+                                    <li className="flex items-start">
+                                        <Plus className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
+                                        Migration, mode hybride & APIs spécifiques
                                     </li>
                                 </ul>
                             </div>
@@ -317,12 +314,12 @@ const PricingHero = () => {
                                 <tr className="hover:bg-slate-700/50 transition-colors">
                                     <td className="py-3 px-4 border-t border-slate-700">APIs sécurisées</td>
                                     <td className="py-3 px-4 border-t border-slate-700">10–20</td>
-                                    <td className="py-3 px-4 border-t border-slate-700">Illimité</td>
+                                    <td className="py-3 px-4 border-t border-slate-700">sur devis</td>
                                 </tr>
                                 <tr className="hover:bg-slate-700/50 transition-colors">
                                     <td className="py-3 px-4 border-t border-slate-700">Instances Gateway</td>
                                     <td className="py-3 px-4 border-t border-slate-700">4</td>
-                                    <td className="py-3 px-4 border-t border-slate-700">Illimité</td>
+                                    <td className="py-3 px-4 border-t border-slate-700">sur devis</td>
                                 </tr>
                                 <tr className="hover:bg-slate-700/50 transition-colors">
                                     <td className="py-3 px-4 border-t border-slate-700">Intégration & onboarding</td>
@@ -342,7 +339,22 @@ const PricingHero = () => {
                                 <tr className="hover:bg-slate-700/50 transition-colors">
                                     <td className="py-3 px-4 border-t border-slate-700">Serveur ID</td>
                                     <td className="py-3 px-4 border-t border-slate-700"><span className="text-indigo-400 font-bold">+ Option</span></td>
-                                    <td className="py-3 px-4 border-t border-slate-700"><span className="text-indigo-400 font-bold">✓ Inclus</span></td>
+                                    <td className="py-3 px-4 border-t border-slate-700"><span className="text-indigo-400 font-bold">+ Options</span></td>
+                                </tr>
+                                <tr className="hover:bg-slate-700/50 transition-colors">
+                                    <td className="py-3 px-4 border-t border-slate-700">Orchestrateur</td>
+                                    <td className="py-3 px-4 border-t border-slate-700"><span className="text-indigo-400 font-bold">+ Option</span></td>
+                                    <td className="py-3 px-4 border-t border-slate-700"><span className="text-indigo-400 font-bold">+ Options</span></td>
+                                </tr>
+                                <tr className="hover:bg-slate-700/50 transition-colors">
+                                    <td className="py-3 px-4 border-t border-slate-700">Process Executor</td>
+                                    <td className="py-3 px-4 border-t border-slate-700"><span className="text-indigo-400 font-bold">+ Option</span></td>
+                                    <td className="py-3 px-4 border-t border-slate-700"><span className="text-indigo-400 font-bold">+ Options</span></td>
+                                </tr>
+                                <tr className="hover:bg-slate-700/50 transition-colors">
+                                    <td className="py-3 px-4 border-t border-slate-700">Control Station rôles utilisateurs</td>
+                                    <td className="py-3 px-4 border-t border-slate-700">3 rôles Builder, rôles "Lecteur" illimités</td>
+                                    <td className="py-3 px-4 border-t border-slate-700"><span className="text-indigo-400 font-bold">+ Options</span></td>
                                 </tr>
                                 <tr className="hover:bg-slate-700/50 transition-colors">
                                     <td className="py-3 px-4 border-t border-slate-700 font-bold">Prix (HT / mois)</td>
