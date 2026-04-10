@@ -183,7 +183,7 @@ const ComponentsPage = () => {
                   <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
                     <path
                       d="M32 0 L32 40 M24 32 L32 40 L40 32"
-                      stroke="#1F2937"
+                      stroke="#6B7280"
                       strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
