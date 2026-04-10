@@ -54,7 +54,7 @@ const ComponentsPage = () => {
     },
     {
       icon: Network,
-      iconColor: "text-brand-blue",
+      iconColor: "text-gray-400",
       title: "Orchestrateur",
       subtitle: "Synchrone & Asynchrone",
       description: "Moteur d'orchestration intelligent pour coordonner vos services et processus métier complexes.",
@@ -72,12 +72,12 @@ const ComponentsPage = () => {
         "Visibilité complète sur les flux de données",
         "Scalabilité horizontale native"
       ],
-      gradient: "from-brand-blue/20 to-brand-blue/30",
-      border: "border-brand-blue/30"
+      gradient: "from-gray-500/20 to-gray-500/30",
+      border: "border-gray-500/30"
     },
     {
       icon: Zap,
-      iconColor: "text-brand-orange",
+      iconColor: "text-gray-300",
       title: "Process Executor",
       subtitle: "Process Automatisation",
       description: "Moteur d'exécution de processus pour automatiser vos workflows.",
@@ -93,8 +93,8 @@ const ComponentsPage = () => {
         "Amélioration de la traçabilité",
         "Optimisation continue des workflows"
       ],
-      gradient: "from-brand-orange/20 to-brand-orange/30",
-      border: "border-brand-orange/30"
+      gradient: "from-gray-800/50 to-gray-800/60",
+      border: "border-gray-600"
     }
   ];
 
