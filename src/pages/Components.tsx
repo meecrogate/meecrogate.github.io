@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Network, ShieldCheck, Workflow, Zap, Shield, Component } from "lucide-react";
+import { Network, ShieldCheck, Fingerprint, Workflow, Zap, Shield, Component } from "lucide-react";
 import componentsHero from "@/assets/components-hero.png";
 
 const ComponentsPage = () => {
   const components = [
     {
-      icon: Network,
+      icon: ShieldCheck,
       iconColor: "text-brand-blue",
       title: "API Gateway",
       subtitle: "Sécurisation & Routage",
@@ -30,7 +30,7 @@ const ComponentsPage = () => {
       border: "border-brand-blue/30"
     },
     {
-      icon: ShieldCheck,
+      icon: Fingerprint,
       iconColor: "text-brand-orange",
       title: "Serveur d'identité",
       subtitle: "Gestion des accès",
@@ -53,8 +53,8 @@ const ComponentsPage = () => {
       border: "border-brand-orange/30"
     },
     {
-      icon: Workflow,
-      iconColor: "text-brand-blue",
+      icon: Network,
+      iconColor: "text-gray-400",
       title: "Orchestrateur",
       subtitle: "Synchrone & Asynchrone",
       description: "Moteur d'orchestration intelligent pour coordonner vos services et processus métier complexes.",
@@ -72,12 +72,12 @@ const ComponentsPage = () => {
         "Visibilité complète sur les flux de données",
         "Scalabilité horizontale native"
       ],
-      gradient: "from-brand-blue/20 to-brand-blue/30",
-      border: "border-brand-blue/30"
+      gradient: "from-gray-500/20 to-gray-500/30",
+      border: "border-gray-500/30"
     },
     {
       icon: Zap,
-      iconColor: "text-brand-orange",
+      iconColor: "text-gray-300",
       title: "Process Executor",
       subtitle: "Process Automatisation",
       description: "Moteur d'exécution de processus pour automatiser vos workflows.",
@@ -93,8 +93,8 @@ const ComponentsPage = () => {
         "Amélioration de la traçabilité",
         "Optimisation continue des workflows"
       ],
-      gradient: "from-brand-orange/20 to-brand-orange/30",
-      border: "border-brand-orange/30"
+      gradient: "from-gray-800/50 to-gray-800/60",
+      border: "border-gray-600"
     }
   ];
 
@@ -120,6 +120,9 @@ const ComponentsPage = () => {
                   src={componentsHero}
                   alt="Plateforme Meecrogate - API Management et déploiement hybride"
                   className="w-full h-auto rounded-2xl shadow-2xl border border-brand-light/10"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                 />
               </div>
 
@@ -137,7 +140,7 @@ const ComponentsPage = () => {
                     />
                   </svg>
                   <div className="bg-brand-blue/20 w-16 h-16 rounded-2xl flex items-center justify-center">
-                    <Network className="w-8 h-8 text-brand-blue" />
+                    <ShieldCheck className="w-8 h-8 text-brand-blue" />
                   </div>
                   <span className="text-brand-light mt-2 text-sm font-medium">API Gateway</span>
                 </div>
@@ -154,7 +157,7 @@ const ComponentsPage = () => {
                     />
                   </svg>
                   <div className="bg-brand-orange/20 w-16 h-16 rounded-2xl flex items-center justify-center">
-                    <ShieldCheck className="w-8 h-8 text-brand-orange" />
+                    <Fingerprint className="w-8 h-8 text-brand-orange" />
                   </div>
                   <span className="text-brand-light mt-2 text-sm font-medium">Serveur d'identité</span>
                 </div>
@@ -164,28 +167,23 @@ const ComponentsPage = () => {
                   <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
                     <path
                       d="M32 0 L32 40 M24 32 L32 40 L40 32"
-                      stroke="#d15325"
+                      stroke="#6B7280"
                       strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <div
-                    style={{ backgroundColor: '#d78262' }}
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                  >                    
-                    <Component className="w-8 h-8 text-brand-orange" />
+                  <div className="bg-gray-500/20 w-16 h-16 rounded-2xl flex items-center justify-center border border-gray-500/30">
+                    <Network className="w-8 h-8 text-gray-400" />
                   </div>
-                  
                   <span className="text-brand-light mt-2 text-sm font-medium">Orchestrateur</span>
-
                 </div>
                 {/* Process Executor - Black arrow */}
                 <div className="flex flex-col items-center">
                   <svg className="w-16 h-16 mb-4" viewBox="0 0 64 64" fill="none">
                     <path
                       d="M32 0 L32 40 M24 32 L32 40 L40 32"
-                      stroke="#1F2937"
+                      stroke="#6B7280"
                       strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
