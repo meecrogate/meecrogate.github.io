@@ -179,10 +179,7 @@ const PricingHero = () => {
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
                                         Support Standard par tickets
                                     </li>
-                                    <li className="flex items-start">
-                                        <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
-                                        4 instances Meecrogate Gateway en production
-                                    </li>
+                                   
                                     <li className="flex items-start">
                                         <Check className="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0" />
                                         Control Station: 3 rôles utilisateurs Builders , rôles "Lecteur" illimités

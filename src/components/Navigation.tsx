@@ -49,9 +49,9 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/">
-              <img 
-                src={meecrogateLogoSvg} 
-                alt="Meecrogate" 
+              <img
+                src={meecrogateLogoSvg}
+                alt="Meecrogate"
                 className="h-8 hover:opacity-80 transition-opacity"
               />
             </Link>
@@ -64,23 +64,21 @@ const Navigation = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                    isActive(item.path)
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive(item.path)
                       ? "text-blue-400 bg-blue-400/10"
                       : "text-gray-300 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              
+
               {/* Solutions dropdown */}
               <DropdownMenu modal={false}>
-                <DropdownMenuTrigger className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1 outline-none ${
-                  isUseCaseActive() || location.pathname.includes('/projets-clients')
+                <DropdownMenuTrigger className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1 outline-none ${isUseCaseActive() || location.pathname.includes('/projets-clients')
                     ? "text-blue-400 bg-blue-400/10"
                     : "text-gray-300 hover:text-white"
-                }`}>
+                  }`}>
                   Solutions
                   <ChevronDown size={16} />
                 </DropdownMenuTrigger>
@@ -119,7 +117,8 @@ const Navigation = () => {
                       </Link>
                     </DropdownMenuItem>
                   </div>
-                 {/*  <div className="border-t border-gray-700 my-1"></div>
+                  {/*  
+                 <div className="border-t border-gray-700 my-1"></div>
                   <div className="px-2 py-1">
                     <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
                       Projets clients
@@ -134,7 +133,9 @@ const Navigation = () => {
                         </Link>
                       </DropdownMenuItem>
                     ))}
-                  </div> */}
+                  </div> 
+                  
+                  */}
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -169,19 +170,18 @@ const Navigation = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 ${
-                    isActive(item.path)
+                  className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 ${isActive(item.path)
                       ? "text-blue-400 bg-blue-400/10"
                       : "text-gray-300 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              
+
               <div className="px-3 py-2">
                 <div className="text-gray-400 text-sm font-medium mb-2">Solutions</div>
-                
+
                 <div className="mb-3">
                   <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
                     Cas d'usage
@@ -204,7 +204,18 @@ const Navigation = () => {
                     </Link>
                   ))}
                 </div>
+                <div className="border-t border-gray-700 my-1"></div>
+                <div className="px-2 py-1">
+                  <Link
+                    to="/comparatifs"
+                    className="text-gray-300 hover:text-white w-full font-medium"
+                  >
+                    Comparatifs avec les autres solutions
+                  </Link>
 
+                </div>
+
+                {/* 
                 <div>
                   <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
                     Projets clients
@@ -220,8 +231,10 @@ const Navigation = () => {
                     </Link>
                   ))}
                 </div>
+                */}
               </div>
-              
+
+
               <div className="pt-2">
                 <Link to="/demo" onClick={() => setIsMenuOpen(false)}>
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">
