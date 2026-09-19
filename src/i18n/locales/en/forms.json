@@ -1,0 +1,58 @@
+{
+  "fields": {
+    "name": {
+      "label": "Name *",
+      "placeholder": "Your name"
+    },
+    "company": {
+      "label": "Company *",
+      "placeholder": "Company name"
+    },
+    "email": {
+      "label": "Email *",
+      "placeholder": "your.email@company.com"
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "+33 1 23 45 67 89"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Tell us about your needs or questions..."
+    }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "subtitle": "Questions about Meecrogate? Our team of experts is here to support you through your digital transformation.",
+    "formTitle": "Send us a message",
+    "fullName": {
+      "label": "Full name *",
+      "placeholder": "Your full name"
+    },
+    "company": {
+      "label": "Company *",
+      "placeholder": "Your company name"
+    },
+    "subject": {
+      "label": "Subject *",
+      "placeholder": "What is your request about?"
+    },
+    "message": {
+      "label": "Message *",
+      "placeholder": "Tell us about your project, your needs or your questions in detail..."
+    },
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "success": {
+      "title": "Message sent!",
+      "description": "Thanks for reaching out. Our team has received your request and will come back to you very soon.",
+      "again": "Send another message",
+      "toast": "Your message is on its way! We will get back to you very soon."
+    },
+    "errors": {
+      "send": "Something went wrong while sending your message.",
+      "network": "The server could not be reached. Please try again later."
+    },
+    "mailSubject": "[Meecrogate] New message from {{name}} ({{company}})"
+  }
+}

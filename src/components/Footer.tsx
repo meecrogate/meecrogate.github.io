@@ -1,9 +1,12 @@
 
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Link } from "@/i18n/Link";
 import { Button } from "@/components/ui/button";
 import meecrogateLogoSvg from "@/assets/meecrogate-logo.svg";
 
 const Footer = () => {
+  const { t } = useTranslation("common");
+
   return (
     <footer className="bg-gray-900/80 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -15,44 +18,43 @@ const Footer = () => {
               className="h-8 mb-4"
             />
             <p className="text-gray-400 mb-6 max-w-md">
-              La plateforme modulaire d'APIs cloud-native. Solution composable pour 
-              l'exposition, la sécurisation et l'orchestration d'APIs.
+              {t("footer.tagline")}
             </p>
             <div className="flex space-x-4">
               <Link to="/demo">
                 <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
-                  Support
+                  {t("actions.support")}
                 </Button>
               </Link>
             </div>
           </div>
           
           <div>
-            <h4 className="font-semibold text-white mb-4">Composants</h4>
+            <h4 className="font-semibold text-white mb-4">{t("footer.components")}</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/components/api-gateway" className="hover:text-white transition-colors">API Gateway</Link></li>
-              <li><Link to="/components/identity-server" className="hover:text-white transition-colors">Serveur d'identité</Link></li>
-              <li><Link to="/components/orchestrator" className="hover:text-white transition-colors">Orchestrateur</Link></li>
-              <li><Link to="/components/process-executor" className="hover:text-white transition-colors">Process Executor</Link></li>
+              <li><Link to="/components/api-gateway" className="hover:text-white transition-colors">{t("footer.componentLinks.apiGateway")}</Link></li>
+              <li><Link to="/components/identity-server" className="hover:text-white transition-colors">{t("footer.componentLinks.identityServer")}</Link></li>
+              <li><Link to="/components/orchestrator" className="hover:text-white transition-colors">{t("footer.componentLinks.orchestrator")}</Link></li>
+              <li><Link to="/components/process-executor" className="hover:text-white transition-colors">{t("footer.componentLinks.processExecutor")}</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold text-white mb-4">Ressources</h4>
+            <h4 className="font-semibold text-white mb-4">{t("footer.resources")}</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/usecases" className="hover:text-white transition-colors">Cas d'usage</Link></li>
-              <li><Link to="/demo" className="hover:text-white transition-colors">Contact</Link></li>
+              <li><Link to="/usecases" className="hover:text-white transition-colors">{t("nav.useCases")}</Link></li>
+              <li><Link to="/demo" className="hover:text-white transition-colors">{t("actions.contact")}</Link></li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2026 Meecrogate. Tous droits réservés.
+            {t("footer.copyright")}
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/mentions-legales" className="text-gray-400 hover:text-white text-sm transition-colors">Mentions légales</Link>
-            <Link to="/politique-confidentialite" className="text-gray-400 hover:text-white text-sm transition-colors">Politique de confidentialité</Link>
+            <Link to="/mentions-legales" className="text-gray-400 hover:text-white text-sm transition-colors">{t("footer.legalNotice")}</Link>
+            <Link to="/politique-confidentialite" className="text-gray-400 hover:text-white text-sm transition-colors">{t("footer.privacyPolicy")}</Link>
           </div>
         </div>
       </div>
@@ -61,4 +63,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

@@ -1,0 +1,58 @@
+{
+  "fields": {
+    "name": {
+      "label": "Nom *",
+      "placeholder": "Votre nom"
+    },
+    "company": {
+      "label": "Entreprise *",
+      "placeholder": "Nom de l'entreprise"
+    },
+    "email": {
+      "label": "Email *",
+      "placeholder": "votre.email@entreprise.com"
+    },
+    "phone": {
+      "label": "Téléphone",
+      "placeholder": "+33 1 23 45 67 89"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Décrivez vos besoins ou questions..."
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Vous avez des questions sur Meecrogate ? Notre équipe d'experts est là pour vous accompagner dans votre transformation digitale.",
+    "formTitle": "Envoyez-nous un message",
+    "fullName": {
+      "label": "Nom complet *",
+      "placeholder": "Votre nom complet"
+    },
+    "company": {
+      "label": "Entreprise *",
+      "placeholder": "Nom de votre entreprise"
+    },
+    "subject": {
+      "label": "Sujet *",
+      "placeholder": "Objet de votre demande"
+    },
+    "message": {
+      "label": "Message *",
+      "placeholder": "Décrivez votre projet, vos besoins ou vos questions en détail..."
+    },
+    "submit": "Envoyer le message",
+    "submitting": "Envoi en cours...",
+    "success": {
+      "title": "Message envoyé !",
+      "description": "Merci de nous avoir contactés. Notre équipe a bien reçu votre demande et reviendra vers vous très rapidement.",
+      "again": "Envoyer un autre message",
+      "toast": "Votre message a bien été envoyé ! Nous vous recontacterons très vite."
+    },
+    "errors": {
+      "send": "Erreur lors de l'envoi du message.",
+      "network": "Impossible de joindre le serveur. Veuillez réessayer plus tard."
+    },
+    "mailSubject": "[Meecrogate] Nouveau message de {{name}} ({{company}})"
+  }
+}

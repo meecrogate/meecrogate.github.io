@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Features — API gateway, orchestration & low-code",
+    "description": "Explore what Meecrogate does: API gateway, process orchestration, identity, auditable JSON configuration and cloud-agnostic deployment."
+  },
+  "title": "Core components",
+  "subtitle": "Every component is stateless, modular and fully configurable without code.",
+  "explore": {
+    "title": "Explore the components",
+    "description": "Pick a component to see what it does in detail and where it sits in the architecture."
+  },
+  "items": {
+    "apiGateway": {
+      "title": "API Gateway",
+      "description": "Expose and fully secure your APIs",
+      "capabilities": [
+        "REST, OpenAPI and AsyncAPI APIs",
+        "Auth, OAuth2, JWT, quotas, CORS",
+        "Smart routing and versioning",
+        "Built-in documentation"
+      ]
+    },
+    "identityServer": {
+      "title": "Identity & subscription server",
+      "description": "Centralised management of users and access",
+      "capabilities": [
+        "Users, clients and roles in one place",
+        "Customisable developer portal",
+        "Quota and SLA assignment",
+        "SSO / LDAP integration"
+      ]
+    },
+    "orchestrator": {
+      "title": "API orchestrator",
+      "description": "Smart synchronous and asynchronous orchestration",
+      "capabilities": [
+        "Chaining of services",
+        "Conditions and transformations",
+        "Event-driven triggers",
+        "OpenAPI & AsyncAPI support"
+      ]
+    },
+    "processExecutor": {
+      "title": "Process Executor",
+      "description": "Business processes runnable as web services",
+      "capabilities": [
+        "Automation engines",
+        "Web services without code",
+        "Full observability"
+      ]
+    }
+  }
+}

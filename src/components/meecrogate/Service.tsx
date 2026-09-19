@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -15,6 +16,7 @@ const Service = () => {
     message: ""
   });
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  const { t } = useTranslation(["service", "forms"]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -28,8 +30,8 @@ const Service = () => {
     e.preventDefault();
     console.log("Formulaire soumis:", formData);
     toast({
-      title: "Demande envoyée",
-      description: "Nous vous contacterons rapidement pour discuter de votre projet d'intégration.",
+      title: t("toast.title"),
+      description: t("toast.description"),
     });
     setFormData({
       nom: "",
@@ -47,12 +49,12 @@ const Service = () => {
       <div className="text-center mb-16">
         <div className="flex flex-col items-center mb-6">
           <h2 className="text-5xl sm:text-6xl font-extrabold text-white mb-3 tracking-tight">
-            Service d'intégration
+            {t("title")}
           </h2>
           <div className="w-16 h-1 bg-indigo-500 rounded-sm"></div>
         </div>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-          Notre équipe accompagne l'intégration de la solution Meecrogate dans votre contexte spécifique, pour un déploiement optimal sur votre infrastructure.
+          {t("subtitle")}
         </p>
       </div>
 
@@ -60,21 +62,12 @@ const Service = () => {
       <div className="max-w-3xl mx-auto">
         <div className="bg-slate-800/70 border border-slate-700/30 rounded-xl p-8 text-left text-slate-200 backdrop-blur-sm">
           <ul className="space-y-6 list-inside list-disc">
-            <li>
-              <span className="font-semibold text-white">Diagnostic de l'existant :</span> Analyse de votre environnement technique, architecture, flux d'API et contraintes d'intégration.
-            </li>
-            <li>
-              <span className="font-semibold text-white">Proposition d'architecture cible :</span> Définition d'une architecture adaptée à votre système d'information permettant une adoption progressive et sécurisée de Meecrogate.
-            </li>
-            <li>
-              <span className="font-semibold text-white">Déploiement sur mesure :</span> Accompagnement à l'installation sur vos environnements (cloud, on-premise ou hybride) avec adaptation des configurations et orchestrations selon vos besoins.
-            </li>
-            <li>
-              <span className="font-semibold text-white">Transfert de compétences :</span> Formations et meilleures pratiques pour une prise en main rapide par vos équipes.
-            </li>
-            <li>
-              <span className="font-semibold text-white">Support renforcé :</span> Accès à un support dédié tout au long du projet de migration et d'intégration.
-            </li>
+            {["diagnostic", "targetArchitecture", "deployment", "training", "support"].map((step) => (
+              <li key={step}>
+                <span className="font-semibold text-white">{t(`steps.${step}.title`)}</span>{" "}
+                {t(`steps.${step}.description`)}
+              </li>
+            ))}
           </ul>
           <div className="mt-10 text-center">
             <Button 
@@ -82,7 +75,7 @@ const Service = () => {
               className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 text-lg font-semibold"
               onClick={() => setIsContactDialogOpen(true)}
             >
-              Discuter de mon projet d'intégration
+              {t("cta")}
             </Button>
           </div>
         </div>
@@ -93,14 +86,14 @@ const Service = () => {
         <DialogContent className="sm:max-w-[500px] bg-slate-800 border-slate-700">
           <DialogHeader>
             <DialogTitle className="text-white text-xl font-bold">
-              Demande d'intégration
+              {t("dialog.title")}
             </DialogTitle>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="nom" className="text-slate-300">
-                  Nom *
+                  {t("forms:fields.name.label")}
                 </Label>
                 <Input
                   id="nom"
@@ -109,12 +102,12 @@ const Service = () => {
                   onChange={handleInputChange}
                   required
                   className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
-                  placeholder="Votre nom"
+                  placeholder={t("forms:fields.name.placeholder")}
                 />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="entreprise" className="text-slate-300">
-                  Entreprise *
+                  {t("forms:fields.company.label")}
                 </Label>
                 <Input
                   id="entreprise"
@@ -123,14 +116,14 @@ const Service = () => {
                   onChange={handleInputChange}
                   required
                   className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
-                  placeholder="Nom de l'entreprise"
+                  placeholder={t("forms:fields.company.placeholder")}
                 />
               </div>
             </div>
             
             <div className="space-y-2">
               <Label htmlFor="email" className="text-slate-300">
-                Email *
+                {t("forms:fields.email.label")}
               </Label>
               <Input
                 id="email"
@@ -140,13 +133,13 @@ const Service = () => {
                 onChange={handleInputChange}
                 required
                 className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
-                placeholder="votre.email@entreprise.com"
+                placeholder={t("forms:fields.email.placeholder")}
               />
             </div>
             
             <div className="space-y-2">
               <Label htmlFor="telephone" className="text-slate-300">
-                Téléphone
+                {t("forms:fields.phone.label")}
               </Label>
               <Input
                 id="telephone"
@@ -155,13 +148,13 @@ const Service = () => {
                 value={formData.telephone}
                 onChange={handleInputChange}
                 className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
-                placeholder="+33 1 23 45 67 89"
+                placeholder={t("forms:fields.phone.placeholder")}
               />
             </div>
             
             <div className="space-y-2">
               <Label htmlFor="message" className="text-slate-300">
-                Message
+                {t("forms:fields.message.label")}
               </Label>
               <Textarea
                 id="message"
@@ -170,7 +163,7 @@ const Service = () => {
                 onChange={handleInputChange}
                 rows={4}
                 className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
-                placeholder="Décrivez vos besoins ou questions..."
+                placeholder={t("forms:fields.message.placeholder")}
               />
             </div>
             
@@ -179,7 +172,7 @@ const Service = () => {
                 type="submit"
                 className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white"
               >
-                Envoyer la demande
+                {t("dialog.submit")}
               </Button>
             </div>
           </form>

@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "Services — API guidance & expertise",
+    "description": "Consulting, integration and support from the Meecrogate team: our experts stay with you from proof of concept to production rollout of your sovereign API platform."
+  },
+  "title": "Integration service",
+  "subtitle": "Our team works alongside you to fit Meecrogate to your context, so the platform lands cleanly on your infrastructure.",
+  "steps": {
+    "diagnostic": {
+      "title": "Assessment of what you already run:",
+      "description": "We review your technical environment, architecture, API flows and integration constraints."
+    },
+    "targetArchitecture": {
+      "title": "Proposed target architecture:",
+      "description": "We define an architecture suited to your information system, so Meecrogate can be adopted gradually and safely."
+    },
+    "deployment": {
+      "title": "Tailored deployment:",
+      "description": "We support installation in your environments (cloud, on-premise or hybrid) and adapt configurations and orchestrations to your needs."
+    },
+    "training": {
+      "title": "Knowledge transfer:",
+      "description": "Training and best practices so your teams are productive quickly."
+    },
+    "support": {
+      "title": "Enhanced support:",
+      "description": "A dedicated support channel throughout the migration and integration project."
+    }
+  },
+  "cta": "Discuss my integration project",
+  "dialog": {
+    "title": "Integration request",
+    "submit": "Send request"
+  },
+  "toast": {
+    "title": "Request sent",
+    "description": "We will get back to you shortly to discuss your integration project."
+  }
+}

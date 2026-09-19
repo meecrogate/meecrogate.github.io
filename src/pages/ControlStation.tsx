@@ -1,9 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { Link } from "@/i18n/Link";
 import { 
   BookOpen, 
   FileJson, 
@@ -19,78 +21,53 @@ import {
 import controlStationHero from "@/assets/control-station-hero.jpg";
 
 const ControlStation = () => {
+  const { t } = useTranslation("controlstation");
+
   const features = [
-    {
-      icon: BookOpen,
-      title: "Catalogue d'APIs",
-      description: "Centralisez et documentez l'ensemble de vos APIs dans un catalogue unique et consultable.",
-      details: ["Documentation automatique", "Versioning intégré", "Recherche avancée", "Tags et catégories"]
-    },
-    {
-      icon: BarChart3,
-      title: "Monitoring en temps réel",
-      description: "Supervisez les performances et la santé de vos APIs avec des tableaux de bord dynamiques.",
-      details: ["Métriques de latence", "Taux d'erreurs", "Volume de requêtes", "Alertes configurables"]
-    },
-    {
-      icon: Users,
-      title: "Gestion des accès",
-      description: "Contrôlez finement qui peut accéder à quelles APIs avec un système de rôles avancé.",
-      details: ["Rôles personnalisés", "Quotas par utilisateur", "Tokens API", "Audit des accès"]
-    },
-    {
-      icon: Lock,
-      title: "Politiques de sécurité",
-      description: "Définissez et appliquez des règles de sécurité cohérentes sur l'ensemble de vos APIs.",
-      details: ["Rate limiting", "IP whitelisting", "OAuth2/OIDC", "Validation des entrées"]
-    }
+    { id: "catalog", icon: BookOpen },
+    { id: "monitoring", icon: BarChart3 },
+    { id: "access", icon: Users },
+    { id: "security", icon: Lock },
   ];
 
   const templates = [
     {
+      id: "apiGateway",
       icon: Shield,
-      title: "API Gateway",
-      description: "Générez des configurations JSON pour exposer, sécuriser et monitorer vos APIs.",
       color: "text-blue-400",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/30",
-      href: "/components/api-gateway"
+      href: "/components/api-gateway",
     },
     {
+      id: "identityServer",
       icon: Fingerprint,
-      title: "Serveur d'Identité",
-      description: "Créez des configurations pour l'authentification OAuth2, OIDC et la gestion des tokens.",
       color: "text-emerald-400",
       bgColor: "bg-emerald-500/10",
       borderColor: "border-emerald-500/30",
-      href: "/components/identity-server"
+      href: "/components/identity-server",
     },
     {
+      id: "orchestrator",
       icon: Layers,
-      title: "Orchestrateur",
-      description: "Configurez des workflows d'orchestration pour chaîner vos services de manière intelligente.",
       color: "text-purple-400",
       bgColor: "bg-purple-500/10",
       borderColor: "border-purple-500/30",
-      href: "/components/orchestrator"
+      href: "/components/orchestrator",
     },
     {
+      id: "processExecutor",
       icon: Zap,
-      title: "Process Executor",
-      description: "Définisser des configurations JSON pour automatiser vos processus métiers.",
       color: "text-amber-400",
       bgColor: "bg-amber-500/10",
       borderColor: "border-amber-500/30",
-      href: "/components/process-executor"
-    }
+      href: "/components/process-executor",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-slate-900">
-      <Seo
-        title="Control Station — Pilotage centralisé de votre plateforme API"
-        description="Le Control Station Meecrogate : interface unique pour configurer, surveiller et administrer Gateway, identité, orchestration et processus."
-      />
+      <Seo title={t("seo.title")} description={t("seo.description")} />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}
@@ -98,7 +75,7 @@ const ControlStation = () => {
           <div className="absolute inset-0">
             <img 
               src={controlStationHero} 
-              alt="Control Station Dashboard"
+              alt={t("hero.imageAlt")}
               className="w-full h-full object-cover opacity-30"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/80 to-slate-900" />
@@ -108,27 +85,26 @@ const ControlStation = () => {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 bg-[#FFB300]/10 border border-[#FFB300]/30 rounded-full px-4 py-2 mb-6">
                 <Settings className="w-5 h-5 text-[#FFB300]" />
-                <span className="text-[#FFB300] font-medium">Interface d'Administration</span>
+                <span className="text-[#FFB300] font-medium">{t("hero.badge")}</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Le Control Station Central
+                {t("hero.title")}
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Gérez, configurez et surveillez l'intégralité de votre plateforme Meecrogate 
-                depuis une interface graphique unique et intuitive.
+                {t("hero.description")}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/demo">
                   <Button size="lg" className="bg-[#FFB300] text-gray-900 hover:bg-[#FFB300]/90 font-semibold px-8">
-                    Demander une démo
+                    {t("hero.demo")}
                   </Button>
                 </Link>
                 <Link to="/architecture">
                   <Button size="lg" className="bg-[#007AFF] text-white hover:bg-[#007AFF]/90">
-                    Voir l'architecture
+                    {t("hero.architecture")}
                   </Button>
                 </Link>
               </div>
@@ -141,28 +117,28 @@ const ControlStation = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Fonctionnalités de gestion
+                {t("features.title")}
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Un ensemble complet d'outils pour administrer votre écosystème d'APIs
+                {t("features.subtitle")}
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature, index) => {
+              {features.map((feature) => {
                 const Icon = feature.icon;
                 return (
-                  <Card key={index} className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all">
+                  <Card key={feature.id} className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all">
                     <CardHeader>
                       <div className="w-12 h-12 bg-[#007AFF]/10 rounded-xl flex items-center justify-center mb-4">
                         <Icon className="w-6 h-6 text-[#007AFF]" />
                       </div>
-                      <CardTitle className="text-white text-lg">{feature.title}</CardTitle>
-                      <CardDescription className="text-gray-400">{feature.description}</CardDescription>
+                      <CardTitle className="text-white text-lg">{t(`features.items.${feature.id}.title`)}</CardTitle>
+                      <CardDescription className="text-gray-400">{t(`features.items.${feature.id}.description`)}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2">
-                        {feature.details.map((detail, i) => (
+                        {(t(`features.items.${feature.id}.details`, { returnObjects: true }) as string[]).map((detail, i) => (
                           <li key={i} className="text-sm text-gray-500 flex items-center gap-2">
                             <div className="w-1.5 h-1.5 bg-[#FFB300] rounded-full" />
                             {detail}
@@ -183,23 +159,22 @@ const ControlStation = () => {
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 bg-gray-800 rounded-full px-4 py-2 mb-6">
                 <FileJson className="w-5 h-5 text-[#007AFF]" />
-                <span className="text-gray-300 font-medium">Générateur de configurations</span>
+                <span className="text-gray-300 font-medium">{t("templates.badge")}</span>
               </div>
               
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Templates JSON pour vos composants
+                {t("templates.title")}
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                Générez automatiquement les configurations JSON pour chaque composant Meecrogate 
-                grâce à des templates prédéfinis et personnalisables.
+                {t("templates.subtitle")}
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {templates.map((template, index) => {
+              {templates.map((template) => {
                 const Icon = template.icon;
                 return (
-                  <Link to={template.href} key={index}>
+                  <Link to={template.href} key={template.id}>
                     <Card 
                       className={`${template.bgColor} ${template.borderColor} border-2 hover:scale-[1.02] transition-all cursor-pointer h-full`}
                     >
@@ -210,9 +185,9 @@ const ControlStation = () => {
                               <Icon className={`w-7 h-7 ${template.color}`} />
                             </div>
                             <div>
-                              <CardTitle className="text-white text-xl">{template.title}</CardTitle>
+                              <CardTitle className="text-white text-xl">{t(`templates.items.${template.id}.title`)}</CardTitle>
                               <CardDescription className="text-gray-400 mt-1">
-                                {template.description}
+                                {t(`templates.items.${template.id}.description`)}
                               </CardDescription>
                             </div>
                           </div>
@@ -231,15 +206,14 @@ const ControlStation = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Prêt à centraliser la gestion de vos APIs ?
+                {t("cta.title")}
               </h2>
               <p className="text-gray-400 mb-8">
-                Découvrez comment le Control Station peut transformer votre gouvernance API 
-                avec une démonstration personnalisée.
+                {t("cta.description")}
               </p>
               <Link to="/demo">
                 <Button size="lg" className="bg-[#FFB300] text-gray-900 hover:bg-[#FFB300]/90 font-semibold px-8">
-                  Planifier une démo
+                  {t("cta.button")}
                 </Button>
               </Link>
             </div>

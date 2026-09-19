@@ -1,13 +1,16 @@
+import Seo from "@/components/Seo";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const PolitiqueConfidentialite = () => {
   return (
     <div className="min-h-screen bg-slate-900 overflow-x-hidden">
+      <Seo title="Politique de confidentialité" description="Politique de confidentialité de Meecrogate : collecte, usage et protection de vos données personnelles conformément au RGPD." />
       <Navigation />
       
       <div className="pt-16">
-        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Published in French only, whatever language the chrome is in. */}
+        <main lang="fr" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="text-3xl font-bold mb-8 text-white">Politique de Confidentialité</h1>
           
           <div className="space-y-8 text-slate-300">

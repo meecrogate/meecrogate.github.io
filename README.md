@@ -40,3 +40,17 @@ This project is built with:
 
 
 
+
+## Languages
+
+The site is published in French (default, at `/#/...`) and English (at
+`/#/en/...`), with a language switcher in the navigation bar. Visitors
+whose browser asks for French get French; everybody else gets English.
+
+All wording lives in `src/i18n/locales/<language>/<namespace>.json`.
+See [`src/i18n/README.md`](src/i18n/README.md) for how to change a
+string, add a page or add a language.
+
+```sh
+npm run i18n:check   # every language defines the same keys
+```

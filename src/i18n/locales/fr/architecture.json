@@ -1,0 +1,87 @@
+{
+  "seo": {
+    "title": "Architecture — Plateforme API modulaire et souveraine",
+    "description": "L'architecture Meecrogate : composants découplés (Gateway, Identité, Orchestrateur, Process Executor), déploiement VM, Kubernetes ou Cloud."
+  },
+  "title": "Architecture technique",
+  "subtitle": "Cloud-native par design, compatible Kubernetes et VM traditionnelles",
+  "keyBenefits": "Avantages clés",
+  "points": {
+    "stateless": {
+      "title": "100% Stateless",
+      "description": "Aucun stockage local, scalabilité horizontale native",
+      "benefits": ["Scalabilité illimitée", "Haute disponibilité", "Déploiement simplifié", "Coûts optimisés"]
+    },
+    "configurationDriven": {
+      "title": "Configuration-driven",
+      "description": "Logique métier via fichiers JSON ou interface graphique",
+      "benefits": ["Zéro code", "Versioning complet via Git", "Rollback instantané", "Collaboration facilitée"]
+    },
+    "interoperability": {
+      "title": "Interopérabilité native",
+      "description": "REST, WebSocket, Kafka, JDBC",
+      "benefits": ["Connectivité universelle", "Temps réel", "Event-driven", "Accès direct DB"]
+    },
+    "monitoring": {
+      "title": "Monitoring centralisé",
+      "description": "Logs, métriques et traces intégrés",
+      "benefits": ["Visibilité complète", "Alertes proactives", "Debugging facilité", "Conformité d'audit"]
+    }
+  },
+  "deployment": {
+    "title": "Déploiement flexible",
+    "cloudNative": { "title": "Cloud-Native", "description": "Kubernetes, containers, auto-scaling" },
+    "hybrid": { "title": "Hybride", "description": "Cloud public + datacenter interne" },
+    "onPremise": { "title": "On-Premise", "description": "Machines virtuelles traditionnelles" }
+  },
+  "gitops": {
+    "title": "Processus d'Industrialisation GitOps",
+    "footnote": "L'infrastructure et l'application sont déclarées, versionnées et auto-déployées.",
+    "exampleTitle": "Exemple de déploiement Cloud Native",
+    "interactiveHint": "Cliquer sur un des composants pour en savoir plus.",
+    "clusterLabel": "KUBERNETES CLUSTER",
+    "phases": {
+      "json": { "title": "CONFIGURATION JSON", "subtitle": "Fichiers de Déclaration" },
+      "git": { "title": "GIT REPOSITORY", "subtitle": "Source de Vérité" },
+      "sync": { "title": "GITOPS SYNC", "subtitle": "Pull & Apply (Argo/Flux)" },
+      "runtime": { "title": "MEECROGATE RUNTIME", "subtitle": "Composants Conteneurisés" }
+    },
+    "nodes": {
+      "station": {
+        "label": "Control Station",
+        "phase": "Configuration Source",
+        "desc": "L'interface d'administration (UI) où les opérateurs définissent les configurations globales de manière visuelle (Low-Code). Les changements sont générés en JSON et poussés vers un dépôt Git."
+      },
+      "git": {
+        "label": "Git Repository",
+        "phase": "Version Control",
+        "desc": "La source de vérité unique (Single Source of Truth). Chaque modification est versionnée ici, offrant une traçabilité complète (audit trail) et des capacités de rollback instantanées."
+      },
+      "operator": {
+        "label": "Meecrogate Operator",
+        "phase": "Sync & Reconcile",
+        "desc": "Un contrôleur Kubernetes autonome. Il surveille le dépôt Git, détecte les différences (drift) avec l'état du cluster, et télécharge les nouvelles configurations de manière sécurisée (Zero Trust)."
+      },
+      "config": {
+        "label": "ConfigMap",
+        "phase": "In-Cluster Config",
+        "desc": "L'objet Kubernetes natif (ConfigMap). Il stocke les paramètres synchronisés dans un format dynamique virtuellement monté à l'intérieur des conteneurs."
+      },
+      "pod1": {
+        "label": "Gateway",
+        "phase": "Runtime Deployment",
+        "desc": "La passerelle API. Elle détecte la mise à jour du ConfigMap et recharge sa logique de routage en mémoire (Hot Reload) avec Zéro Seconde de coupure."
+      },
+      "pod2": {
+        "label": "ID Server",
+        "phase": "Runtime Deployment",
+        "desc": "Le serveur d'identité. Il gère les jetons d'authentification et met à jour ses politiques de sécurité en temps réel grâce au flux GitOps."
+      },
+      "pod3": {
+        "label": "Orchestrator",
+        "phase": "Runtime Deployment",
+        "desc": "L'orchestrateur de services. Il coordonne les microservices internes selon la dernière topologie définie, le tout mis à jour à chaud."
+      }
+    }
+  }
+}

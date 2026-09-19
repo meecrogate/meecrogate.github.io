@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Fonctionnalités — API Gateway, orchestration & low-code",
+    "description": "Découvrez les fonctionnalités Meecrogate : API Gateway, orchestration de processus, identité, configuration JSON auditable et déploiement cloud-agnostique."
+  },
+  "title": "Composants principaux",
+  "subtitle": "Chaque composant est stateless, modulaire et entièrement configurable sans code.",
+  "explore": {
+    "title": "Explorer les composants",
+    "description": "Cliquez sur un composant pour découvrir ses fonctionnalités détaillées et sa place dans l'architecture."
+  },
+  "items": {
+    "apiGateway": {
+      "title": "API Gateway",
+      "description": "Exposition et sécurisation complète de vos APIs",
+      "capabilities": [
+        "APIs REST, OpenAPI, AsyncAPI",
+        "Auth, OAuth2, JWT, quotas, CORS",
+        "Routage intelligent et versioning",
+        "Documentation intégrée"
+      ]
+    },
+    "identityServer": {
+      "title": "Serveur d'identité & souscription",
+      "description": "Gestion centralisée des utilisateurs et accès",
+      "capabilities": [
+        "Gestion utilisateurs, clients, rôles",
+        "Portail développeur personnalisable",
+        "Attribution quotas et SLA",
+        "Intégration SSO / LDAP"
+      ]
+    },
+    "orchestrator": {
+      "title": "Orchestrateur d'APIs",
+      "description": "Orchestration intelligente synchrone et asynchrone",
+      "capabilities": [
+        "Enchaînement de services",
+        "Conditions et transformations",
+        "Déclenchements événementiels",
+        "Support OpenAPI & AsyncAPI"
+      ]
+    },
+    "processExecutor": {
+      "title": "Process Executor",
+      "description": "Processus métier exécutables comme Services Web",
+      "capabilities": [
+        "Moteurs d'automatisation",
+        "Service web sans code",
+        "Observabilité complète"
+      ]
+    }
+  }
+}

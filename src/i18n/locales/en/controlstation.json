@@ -1,0 +1,68 @@
+{
+  "seo": {
+    "title": "Control Station — Central control of your API platform",
+    "description": "The Meecrogate Control Station: one interface to configure, monitor and administer the gateway, identity, orchestration and processes."
+  },
+  "hero": {
+    "badge": "Administration interface",
+    "title": "The central Control Station",
+    "description": "Run, configure and monitor your entire Meecrogate platform from a single, intuitive graphical interface.",
+    "imageAlt": "Control Station dashboard",
+    "demo": "Request a demo",
+    "architecture": "See the architecture"
+  },
+  "features": {
+    "title": "Management features",
+    "subtitle": "A complete toolset to administer your API ecosystem",
+    "items": {
+      "catalog": {
+        "title": "API catalogue",
+        "description": "Bring all your APIs together and document them in a single, searchable catalogue.",
+        "details": ["Automatic documentation", "Built-in versioning", "Advanced search", "Tags and categories"]
+      },
+      "monitoring": {
+        "title": "Real-time monitoring",
+        "description": "Watch the performance and health of your APIs on live dashboards.",
+        "details": ["Latency metrics", "Error rates", "Request volume", "Configurable alerts"]
+      },
+      "access": {
+        "title": "Access management",
+        "description": "Control precisely who can reach which API, with an advanced role system.",
+        "details": ["Custom roles", "Per-user quotas", "API tokens", "Access auditing"]
+      },
+      "security": {
+        "title": "Security policies",
+        "description": "Define consistent security rules and apply them across all your APIs.",
+        "details": ["Rate limiting", "IP allow-listing", "OAuth2/OIDC", "Input validation"]
+      }
+    }
+  },
+  "templates": {
+    "badge": "Configuration generator",
+    "title": "JSON templates for your components",
+    "subtitle": "Generate the JSON configuration for each Meecrogate component automatically, from ready-made templates you can adapt.",
+    "items": {
+      "apiGateway": {
+        "title": "API Gateway",
+        "description": "Generate JSON configurations to expose, secure and monitor your APIs."
+      },
+      "identityServer": {
+        "title": "Identity Server",
+        "description": "Create configurations for OAuth2 and OIDC authentication and token management."
+      },
+      "orchestrator": {
+        "title": "Orchestrator",
+        "description": "Configure orchestration workflows to chain your services intelligently."
+      },
+      "processExecutor": {
+        "title": "Process Executor",
+        "description": "Write JSON configurations to automate your business processes."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to manage your APIs from one place?",
+    "description": "See how the Control Station can reshape your API governance, with a personalised demonstration.",
+    "button": "Schedule a demo"
+  }
+}

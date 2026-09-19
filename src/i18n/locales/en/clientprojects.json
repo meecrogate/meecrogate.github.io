@@ -1,0 +1,365 @@
+{
+  "seo": {
+    "title": "Customer projects — Testimonials & real cases",
+    "description": "See how our customers in banking, e-commerce, healthcare and the public sector use Meecrogate to modernise their API platform."
+  },
+  "index": {
+    "titlePrefix": "Customer",
+    "titleHighlight": "projects",
+    "subtitle": "See how our customers use Meecrogate to reshape their API architecture and streamline their business processes.",
+    "readCaseStudy": "Read the case study",
+    "stats": [
+      {
+        "value": "50+",
+        "label": "Projects delivered"
+      },
+      {
+        "value": "95%",
+        "label": "Satisfaction rate"
+      },
+      {
+        "value": "6 months",
+        "label": "Average time to deploy"
+      }
+    ]
+  },
+  "labels": {
+    "challengesTitle": "Challenges",
+    "solutionsTitle": "Solutions delivered"
+  },
+  "projects": {
+    "banking": {
+      "title": "Banking integration solutions",
+      "quote": "Meecrogate let us modernise our API architecture from end to end, cutting processing times by 60% and improving transaction security.",
+      "author": "IT Director",
+      "company": "Banque Centrale",
+      "cardMetrics": [
+        {
+          "value": "60%",
+          "label": "Shorter processing time"
+        },
+        {
+          "value": "99.9%",
+          "label": "Availability"
+        },
+        {
+          "value": "500k",
+          "label": "Transactions per day"
+        }
+      ],
+      "intro": "How Meecrogate reshaped the API architecture of a central bank, cutting processing times by 60% while strengthening security.",
+      "metricsTitle": "Results achieved",
+      "metrics": [
+        {
+          "title": "60% reduction",
+          "subtitle": "Processing time",
+          "description": "Transactions are now processed 60% faster thanks to optimised APIs"
+        },
+        {
+          "title": "99.9% availability",
+          "subtitle": "Guaranteed uptime",
+          "description": "A robust architecture that keeps critical services available"
+        },
+        {
+          "title": "500k transactions a day",
+          "subtitle": "Processing capacity",
+          "description": "Real-time handling of a high volume of banking transactions"
+        }
+      ],
+      "challengesTitle": "Challenges faced",
+      "challengesSubtitle": "The problems the project started from",
+      "challenges": [
+        "A fragmented legacy API architecture",
+        "Long transaction processing times",
+        "Banking security and compliance requirements",
+        "A need for 24/7 high availability"
+      ],
+      "solutionsTitle": "Solutions delivered",
+      "solutionsSubtitle": "How Meecrogate answered those challenges",
+      "solutions": [
+        "A complete modernisation of the API architecture",
+        "Optimised data flows",
+        "Stronger security protocols put in place",
+        "A high-availability architecture with automatic failover"
+      ],
+      "detailsTitle": "Implementation details",
+      "details": [
+        {
+          "title": "A modernised architecture",
+          "description": "The legacy architecture was replaced by an API-first approach built on Meecrogate, which scales and is easier to maintain."
+        },
+        {
+          "title": "Stronger security",
+          "description": "Strict banking security protocols were put in place, with multi-factor authentication, end-to-end encryption and a complete audit trail."
+        },
+        {
+          "title": "Optimised performance",
+          "description": "Data flows were optimised and smart caching introduced, cutting transaction processing times substantially."
+        }
+      ]
+    },
+    "ecommerce": {
+      "title": "A unified e-commerce platform",
+      "quote": "Rolling out Meecrogate transformed how we handle orders and stock synchronisation, lifting operational efficiency by 45%.",
+      "author": "CTO",
+      "company": "RetailTech Solutions",
+      "cardMetrics": [
+        {
+          "value": "45%",
+          "label": "Efficiency gain"
+        },
+        {
+          "value": "2M",
+          "label": "Orders processed per month"
+        },
+        {
+          "value": "Real-time",
+          "label": "Stock synchronisation"
+        }
+      ],
+      "intro": "How RetailTech Solutions transformed order handling and stock synchronisation with Meecrogate, lifting operational efficiency by 45%.",
+      "metricsTitle": "Business impact",
+      "metrics": [
+        {
+          "title": "45% improvement",
+          "subtitle": "Operational efficiency",
+          "description": "A step change in how orders and stock are managed"
+        },
+        {
+          "title": "2M orders a month",
+          "subtitle": "Processing capacity",
+          "description": "A high volume of orders handled smoothly, including at peak"
+        },
+        {
+          "title": "Real-time synchronisation",
+          "subtitle": "Stock management",
+          "description": "Stock levels updated instantly across every channel"
+        }
+      ],
+      "challengesTitle": "The starting point",
+      "challengesSubtitle": "The challenges of modern e-commerce",
+      "challenges": [
+        "Order handling scattered across several systems",
+        "Complex stock synchronisation between channels",
+        "Little visibility over business processes",
+        "Order processing times that were too long"
+      ],
+      "solutionsTitle": "Meecrogate solutions",
+      "solutionsSubtitle": "Reshaping the e-commerce ecosystem",
+      "solutions": [
+        "Order management systems brought together",
+        "Real-time multichannel stock synchronisation",
+        "A central dashboard for operational steering",
+        "Automated processing workflows"
+      ],
+      "detailsTitle": "Technical architecture",
+      "details": [
+        {
+          "title": "A central orchestration hub",
+          "description": "Meecrogate brings together the flows between the website, the mobile app, the marketplaces and the back-office systems into one unified view."
+        },
+        {
+          "title": "Real-time synchronisation",
+          "description": "Real-time events keep stock, prices and promotions in step instantly across every sales channel."
+        },
+        {
+          "title": "Automated workflows",
+          "description": "The whole order journey is automated, from payment validation to shipping label generation and customer tracking."
+        }
+      ]
+    },
+    "health": {
+      "title": "A connected healthcare system",
+      "quote": "Meecrogate helped us build an integrated digital health ecosystem that improves care coordination and the patient experience.",
+      "author": "Director of Innovation",
+      "company": "University Hospital",
+      "cardMetrics": [
+        {
+          "value": "Unified",
+          "label": "Patient record"
+        },
+        {
+          "value": "30%",
+          "label": "Shorter delays"
+        },
+        {
+          "value": "24/7",
+          "label": "Telemedicine"
+        }
+      ],
+      "intro": "How the University Hospital built an integrated digital health ecosystem with Meecrogate, improving care coordination and the patient experience.",
+      "metricsTitle": "Benefits for patients",
+      "metrics": [
+        {
+          "title": "A unified patient record",
+          "subtitle": "A 360° view",
+          "description": "All patient data consolidated behind a single, secure point of access"
+        },
+        {
+          "title": "30% reduction",
+          "subtitle": "Processing delays",
+          "description": "A marked improvement in how quickly patients are taken in hand and care is coordinated"
+        },
+        {
+          "title": "24/7 telemedicine",
+          "subtitle": "Always available",
+          "description": "An integrated telemedicine platform giving permanent access to care"
+        }
+      ],
+      "challengesTitle": "Healthcare system challenges",
+      "challengesSubtitle": "What digital transformation in healthcare has to solve",
+      "challenges": [
+        "Information systems siloed between departments",
+        "Patient records fragmented across several platforms",
+        "Complex coordination between medical teams",
+        "Processing and waiting times that were too long"
+      ],
+      "solutionsTitle": "Digital transformation",
+      "solutionsSubtitle": "Meecrogate solutions for connected healthcare",
+      "solutions": [
+        "Full interoperability between healthcare systems",
+        "A unified, secure digital patient record",
+        "Optimised care coordination workflows",
+        "Integrated telemedicine with patient follow-up"
+      ],
+      "detailsTitle": "Innovation in digital health",
+      "details": [
+        {
+          "title": "Data interoperability",
+          "description": "Every system is securely connected — medical imaging, laboratories, electronic records and connected equipment — for a complete view of the patient."
+        },
+        {
+          "title": "Security and GDPR compliance",
+          "description": "A secure architecture that meets medical confidentiality standards, with end-to-end encryption and full traceability of access."
+        },
+        {
+          "title": "A digital patient journey",
+          "description": "From booking an appointment to post-discharge remote monitoring, every step of the patient journey is optimised and connected."
+        }
+      ]
+    },
+    "paris": {
+      "title": "AI citizen portal — City of Paris",
+      "quote": "Meecrogate let us integrate AI services (chatbot, translation, recommendations) into the citizen portal quickly and securely, cutting integration time by 40%.",
+      "author": "Director of Digital Innovation",
+      "company": "City of Paris",
+      "cardMetrics": [
+        {
+          "value": "40%",
+          "label": "Time saved on integration"
+        },
+        {
+          "value": "GDPR",
+          "label": "Stronger compliance"
+        },
+        {
+          "value": "A few weeks",
+          "label": "Time to go live"
+        }
+      ],
+      "seoTitle": "AI citizen portal — City of Paris",
+      "seoDescription": "How the City of Paris brought AI services into its citizen portal with Meecrogate, cutting integration time by 40%.",
+      "back": "Back to customer projects",
+      "heroTitle": "AI citizen portal - City of Paris",
+      "heroSubtitle": "Speeding up digital innovation for the people of Paris",
+      "highlights": [
+        {
+          "value": "40%",
+          "label": "Time saved integrating services"
+        },
+        {
+          "value": "GDPR",
+          "label": "Stronger compliance and security"
+        },
+        {
+          "value": "A few weeks",
+          "label": "Time to go live"
+        }
+      ],
+      "contextTitle": "The context",
+      "contextText": "The City of Paris wanted to enrich its citizen portal with advanced artificial intelligence services: a conversational chatbot, real-time translation, personalised recommendations and predictive analysis tools. The goal was to markedly improve the experience of Paris residents while meeting demands for fast deployment, data security and digital sovereignty.",
+      "contextQuote": "Our vision was to make Paris the first European capital to show that AI services can be brought into public administration quickly and securely.",
+      "contextQuoteAuthor": "- Director of Digital Innovation, City of Paris",
+      "challengesTitle": "The challenges",
+      "challenges": [
+        {
+          "title": "Integration complexity",
+          "description": "Each AI service called for bespoke development taking several months, with a risk of technological fragmentation."
+        },
+        {
+          "title": "Digital sovereignty",
+          "description": "Citizen data had to stay under control, hosted in France, with absolute GDPR compliance."
+        },
+        {
+          "title": "The agility required",
+          "description": "The city needed to connect or disconnect an API in a few clicks, and to automate security and monitoring."
+        },
+        {
+          "title": "Vendor dependency",
+          "description": "Existing solutions carried a risk of technological lock-in and of regulatory non-compliance."
+        }
+      ],
+      "solutionTitle": "The Meecrogate solution",
+      "solutionSubtitle": "Sovereign, modular API management",
+      "solutions": [
+        {
+          "title": "Plug-and-play integration",
+          "description": "A stateless architecture that lets new AI services be integrated quickly, without changing the existing system."
+        },
+        {
+          "title": "Full automation",
+          "description": "Automatic cataloguing, security management and real-time monitoring of every integrated API."
+        },
+        {
+          "title": "Guaranteed sovereignty",
+          "description": "Data kept under control and hosted in France, with native GDPR compliance and security certification."
+        },
+        {
+          "title": "Express deployment",
+          "description": "Fully in place in a matter of weeks, against several months with traditional solutions."
+        }
+      ],
+      "resultsTitle": "Results and impact",
+      "results": [
+        {
+          "title": "Operational performance",
+          "items": [
+            "40% less time spent integrating services",
+            "Stronger security and GDPR compliance",
+            "IT agility: APIs managed in a few clicks"
+          ]
+        },
+        {
+          "title": "Citizen experience",
+          "items": [
+            "A smart multilingual chatbot",
+            "Instant translation of services",
+            "Personalised recommendations"
+          ]
+        }
+      ],
+      "impactTitle": "Strategic impact",
+      "impactText": "Paris becomes the first European capital to show that AI services can be brought into public administration quickly and securely, creating a model other large European cities can follow.",
+      "impactPositioning": "Positioning: citizen innovation and digital sovereignty",
+      "outlookTitle": "What comes next",
+      "outlook": [
+        {
+          "title": "More services",
+          "description": "Mobility, energy, environment"
+        },
+        {
+          "title": "API marketplace",
+          "description": "Building an internal marketplace"
+        },
+        {
+          "title": "Standardisation",
+          "description": "A unified Paris digital ecosystem"
+        }
+      ],
+      "ctaTitle": "Ready to transform your administration?",
+      "ctaSubtitle": "See how Meecrogate can speed up your digital innovation",
+      "ctaDemo": "Request a demo",
+      "ctaOther": "See other projects"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "cta": {
+    "title": "Ready to rethink your APIs?",
+    "description": "See how Meecrogate can turn your API architecture into a modern, secure and scalable platform.",
+    "freeTrial": "Free trial"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! This page does not exist.",
+    "backHome": "Back to home"
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "seo": {
+    "title": "Use cases — API solutions by business need",
+    "description": "API portals, fast integration, business processes, orchestration, hybrid deployment: explore what teams build with Meecrogate."
+  },
+  "title": "Typical use cases",
+  "subtitle": "Concrete answers to your integration challenges",
+  "items": {
+    "apiPortals": {
+      "title": "Secure API portals",
+      "description": "For partners or external customers",
+      "details": "Controlled exposure with authentication, quotas and monitoring"
+    },
+    "fastIntegration": {
+      "title": "Fast integration",
+      "description": "Existing systems, no code",
+      "details": "Connect your legacy applications with a handful of JSON configurations"
+    },
+    "businessProcesses": {
+      "title": "Business processes",
+      "description": "Served as REST APIs",
+      "details": "Turn your workflows into web services anyone can call"
+    },
+    "orchestration": {
+      "title": "Smart orchestration",
+      "description": "Internal or partner APIs",
+      "details": "Automatic chaining with conditions and transformations"
+    },
+    "hybridDeployment": {
+      "title": "Hybrid deployment",
+      "description": "Cloud plus your own datacenter",
+      "details": "Full flexibility, whatever your security constraints"
+    },
+    "standardisation": {
+      "title": "API standardisation",
+      "description": "Unified governance",
+      "details": "Consistent policies across your whole information system"
+    }
+  },
+  "details": {
+    "apiPortals": {
+      "seoTitle": "Secure API portals — Use case",
+      "seoDescription": "Expose your APIs to partners and external customers with authentication, quotas and monitoring.",
+      "title": "Secure API portals",
+      "intro": "Expose your APIs to partners and external customers with full control over access, quotas and security.",
+      "features": [
+        {
+          "title": "Robust authentication",
+          "description": "OAuth2, JWT and API keys with fine-grained permissions"
+        },
+        {
+          "title": "Partner management",
+          "description": "A dedicated interface for onboarding and access management"
+        },
+        {
+          "title": "Quotas and monitoring",
+          "description": "Real-time supervision with alerts and automatic limits"
+        },
+        {
+          "title": "Advanced security",
+          "description": "Encryption, audit trail and regulatory compliance"
+        }
+      ],
+      "scenariosTitle": "Typical use cases",
+      "scenarios": [
+        {
+          "title": "Commercial partners",
+          "description": "Give access to your product, order or inventory data through secured APIs with authentication and tailored quotas."
+        },
+        {
+          "title": "Enterprise customers",
+          "description": "Let your customers plug your services into their systems, with documented APIs and monitoring dashboards."
+        },
+        {
+          "title": "Developer ecosystem",
+          "description": "Build an API marketplace that encourages third-party integrations, with version management and developer support."
+        }
+      ]
+    },
+    "fastIntegration": {
+      "seoTitle": "Fast integration — Use case",
+      "seoDescription": "Connect your existing systems in minutes through JSON configuration, without writing code.",
+      "title": "Fast integration",
+      "intro": "Connect your existing systems in minutes without writing a single line of code.",
+      "features": [
+        {
+          "title": "JSON configuration",
+          "description": "Describe your integrations in a few lines of configuration"
+        },
+        {
+          "title": "Ready-made connectors",
+          "description": "More than 100 connectors for the most common systems"
+        },
+        {
+          "title": "No development",
+          "description": "No code required, configuration only"
+        },
+        {
+          "title": "Automatic transformation",
+          "description": "Data mapping and transformation in real time"
+        }
+      ],
+      "scenariosTitle": "Integration examples",
+      "scenarios": [
+        {
+          "title": "ERP → CRM",
+          "description": "Keep customer data in sync automatically between your SAP ERP and your Salesforce CRM."
+        },
+        {
+          "title": "Legacy → cloud",
+          "description": "Expose your mainframe applications through modern REST APIs for new web applications."
+        },
+        {
+          "title": "Multiple databases",
+          "description": "Aggregate data from several sources (Oracle, PostgreSQL, MongoDB) behind a single API."
+        }
+      ]
+    },
+    "businessProcesses": {
+      "seoTitle": "Business processes as APIs — Use case",
+      "seoDescription": "Turn complex business processes into REST web services that are simple to call and to supervise.",
+      "title": "Business processes as APIs",
+      "intro": "Turn your complex business processes into web services that are simple to use.",
+      "features": [
+        {
+          "title": "Business processes",
+          "description": "Turn your business processes into web services anyone can reach"
+        },
+        {
+          "title": "API triggering",
+          "description": "Start your processes with plain REST calls"
+        },
+        {
+          "title": "Status tracking",
+          "description": "Real-time monitoring of how far each process has got"
+        },
+        {
+          "title": "Complete history",
+          "description": "A detailed audit trail of every process that ran"
+        }
+      ],
+      "scenariosTitle": "Typical processes",
+      "scenarios": [
+        {
+          "title": "Order validation",
+          "description": "A complex process covering stock checks, credit validation and management approval, reachable through a single REST API."
+        },
+        {
+          "title": "Customer onboarding",
+          "description": "An onboarding workflow with KYC checks, account opening and service activation."
+        },
+        {
+          "title": "Incident management",
+          "description": "An ITIL incident process with automatic escalation, notifications and collaborative resolution."
+        }
+      ]
+    },
+    "orchestration": {
+      "seoTitle": "Smart orchestration — Use case",
+      "seoDescription": "Coordinate and chain your internal and partner APIs to compose complex services.",
+      "title": "Smart orchestration",
+      "intro": "Coordinate and chain your internal and partner APIs to build complex services.",
+      "features": [
+        {
+          "title": "Smart chaining",
+          "description": "Orchestrate several APIs in a single call, with conditional logic"
+        },
+        {
+          "title": "Dynamic routing",
+          "description": "Requests routed automatically according to business conditions"
+        },
+        {
+          "title": "Data transformation",
+          "description": "Automatic mapping and enrichment of data in transit"
+        },
+        {
+          "title": "Service composition",
+          "description": "Build composite APIs out of the services you already have"
+        }
+      ],
+      "scenariosTitle": "Orchestration scenarios",
+      "scenarios": [
+        {
+          "title": "Smart e-commerce",
+          "description": "Orchestrate stock checks, dynamic pricing, payment validation and delivery triggering behind a single API."
+        },
+        {
+          "title": "Financial services",
+          "description": "Chain credit scoring, identity verification and regulatory validation APIs for instant account opening."
+        },
+        {
+          "title": "IoT and Industry 4.0",
+          "description": "Aggregate sensor data, apply business rules and trigger automated actions on equipment."
+        }
+      ]
+    },
+    "hybridDeployment": {
+      "seoTitle": "Hybrid deployment — Use case",
+      "seoDescription": "Public cloud, private cloud or on-site infrastructure: deploy Meecrogate to fit your constraints.",
+      "title": "Hybrid deployment",
+      "intro": "Complete deployment flexibility: public cloud, private cloud or on-site infrastructure, whatever your constraints.",
+      "features": [
+        {
+          "title": "Multi-cloud",
+          "description": "Deploy on AWS, Azure or GCP as your needs dictate"
+        },
+        {
+          "title": "On-premise",
+          "description": "Installed in your own datacenters for sensitive data"
+        },
+        {
+          "title": "Security to match",
+          "description": "Security policies tailored to each environment"
+        },
+        {
+          "title": "Synchronisation",
+          "description": "Replication and synchronisation between environments"
+        }
+      ],
+      "scenariosTitle": "Hybrid architectures",
+      "scenarios": [
+        {
+          "title": "Banking",
+          "description": "Public APIs in the cloud for customer services, sensitive APIs on-premise for internal operations and compliance."
+        },
+        {
+          "title": "Health and pharma",
+          "description": "Patient data kept secure in the private datacenter, research and analytics APIs in the cloud for scale."
+        },
+        {
+          "title": "Manufacturing",
+          "description": "Production systems at the edge, cloud aggregation for analytics, and partner APIs across several clouds."
+        }
+      ]
+    },
+    "standardisation": {
+      "seoTitle": "API standardisation — Use case",
+      "seoDescription": "Apply consistent governance and uniform standards across your entire API ecosystem.",
+      "title": "API standardisation",
+      "intro": "Apply consistent governance and uniform standards across your entire API ecosystem.",
+      "features": [
+        {
+          "title": "Centralised policies",
+          "description": "Define consistent standards once and apply them to every API"
+        },
+        {
+          "title": "Unified governance",
+          "description": "Central management of users, roles and permissions"
+        },
+        {
+          "title": "Global observability",
+          "description": "One view of all your APIs, with unified metrics"
+        },
+        {
+          "title": "Centralised configuration",
+          "description": "Environments and configuration managed from a single place"
+        }
+      ],
+      "scenariosTitle": "What standardisation brings",
+      "scenarios": [
+        {
+          "title": "Lower costs",
+          "description": "Remove duplication, standardise practices and cut maintenance complexity by 40%."
+        },
+        {
+          "title": "Faster time to market",
+          "description": "Reusable templates and patterns let you ship new APIs 60% faster."
+        },
+        {
+          "title": "Compliance by default",
+          "description": "Security standards, GDPR and sector regulations are respected automatically."
+        }
+      ]
+    }
+  }
+}

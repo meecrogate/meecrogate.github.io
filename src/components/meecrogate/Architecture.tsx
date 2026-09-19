@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Cloud, Database, Settings, Monitor, GitBranch, Server, Workflow, Repeat2, ArrowRight, CheckCircle2, Terminal, Shield, Network, FileJson, Fingerprint, Info } from "lucide-react";
@@ -7,6 +8,9 @@ import { Cloud, Database, Settings, Monitor, GitBranch, Server, Workflow, Repeat
 const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { t } = useTranslation("architecture");
+  const title = t(`points.${point.id}.title`);
+  const description = t(`points.${point.id}.description`);
 
   return (
     <>
@@ -19,7 +23,7 @@ const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) =>
         <div className="relative h-48 overflow-hidden">
           <img 
             src={point.image} 
-            alt={point.title}
+            alt={title}
             className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : ''}`}
             onError={(e) => { 
               const target = e.target as HTMLImageElement;
@@ -33,11 +37,11 @@ const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) =>
           </div>
         </div>
         <CardHeader className="pb-4">
-          <CardTitle className="text-lg text-white">{point.title}</CardTitle>
+          <CardTitle className="text-lg text-white">{title}</CardTitle>
         </CardHeader>
         <CardContent>
           <CardDescription className="text-slate-300">
-            {point.description}
+            {description}
           </CardDescription>
         </CardContent>
       </Card>
@@ -47,16 +51,16 @@ const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) =>
           <DialogHeader>
             <div className="flex items-center gap-3 mb-2">
               {point.icon}
-              <DialogTitle className="text-xl text-white">{point.title}</DialogTitle>
+              <DialogTitle className="text-xl text-white">{title}</DialogTitle>
             </div>
             <DialogDescription className="text-slate-300 text-base">
-              {point.description}
+              {description}
             </DialogDescription>
           </DialogHeader>
           <div className="mt-4 space-y-4">
-            <h4 className="text-indigo-400 font-semibold">Avantages clés</h4>
+            <h4 className="text-indigo-400 font-semibold">{t("keyBenefits")}</h4>
             <ul className="space-y-3">
-              {point.benefits.map((benefit, index) => (
+              {(t(`points.${point.id}.benefits`, { returnObjects: true }) as string[]).map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-300">{benefit}</span>
@@ -72,37 +76,19 @@ const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) =>
 
 // L'ancien composant pour le cycle GitOps (conservé)
 const GitOpsMeecrogateCycle = () => {
+  const { t } = useTranslation("architecture");
+
   const phases = [
-    {
-      title: "CONFIGURATION JSON",
-      subtitle: "Fichiers de Déclaration",
-      icon: <GitBranch size={24} className="text-white" />,
-      colorClass: "bg-indigo-600",
-    },
-    {
-      title: "GIT REPOSITORY",
-      subtitle: "Source de Vérité",
-      icon: <Workflow size={24} className="text-white" />,
-      colorClass: "bg-slate-800 border-2 border-amber-500",
-    },
-    {
-      title: "GITOPS SYNC",
-      subtitle: "Pull & Apply (Argo/Flux)",
-      icon: <Repeat2 size={24} className="text-white" />,
-      colorClass: "bg-amber-500",
-    },
-    {
-      title: "MEECROGATE RUNTIME",
-      subtitle: "Composants Conteneurisés",
-      icon: <Server size={24} className="text-white" />,
-      colorClass: "bg-indigo-600",
-    },
+    { id: "json", icon: <GitBranch size={24} className="text-white" />, colorClass: "bg-indigo-600" },
+    { id: "git", icon: <Workflow size={24} className="text-white" />, colorClass: "bg-slate-800 border-2 border-amber-500" },
+    { id: "sync", icon: <Repeat2 size={24} className="text-white" />, colorClass: "bg-amber-500" },
+    { id: "runtime", icon: <Server size={24} className="text-white" />, colorClass: "bg-indigo-600" },
   ];
 
   return (
     <div className="mt-8 p-6 bg-slate-800/50 rounded-xl">
       <h5 className="text-indigo-400 font-bold mb-6 text-center text-lg">
-        Processus d'Industrialisation GitOps
+        {t("gitops.title")}
       </h5>
       
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 max-w-4xl mx-auto">
@@ -111,10 +97,10 @@ const GitOpsMeecrogateCycle = () => {
             <div className={`${phase.colorClass} p-4 rounded-lg min-w-[110px] shadow-lg flex flex-col items-center`}>
               {phase.icon}
               <div className="text-white font-bold text-sm mt-2 uppercase text-center leading-tight">
-                {phase.title}
+                {t(`gitops.phases.${phase.id}.title`)}
               </div>
               <div className="text-slate-200 text-xs mt-1 text-center">
-                {phase.subtitle}
+                {t(`gitops.phases.${phase.id}.subtitle`)}
               </div>
             </div>
 
@@ -128,12 +114,12 @@ const GitOpsMeecrogateCycle = () => {
       </div>
       
       <div className="text-indigo-400 text-sm mt-6 text-center mb-8">
-        L'infrastructure et l'application sont déclarées, versionnées et auto-déployées.
+        {t("gitops.footnote")}
       </div>
 
       {/* Titre ajouté ici */}
       <h5 className="text-white font-bold mb-4 text-center text-lg uppercase tracking-wider">
-        Exemple de déploiement Cloud Native
+        {t("gitops.exampleTitle")}
       </h5>
 
       <InteractiveGitOpsCycle />
@@ -143,6 +129,7 @@ const GitOpsMeecrogateCycle = () => {
 
 // Le nouveau composant Interactif pour le cycle GitOps (Version Fluide)
 const InteractiveGitOpsCycle = () => {
+  const { t } = useTranslation("architecture");
   const [selectedId, setSelectedId] = useState('station');
   const [dashOffset, setDashOffset] = useState(0);
   const animationRef = useRef<number>();
@@ -163,34 +150,13 @@ const InteractiveGitOpsCycle = () => {
   }, []);
 
   const components = [
-    { 
-      id: 'station', label: 'Control Station', icon: <Monitor size={24} />, x: 80, y: 200, color: '#3b82f6', 
-      desc: "L'interface d'administration (UI) où les opérateurs définissent les configurations globales de manière visuelle (Low-Code). Les changements sont générés en JSON et poussés vers un dépôt Git.", phase: "Configuration Source" 
-    },
-    { 
-      id: 'git', label: 'Git Repository', icon: <GitBranch size={24} />, x: 250, y: 200, color: '#22c55e', 
-      desc: "La source de vérité unique (Single Source of Truth). Chaque modification est versionnée ici, offrant une traçabilité complète (audit trail) et des capacités de rollback instantanées.", phase: "Version Control" 
-    },
-    { 
-      id: 'operator', label: 'Meecrogate Operator', icon: <Repeat2 size={24} />, x: 440, y: 200, color: '#eab308', 
-      desc: "Un contrôleur Kubernetes autonome. Il surveille le dépôt Git, détecte les différences (drift) avec l'état du cluster, et télécharge les nouvelles configurations de manière sécurisée (Zero Trust).", phase: "Sync & Reconcile" 
-    },
-    { 
-      id: 'config', label: 'ConfigMap', icon: <FileJson size={24} />, x: 600, y: 200, color: '#a855f7', 
-      desc: "L'objet Kubernetes natif (ConfigMap). Il stocke les paramètres synchronisés dans un format dynamique virtuellement monté à l'intérieur des conteneurs.", phase: "In-Cluster Config" 
-    },
-    { 
-      id: 'pod1', label: 'Gateway', icon: <Shield size={24} />, x: 750, y: 100, color: '#8b5cf6', 
-      desc: "La passerelle API. Elle détecte la mise à jour du ConfigMap et recharge sa logique de routage en mémoire (Hot Reload) avec Zéro Seconde de coupure.", phase: "Runtime Deployment" 
-    },
-    { 
-      id: 'pod2', label: 'ID Server', icon: <Fingerprint size={24} />, x: 750, y: 200, color: '#8b5cf6', 
-      desc: "Le serveur d'identité. Il gère les jetons d'authentification et met à jour ses politiques de sécurité en temps réel grâce au flux GitOps.", phase: "Runtime Deployment" 
-    },
-    { 
-      id: 'pod3', label: 'Orchestrator', icon: <Network size={24} />, x: 750, y: 300, color: '#8b5cf6', 
-      desc: "L'orchestrateur de services. Il coordonne les microservices internes selon la dernière topologie définie, le tout mis à jour à chaud.", phase: "Runtime Deployment" 
-    }
+    { id: 'station', icon: <Monitor size={24} />, x: 80, y: 200, color: '#3b82f6' },
+    { id: 'git', icon: <GitBranch size={24} />, x: 250, y: 200, color: '#22c55e' },
+    { id: 'operator', icon: <Repeat2 size={24} />, x: 440, y: 200, color: '#eab308' },
+    { id: 'config', icon: <FileJson size={24} />, x: 600, y: 200, color: '#a855f7' },
+    { id: 'pod1', icon: <Shield size={24} />, x: 750, y: 100, color: '#8b5cf6' },
+    { id: 'pod2', icon: <Fingerprint size={24} />, x: 750, y: 200, color: '#8b5cf6' },
+    { id: 'pod3', icon: <Network size={24} />, x: 750, y: 300, color: '#8b5cf6' },
   ];
 
   const links = [
@@ -211,7 +177,7 @@ const InteractiveGitOpsCycle = () => {
           <g>
             <rect x="360" y="40" width="460" height="320" rx="16" fill="rgba(30, 41, 59, 0.4)" stroke="#475569" strokeWidth="2" strokeDasharray="6,6" />
             <text x="590" y="70" textAnchor="middle" fill="#94a3b8" className="text-sm font-bold tracking-wider font-sans">
-              KUBERNETES CLUSTER
+              {t("gitops.clusterLabel")}
             </text>
           </g>
           <g>
@@ -234,7 +200,7 @@ const InteractiveGitOpsCycle = () => {
                     </div>
                   </foreignObject>
                   <text y="48" textAnchor="middle" fill={isSelected ? '#ffffff' : '#cbd5e1'} className="text-[13px] font-medium font-sans pointer-events-none transition-colors duration-300">
-                    {node.label}
+                    {t(`gitops.nodes.${node.id}.label`)}
                   </text>
                 </g>
               );
@@ -246,7 +212,7 @@ const InteractiveGitOpsCycle = () => {
       {/* Note interactive ajoutée ici */}
       <div className="flex items-center justify-center gap-2 py-3 bg-slate-800/40 border-t border-slate-700/30 text-slate-400 text-xs sm:text-sm italic">
         <Info size={14} className="text-indigo-400" />
-        Cliquer sur un des composants pour en savoir plus.
+        {t("gitops.interactiveHint")}
       </div>
 
       <div className="bg-slate-800/80 p-6 sm:p-8 border-t border-slate-700 backdrop-blur-md transition-all duration-300 text-left">
@@ -254,13 +220,13 @@ const InteractiveGitOpsCycle = () => {
           <div className="p-3 rounded-lg flex items-center justify-center shadow-inner shrink-0 w-fit" style={{ backgroundColor: `${selected.color}20`, color: selected.color }}>
             {selected.icon}
           </div>
-          <h3 className="text-2xl text-white font-semibold m-0 text-left">{selected.label}</h3>
+          <h3 className="text-2xl text-white font-semibold m-0 text-left">{t(`gitops.nodes.${selected.id}.label`)}</h3>
           <span className="sm:ml-auto w-fit text-xs font-bold px-3 py-1.5 bg-slate-900 rounded-full text-indigo-300 uppercase tracking-wider border border-indigo-500/30 shadow-sm">
-            {selected.phase}
+            {t(`gitops.nodes.${selected.id}.phase`)}
           </span>
         </div>
         <p className="text-slate-300 leading-relaxed text-base sm:text-lg text-left m-0">
-          {selected.desc}
+          {t(`gitops.nodes.${selected.id}.desc`)}
         </p>
       </div>
     </div>
@@ -272,59 +238,53 @@ const SHARED_ABSTRACT_IMAGE = "https://images.unsplash.com/photo-1542831371-29b0
 
 const architecturePoints = [
   {
+    id: "stateless",
     icon: <Cloud className="w-6 h-6 text-indigo-500" />,
-    title: "100% Stateless",
-    description: "Aucun stockage local, scalabilité horizontale native",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
-    benefits: ["Scalabilité illimitée", "Haute disponibilité", "Déploiement simplifié", "Coûts optimisés"]
   },
   {
+    id: "configurationDriven",
     icon: <Settings className="w-6 h-6 text-amber-500" />,
-    title: "Configuration-driven",
-    description: "Logique métier via fichiers JSON ou interface graphique",
     image: SHARED_ABSTRACT_IMAGE,
-    benefits: ["Zéro code", "Versioning complet via Git", "Rollback instantané", "Collaboration facilitée"]
   },
   {
+    id: "interoperability",
     icon: <Database className="w-6 h-6 text-indigo-500" />,
-    title: "Interopérabilité native",
-    description: "REST, WebSocket, Kafka, JDBC",
     image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop&crop=center",
-    benefits: ["Connectivité universelle", "Temps réel", "Event-driven", "Accès direct DB"]
   },
   {
+    id: "monitoring",
     icon: <Monitor className="w-6 h-6 text-amber-500" />,
-    title: "Monitoring centralisé",
-    description: "Logs, métriques et traces intégrés",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop&crop=center",
-    benefits: ["Visibilité complète", "Alertes proactives", "Debugging facilité", "Conformité d'audit"]
-  }
+  },
 ];
 
 const Architecture = () => {
+  const { t } = useTranslation("architecture");
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-slate-900 min-h-screen">
       <div className="text-center mb-16">
         <div className="flex flex-col items-center mb-6">
-          <h2 className="text-5xl sm:text-6xl font-extrabold text-white mb-3 tracking-tight">Architecture technique</h2>
+          <h2 className="text-5xl sm:text-6xl font-extrabold text-white mb-3 tracking-tight">{t("title")}</h2>
           <div className="w-16 h-1 bg-indigo-500 rounded-sm"></div>
         </div>
-        <p className="text-xl text-slate-300 max-w-3xl mx-auto">Cloud-native par design, compatible Kubernetes et VM traditionnelles</p>
+        <p className="text-xl text-slate-300 max-w-3xl mx-auto">{t("subtitle")}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {architecturePoints.map((point, index) => <ArchitectureCard key={index} point={point} />)}
+        {architecturePoints.map((point) => <ArchitectureCard key={point.id} point={point} />)}
       </div>
 
       <Card className="bg-slate-800/70 border-slate-700/30 backdrop-blur-sm max-w-5xl mx-auto">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl text-white mb-4">Déploiement flexible</CardTitle>
+          <CardTitle className="text-2xl text-white mb-4">{t("deployment.title")}</CardTitle>
         </CardHeader>
         <CardContent className="text-center">
           <div className="flex flex-col sm:flex-row justify-around gap-8 text-slate-300 mb-6">
-            <div className="flex flex-col items-center gap-1"><h4 className="font-semibold text-indigo-400 mb-2">Cloud-Native</h4><p className="text-sm">Kubernetes, containers, auto-scaling</p></div>
-            <div className="flex flex-col items-center gap-1"><h4 className="font-semibold text-amber-400 mb-2">Hybride</h4><p className="text-sm">Cloud public + datacenter interne</p></div>
-            <div className="flex flex-col items-center gap-1"><h4 className="font-semibold text-indigo-400 mb-2">On-Premise</h4><p className="text-sm">Machines virtuelles traditionnelles</p></div>
+            <div className="flex flex-col items-center gap-1"><h4 className="font-semibold text-indigo-400 mb-2">{t("deployment.cloudNative.title")}</h4><p className="text-sm">{t("deployment.cloudNative.description")}</p></div>
+            <div className="flex flex-col items-center gap-1"><h4 className="font-semibold text-amber-400 mb-2">{t("deployment.hybrid.title")}</h4><p className="text-sm">{t("deployment.hybrid.description")}</p></div>
+            <div className="flex flex-col items-center gap-1"><h4 className="font-semibold text-indigo-400 mb-2">{t("deployment.onPremise.title")}</h4><p className="text-sm">{t("deployment.onPremise.description")}</p></div>
           </div>
           <GitOpsMeecrogateCycle />
         </CardContent>

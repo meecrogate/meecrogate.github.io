@@ -1,0 +1,125 @@
+{
+  "seo": {
+    "title": "Pricing — Meecrogate plans",
+    "description": "Meecrogate pricing: transparent plans to get started quickly and scale up, with no cloud lock-in."
+  },
+  "hero": {
+    "title": "Pricing — From prototype to production",
+    "subtitle": "Straightforward plans. Prices excluding VAT, per month — integration included depending on the plan.",
+    "subtitleStrong": "Get in touch",
+    "subtitleEnd": "for a demo or an Enterprise quote."
+  },
+  "labels": {
+    "included": "Included:",
+    "options": "Options:",
+    "choosePlan": "Choose this plan",
+    "contactUs": "Contact us"
+  },
+  "plans": {
+    "pro": {
+      "name": "Pro",
+      "tagline": "For mid-sized companies going into production",
+      "price": "€2,600",
+      "priceNote": "excl. VAT / month (billed annually)",
+      "included": [
+        "Up to 25 APIs",
+        "10 orchestrators",
+        "5 days of integration and onboarding included",
+        "Standard ticket-based support",
+        "Unlimited gateway instances"
+      ],
+      "optionsTitle": "Options:",
+      "options": [
+        "Meecrogate ID Server",
+        "Multi-year licences: €31,200/year",
+        "3 years: €28,080/year",
+        "5 years: €24,960/year"
+      ],
+      "cta": "Choose this plan"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "tagline": "Built for large organisations: high security, compliance and heavy volumes.",
+      "price": "On request",
+      "priceNote": "",
+      "included": [
+        "Custom SLA",
+        "Identity management: Meecrogate ID Server",
+        "Dedicated integration project team",
+        "Dedicated support",
+        "Audit and a 4 to 6 week pilot to confirm Meecrogate fits your context"
+      ],
+      "optionsTitle": "Build your solution à la carte from the Meecrogate modules",
+      "options": [
+        "Meecrogate ID Server",
+        "Orchestrator",
+        "Process Executor",
+        "Control Station",
+        "Migration, hybrid mode & bespoke APIs"
+      ],
+      "cta": "Contact us"
+    }
+  },
+  "comparison": {
+    "title": "Comparison table",
+    "headers": { "feature": "Feature", "pro": "Pro", "enterprise": "Enterprise" },
+    "option": "+ Option",
+    "options": "+ Options",
+    "rows": {
+      "apis": { "feature": "Secured APIs", "pro": "Up to 25", "enterprise": "Unlimited" },
+      "orchestrators": { "feature": "Orchestrators", "pro": "10", "enterprise": "Unlimited" },
+      "gatewayInstances": { "feature": "Gateway instances", "pro": "Unlimited", "enterprise": "Unlimited" },
+      "onboarding": { "feature": "Integration & onboarding", "pro": "5 days included", "enterprise": "Dedicated team" },
+      "support": { "feature": "Support", "pro": "Standard, ticket-based", "enterprise": "Dedicated support" },
+      "sla": { "feature": "SLA", "pro": "Standard", "enterprise": "Custom" },
+      "idServer": { "feature": "ID Server", "pro": "@option", "enterprise": "@options" },
+      "orchestrator": { "feature": "Orchestrator", "pro": "@option", "enterprise": "@options" },
+      "processExecutor": { "feature": "Process Executor", "pro": "@option", "enterprise": "@options" },
+      "roles": { "feature": "Control Station user roles", "pro": "3 Builder roles, unlimited \"Reader\" roles", "enterprise": "@options" },
+      "price": { "feature": "Price (excl. VAT / year)", "pro": "€31,200", "enterprise": "On request" }
+    }
+  },
+  "notes": {
+    "label": "Notes:",
+    "text": "Prices are quoted in <0>EUR excluding VAT, per month</0>. VAT is charged on top. Billing is annual, on a 1, 3 or 5 year commitment."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "What does the integration cover?",
+        "answer": "Initial setup, connection to your backends, testing and team training (duration depends on the plan: ½ day → 2 days → bespoke project)."
+      },
+      {
+        "question": "Can we move from one plan to another without downtime?",
+        "answer": "Yes — scaling up is smooth, and migration and integration hooks are planned with our team so nothing is interrupted."
+      },
+      {
+        "question": "Is there a proof-of-concept offer?",
+        "answer": "Yes: a POC pack is available, and the fee is refunded when you sign a Pro or Enterprise contract. Contact sales for the terms."
+      }
+    ]
+  },
+  "contactStrip": {
+    "title": "Need support tailored to your context?",
+    "description": "Dedicated team, migration, GDPR compliance or on-premise deployment: let's talk.",
+    "cta": "Contact sales"
+  },
+  "dialog": {
+    "title": "Contact request",
+    "descriptionWithPlan": "You are interested in the {{plan}} plan. ",
+    "description": "Fill in this form and our team will get back to you shortly.",
+    "defaultSubject": "Information request - {{plan}} plan",
+    "mailSubject": "[Meecrogate pricing] Request for the {{plan}} plan from {{name}}",
+    "submit": "Send request",
+    "submitting": "Sending..."
+  },
+  "toast": {
+    "successTitle": "Message sent!",
+    "successDescription": "We have received your request and will get back to you very soon.",
+    "errorTitle": "Error",
+    "errorDescription": "Something went wrong while sending. Please try again.",
+    "networkTitle": "Network error",
+    "networkDescription": "The sending server could not be reached."
+  }
+}

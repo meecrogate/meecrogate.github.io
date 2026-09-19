@@ -1,0 +1,43 @@
+{
+  "seo": {
+    "title": "Comparisons — Meecrogate vs Gravitee, Kong, Apigee",
+    "description": "A detailed comparison of Meecrogate with Gravitee, Kong/APISIX and cloud API gateways (Apigee, AWS): technology, sovereignty and auditability."
+  },
+  "title": "Comparisons",
+  "subtitle": "How Meecrogate compares with the main solutions on the market",
+  "technical": {
+    "title": "Technical comparison",
+    "headers": {
+      "feature": "Characteristic",
+      "gravitee": "Java solutions (Gravitee)",
+      "kong": "API gateways (Kong / APISIX)",
+      "cloud": "Cloud native (AWS / Apigee)",
+      "meecrogate": "Meecrogate"
+    },
+    "rows": [
+      { "feature": "Philosophy", "gravitee": "Monolithic / feature-rich", "kong": "Performance / DevOps", "cloud": "Captive ecosystem (lock-in)", "meecrogate": "Lean / modular" },
+      { "feature": "Footprint & resources", "gravitee": "Heavy (third-party dependencies)", "kong": "Light (Lua-Nginx / Go)", "cloud": "Managed by the cloud provider", "meecrogate": "Light (Java-based)" },
+      { "feature": "Deployment model", "gravitee": "VM / K8s", "kong": "VM / K8s / Docker", "cloud": "Cloud only", "meecrogate": "VM, K8s & cloud-agnostic" },
+      { "feature": "Configuration approach", "gravitee": "Dense management UI", "kong": "YAML / CLI / Lua scripts", "cloud": "Cloud console / Terraform", "meecrogate": "Visual low-code" },
+      { "feature": "Auditability", "gravitee": "Binary / database", "kong": "Complex YAML", "cloud": "Proprietary", "meecrogate": "Human-readable, auditable JSON" },
+      { "feature": "GitOps ready", "gravitee": "Difficult (stateful)", "kong": "Yes (declarative)", "cloud": "Partial (through heavy IaC)", "meecrogate": "Native (versionable JSON)" },
+      { "feature": "Independence", "gravitee": "Sovereign but heavy", "kong": "Agnostic", "cloud": "Total cloud lock-in", "meecrogate": "100% cloud-agnostic" }
+    ]
+  },
+  "sovereignty": {
+    "title": "Sovereignty & compliance",
+    "headers": {
+      "feature": "Characteristic",
+      "gravitee": "Java solutions (Gravitee)",
+      "kong": "API gateways (Kong)",
+      "cloud": "US cloud (AWS / Apigee)",
+      "meecrogate": "Meecrogate"
+    },
+    "rows": [
+      { "feature": "Cloud sovereignty", "gravitee": "Very high (self-hosted)", "kong": "Moderate (US vendor)", "cloud": "None (Cloud Act)", "meecrogate": "Maximal (agnostic)" },
+      { "feature": "Data privacy (GDPR)", "gravitee": "Fully local", "kong": "US control plane", "cloud": "Metadata held in the US", "meecrogate": "Fully local / on-premise" },
+      { "feature": "Configuration auditability", "gravitee": "Database (blob)", "kong": "YAML (verbose)", "cloud": "Cloud interface", "meecrogate": "Human-readable JSON" },
+      { "feature": "Longevity (lock-in)", "gravitee": "Tied to the JVM stack", "kong": "Tied to plugins", "cloud": "Complete lock-in", "meecrogate": "Fully reversible" }
+    ]
+  }
+}

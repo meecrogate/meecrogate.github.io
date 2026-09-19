@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Send, Loader2, CheckCircle } from "lucide-react";
 
 const ContactForm = () => {
+  const { t } = useTranslation("forms");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
@@ -43,7 +45,7 @@ const ContactForm = () => {
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           // On personnalise l'objet du mail que vous allez recevoir
-          subject: `[Meecrogate] Nouveau message de ${formData.nom} (${formData.entreprise})`,
+          subject: t("contact.mailSubject", { name: formData.nom, company: formData.entreprise }),
           // On indique à Web3Forms qui envoie le message pour un affichage propre
           from_name: formData.nom,
           // Et on injecte tout le reste des champs (nom, email, tel, message, etc.)
@@ -54,7 +56,7 @@ const ContactForm = () => {
       const result = await response.json();
 
       if (result.success) {
-        toast.success("Votre message a bien été envoyé ! Nous vous recontacterons très vite.");
+        toast.success(t("contact.success.toast"));
         setIsSuccess(true);
         // On vide le formulaire après succès
         setFormData({
@@ -66,11 +68,11 @@ const ContactForm = () => {
           message: ""
         });
       } else {
-        toast.error("Erreur lors de l'envoi du message.");
+        toast.error(t("contact.errors.send"));
         console.error(result);
       }
     } catch (error) {
-      toast.error("Impossible de joindre le serveur. Veuillez réessayer plus tard.");
+      toast.error(t("contact.errors.network"));
       console.error(error);
     } finally {
       setIsSubmitting(false);
@@ -81,11 +83,10 @@ const ContactForm = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-          Contactez-nous
+          {t("contact.title")}
         </h1>
         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-          Vous avez des questions sur Meecrogate ? Notre équipe d'experts est là pour vous accompagner
-          dans votre transformation digitale.
+          {t("contact.subtitle")}
         </p>
       </div>
 
@@ -95,84 +96,84 @@ const ContactForm = () => {
           /* --- ÉCRAN DE SUCCÈS --- */
           <div className="text-center py-16 animate-in fade-in zoom-in duration-500">
             <CheckCircle className="w-20 h-20 text-green-400 mx-auto mb-6" />
-            <h3 className="text-3xl font-bold text-white mb-4">Message envoyé !</h3>
+            <h3 className="text-3xl font-bold text-white mb-4">{t("contact.success.title")}</h3>
             <p className="text-lg text-gray-300 mb-8">
-              Merci de nous avoir contactés. Notre équipe a bien reçu votre demande et reviendra vers vous très rapidement.
+              {t("contact.success.description")}
             </p>
             <Button
               onClick={() => setIsSuccess(false)}
               variant="outline"
               className="bg-transparent text-white border-gray-600 hover:bg-gray-800"
             >
-              Envoyer un autre message
+              {t("contact.success.again")}
             </Button>
           </div>
         ) : (
           /* --- LE FORMULAIRE CLASSIQUE --- */
           <>
-            <h2 className="text-2xl font-bold text-white mb-8">Envoyez-nous un message</h2>
+            <h2 className="text-2xl font-bold text-white mb-8">{t("contact.formTitle")}</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="nom" className="text-gray-300">Nom complet *</Label>
+                  <Label htmlFor="nom" className="text-gray-300">{t("contact.fullName.label")}</Label>
                   <Input
                     id="nom" name="nom" value={formData.nom} onChange={handleInputChange} required
                     className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                    placeholder="Votre nom complet" disabled={isSubmitting}
+                    placeholder={t("contact.fullName.placeholder")} disabled={isSubmitting}
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="entreprise" className="text-gray-300">Entreprise *</Label>
+                  <Label htmlFor="entreprise" className="text-gray-300">{t("contact.company.label")}</Label>
                   <Input
                     id="entreprise" name="entreprise" value={formData.entreprise} onChange={handleInputChange} required
                     className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                    placeholder="Nom de votre entreprise" disabled={isSubmitting}
+                    placeholder={t("contact.company.placeholder")} disabled={isSubmitting}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-gray-300">Email *</Label>
+                  <Label htmlFor="email" className="text-gray-300">{t("fields.email.label")}</Label>
                   <Input
                     id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required
                     className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                    placeholder="votre.email@entreprise.com" disabled={isSubmitting}
+                    placeholder={t("fields.email.placeholder")} disabled={isSubmitting}
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="telephone" className="text-gray-300">Téléphone</Label>
+                  <Label htmlFor="telephone" className="text-gray-300">{t("fields.phone.label")}</Label>
                   <Input
                     id="telephone" name="telephone" type="tel" value={formData.telephone} onChange={handleInputChange}
                     className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                    placeholder="+33 1 23 45 67 89" disabled={isSubmitting}
+                    placeholder={t("fields.phone.placeholder")} disabled={isSubmitting}
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="sujet" className="text-gray-300">Sujet *</Label>
+                <Label htmlFor="sujet" className="text-gray-300">{t("contact.subject.label")}</Label>
                 <Input
                   id="sujet" name="sujet" value={formData.sujet} onChange={handleInputChange} required
                   className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                  placeholder="Objet de votre demande" disabled={isSubmitting}
+                  placeholder={t("contact.subject.placeholder")} disabled={isSubmitting}
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-gray-300">Message *</Label>
+                <Label htmlFor="message" className="text-gray-300">{t("contact.message.label")}</Label>
                 <Textarea
                   id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={6}
                   className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400"
-                  placeholder="Décrivez votre projet, vos besoins ou vos questions en détail..." disabled={isSubmitting}
+                  placeholder={t("contact.message.placeholder")} disabled={isSubmitting}
                 />
               </div>
 
               <Button type="submit" size="lg" className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white" disabled={isSubmitting}>
                 {isSubmitting ? (
-                  <><Loader2 className="mr-2 w-5 h-5 animate-spin" /> Envoi en cours...</>
+                  <><Loader2 className="mr-2 w-5 h-5 animate-spin" /> {t("contact.submitting")}</>
                 ) : (
-                  <><Send className="mr-2 w-5 h-5" /> Envoyer le message</>
+                  <><Send className="mr-2 w-5 h-5" /> {t("contact.submit")}</>
                 )}
               </Button>
             </form>

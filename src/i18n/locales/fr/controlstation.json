@@ -1,0 +1,68 @@
+{
+  "seo": {
+    "title": "Control Station — Pilotage centralisé de votre plateforme API",
+    "description": "Le Control Station Meecrogate : interface unique pour configurer, surveiller et administrer Gateway, identité, orchestration et processus."
+  },
+  "hero": {
+    "badge": "Interface d'Administration",
+    "title": "Le Control Station Central",
+    "description": "Gérez, configurez et surveillez l'intégralité de votre plateforme Meecrogate depuis une interface graphique unique et intuitive.",
+    "imageAlt": "Tableau de bord du Control Station",
+    "demo": "Demander une démo",
+    "architecture": "Voir l'architecture"
+  },
+  "features": {
+    "title": "Fonctionnalités de gestion",
+    "subtitle": "Un ensemble complet d'outils pour administrer votre écosystème d'APIs",
+    "items": {
+      "catalog": {
+        "title": "Catalogue d'APIs",
+        "description": "Centralisez et documentez l'ensemble de vos APIs dans un catalogue unique et consultable.",
+        "details": ["Documentation automatique", "Versioning intégré", "Recherche avancée", "Tags et catégories"]
+      },
+      "monitoring": {
+        "title": "Monitoring en temps réel",
+        "description": "Supervisez les performances et la santé de vos APIs avec des tableaux de bord dynamiques.",
+        "details": ["Métriques de latence", "Taux d'erreurs", "Volume de requêtes", "Alertes configurables"]
+      },
+      "access": {
+        "title": "Gestion des accès",
+        "description": "Contrôlez finement qui peut accéder à quelles APIs avec un système de rôles avancé.",
+        "details": ["Rôles personnalisés", "Quotas par utilisateur", "Tokens API", "Audit des accès"]
+      },
+      "security": {
+        "title": "Politiques de sécurité",
+        "description": "Définissez et appliquez des règles de sécurité cohérentes sur l'ensemble de vos APIs.",
+        "details": ["Rate limiting", "IP whitelisting", "OAuth2/OIDC", "Validation des entrées"]
+      }
+    }
+  },
+  "templates": {
+    "badge": "Générateur de configurations",
+    "title": "Templates JSON pour vos composants",
+    "subtitle": "Générez automatiquement les configurations JSON pour chaque composant Meecrogate grâce à des templates prédéfinis et personnalisables.",
+    "items": {
+      "apiGateway": {
+        "title": "API Gateway",
+        "description": "Générez des configurations JSON pour exposer, sécuriser et monitorer vos APIs."
+      },
+      "identityServer": {
+        "title": "Serveur d'Identité",
+        "description": "Créez des configurations pour l'authentification OAuth2, OIDC et la gestion des tokens."
+      },
+      "orchestrator": {
+        "title": "Orchestrateur",
+        "description": "Configurez des workflows d'orchestration pour chaîner vos services de manière intelligente."
+      },
+      "processExecutor": {
+        "title": "Process Executor",
+        "description": "Définissez des configurations JSON pour automatiser vos processus métiers."
+      }
+    }
+  },
+  "cta": {
+    "title": "Prêt à centraliser la gestion de vos APIs ?",
+    "description": "Découvrez comment le Control Station peut transformer votre gouvernance API avec une démonstration personnalisée.",
+    "button": "Planifier une démo"
+  }
+}

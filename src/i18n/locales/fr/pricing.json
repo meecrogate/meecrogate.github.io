@@ -1,0 +1,125 @@
+{
+  "seo": {
+    "title": "Tarifs — Plans Meecrogate",
+    "description": "Découvrez les offres Meecrogate : tarifs transparents pour démarrer rapidement et passer à l'échelle, sans lock-in cloud."
+  },
+  "hero": {
+    "title": "Tarifs — Passez du prototype à la production",
+    "subtitle": "Des offres simples, adaptées à la France. Prix HT / mois — intégration incluse selon l'offre.",
+    "subtitleStrong": "Contactez-nous",
+    "subtitleEnd": "pour une démo ou un devis Enterprise."
+  },
+  "labels": {
+    "included": "Inclus:",
+    "options": "Options:",
+    "choosePlan": "Choisir ce plan",
+    "contactUs": "Nous contacter"
+  },
+  "plans": {
+    "pro": {
+      "name": "Pro",
+      "tagline": "Pour PME/ETI qui passent en production",
+      "price": "2 600 €",
+      "priceNote": "HT / mois (facturation annuelle)",
+      "included": [
+        "Jusqu'à 25 APIs",
+        "10 orchestrateurs",
+        "5 jours d'intégration et onboarding inclus",
+        "Support Standard par tickets",
+        "Instances de Gateway illimitées"
+      ],
+      "optionsTitle": "Options:",
+      "options": [
+        "Meecrogate Serveur ID",
+        "Licences pluriannuelles : 31 200 €/an",
+        "3 ans : 28 080 €/an",
+        "5 ans : 24 960 €/an"
+      ],
+      "cta": "Choisir ce plan"
+    },
+    "enterprise": {
+      "name": "Entreprise",
+      "tagline": "Conçu pour les grands comptes : haute sécurité, conformité et forte volumétrie.",
+      "price": "Sur demande",
+      "priceNote": "",
+      "included": [
+        "SLA sur mesure",
+        "Gestion des Identités: Meecrogate Serveur ID",
+        "Équipe de Projet d'intégration dédiée",
+        "Support dédié",
+        "Audit et réalisation d'un pilote de 4 à 6 semaines pour valider l'adéquation de Meecrogate à votre contexte"
+      ],
+      "optionsTitle": "Composition à la carte de votre solution avec les modules Meecrogate",
+      "options": [
+        "Meecrogate Serveur ID",
+        "Orchestrateur",
+        "Process Executor",
+        "Control Station",
+        "Migration, mode hybride & APIs spécifiques"
+      ],
+      "cta": "Nous contacter"
+    }
+  },
+  "comparison": {
+    "title": "Tableau comparatif",
+    "headers": { "feature": "Fonctionnalité", "pro": "Pro", "enterprise": "Entreprise" },
+    "option": "+ Option",
+    "options": "+ Options",
+    "rows": {
+      "apis": { "feature": "APIs sécurisées", "pro": "Jusqu'à 25", "enterprise": "Illimité" },
+      "orchestrators": { "feature": "Orchestrateurs", "pro": "10", "enterprise": "Illimité" },
+      "gatewayInstances": { "feature": "Instances Gateway", "pro": "Illimité", "enterprise": "Illimité" },
+      "onboarding": { "feature": "Intégration & onboarding", "pro": "5 jours inclus", "enterprise": "Équipe dédiée" },
+      "support": { "feature": "Support", "pro": "Standard par tickets", "enterprise": "Support dédié" },
+      "sla": { "feature": "SLA", "pro": "Standard", "enterprise": "Sur mesure" },
+      "idServer": { "feature": "Serveur ID", "pro": "@option", "enterprise": "@options" },
+      "orchestrator": { "feature": "Orchestrateur", "pro": "@option", "enterprise": "@options" },
+      "processExecutor": { "feature": "Process Executor", "pro": "@option", "enterprise": "@options" },
+      "roles": { "feature": "Control Station rôles utilisateurs", "pro": "3 rôles Builder, rôles \"Lecteur\" illimités", "enterprise": "@options" },
+      "price": { "feature": "Prix (HT / an)", "pro": "31 200 €", "enterprise": "Sur demande" }
+    }
+  },
+  "notes": {
+    "label": "Remarques :",
+    "text": "Les prix sont exprimés en <0>EUR HT / mois</0>. TVA en sus. La facturation est annuelle, engagement sur 1, 3 ou 5 ans."
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "question": "Que comprend l'intégration ?",
+        "answer": "Paramétrage initial, connexion aux backends, tests, et formation des équipes (durée selon l'offre : ½ j → 2 j → projet sur mesure)."
+      },
+      {
+        "question": "Peut-on monter d'un plan à l'autre sans coupure ?",
+        "answer": "Oui — montée en charge fluide, migration et hook d'intégration planifiés avec notre équipe pour éviter toute interruption."
+      },
+      {
+        "question": "Y a-t-il une offre POC ?",
+        "answer": "Oui : pack POC disponible (forfait remboursable à la signature d'un contrat Pro/Entreprise). Contactez ventes pour les conditions."
+      }
+    ]
+  },
+  "contactStrip": {
+    "title": "Besoin d'un accompagnement sur-mesure ?",
+    "description": "Équipe dédiée, migration, conformité RGPD, ou déploiement on-premise : parlons-en.",
+    "cta": "Contact commercial"
+  },
+  "dialog": {
+    "title": "Demande de contact",
+    "descriptionWithPlan": "Vous êtes intéressé par le plan {{plan}}. ",
+    "description": "Remplissez ce formulaire et notre équipe vous contactera rapidement.",
+    "defaultSubject": "Demande d'information - Plan {{plan}}",
+    "mailSubject": "[Tarifs Meecrogate] Demande pour le plan {{plan}} par {{name}}",
+    "submit": "Envoyer la demande",
+    "submitting": "Envoi en cours..."
+  },
+  "toast": {
+    "successTitle": "Message envoyé !",
+    "successDescription": "Nous avons bien reçu votre demande et vous recontacterons très vite.",
+    "errorTitle": "Erreur",
+    "errorDescription": "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+    "networkTitle": "Erreur réseau",
+    "networkDescription": "Impossible de joindre le serveur d'envoi."
+  }
+}

@@ -1,6 +1,7 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/i18n/Link";
 import BenefitsSection from "./BenefitsSection";
 import ControlStationCard from "./ControlStationCard";
 import MeecrogateComponentsGrid from "./MeecrogateComponentsGrid";
@@ -8,27 +9,28 @@ import ProcessPhasesSection from "./ProcessPhasesSection";
 import SovereigntySection from "./SovereigntySection";
 
 const Hero = () => {
+  const { t } = useTranslation("home");
+
   return (
     <div className="relative overflow-hidden" style={{ fontFamily: 'Poppins, sans-serif' }}>
       {/* HERO SECTION */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="text-center">
           <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 mt-6">
-            <span className="block">Meecrogate</span>
+            <span className="block">{t("hero.title")}</span>
             <span className="block text-[#FFB300] text-4xl md:text-5xl mt-4">
-              La plateforme modulaire d'APIs cloud-native
+              {t("hero.subtitle")}
             </span>
           </h1>
 
           <p className="text-xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Solution modulaire composable pour l'exposition, la sécurisation et l'orchestration d'APIs.
-            Conçue pour le cloud et les environnements traditionnels, entièrement configurable sans code.
+            {t("hero.description")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <Link to="/demo">
               <Button size="lg" className="bg-[#FFB300] text-gray-900 px-8 py-4 text-lg h-auto border-0 font-semibold">
-                Demander une démo
+                {t("actions.requestDemo", { ns: "common" })}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>

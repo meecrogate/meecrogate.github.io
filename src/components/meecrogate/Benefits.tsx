@@ -1,46 +1,19 @@
+import { useTranslation } from "react-i18next";
 import { Check, Zap, Globe, Shield, Activity, Lock } from "lucide-react";
 
 const Benefits = () => {
+  const { t } = useTranslation("benefits");
+
   const benefits = [
-    { 
-      text: "Déploiement rapide et accompagné sans développeur",
-      icon: Zap, 
-      color: "blue" 
-    },
-    { 
-      text: "Haute disponibilité et scalabilité automatique", 
-      icon: Activity, 
-      color: "fuchsia" 
-    },
-    { 
-      text: "Gouvernance des APIs intégrée (sécurité, accès, quotas)", 
-      icon: Shield, 
-      color: "orange" 
-    },
-    { 
-      text: "Surveillance et traçabilité natives", 
-      icon: Globe, 
-      color: "cyan" 
-    },
-    { 
-      text: "Adapté aux architectures Cloud et On premise modernes: microservices, event-driven, api-first", 
-      icon: Check, 
-      color: "green" 
-    },
-    { 
-      text: (
-        <>
-          No cloud vendor locking
-          <br />
-          <span className="font-semibold">Compatible et Composable</span>
-        </>
-      ),
-      icon: Lock, 
-      color: "yellow" 
-    }
+    { id: "fastDeployment", icon: Zap, color: "blue" },
+    { id: "highAvailability", icon: Activity, color: "fuchsia" },
+    { id: "governance", icon: Shield, color: "orange" },
+    { id: "monitoring", icon: Globe, color: "cyan" },
+    { id: "modernArchitectures", icon: Check, color: "green" },
+    { id: "noLockIn", icon: Lock, color: "yellow" },
   ];
 
-  const getColorClasses = (color) => {
+  const getColorClasses = (color: string) => {
     switch (color) {
       case 'blue': return { bg: 'bg-blue-500/20', text: 'text-blue-400' };
       case 'fuchsia': return { bg: 'bg-fuchsia-500/20', text: 'text-fuchsia-400' };
@@ -63,23 +36,23 @@ const Benefits = () => {
         <div className="text-center mb-20">
           <h2 className="text-5xl sm:text-6xl font-black text-white mb-4 tracking-tighter">
             <span className="text-[#ffb300] pb-2 border-b-4 border-[#ffb300]/50 inline-flex items-center">
-              Bénéfices Clés
+              {t("title")}
             </span>
           </h2>
           <p className="text-xl sm:text-2xl text-gray-200 max-w-4xl mx-auto mt-6">
-            Une plateforme qui s'adapte à vos besoins, pas l'inverse.
+            {t("subtitle")}
           </p>
         </div>
 
         <div className="bg-gray-900/30 backdrop-blur-lg rounded-3xl border border-gray-700/70 p-8 md:p-12 shadow-2xl">
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
-            {benefits.map((benefit, index) => {
+            {benefits.map((benefit) => {
               const Icon = benefit.icon;
               const classes = getColorClasses(benefit.color);
 
               return (
                 <div 
-                  key={index}
+                  key={benefit.id}
                   className="flex items-start space-x-6 group transition-all duration-500 transform bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 shadow-xl hover:scale-[1.03] hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.3),0_4px_6px_-2px_rgba(0,0,0,0.2),0_0_40px_-5px_rgba(255,179,0,0.6)] hover:border-[#ffb300] hover:from-gray-800/70 hover:to-gray-900/70"
                 >
                   <div className="flex-shrink-0">
@@ -89,11 +62,21 @@ const Benefits = () => {
                   </div>
                   <div className="flex flex-col">
                     <p className="text-xl font-medium text-white group-hover:text-[#ffb300] transition-colors duration-300">
-                      {benefit.text}
+                      {benefit.id === "noLockIn" ? (
+                        <>
+                          {t("items.noLockIn.text")}
+                          <br />
+                          <span className="font-semibold">{t("items.noLockIn.highlight")}</span>
+                        </>
+                      ) : benefit.id === "modernArchitectures" ? (
+                        t("items.modernArchitectures.text")
+                      ) : (
+                        t(`items.${benefit.id}`)
+                      )}
                     </p>
-                    {typeof benefit.text === 'string' && benefit.text.includes("Cloud et On premise") && (
+                    {benefit.id === "modernArchitectures" && (
                       <p className="text-sm text-gray-400 mt-1">
-                        Support complet pour toutes vos intégrations asynchrones et synchrones.
+                        {t("items.modernArchitectures.note")}
                       </p>
                     )}
                   </div>

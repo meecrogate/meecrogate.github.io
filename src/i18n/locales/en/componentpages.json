@@ -1,0 +1,334 @@
+{
+  "labels": {
+    "demo": "Request a demo",
+    "allComponents": "All components"
+  },
+  "apiGateway": {
+    "seoTitle": "API Gateway — Securing and routing your APIs",
+    "seoDescription": "The Meecrogate API Gateway component: authentication, rate limiting, transformation, caching and observability for your APIs.",
+    "title": "API Gateway",
+    "subtitle": "Security & smart routing",
+    "description": "A single, secure entry point for all your APIs. Our API Gateway centralises traffic management, strengthens security and keeps microservice architectures fast.",
+    "benefitsTitle": "Key benefits",
+    "benefits": [
+      {
+        "title": "Stronger security",
+        "description": "One control point for authentication and authorisation"
+      },
+      {
+        "title": "Excellent performance",
+        "description": "Smart caching and automatic load balancing"
+      },
+      {
+        "title": "Full observability",
+        "description": "Real-time monitoring and analytics"
+      }
+    ],
+    "featuresTitle": "Advanced features",
+    "features": [
+      {
+        "title": "Centralised authentication",
+        "description": "Authentication handled in one place, with OAuth 2.0, JWT and SSO support."
+      },
+      {
+        "title": "Rate limiting",
+        "description": "Protection against abuse, with rate limits configurable per client or endpoint."
+      },
+      {
+        "title": "Smart routing",
+        "description": "Routing based on content, geolocation or your own business rules."
+      },
+      {
+        "title": "Data transformation",
+        "description": "Requests and responses altered on the fly to match the formats each side expects."
+      },
+      {
+        "title": "Advanced analytics",
+        "description": "Detailed dashboards with performance and usage metrics."
+      },
+      {
+        "title": "Multi-level caching",
+        "description": "A smart caching system that improves performance and cuts latency."
+      }
+    ],
+    "useCasesTitle": "Typical use cases",
+    "useCases": [
+      {
+        "title": "Microservice architecture",
+        "description": "Simplify access to microservices with a single entry point and centralised security."
+      },
+      {
+        "title": "Partner APIs",
+        "description": "Expose your APIs to external partners with fine-grained access control and billing."
+      },
+      {
+        "title": "Mobile applications",
+        "description": "Optimise mobile-to-backend traffic with compression, caching and format adaptation."
+      },
+      {
+        "title": "Legacy integration",
+        "description": "Modernise access to legacy systems by exposing them as up-to-date REST APIs."
+      }
+    ]
+  },
+  "identityServer": {
+    "seoTitle": "Identity Server — SSO, OAuth2 & access management",
+    "seoDescription": "The Meecrogate identity server: SSO, OAuth2, OpenID Connect, MFA and central management of users and permissions.",
+    "title": "Identity Server",
+    "subtitle": "Access management & single sign-on",
+    "description": "A complete identity and access management (IAM) solution that strengthens security, keeps the user experience smooth and brings identity management into one place.",
+    "benefitsTitle": "Immediate benefits",
+    "benefits": [
+      {
+        "title": "Layered security",
+        "description": "MFA, anomaly detection and GDPR compliance"
+      },
+      {
+        "title": "A smooth user experience",
+        "description": "Transparent SSO across every application"
+      },
+      {
+        "title": "Central management",
+        "description": "Unified control over identities and permissions"
+      }
+    ],
+    "featuresTitle": "Complete feature set",
+    "features": [
+      {
+        "title": "Single sign-on (SSO)",
+        "description": "One login to reach every application in the ecosystem."
+      },
+      {
+        "title": "RBAC management",
+        "description": "Role-based access control with fine-grained permissions and inheritance."
+      },
+      {
+        "title": "MFA authentication",
+        "description": "Stronger security through multi-factor authentication (SMS, TOTP, biometrics)."
+      },
+      {
+        "title": "LDAP/AD integration",
+        "description": "Seamless connection to the corporate directories you already run."
+      },
+      {
+        "title": "Open standards",
+        "description": "Full support for OAuth 2.0, OpenID Connect, SAML 2.0 and JWT."
+      },
+      {
+        "title": "User lifecycle",
+        "description": "Automatic provisioning and deprovisioning with approval workflows."
+      }
+    ],
+    "standardsTitle": "Supported protocols and standards",
+    "standards": [
+      {
+        "title": "OAuth 2.0",
+        "description": "Secure authorisation for APIs"
+      },
+      {
+        "title": "OpenID Connect",
+        "description": "An identity layer on top of OAuth 2.0"
+      },
+      {
+        "title": "SAML 2.0",
+        "description": "Enterprise identity federation"
+      },
+      {
+        "title": "JWT/JWS/JWE",
+        "description": "Secure, signed tokens"
+      }
+    ],
+    "useCasesTitle": "Implementation scenarios",
+    "useCases": [
+      {
+        "title": "Employee portal",
+        "description": "Unified access to HR applications, collaboration tools and business systems, with full SSO."
+      },
+      {
+        "title": "Customer/partner portal",
+        "description": "Secure management of external access, with domain separation and complete auditing."
+      },
+      {
+        "title": "B2C applications",
+        "description": "Simple sign-up and sign-in, including social logins and full self-service."
+      },
+      {
+        "title": "Cloud migration",
+        "description": "Legacy authentication systems modernised onto cloud-native standards."
+      }
+    ]
+  },
+  "orchestrator": {
+    "seoTitle": "Orchestrator — Composing APIs and workflows",
+    "seoDescription": "The Meecrogate orchestrator: compose complex workflows, aggregate several APIs and manage distributed transactions.",
+    "title": "Orchestrator",
+    "subtitle": "Synchronous & asynchronous",
+    "description": "A smart orchestration engine that coordinates your services and complex business processes. Handle synchronous and asynchronous flows with maximum resilience and observability.",
+    "benefitsTitle": "Core capabilities",
+    "benefits": [
+      {
+        "title": "Smart orchestration",
+        "description": "Complex microservices coordinated automatically"
+      },
+      {
+        "title": "Native resilience",
+        "description": "Automatic error handling and intelligent retries"
+      },
+      {
+        "title": "Total observability",
+        "description": "Complete traceability of your data flows"
+      }
+    ],
+    "featuresTitle": "Advanced features",
+    "features": [
+      {
+        "title": "Saga patterns",
+        "description": "Distributed transactions with automatic compensation when something fails."
+      },
+      {
+        "title": "Conditional routing",
+        "description": "Sophisticated routing logic driven by content and business rules."
+      },
+      {
+        "title": "Smart retries",
+        "description": "Configurable retry strategies with exponential backoff and a circuit breaker."
+      },
+      {
+        "title": "Message brokers",
+        "description": "Native integration with RabbitMQ, Apache Kafka and Azure Service Bus."
+      },
+      {
+        "title": "Real-time monitoring",
+        "description": "A live dashboard with performance metrics and configurable alerts."
+      },
+      {
+        "title": "Parallel execution",
+        "description": "Tasks run in parallel, with synchronisation and result aggregation."
+      }
+    ],
+    "patternsTitle": "Supported architecture patterns",
+    "patterns": [
+      {
+        "title": "Synchronous orchestration",
+        "items": [
+          "Request-response patterns",
+          "Service chaining",
+          "Data aggregation",
+          "ETL transformation"
+        ]
+      },
+      {
+        "title": "Asynchronous orchestration",
+        "items": [
+          "Event-driven workflows",
+          "Publish-subscribe patterns",
+          "Long-running processes",
+          "Batch processing"
+        ]
+      }
+    ],
+    "useCasesTitle": "Typical use cases",
+    "useCases": [
+      {
+        "title": "E-commerce",
+        "description": "The whole customer journey orchestrated: order validation, payment, stock, delivery and invoicing."
+      },
+      {
+        "title": "Financial services",
+        "description": "Complex transactions handled with validation, enrichment and multi-channel notification."
+      },
+      {
+        "title": "ERP integration",
+        "description": "Business data kept in sync between heterogeneous systems, with transformation and validation."
+      },
+      {
+        "title": "IoT & telemetry",
+        "description": "Real-time processing of IoT streams, with aggregation, analysis and triggered actions."
+      }
+    ]
+  },
+  "processExecutor": {
+    "seoTitle": "Process Executor — A business process engine",
+    "seoDescription": "The Meecrogate Process Executor: automate your business workflows, human tasks and integrations with complete traceability.",
+    "title": "Process Executor",
+    "subtitle": "Execution & automation",
+    "description": "A process execution engine for non-HTTP work. Automate your complex workflows with the Process Executor.",
+    "benefitsTitle": "Business benefits",
+    "benefits": [
+      {
+        "title": "Full automation",
+        "description": "A sharp drop in manual intervention"
+      },
+      {
+        "title": "Total traceability",
+        "description": "A complete history of executions and decisions"
+      },
+      {
+        "title": "Continuous optimisation",
+        "description": "Analytics that help you improve performance"
+      }
+    ],
+    "featuresTitle": "The complete Process Executor feature set",
+    "features": [
+      {
+        "title": "Graphical designer",
+        "description": "A low-code interface to build and change your processes visually."
+      },
+      {
+        "title": "Human tasks",
+        "description": "User tasks handled with dynamic forms and automatic notifications."
+      },
+      {
+        "title": "Automated tasks",
+        "description": "Scripts, API calls and integrations with external systems."
+      },
+      {
+        "title": "Time management",
+        "description": "Timers, deadlines and automatic escalations with configurable notifications."
+      },
+      {
+        "title": "Advanced analytics",
+        "description": "Performance metrics, bottlenecks and suggested optimisations."
+      },
+      {
+        "title": "Complex events",
+        "description": "Start, intermediate and end events handled with multiple conditions."
+      }
+    ],
+    "useCasesTitle": "Typical business processes",
+    "useCases": [
+      {
+        "title": "HR processes",
+        "description": "Recruitment, onboarding, leave and reviews, with multi-level approval workflows."
+      },
+      {
+        "title": "Finance processes",
+        "description": "Invoice validation, budget approvals and expense claims, with automated controls."
+      },
+      {
+        "title": "Contract management",
+        "description": "The full contract lifecycle: drafting, negotiation, validation, signature and renewal."
+      },
+      {
+        "title": "Customer support",
+        "description": "Automatic ticket escalation, SLA monitoring and customer satisfaction KPIs."
+      }
+    ],
+    "integrationsTitle": "Native integrations",
+    "integrationsSubtitle": "The Process Executor plugs straight into the systems you already run and into the other Meecrogate components",
+    "integrations": [
+      {
+        "title": "External systems",
+        "description": "ERP, CRM and databases through REST and SOAP APIs and dedicated connectors"
+      },
+      {
+        "title": "Orchestrator",
+        "description": "Native collaboration to orchestrate complex processes across systems"
+      },
+      {
+        "title": "Identity Server",
+        "description": "SSO integration for human tasks, with role and permission management"
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "seo": {
+    "title": "Meecrogate — Plateforme API Cloud souveraine & low-code",
+    "description": "Meecrogate : plateforme API cloud-agnostique, lean et souveraine. API Gateway, orchestration, identité et exécution de processus en JSON auditable."
+  },
+  "hero": {
+    "title": "Meecrogate",
+    "subtitle": "La plateforme modulaire d'APIs cloud-native",
+    "description": "Solution modulaire composable pour l'exposition, la sécurisation et l'orchestration d'APIs. Conçue pour le cloud et les environnements traditionnels, entièrement configurable sans code."
+  },
+  "benefits": {
+    "title": "Avantages Clés de Meecrogate",
+    "details": "Détails",
+    "items": {
+      "fastDeployment": {
+        "title": "Déploiement rapide",
+        "description": "Sans développeur",
+        "details": "Déployez de nouvelles APIs ou fonctionnalités en quelques minutes, sans dépendre d'une équipe de développement. La configuration se fait par interface graphique, sans code à écrire."
+      },
+      "highAvailability": {
+        "title": "Haute disponibilité",
+        "description": "Scalabilité automatique",
+        "details": "La plateforme s'adapte automatiquement à la charge. Vous bénéficiez d'une haute disponibilité sans gestion manuelle de l'infrastructure, même lors de pics d'activité."
+      },
+      "governance": {
+        "title": "Gouvernance intégrée",
+        "description": "Sécurité, accès, quotas",
+        "details": "Gérez simplement la sécurité, les accès utilisateurs, les rôles et quotas. Toutes les politiques de gouvernance sont centralisées, et l'audit est natif."
+      },
+      "monitoring": {
+        "title": "Surveillance native",
+        "description": "Traçabilité complète",
+        "details": "Accédez en temps réel à toutes les métriques, logs, et traces. Visualisez facilement la santé des APIs et anticipez les incidents avec des alertes intégrées."
+      },
+      "modernArchitectures": {
+        "title": "Architectures modernes",
+        "description": "Microservices, serverless",
+        "details": "Support complet des architectures microservices, serverless ou hybrides, pour accélérer vos projets IT tout en gardant la maîtrise technologique."
+      },
+      "noLockIn": {
+        "title": "No vendor lock-in",
+        "description": "Liberté technologique",
+        "details": "La plateforme est compatible avec tous les clouds et peut être déployée sur site. Vos données et vos architectures restent portables, sans dépendance à un fournisseur."
+      }
+    }
+  },
+  "sovereignty": {
+    "text": "Conçu et maintenu en France. Solution européenne respectant les normes RGPD et offrant un contrôle total sur vos données."
+  },
+  "controlStation": {
+    "title": "Le Control Station Central",
+    "description": "Gérez, configurez et surveillez l'intégralité de votre plateforme Meecrogate depuis une interface graphique unique.",
+    "cta": "Interface D'Administration",
+    "imageAlt": "Tableau de bord du Control Station"
+  },
+  "componentsGrid": {
+    "apiGateway": "API Gateway",
+    "identityServer": "Serveur d'identité & souscription",
+    "orchestrator": "Orchestrateur d'APIs",
+    "processExecutor": "Process Executor"
+  },
+  "process": {
+    "title": "Accélérer votre roadmap",
+    "learnMore": "En savoir plus",
+    "howItHelps": "Comment Meecrogate vous aide",
+    "steps": {
+      "design": {
+        "title": "Conception",
+        "description": "Modélisez vos APIs et processus via l'interface sans écrire une ligne de code.",
+        "benefits": [
+          "Interface visuelle drag-and-drop pour concevoir vos APIs",
+          "Modélisation JSON de vos processus métiers",
+          "Génération automatique de la documentation OpenAPI",
+          "Validation en temps réel de la cohérence de vos schémas",
+          "Templates prédéfinis pour accélérer le démarrage"
+        ]
+      },
+      "configuration": {
+        "title": "Configuration",
+        "description": "Définissez les règles de sécurité, les quotas et les orchestrations en quelques clics.",
+        "benefits": [
+          "Politiques de sécurité centralisées (OAuth2, JWT, API Keys)",
+          "Gestion fine des quotas et du rate limiting par client",
+          "Configuration des transformations de données sans code",
+          "Orchestration visuelle des appels entre services",
+          "Environnements multiples (dev, staging, prod) synchronisés"
+        ]
+      },
+      "deployment": {
+        "title": "Déploiement",
+        "description": "Déployez en production instantanément et bénéficiez de la scalabilité cloud-native.",
+        "benefits": [
+          "Déploiement en un clic vers tous vos environnements",
+          "Support multi-cloud (AWS, Azure, GCP, on-premise)",
+          "Auto-scaling intelligent basé sur la charge",
+          "Rollback instantané en cas de problème",
+          "Déploiements blue-green sans interruption de service"
+        ]
+      },
+      "monitoring": {
+        "title": "Surveillance",
+        "description": "Obtenez une vue en temps réel de la performance et du comportement de vos services.",
+        "benefits": [
+          "Tableaux de bord temps réel personnalisables",
+          "Alertes intelligentes basées sur des seuils configurables",
+          "Traçabilité complète de chaque requête (distributed tracing)",
+          "Analyse des performances et détection d'anomalies",
+          "Rapports automatisés pour le pilotage métier"
+        ]
+      }
+    }
+  }
+}

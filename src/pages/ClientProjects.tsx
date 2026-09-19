@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
 import { ArrowRight, Building2, ShoppingCart, Heart, CheckCircle, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/i18n/Link";
 import { useEffect, useRef, useState } from "react";
 
 const ClientProjects = () => {
+  const { t } = useTranslation("clientprojects");
   const [visibleProjects, setVisibleProjects] = useState(new Set<number>());
   
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -40,86 +43,47 @@ const ClientProjects = () => {
     }
   };
 
+  // Illustrations and links live here; the wording is in the `clientprojects` namespace.
   const projects = [
     {
-      id: "bancaire",
-      title: "Solutions d'intégration bancaire",
-      description: "Meecrogate a permis la modernisation complète de notre architecture API, réduisant les temps de traitement de 60% et améliorant la sécurité des transactions.",
-      author: "Directeur IT",
-      company: "Banque Centrale",
+      id: "banking",
       icon: <Building2 className="w-14 h-14 text-blue-400" />,
-      metrics: [
-        { value: "60%", label: "Réduction temps de traitement" },
-        { value: "99.9%", label: "Disponibilité" },
-        { value: "500k", label: "Transactions/jour" }
-      ],
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=610&h=375",
-      link: "/projets-clients/bancaire"
+      link: "/projets-clients/bancaire",
     },
     {
       id: "ecommerce",
-      title: "Plateforme e-commerce unifiée",
-      description: "L'implémentation de Meecrogate a révolutionné notre gestion des commandes et synchronisation stock, augmentant notre efficacité opérationnelle de 45%.",
-      author: "CTO",
-      company: "RetailTech Solutions",
       icon: <ShoppingCart className="w-14 h-14 text-green-400" />,
-      metrics: [
-        { value: "45%", label: "Amélioration efficacité" },
-        { value: "2M", label: "Commandes traitées/mois" },
-        { value: "Real-time", label: "Synchronisation stock" }
-      ],
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=610&h=375",
-      link: "/projets-clients/ecommerce"
+      link: "/projets-clients/ecommerce",
     },
     {
-      id: "sante",
-      title: "Système de santé connecté",
-      description: "Meecrogate nous a aidés à créer un écosystème de santé numérique intégré, améliorant la coordination des soins et l'expérience patient.",
-      author: "Directeur Innovation",
-      company: "Hôpital Universitaire",
+      id: "health",
       icon: <Heart className="w-14 h-14 text-red-400" />,
-      metrics: [
-        { value: "Unifié", label: "Dossier patient" },
-        { value: "30%", label: "Réduction délais" },
-        { value: "24/7", label: "Télémédecine" }
-      ],
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=610&h=375",
-      link: "/projets-clients/sante"
+      link: "/projets-clients/sante",
     },
     {
       id: "paris",
-      title: "Portail citoyen IA - Ville de Paris",
-      description: "Meecrogate a permis l'intégration rapide et sécurisée de services IA (chatbot, traduction, recommandations) dans le portail citoyen, avec un gain de 40% sur les délais d'intégration.",
-      author: "Directeur Innovation Numérique",
-      company: "Ville de Paris",
       icon: <MapPin className="w-14 h-14 text-purple-400" />,
-      metrics: [
-        { value: "40%", label: "Temps gagné sur intégration" },
-        { value: "RGPD", label: "Conformité renforcée" },
-        { value: "Quelques semaines", label: "Mise en service" }
-      ],
       image: "https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=610&h=375",
-      link: "/projets-clients/paris"
-    }
+      link: "/projets-clients/paris",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-slate-900">
-      <Seo
-        title="Projets clients — Témoignages & cas concrets"
-        description="Découvrez comment nos clients (banque, e-commerce, santé, secteur public) utilisent Meecrogate pour moderniser leur plateforme API."
-      />
+      <Seo title={t("seo.title")} description={t("seo.description")} />
       <Navigation />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-              Projets <span className="text-[#FFB300]">clients</span>
+              {t("index.titlePrefix")} <span className="text-[#FFB300]">{t("index.titleHighlight")}</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Découvrez comment nos clients utilisent Meecrogate pour transformer 
-              leur architecture d'APIs et optimiser leurs processus métier.
+              {t("index.subtitle")}
             </p>
           </div>
         </section>
@@ -150,16 +114,16 @@ const ClientProjects = () => {
                               {project.icon}
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
-                              {project.title}
+                              {t(`projects.${project.id}.title`)}
                             </h3>
                             <p className="text-gray-300 mb-4 text-lg leading-relaxed">
-                              "{project.description}"
+                              &ldquo;{t(`projects.${project.id}.quote`)}&rdquo;
                             </p>
                             <p className="text-[#FFB300] font-semibold mb-6">
-                              {project.author}, {project.company}
+                              {t(`projects.${project.id}.author`)}, {t(`projects.${project.id}.company`)}
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                              {project.metrics.map((metric, idx) => (
+                              {(t(`projects.${project.id}.cardMetrics`, { returnObjects: true }) as { value: string; label: string }[]).map((metric, idx) => (
                                 <div key={idx} className="flex items-center space-x-3">
                                   <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                                   <div>
@@ -170,7 +134,7 @@ const ClientProjects = () => {
                               ))}
                             </div>
                             <span className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors group-hover:translate-x-1 transform duration-300">
-                              Lire l'étude de cas
+                              {t("index.readCaseStudy")}
                               <ArrowRight size={16} className="ml-2" />
                             </span>
                           </div>
@@ -179,7 +143,7 @@ const ClientProjects = () => {
                           width="610" 
                           height="375" 
                           src={project.image}
-                          alt={`${project.title} image`} 
+                          alt={t(`projects.${project.id}.title`)} 
                           className="w-full lg:w-[610px] h-64 lg:h-[375px] object-cover"
                         />
                       </div>
@@ -195,18 +159,12 @@ const ClientProjects = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold text-[#FFB300] mb-2">50+</div>
-                <div className="text-gray-300">Projets réalisés</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-[#FFB300] mb-2">95%</div>
-                <div className="text-gray-300">Taux de satisfaction</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-[#FFB300] mb-2">6 mois</div>
-                <div className="text-gray-300">Délai moyen de déploiement</div>
-              </div>
+              {(t("index.stats", { returnObjects: true }) as { value: string; label: string }[]).map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-4xl font-bold text-[#FFB300] mb-2">{stat.value}</div>
+                  <div className="text-gray-300">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

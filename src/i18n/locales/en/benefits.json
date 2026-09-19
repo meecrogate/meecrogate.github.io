@@ -1,0 +1,18 @@
+{
+  "title": "Key benefits",
+  "subtitle": "A platform that adapts to your needs, not the other way round.",
+  "items": {
+    "fastDeployment": "Fast, supported deployment with no developer required",
+    "highAvailability": "High availability and automatic scalability",
+    "governance": "Built-in API governance (security, access, quotas)",
+    "monitoring": "Native monitoring and traceability",
+    "modernArchitectures": {
+      "text": "Built for modern cloud and on-premise architectures: microservices, event-driven, API-first",
+      "note": "Full support for all your asynchronous and synchronous integrations."
+    },
+    "noLockIn": {
+      "text": "No cloud vendor lock-in",
+      "highlight": "Compatible and composable"
+    }
+  }
+}

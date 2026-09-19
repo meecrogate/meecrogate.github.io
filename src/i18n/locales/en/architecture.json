@@ -1,0 +1,87 @@
+{
+  "seo": {
+    "title": "Architecture — A modular, sovereign API platform",
+    "description": "Inside the Meecrogate architecture: decoupled components (gateway, identity, orchestrator, process executor) deployed on VMs, Kubernetes or the cloud."
+  },
+  "title": "Technical architecture",
+  "subtitle": "Cloud-native by design, at home on Kubernetes and on traditional VMs",
+  "keyBenefits": "Key benefits",
+  "points": {
+    "stateless": {
+      "title": "100% stateless",
+      "description": "No local storage, native horizontal scalability",
+      "benefits": ["Unlimited scalability", "High availability", "Simpler deployment", "Optimised costs"]
+    },
+    "configurationDriven": {
+      "title": "Configuration-driven",
+      "description": "Business logic through JSON files or the graphical interface",
+      "benefits": ["Zero code", "Full versioning through Git", "Instant rollback", "Easier collaboration"]
+    },
+    "interoperability": {
+      "title": "Native interoperability",
+      "description": "REST, WebSocket, Kafka, JDBC",
+      "benefits": ["Universal connectivity", "Real time", "Event-driven", "Direct database access"]
+    },
+    "monitoring": {
+      "title": "Centralised monitoring",
+      "description": "Logs, metrics and traces built in",
+      "benefits": ["Complete visibility", "Proactive alerting", "Easier debugging", "Audit compliance"]
+    }
+  },
+  "deployment": {
+    "title": "Flexible deployment",
+    "cloudNative": { "title": "Cloud-native", "description": "Kubernetes, containers, auto-scaling" },
+    "hybrid": { "title": "Hybrid", "description": "Public cloud plus your own datacenter" },
+    "onPremise": { "title": "On-premise", "description": "Traditional virtual machines" }
+  },
+  "gitops": {
+    "title": "GitOps industrialisation process",
+    "footnote": "Infrastructure and application are declared, versioned and deployed automatically.",
+    "exampleTitle": "Cloud-native deployment example",
+    "interactiveHint": "Click a component to learn more about it.",
+    "clusterLabel": "KUBERNETES CLUSTER",
+    "phases": {
+      "json": { "title": "JSON CONFIGURATION", "subtitle": "Declaration files" },
+      "git": { "title": "GIT REPOSITORY", "subtitle": "Source of truth" },
+      "sync": { "title": "GITOPS SYNC", "subtitle": "Pull & apply (Argo/Flux)" },
+      "runtime": { "title": "MEECROGATE RUNTIME", "subtitle": "Containerised components" }
+    },
+    "nodes": {
+      "station": {
+        "label": "Control Station",
+        "phase": "Configuration source",
+        "desc": "The administration interface where operators define global configuration visually, low-code. Changes are emitted as JSON and pushed to a Git repository."
+      },
+      "git": {
+        "label": "Git repository",
+        "phase": "Version control",
+        "desc": "The single source of truth. Every change is versioned here, which gives you a complete audit trail and instant rollback."
+      },
+      "operator": {
+        "label": "Meecrogate Operator",
+        "phase": "Sync & reconcile",
+        "desc": "A self-contained Kubernetes controller. It watches the Git repository, detects drift against the state of the cluster, and pulls new configuration securely under a zero-trust model."
+      },
+      "config": {
+        "label": "ConfigMap",
+        "phase": "In-cluster config",
+        "desc": "The native Kubernetes object. It holds the synchronised parameters in a dynamic format mounted inside the containers."
+      },
+      "pod1": {
+        "label": "Gateway",
+        "phase": "Runtime deployment",
+        "desc": "The API gateway. It picks up the ConfigMap update and hot-reloads its routing logic in memory, with zero downtime."
+      },
+      "pod2": {
+        "label": "ID Server",
+        "phase": "Runtime deployment",
+        "desc": "The identity server. It issues authentication tokens and refreshes its security policies in real time through the GitOps flow."
+      },
+      "pod3": {
+        "label": "Orchestrator",
+        "phase": "Runtime deployment",
+        "desc": "The service orchestrator. It coordinates internal microservices according to the latest topology, updated on the fly."
+      }
+    }
+  }
+}

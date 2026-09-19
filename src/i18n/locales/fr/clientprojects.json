@@ -1,0 +1,365 @@
+{
+  "seo": {
+    "title": "Projets clients — Témoignages & cas concrets",
+    "description": "Découvrez comment nos clients (banque, e-commerce, santé, secteur public) utilisent Meecrogate pour moderniser leur plateforme API."
+  },
+  "index": {
+    "titlePrefix": "Projets",
+    "titleHighlight": "clients",
+    "subtitle": "Découvrez comment nos clients utilisent Meecrogate pour transformer leur architecture d'APIs et optimiser leurs processus métier.",
+    "readCaseStudy": "Lire l'étude de cas",
+    "stats": [
+      {
+        "value": "50+",
+        "label": "Projets réalisés"
+      },
+      {
+        "value": "95%",
+        "label": "Taux de satisfaction"
+      },
+      {
+        "value": "6 mois",
+        "label": "Délai moyen de déploiement"
+      }
+    ]
+  },
+  "labels": {
+    "challengesTitle": "Défis rencontrés",
+    "solutionsTitle": "Solutions apportées"
+  },
+  "projects": {
+    "banking": {
+      "title": "Solutions d'intégration bancaire",
+      "quote": "Meecrogate a permis la modernisation complète de notre architecture API, réduisant les temps de traitement de 60% et améliorant la sécurité des transactions.",
+      "author": "Directeur IT",
+      "company": "Banque Centrale",
+      "cardMetrics": [
+        {
+          "value": "60%",
+          "label": "Réduction temps de traitement"
+        },
+        {
+          "value": "99.9%",
+          "label": "Disponibilité"
+        },
+        {
+          "value": "500k",
+          "label": "Transactions/jour"
+        }
+      ],
+      "intro": "Découvrez comment Meecrogate a transformé l'architecture API d'une banque centrale, réduisant les temps de traitement de 60% tout en améliorant la sécurité.",
+      "metricsTitle": "Résultats obtenus",
+      "metrics": [
+        {
+          "title": "60% de réduction",
+          "subtitle": "Temps de traitement",
+          "description": "Les transactions sont désormais traitées 60% plus rapidement grâce à l'optimisation des APIs"
+        },
+        {
+          "title": "99.9% de disponibilité",
+          "subtitle": "Uptime garantie",
+          "description": "Architecture robuste assurant une disponibilité maximale pour les services critiques"
+        },
+        {
+          "title": "500k transactions/jour",
+          "subtitle": "Capacité de traitement",
+          "description": "Gestion en temps réel d'un volume élevé de transactions bancaires"
+        }
+      ],
+      "challengesTitle": "Défis rencontrés",
+      "challengesSubtitle": "Les problématiques initiales du projet",
+      "challenges": [
+        "Architecture API legacy fragmentée",
+        "Temps de traitement des transactions élevés",
+        "Défis de sécurité et de conformité bancaire",
+        "Besoin de haute disponibilité 24/7"
+      ],
+      "solutionsTitle": "Solutions apportées",
+      "solutionsSubtitle": "Comment Meecrogate a résolu ces défis",
+      "solutions": [
+        "Modernisation complète de l'architecture API",
+        "Optimisation des flux de données",
+        "Implémentation de protocoles de sécurité renforcés",
+        "Architecture haute disponibilité avec failover automatique"
+      ],
+      "detailsTitle": "Détails de l'implémentation",
+      "details": [
+        {
+          "title": "Architecture modernisée",
+          "description": "Remplacement de l'architecture legacy par une approche API-first basée sur Meecrogate, permettant une meilleure scalabilité et maintenabilité."
+        },
+        {
+          "title": "Sécurité renforcée",
+          "description": "Implémentation de protocoles de sécurité bancaire stricts avec authentification multi-facteurs, chiffrement end-to-end et audit trail complet."
+        },
+        {
+          "title": "Performance optimisée",
+          "description": "Optimisation des flux de données et mise en place de cache intelligent pour réduire significativement les temps de traitement des transactions."
+        }
+      ]
+    },
+    "ecommerce": {
+      "title": "Plateforme e-commerce unifiée",
+      "quote": "L'implémentation de Meecrogate a révolutionné notre gestion des commandes et synchronisation stock, augmentant notre efficacité opérationnelle de 45%.",
+      "author": "CTO",
+      "company": "RetailTech Solutions",
+      "cardMetrics": [
+        {
+          "value": "45%",
+          "label": "Amélioration efficacité"
+        },
+        {
+          "value": "2M",
+          "label": "Commandes traitées/mois"
+        },
+        {
+          "value": "Real-time",
+          "label": "Synchronisation stock"
+        }
+      ],
+      "intro": "Comment RetailTech Solutions a révolutionné sa gestion des commandes et synchronisation stock avec Meecrogate, augmentant l'efficacité opérationnelle de 45%.",
+      "metricsTitle": "Impact business",
+      "metrics": [
+        {
+          "title": "45% d'amélioration",
+          "subtitle": "Efficacité opérationnelle",
+          "description": "Optimisation drastique des processus de gestion des commandes et du stock"
+        },
+        {
+          "title": "2M commandes/mois",
+          "subtitle": "Capacité de traitement",
+          "description": "Gestion fluide d'un volume élevé de commandes en période de pointe"
+        },
+        {
+          "title": "Synchronisation real-time",
+          "subtitle": "Gestion du stock",
+          "description": "Mise à jour instantanée des niveaux de stock sur tous les canaux"
+        }
+      ],
+      "challengesTitle": "Problématiques initiales",
+      "challengesSubtitle": "Les défis du commerce électronique moderne",
+      "challenges": [
+        "Gestion des commandes dispersée sur plusieurs systèmes",
+        "Synchronisation stock complexe entre canaux",
+        "Manque de visibilité sur les processus métier",
+        "Délais de traitement des commandes trop élevés"
+      ],
+      "solutionsTitle": "Solutions Meecrogate",
+      "solutionsSubtitle": "Transformation de l'écosystème e-commerce",
+      "solutions": [
+        "Unification des systèmes de gestion des commandes",
+        "Synchronisation temps réel du stock multicanal",
+        "Dashboard centralisé de pilotage opérationnel",
+        "Automatisation des workflows de traitement"
+      ],
+      "detailsTitle": "Architecture technique",
+      "details": [
+        {
+          "title": "Hub d'orchestration central",
+          "description": "Meecrogate centralise les flux entre le site web, l'application mobile, les marketplaces et les systèmes back-office pour une vue unifiée."
+        },
+        {
+          "title": "Synchronisation temps réel",
+          "description": "Mise en place d'événements temps réel pour la synchronisation instantanée des stocks, prix et promotions sur tous les canaux de vente."
+        },
+        {
+          "title": "Workflows automatisés",
+          "description": "Automatisation complète du parcours commande : de la validation du paiement à la génération des étiquettes d'expédition et suivi client."
+        }
+      ]
+    },
+    "health": {
+      "title": "Système de santé connecté",
+      "quote": "Meecrogate nous a aidés à créer un écosystème de santé numérique intégré, améliorant la coordination des soins et l'expérience patient.",
+      "author": "Directeur Innovation",
+      "company": "Hôpital Universitaire",
+      "cardMetrics": [
+        {
+          "value": "Unifié",
+          "label": "Dossier patient"
+        },
+        {
+          "value": "30%",
+          "label": "Réduction délais"
+        },
+        {
+          "value": "24/7",
+          "label": "Télémédecine"
+        }
+      ],
+      "intro": "Découvrez comment l'Hôpital Universitaire a créé un écosystème de santé numérique intégré avec Meecrogate, améliorant la coordination des soins et l'expérience patient.",
+      "metricsTitle": "Bénéfices patients",
+      "metrics": [
+        {
+          "title": "Dossier patient unifié",
+          "subtitle": "Vision 360°",
+          "description": "Consolidation de toutes les données patient en un point d'accès unique et sécurisé"
+        },
+        {
+          "title": "30% de réduction",
+          "subtitle": "Délais de traitement",
+          "description": "Amélioration significative des délais de prise en charge et de coordination des soins"
+        },
+        {
+          "title": "Télémédecine 24/7",
+          "subtitle": "Disponibilité continue",
+          "description": "Plateforme de télémédecine intégrée pour un accès aux soins permanent"
+        }
+      ],
+      "challengesTitle": "Défis du système de santé",
+      "challengesSubtitle": "Les enjeux de la transformation numérique en santé",
+      "challenges": [
+        "Systèmes d'information cloisonnés entre services",
+        "Dossiers patients fragmentés sur multiple plateformes",
+        "Coordination complexe entre équipes médicales",
+        "Délais de traitement et attente trop élevés"
+      ],
+      "solutionsTitle": "Transformation digitale",
+      "solutionsSubtitle": "Solutions Meecrogate pour la santé connectée",
+      "solutions": [
+        "Interopérabilité complète des systèmes de santé",
+        "Dossier patient numérique unifié et sécurisé",
+        "Workflows de coordination des soins optimisés",
+        "Télémédecine intégrée avec suivi patient"
+      ],
+      "detailsTitle": "Innovation en santé numérique",
+      "details": [
+        {
+          "title": "Interopérabilité des données",
+          "description": "Connexion sécurisée de tous les systèmes : imagerie médicale, laboratoires, dossiers électroniques et équipements connectés pour une vue patient complète."
+        },
+        {
+          "title": "Sécurité et conformité RGPD",
+          "description": "Architecture sécurisée respectant les normes de confidentialité médicale avec chiffrement end-to-end et traçabilité complète des accès."
+        },
+        {
+          "title": "Parcours patient digitalisé",
+          "description": "De la prise de rendez-vous à la télésurveillance post-hospitalisation, chaque étape du parcours patient est optimisée et connectée."
+        }
+      ]
+    },
+    "paris": {
+      "title": "Portail citoyen IA - Ville de Paris",
+      "quote": "Meecrogate a permis l'intégration rapide et sécurisée de services IA (chatbot, traduction, recommandations) dans le portail citoyen, avec un gain de 40% sur les délais d'intégration.",
+      "author": "Directeur Innovation Numérique",
+      "company": "Ville de Paris",
+      "cardMetrics": [
+        {
+          "value": "40%",
+          "label": "Temps gagné sur intégration"
+        },
+        {
+          "value": "RGPD",
+          "label": "Conformité renforcée"
+        },
+        {
+          "value": "Quelques semaines",
+          "label": "Mise en service"
+        }
+      ],
+      "seoTitle": "Portail Citoyen IA — Ville de Paris",
+      "seoDescription": "Comment la Ville de Paris a intégré des services IA dans son portail citoyen avec Meecrogate, en gagnant 40% sur les délais d'intégration.",
+      "back": "Retour aux projets clients",
+      "heroTitle": "Portail Citoyen IA - Ville de Paris",
+      "heroSubtitle": "Accélérer l'innovation numérique au service des Franciliens",
+      "highlights": [
+        {
+          "value": "40%",
+          "label": "Temps gagné sur l'intégration des services"
+        },
+        {
+          "value": "RGPD",
+          "label": "Conformité et sécurité renforcées"
+        },
+        {
+          "value": "Quelques semaines",
+          "label": "Délai de mise en service"
+        }
+      ],
+      "contextTitle": "Le Contexte",
+      "contextText": "La Ville de Paris souhaitait enrichir son portail citoyen en intégrant des services d'intelligence artificielle avancés : chatbot conversationnel, traduction en temps réel, système de recommandations personnalisées et outils d'analyse prédictive. L'objectif était d'améliorer significativement l'expérience des Franciliens tout en respectant les enjeux de rapidité de déploiement, de sécurité des données et de souveraineté numérique.",
+      "contextQuote": "Notre vision était de faire de Paris la première capitale européenne à démontrer l'intégration rapide et sécurisée de services IA dans l'administration publique.",
+      "contextQuoteAuthor": "- Directeur Innovation Numérique, Ville de Paris",
+      "challengesTitle": "Les Défis Relevés",
+      "challenges": [
+        {
+          "title": "Complexité d'intégration",
+          "description": "Chaque service IA nécessitait un développement spécifique avec des délais de plusieurs mois et des risques de fragmentation technologique."
+        },
+        {
+          "title": "Souveraineté numérique",
+          "description": "Nécessité de maîtriser les données citoyens avec un hébergement en France et une conformité RGPD absolue."
+        },
+        {
+          "title": "Agilité requise",
+          "description": "Besoin de pouvoir brancher/débrancher une API en quelques clics et d'automatiser les processus de sécurité et monitoring."
+        },
+        {
+          "title": "Dépendance fournisseurs",
+          "description": "Risque de lock-in technologique et de non-conformité réglementaire avec les solutions existantes."
+        }
+      ],
+      "solutionTitle": "La Solution Meecrogate",
+      "solutionSubtitle": "Un API Management souverain et modulaire",
+      "solutions": [
+        {
+          "title": "Intégration plug-and-play",
+          "description": "Architecture stateless permettant l'intégration rapide de nouveaux services IA sans modification du système existant."
+        },
+        {
+          "title": "Automatisation complète",
+          "description": "Catalogage automatique, gestion de la sécurité et monitoring en temps réel de toutes les APIs intégrées."
+        },
+        {
+          "title": "Souveraineté garantie",
+          "description": "Données maîtrisées et hébergement en France avec conformité RGPD native et certification sécurité."
+        },
+        {
+          "title": "Déploiement express",
+          "description": "Mise en place complète en quelques semaines seulement contre plusieurs mois avec les solutions traditionnelles."
+        }
+      ],
+      "resultsTitle": "Résultats et Impact",
+      "results": [
+        {
+          "title": "Performance opérationnelle",
+          "items": [
+            "40% de temps gagné sur l'intégration des services",
+            "Sécurité et conformité RGPD renforcées",
+            "Agilité IT : gestion API en quelques clics"
+          ]
+        },
+        {
+          "title": "Expérience citoyenne",
+          "items": [
+            "Chatbot intelligent multilingue",
+            "Traduction instantanée des services",
+            "Recommandations personnalisées"
+          ]
+        }
+      ],
+      "impactTitle": "Impact Stratégique",
+      "impactText": "Paris devient la première capitale européenne à démontrer l'intégration rapide et sécurisée de services IA dans l'administration publique, créant un modèle reproductible pour d'autres grandes villes européennes.",
+      "impactPositioning": "Positionnement : innovation citoyenne + souveraineté numérique",
+      "outlookTitle": "Perspectives d'Avenir",
+      "outlook": [
+        {
+          "title": "Extension services",
+          "description": "Mobilité, énergie, environnement"
+        },
+        {
+          "title": "API Marketplace",
+          "description": "Création d'une marketplace interne"
+        },
+        {
+          "title": "Standardisation",
+          "description": "Écosystème numérique parisien unifié"
+        }
+      ],
+      "ctaTitle": "Prêt à transformer votre administration ?",
+      "ctaSubtitle": "Découvrez comment Meecrogate peut accélérer votre innovation numérique",
+      "ctaDemo": "Demander une démo",
+      "ctaOther": "Voir d'autres projets"
+    }
+  }
+}

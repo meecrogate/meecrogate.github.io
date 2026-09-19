@@ -1,0 +1,97 @@
+{
+  "seo": {
+    "title": "Components — API gateway, identity, orchestrator",
+    "description": "The four Meecrogate components: API Gateway, Identity Server, Orchestrator and Process Executor — a modular, sovereign architecture."
+  },
+  "hero": {
+    "title": "Meecrogate components",
+    "subtitle": "A closer look at each component of our integration platform and what it can do",
+    "imageAlt": "The Meecrogate platform — API management and hybrid deployment"
+  },
+  "labels": {
+    "keyFeatures": "Key features",
+    "businessBenefits": "Business benefits"
+  },
+  "items": {
+    "apiGateway": {
+      "title": "API Gateway",
+      "subtitle": "Security & routing",
+      "description": "A single entry point for all your APIs, handling security, smart routing and traffic management.",
+      "features": [
+        "Centralised authentication and authorisation",
+        "Rate limiting",
+        "Request and response transformation",
+        "Smart caching to improve performance",
+        "Real-time monitoring and analytics",
+        "Automatic load balancing"
+      ],
+      "benefits": [
+        "Stronger security through a single control point",
+        "Less complexity on the client side",
+        "Better performance thanks to caching",
+        "Full observability of API traffic"
+      ]
+    },
+    "identityServer": {
+      "title": "Identity Server",
+      "subtitle": "Access management",
+      "description": "A complete identity and access management (IAM) solution to secure your applications and services.",
+      "features": [
+        "Single sign-on (SSO) across applications",
+        "Role and permission management (RBAC)",
+        "Multi-factor authentication (MFA)",
+        "LDAP / Active Directory integration",
+        "OAuth 2.0, OIDC and SAML protocols",
+        "User lifecycle management"
+      ],
+      "benefits": [
+        "A simpler experience for users, thanks to SSO",
+        "Stronger security with MFA",
+        "Compliance with regulations such as GDPR",
+        "Lower identity management costs"
+      ]
+    },
+    "orchestrator": {
+      "title": "Orchestrator",
+      "subtitle": "Synchronous & asynchronous",
+      "description": "A smart orchestration engine to coordinate your services and complex business processes.",
+      "features": [
+        "Orchestration of synchronous and asynchronous services",
+        "Saga patterns for distributed transactions",
+        "Automatic retries and error handling",
+        "Conditional routing and parallel execution",
+        "Integration with message brokers (RabbitMQ, Kafka)",
+        "Monitoring dashboard for your flows"
+      ],
+      "benefits": [
+        "Simpler microservice architectures",
+        "Greater resilience through automatic error handling",
+        "Full visibility over data flows",
+        "Native horizontal scalability"
+      ]
+    },
+    "processExecutor": {
+      "title": "Process Executor",
+      "subtitle": "Process automation",
+      "description": "A process execution engine to automate your workflows.",
+      "features": [
+        "Automated and human tasks",
+        "Deadline and escalation handling",
+        "Integration with external systems",
+        "Complete history of every execution"
+      ],
+      "benefits": [
+        "Automation of complex business processes",
+        "Fewer human errors",
+        "Better traceability",
+        "Continuous optimisation of workflows"
+      ]
+    }
+  },
+  "cta": {
+    "title": "Ready to see Meecrogate in action?",
+    "description": "Ask for a personalised demonstration and see how these components can reshape your architecture",
+    "demo": "Request a demo",
+    "architecture": "See the architecture"
+  }
+}

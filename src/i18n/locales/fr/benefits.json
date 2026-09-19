@@ -1,0 +1,18 @@
+{
+  "title": "Bénéfices Clés",
+  "subtitle": "Une plateforme qui s'adapte à vos besoins, pas l'inverse.",
+  "items": {
+    "fastDeployment": "Déploiement rapide et accompagné sans développeur",
+    "highAvailability": "Haute disponibilité et scalabilité automatique",
+    "governance": "Gouvernance des APIs intégrée (sécurité, accès, quotas)",
+    "monitoring": "Surveillance et traçabilité natives",
+    "modernArchitectures": {
+      "text": "Adapté aux architectures Cloud et On premise modernes: microservices, event-driven, api-first",
+      "note": "Support complet pour toutes vos intégrations asynchrones et synchrones."
+    },
+    "noLockIn": {
+      "text": "No cloud vendor locking",
+      "highlight": "Compatible et Composable"
+    }
+  }
+}

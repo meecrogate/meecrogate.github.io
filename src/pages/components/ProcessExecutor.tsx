@@ -1,213 +1,53 @@
-import { Link } from "react-router-dom";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import Seo from "@/components/Seo";
-import { Zap, Workflow, Clock, Users, Settings, BarChart3 } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { BarChart3, Clock, Settings, Users, Workflow, Zap } from "lucide-react";
 
-const ProcessExecutorPage = () => {
+import ComponentDetailPage from "./ComponentDetailPage";
+
+interface Entry {
+  title: string;
+  description: string;
+}
+
+/** Native integrations, a section only this page has. */
+const IntegrationsSection = () => {
+  const { t } = useTranslation("componentpages");
+  const integrations = t("processExecutor.integrations", { returnObjects: true }) as Entry[];
+
   return (
-    <div className="min-h-screen bg-slate-900">
-      <Seo
-        title="Process Executor — Moteur de processus métier"
-        description="Le Process Executor Meecrogate : automatisez vos workflows métier, tâches humaines et intégrations avec une traçabilité complète."
-      />
-      <Navigation />
-      <div className="pt-16">
-        {/* Hero Section */}
-        <section className="py-20 px-6">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="bg-brand-orange/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
-                  <Zap className="w-12 h-12 text-brand-light" />
-                </div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className="text-brand-orange">
-                    Process Executor
-                  </span>
-                </h1>
-                <p className="text-brand-orange text-xl mb-6">
-                  Execution & Automatisation
-                </p>
-                <p className="text-brand-light/80 text-lg leading-relaxed mb-8">
-                  Moteur d'exécution de processus non HTTP.
-                  Automatisez vos workflows complexes avec l'emploi de process executor.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/demo"
-                    className="bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-                  >
-                    Demander une démo
-                  </Link>
-                  <Link
-                    to="/components"
-                    className="border border-brand-light/20 text-brand-light px-8 py-4 rounded-lg font-semibold hover:bg-brand-light/5 transition-all duration-300"
-                  >
-                    Tous les composants
-                  </Link>
-                </div>
-              </div>
-              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-8 border border-brand-light/10">
-                <h2 className="text-2xl font-bold text-brand-light mb-6">Avantages métier</h2>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <Workflow className="w-6 h-6 text-brand-orange mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-brand-light">Automatisation complète</h3>
-                      <p className="text-brand-light/70 text-sm">Réduction drastique des interventions manuelles</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <BarChart3 className="w-6 h-6 text-brand-blue mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-brand-light">Traçabilité totale</h3>
-                      <p className="text-brand-light/70 text-sm">Historisation complète des exécutions et décisions</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <Clock className="w-6 h-6 text-brand-orange mr-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-brand-light">Optimisation continue</h3>
-                      <p className="text-brand-light/70 text-sm">Analytics pour améliorer les performances</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <section className="py-20 px-6 border-t border-brand-light/10">
+      <div className="container mx-auto max-w-6xl text-center">
+        <h2 className="text-3xl font-bold text-brand-light mb-8">
+          {t("processExecutor.integrationsTitle")}
+        </h2>
+        <p className="text-brand-light/80 text-lg mb-12 max-w-3xl mx-auto">
+          {t("processExecutor.integrationsSubtitle")}
+        </p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {integrations.map((integration) => (
+            <div key={integration.title} className="bg-brand-orange/15 rounded-xl p-6 border border-brand-orange/20">
+              <h3 className="text-xl font-bold text-brand-light mb-3">{integration.title}</h3>
+              <p className="text-brand-light/80 text-sm">{integration.description}</p>
             </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-20 px-6 border-t border-brand-light/10">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-brand-light text-center mb-16">
-              Fonctionnalités Process Executor complètes
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                <Workflow className="w-8 h-8 text-brand-orange mb-4" />
-                <h3 className="text-xl font-bold text-brand-light mb-3">Designer graphique</h3>
-                <p className="text-brand-light/80">
-                  Interface low code pour créer et modifier vos processus visuellement.
-                </p>
-              </div>
-              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                <Users className="w-8 h-8 text-brand-blue mb-4" />
-                <h3 className="text-xl font-bold text-brand-light mb-3">Tâches humaines</h3>
-                <p className="text-brand-light/80">
-                  Gestion des tâches utilisateur avec formulaires dynamiques et notifications automatiques.
-                </p>
-              </div>
-              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                <Settings className="w-8 h-8 text-brand-orange mb-4" />
-                <h3 className="text-xl font-bold text-brand-light mb-3">Tâches automatiques</h3>
-                <p className="text-brand-light/80">
-                  Exécution de scripts, appels d'APIs et intégrations avec systèmes externes.
-                </p>
-              </div>
-              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                <Clock className="w-8 h-8 text-brand-blue mb-4" />
-                <h3 className="text-xl font-bold text-brand-light mb-3">Gestion du temps</h3>
-                <p className="text-brand-light/80">
-                  Timers, deadlines et escalations automatiques avec notifications configurables.
-                </p>
-              </div>
-              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                <BarChart3 className="w-8 h-8 text-brand-orange mb-4" />
-                <h3 className="text-xl font-bold text-brand-light mb-3">Analytics avancées</h3>
-                <p className="text-brand-light/80">
-                  Métriques de performance, goulots d'étranglement et optimisations suggérées.
-                </p>
-              </div>
-              <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                <Zap className="w-8 h-8 text-brand-blue mb-4" />
-                <h3 className="text-xl font-bold text-brand-light mb-3">Événements complexes</h3>
-                <p className="text-brand-light/80">
-                  Gestion d'événements start, intermediate et end avec conditions multiples.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      
-        
-
-        {/* Use Cases Section */}
-        <section className="py-20 px-6 border-t border-brand-light/10">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-brand-light text-center mb-16">
-              Processus métier types
-            </h2>
-            <div className="grid lg:grid-cols-2 gap-12">
-              <div className="space-y-6">
-                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                  <h3 className="text-xl font-bold text-brand-light mb-3">Processus RH</h3>
-                  <p className="text-brand-light/80">
-                    Recrutement, onboarding, congés, évaluations avec workflows d'approbation multi-niveaux.
-                  </p>
-                </div>
-                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                  <h3 className="text-xl font-bold text-brand-light mb-3">Processus financiers</h3>
-                  <p className="text-brand-light/80">
-                    Validation de factures, approbations budgétaires, remboursements avec contrôles automatiques.
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                  <h3 className="text-xl font-bold text-brand-light mb-3">Gestion de contrats</h3>
-                  <p className="text-brand-light/80">
-                    Cycle de vie complet des contrats : création, négociation, validation, signature et renouvellement.
-                  </p>
-                </div>
-                <div className="bg-brand-dark/50 backdrop-blur-md rounded-2xl p-6 border border-brand-light/10">
-                  <h3 className="text-xl font-bold text-brand-light mb-3">Support client</h3>
-                  <p className="text-brand-light/80">
-                    Escalation automatique des tickets, SLA monitoring et satisfaction client avec KPIs.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Integration Section */}
-        <section className="py-20 px-6 border-t border-brand-light/10">
-          <div className="container mx-auto max-w-6xl text-center">
-            <h2 className="text-3xl font-bold text-brand-light mb-8">
-              Intégrations natives
-            </h2>
-            <p className="text-brand-light/80 text-lg mb-12 max-w-3xl mx-auto">
-              Le Process Executor s'intègre seamlessly avec vos systèmes existants et les autres composants Meecrogate
-            </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-brand-orange/15 rounded-xl p-6 border border-brand-orange/20">
-                <h3 className="text-xl font-bold text-brand-light mb-3">Systèmes externes</h3>
-                <p className="text-brand-light/80 text-sm">
-                  ERP, CRM, bases de données via APIs REST, SOAP et connecteurs spécialisés
-                </p>
-              </div>
-              <div className="bg-brand-blue/15 rounded-xl p-6 border border-brand-blue/20">
-                <h3 className="text-xl font-bold text-brand-light mb-3">Orchestrateur</h3>
-                <p className="text-brand-light/80 text-sm">
-                  Collaboration native pour orchestrer des processus complexes multi-systèmes
-                </p>
-              </div>
-              <div className="bg-brand-orange/15 rounded-xl p-6 border border-brand-orange/20">
-                <h3 className="text-xl font-bold text-brand-light mb-3">Serveur d'identité</h3>
-                <p className="text-brand-light/80 text-sm">
-                  Intégration SSO pour les tâches humaines avec gestion des rôles et permissions
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+          ))}
+        </div>
       </div>
-      <Footer />
-    </div>
+    </section>
   );
 };
+
+const ProcessExecutorPage = () => (
+  <ComponentDetailPage
+    id="processExecutor"
+    hero={{
+      icon: Zap,
+      accent: "orange",
+      boxClassName: "bg-brand-orange/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6",
+      iconClassName: "w-12 h-12 text-brand-light",
+    }}
+    benefitIcons={[Workflow, BarChart3, Clock]}
+    featureIcons={[Workflow, Users, Settings, Clock, BarChart3, Zap]}
+    afterUseCases={<IntegrationsSection />}
+  />
+);
 
 export default ProcessExecutorPage;

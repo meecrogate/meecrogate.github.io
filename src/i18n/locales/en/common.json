@@ -1,0 +1,52 @@
+{
+  "language": {
+    "label": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "architecture": "Architecture",
+    "service": "Service",
+    "pricing": "Pricing",
+    "solutions": "Solutions",
+    "useCases": "Use cases",
+    "overview": "Overview",
+    "comparisons": "Compared with other solutions",
+    "clientProjects": "Customer projects",
+    "useCaseItems": {
+      "apiPortals": "API portals",
+      "fastIntegration": "Fast integration",
+      "businessProcesses": "Business processes",
+      "orchestration": "Smart orchestration",
+      "hybridDeployment": "Hybrid deployment",
+      "standardisation": "API standardisation"
+    },
+    "clientProjectItems": {
+      "overview": "Overview",
+      "banking": "Banking",
+      "ecommerce": "E-commerce",
+      "health": "Healthcare"
+    }
+  },
+  "actions": {
+    "requestDemo": "Request a demo",
+    "support": "Support",
+    "contact": "Contact",
+    "learnMore": "Learn more",
+    "discover": "Discover"
+  },
+  "footer": {
+    "tagline": "The modular cloud-native API platform. A composable solution to expose, secure and orchestrate your APIs.",
+    "components": "Components",
+    "resources": "Resources",
+    "componentLinks": {
+      "apiGateway": "API Gateway",
+      "identityServer": "Identity Server",
+      "orchestrator": "Orchestrator",
+      "processExecutor": "Process Executor"
+    },
+    "copyright": "© 2026 Meecrogate. All rights reserved.",
+    "legalNotice": "Legal notice",
+    "privacyPolicy": "Privacy policy"
+  }
+}

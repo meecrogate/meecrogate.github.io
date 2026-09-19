@@ -1,0 +1,12 @@
+{
+  "cta": {
+    "title": "Prêt à révolutionner vos APIs ?",
+    "description": "Découvrez comment Meecrogate peut transformer votre architecture API en une plateforme moderne, sécurisée et scalable.",
+    "freeTrial": "Essai gratuit"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oups ! Cette page n'existe pas.",
+    "backHome": "Retour à l'accueil"
+  }
+}

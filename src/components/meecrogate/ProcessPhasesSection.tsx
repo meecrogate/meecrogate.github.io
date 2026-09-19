@@ -1,5 +1,6 @@
 import { Layers, Settings, Rocket, Monitor, Info } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Dialog,
   DialogContent,
@@ -13,81 +14,23 @@ import configurationImg from "@/assets/process/configuration.jpg";
 import deploiementImg from "@/assets/process/deploiement.jpg";
 import surveillanceImg from "@/assets/process/surveillance.jpg";
 
+// Icons and illustrations stay in code, the wording lives in the `home` namespace.
 const steps = [
-  { 
-    title: "Conception", 
-    description: "Modélisez vos APIs et processus via l'interface sans écrire une ligne de code.", 
-    icon: Layers, 
-    image: conceptionImg,
-    details: {
-      subtitle: "Comment Meecrogate vous aide",
-      benefits: [
-        "Interface visuelle drag-and-drop pour concevoir vos APIs",
-        "Modélisation JSON de vos processus métiers",
-        "Génération automatique de la documentation OpenAPI",
-        "Validation en temps réel de la cohérence de vos schémas",
-        "Templates prédéfinis pour accélérer le démarrage"
-      ]
-    }
-  },
-  { 
-    title: "Configuration", 
-    description: "Définissez les règles de sécurité, les quotas et les orchestrations en quelques clics.", 
-    icon: Settings, 
-    image: configurationImg,
-    details: {
-      subtitle: "Comment Meecrogate vous aide",
-      benefits: [
-        "Politiques de sécurité centralisées (OAuth2, JWT, API Keys)",
-        "Gestion fine des quotas et du rate limiting par client",
-        "Configuration des transformations de données sans code",
-        "Orchestration visuelle des appels entre services",
-        "Environnements multiples (dev, staging, prod) synchronisés"
-      ]
-    }
-  },
-  { 
-    title: "Déploiement", 
-    description: "Déployez en production instantanément et bénéficiez de la scalabilité cloud-native.", 
-    icon: Rocket, 
-    image: deploiementImg,
-    details: {
-      subtitle: "Comment Meecrogate vous aide",
-      benefits: [
-        "Déploiement en un clic vers tous vos environnements",
-        "Support multi-cloud (AWS, Azure, GCP, on-premise)",
-        "Auto-scaling intelligent basé sur la charge",
-        "Rollback instantané en cas de problème",
-        "Déploiements blue-green sans interruption de service"
-      ]
-    }
-  },
-  { 
-    title: "Surveillance", 
-    description: "Obtenez une vue en temps réel de la performance et du comportement de vos services.", 
-    icon: Monitor, 
-    image: surveillanceImg,
-    details: {
-      subtitle: "Comment Meecrogate vous aide",
-      benefits: [
-        "Tableaux de bord temps réel personnalisables",
-        "Alertes intelligentes basées sur des seuils configurables",
-        "Traçabilité complète de chaque requête (distributed tracing)",
-        "Analyse des performances et détection d'anomalies",
-        "Rapports automatisés pour le pilotage métier"
-      ]
-    }
-  }
+  { id: "design", icon: Layers, image: conceptionImg },
+  { id: "configuration", icon: Settings, image: configurationImg },
+  { id: "deployment", icon: Rocket, image: deploiementImg },
+  { id: "monitoring", icon: Monitor, image: surveillanceImg },
 ];
 
 const ProcessPhasesSection = () => {
   const [openDialog, setOpenDialog] = useState<number | null>(null);
+  const { t } = useTranslation("home");
 
   return (
     <section className="bg-gray-950 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-4xl font-bold text-white mb-16">
-          Accélérer votre roadmap
+          {t("process.title")}
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {steps.map((step, index) => {
@@ -106,10 +49,10 @@ const ProcessPhasesSection = () => {
                     <Icon className="w-7 h-7 text-[#FFB300]" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">
-                    {index + 1}. {step.title}
+                    {index + 1}. {t(`process.steps.${step.id}.title`)}
                   </h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    {step.description}
+                    {t(`process.steps.${step.id}.description`)}
                   </p>
                   <Button
                     variant="outline"
@@ -118,7 +61,7 @@ const ProcessPhasesSection = () => {
                     className="bg-transparent border-[#FFB300]/50 text-[#FFB300] hover:bg-[#FFB300]/10 hover:text-[#FFB300]"
                   >
                     <Info className="w-4 h-4 mr-2" />
-                    En savoir plus
+                    {t("process.learnMore")}
                   </Button>
                 </div>
 
@@ -143,18 +86,18 @@ const ProcessPhasesSection = () => {
                     <Icon className="w-6 h-6 text-[#FFB300]" />
                   </div>
                   <DialogTitle className="text-2xl font-bold text-white">
-                    {step.title}
+                    {t(`process.steps.${step.id}.title`)}
                   </DialogTitle>
                 </div>
                 <DialogDescription className="text-gray-400 text-base">
-                  {step.description}
+                  {t(`process.steps.${step.id}.description`)}
                 </DialogDescription>
               </DialogHeader>
               
               <div className="mt-4">
-                <h4 className="text-[#FFB300] font-semibold mb-3">{step.details.subtitle}</h4>
+                <h4 className="text-[#FFB300] font-semibold mb-3">{t("process.howItHelps")}</h4>
                 <ul className="space-y-3">
-                  {step.details.benefits.map((benefit, i) => (
+                  {(t(`process.steps.${step.id}.benefits`, { returnObjects: true }) as string[]).map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <div className="w-2 h-2 mt-2 rounded-full bg-[#007AFF] flex-shrink-0" />
                       <span className="text-gray-300">{benefit}</span>

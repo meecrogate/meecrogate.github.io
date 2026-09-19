@@ -1,0 +1,39 @@
+{
+  "seo": {
+    "title": "Services — Accompagnement & expertise API",
+    "description": "Conseil, intégration et support Meecrogate : nos experts vous accompagnent du POC au déploiement en production de votre plateforme API souveraine."
+  },
+  "title": "Service d'intégration",
+  "subtitle": "Notre équipe accompagne l'intégration de la solution Meecrogate dans votre contexte spécifique, pour un déploiement optimal sur votre infrastructure.",
+  "steps": {
+    "diagnostic": {
+      "title": "Diagnostic de l'existant :",
+      "description": "Analyse de votre environnement technique, architecture, flux d'API et contraintes d'intégration."
+    },
+    "targetArchitecture": {
+      "title": "Proposition d'architecture cible :",
+      "description": "Définition d'une architecture adaptée à votre système d'information permettant une adoption progressive et sécurisée de Meecrogate."
+    },
+    "deployment": {
+      "title": "Déploiement sur mesure :",
+      "description": "Accompagnement à l'installation sur vos environnements (cloud, on-premise ou hybride) avec adaptation des configurations et orchestrations selon vos besoins."
+    },
+    "training": {
+      "title": "Transfert de compétences :",
+      "description": "Formations et meilleures pratiques pour une prise en main rapide par vos équipes."
+    },
+    "support": {
+      "title": "Support renforcé :",
+      "description": "Accès à un support dédié tout au long du projet de migration et d'intégration."
+    }
+  },
+  "cta": "Discuter de mon projet d'intégration",
+  "dialog": {
+    "title": "Demande d'intégration",
+    "submit": "Envoyer la demande"
+  },
+  "toast": {
+    "title": "Demande envoyée",
+    "description": "Nous vous contacterons rapidement pour discuter de votre projet d'intégration."
+  }
+}

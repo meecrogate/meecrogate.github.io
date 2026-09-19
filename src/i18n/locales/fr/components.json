@@ -1,0 +1,97 @@
+{
+  "seo": {
+    "title": "Composants — API Gateway, Identité, Orchestrateur",
+    "description": "Les 4 composants Meecrogate : API Gateway, Serveur d'identité, Orchestrateur et Process Executor. Une architecture modulaire et souveraine."
+  },
+  "hero": {
+    "title": "Composants Meecrogate",
+    "subtitle": "Découvrez en détail chaque composant de notre plateforme d'intégration et leurs fonctionnalités avancées",
+    "imageAlt": "Plateforme Meecrogate - API Management et déploiement hybride"
+  },
+  "labels": {
+    "keyFeatures": "Fonctionnalités clés",
+    "businessBenefits": "Bénéfices métier"
+  },
+  "items": {
+    "apiGateway": {
+      "title": "API Gateway",
+      "subtitle": "Sécurisation & Routage",
+      "description": "Point d'entrée unique pour toutes vos APIs, assurant la sécurité, le routage intelligent et la gestion du trafic.",
+      "features": [
+        "Authentification et autorisation centralisées",
+        "Limitation de débit (Rate Limiting)",
+        "Transformation des requêtes et réponses",
+        "Cache intelligent pour optimiser les performances",
+        "Monitoring et analytics en temps réel",
+        "Load balancing automatique"
+      ],
+      "benefits": [
+        "Sécurité renforcée avec point de contrôle unique",
+        "Réduction de la complexité côté client",
+        "Amélioration des performances avec mise en cache",
+        "Observabilité complète du trafic API"
+      ]
+    },
+    "identityServer": {
+      "title": "Serveur d'identité",
+      "subtitle": "Gestion des accès",
+      "description": "Solution complète de gestion d'identité et d'accès (IAM) pour sécuriser vos applications et services.",
+      "features": [
+        "Single Sign-On (SSO) multi-applications",
+        "Gestion des rôles et permissions (RBAC)",
+        "Authentification multi-facteurs (MFA)",
+        "Intégration LDAP/Active Directory",
+        "Protocoles OAuth 2.0, OIDC, SAML",
+        "Gestion du cycle de vie des utilisateurs"
+      ],
+      "benefits": [
+        "Expérience utilisateur simplifiée avec SSO",
+        "Sécurité renforcée avec MFA",
+        "Conformité aux réglementations (RGPD, etc.)",
+        "Réduction des coûts de gestion des identités"
+      ]
+    },
+    "orchestrator": {
+      "title": "Orchestrateur",
+      "subtitle": "Synchrone & Asynchrone",
+      "description": "Moteur d'orchestration intelligent pour coordonner vos services et processus métier complexes.",
+      "features": [
+        "Orchestration de services synchrones et asynchrones",
+        "Gestion des patterns Saga pour transactions distribuées",
+        "Retry automatique et gestion d'erreurs",
+        "Routage conditionnel et parallélisation",
+        "Intégration avec message brokers (RabbitMQ, Kafka)",
+        "Dashboard de monitoring des flux"
+      ],
+      "benefits": [
+        "Simplification des architectures microservices",
+        "Résilience accrue avec gestion d'erreurs automatique",
+        "Visibilité complète sur les flux de données",
+        "Scalabilité horizontale native"
+      ]
+    },
+    "processExecutor": {
+      "title": "Process Executor",
+      "subtitle": "Process Automatisation",
+      "description": "Moteur d'exécution de processus pour automatiser vos workflows.",
+      "features": [
+        "Tasks automatiques et humaines",
+        "Gestion des deadlines et escalations",
+        "Intégration avec systèmes externes",
+        "Historisation complète des exécutions"
+      ],
+      "benefits": [
+        "Automatisation des processus métier complexes",
+        "Réduction des erreurs humaines",
+        "Amélioration de la traçabilité",
+        "Optimisation continue des workflows"
+      ]
+    }
+  },
+  "cta": {
+    "title": "Prêt à découvrir Meecrogate en action ?",
+    "description": "Demandez une démonstration personnalisée pour voir comment ces composants peuvent transformer votre architecture",
+    "demo": "Demander une démo",
+    "architecture": "Voir l'architecture"
+  }
+}

@@ -1,13 +1,16 @@
+import Seo from "@/components/Seo";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const MentionsLegales = () => {
   return (
     <div className="min-h-screen bg-slate-900 overflow-x-hidden">
+      <Seo title="Mentions légales" description="Mentions légales de Meecrogate SAS : éditeur du site, hébergement, propriété intellectuelle et données personnelles." />
       <Navigation />
       
       <div className="pt-16">
-        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Published in French only, whatever language the chrome is in. */}
+        <main lang="fr" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="text-3xl font-bold mb-8 text-white">Mentions Légales</h1>
           
           <div className="space-y-8 text-slate-300">

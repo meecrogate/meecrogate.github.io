@@ -1,0 +1,113 @@
+{
+  "seo": {
+    "title": "Meecrogate — Sovereign, low-code cloud API platform",
+    "description": "Meecrogate: a lean, sovereign, cloud-agnostic API platform. API gateway, orchestration, identity and process execution described in auditable JSON."
+  },
+  "hero": {
+    "title": "Meecrogate",
+    "subtitle": "The modular cloud-native API platform",
+    "description": "A composable, modular solution to expose, secure and orchestrate your APIs. Built for the cloud and for traditional environments, and fully configurable without writing code."
+  },
+  "benefits": {
+    "title": "Why teams choose Meecrogate",
+    "details": "Details",
+    "items": {
+      "fastDeployment": {
+        "title": "Fast deployment",
+        "description": "No developer needed",
+        "details": "Ship new APIs or features in minutes without waiting on a development team. Everything is configured through the graphical interface, with no code to write."
+      },
+      "highAvailability": {
+        "title": "High availability",
+        "description": "Automatic scalability",
+        "details": "The platform adapts to load on its own. You get high availability without managing infrastructure by hand, even through traffic peaks."
+      },
+      "governance": {
+        "title": "Built-in governance",
+        "description": "Security, access, quotas",
+        "details": "Manage security, user access, roles and quotas from one place. Every governance policy is centralised, and auditing is native."
+      },
+      "monitoring": {
+        "title": "Native monitoring",
+        "description": "End-to-end traceability",
+        "details": "Reach every metric, log and trace in real time. See the health of your APIs at a glance and get ahead of incidents with built-in alerting."
+      },
+      "modernArchitectures": {
+        "title": "Modern architectures",
+        "description": "Microservices, serverless",
+        "details": "Full support for microservices, serverless and hybrid architectures, so your IT projects move faster while you stay in control of the technology."
+      },
+      "noLockIn": {
+        "title": "No vendor lock-in",
+        "description": "Technology freedom",
+        "details": "The platform runs on any cloud and can be deployed on premise. Your data and your architecture stay portable, with no dependency on a single provider."
+      }
+    }
+  },
+  "sovereignty": {
+    "text": "Designed and maintained in France. A European solution, GDPR-compliant, that leaves you in full control of your data."
+  },
+  "controlStation": {
+    "title": "The central Control Station",
+    "description": "Run, configure and monitor your entire Meecrogate platform from a single graphical interface.",
+    "cta": "Administration interface",
+    "imageAlt": "Control Station dashboard"
+  },
+  "componentsGrid": {
+    "apiGateway": "API Gateway",
+    "identityServer": "Identity & subscription server",
+    "orchestrator": "API orchestrator",
+    "processExecutor": "Process Executor"
+  },
+  "process": {
+    "title": "Accelerate your roadmap",
+    "learnMore": "Learn more",
+    "howItHelps": "How Meecrogate helps",
+    "steps": {
+      "design": {
+        "title": "Design",
+        "description": "Model your APIs and processes in the interface without writing a line of code.",
+        "benefits": [
+          "Visual drag-and-drop interface to design your APIs",
+          "JSON modelling of your business processes",
+          "OpenAPI documentation generated automatically",
+          "Real-time validation of your schema consistency",
+          "Ready-made templates to get started faster"
+        ]
+      },
+      "configuration": {
+        "title": "Configuration",
+        "description": "Set security rules, quotas and orchestrations in a few clicks.",
+        "benefits": [
+          "Centralised security policies (OAuth2, JWT, API keys)",
+          "Fine-grained quotas and per-client rate limiting",
+          "Data transformations configured without code",
+          "Visual orchestration of calls between services",
+          "Multiple environments (dev, staging, prod) kept in sync"
+        ]
+      },
+      "deployment": {
+        "title": "Deployment",
+        "description": "Go to production instantly and benefit from cloud-native scalability.",
+        "benefits": [
+          "One-click deployment to every environment",
+          "Multi-cloud support (AWS, Azure, GCP, on-premise)",
+          "Smart auto-scaling driven by actual load",
+          "Instant rollback when something goes wrong",
+          "Blue-green deployments with no service interruption"
+        ]
+      },
+      "monitoring": {
+        "title": "Monitoring",
+        "description": "Get a real-time view of how your services perform and behave.",
+        "benefits": [
+          "Customisable real-time dashboards",
+          "Smart alerts based on thresholds you configure",
+          "Full traceability of every request (distributed tracing)",
+          "Performance analysis and anomaly detection",
+          "Automated reports for business stakeholders"
+        ]
+      }
+    }
+  }
+}
