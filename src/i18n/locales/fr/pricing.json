@@ -1,116 +1,284 @@
 {
   "seo": {
-    "title": "Tarifs — Plans Meecrogate",
-    "description": "Découvrez les offres Meecrogate : tarifs transparents pour démarrer rapidement et passer à l'échelle, sans lock-in cloud."
+    "title": "Tarification — Éditions Meecrogate",
+    "description": "Tarification Meecrogate : quatre éditions, les cinq composants inclus, instances et appels illimités, hors production gratuit. Comptez vos APIs, le montant est publié."
   },
   "hero": {
-    "title": "Tarifs — Passez du prototype à la production",
-    "subtitle": "Des offres simples, adaptées à la France. Prix HT / mois — intégration incluse selon l'offre.",
-    "subtitleStrong": "Contactez-nous",
-    "subtitleEnd": "pour une démo ou un devis Enterprise."
+    "eyebrow": "Tarification",
+    "title": "Comptez vos APIs. C'est tout le devis.",
+    "subtitle": "Une édition couvre les cinq composants, toutes les instances et tous les appels. Un seul montant annuel, que vous pouvez prévoir pour chaque année du contrat."
   },
-  "labels": {
-    "included": "Inclus:",
-    "options": "Options:",
-    "choosePlan": "Choisir ce plan",
-    "contactUs": "Nous contacter"
+  "principles": {
+    "items": [
+      {
+        "title": "Pas de facturation à l'appel",
+        "description": "Votre facture ne bouge pas parce que votre trafic a bougé."
+      },
+      {
+        "title": "Pas de facturation à l'instance",
+        "description": "Pods, réplicas et nœuds ne sont jamais comptés. Montez en charge librement."
+      },
+      {
+        "title": "Tout est dans la boîte",
+        "description": "Les cinq composants dans chaque édition, Control Station comprise."
+      },
+      {
+        "title": "Un montant, pas une matrice",
+        "description": "Vos APIs et vos environnements de production : c'est tout ce qui entre dans le calcul."
+      }
+    ]
   },
-  "plans": {
-    "pro": {
-      "name": "Pro",
-      "tagline": "Pour PME/ETI qui passent en production",
-      "price": "2 600 €",
-      "priceNote": "HT / mois (facturation annuelle)",
-      "included": [
-        "Jusqu'à 25 APIs",
-        "10 orchestrateurs",
-        "5 jours d'intégration et onboarding inclus",
-        "Support Standard par tickets",
-        "Instances de Gateway illimitées"
-      ],
-      "optionsTitle": "Options:",
-      "options": [
-        "Meecrogate Serveur ID",
-        "Licences pluriannuelles : 31 200 €/an",
-        "3 ans : 28 080 €/an",
-        "5 ans : 24 960 €/an"
-      ],
-      "cta": "Choisir ce plan"
+  "editions": {
+    "eyebrow": "Éditions",
+    "title": "Un seul montant couvre toute la plateforme",
+    "subtitle": "Choisissez l'édition correspondant au nombre d'APIs que vous publiez et aux environnements de production que vous exploitez. Tout le reste est inclus.",
+    "priceUnit": "par an, hors taxes",
+    "popular": "Le plus choisi",
+    "items": {
+      "launch": {
+        "name": "Launch",
+        "price": "9 600 €",
+        "features": [
+          "10 APIs incluses",
+          "1 environnement de production",
+          "Support Standard",
+          "Les cinq composants"
+        ],
+        "description": "Premières APIs en production pour une équipe ou une direction métier.",
+        "cta": "Demander un devis"
+      },
+      "business": {
+        "name": "Business",
+        "price": "24 000 €",
+        "features": [
+          "30 APIs incluses",
+          "1 environnement de production",
+          "Support Standard",
+          "Les cinq composants"
+        ],
+        "description": "Une plateforme d'APIs à l'échelle d'un département. Le volume de la plupart des premiers contrats entreprise.",
+        "cta": "Demander un devis"
+      },
+      "scale": {
+        "name": "Scale",
+        "price": "54 000 €",
+        "features": [
+          "100 APIs incluses",
+          "2 environnements de production",
+          "Support Standard",
+          "Les cinq composants"
+        ],
+        "description": "Plusieurs domaines en production, avec un second environnement de production pour l'isolation ou la région.",
+        "cta": "Demander un devis"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "dès 96 000 €",
+        "features": [
+          "APIs illimitées",
+          "Environnements de production illimités",
+          "Support Premium 24/7",
+          "Les cinq composants"
+        ],
+        "description": "Plateforme groupe. APIs et environnements de production illimités, SLA sur mesure, équipe dédiée.",
+        "cta": "Nous contacter"
+      }
     },
-    "enterprise": {
-      "name": "Entreprise",
-      "tagline": "Conçu pour les grands comptes : haute sécurité, conformité et forte volumétrie.",
-      "price": "Sur demande",
-      "priceNote": "",
-      "included": [
-        "SLA sur mesure",
-        "Gestion des Identités: Meecrogate Serveur ID",
-        "Équipe de Projet d'intégration dédiée",
-        "Support dédié",
-        "Audit et réalisation d'un pilote de 4 à 6 semaines pour valider l'adéquation de Meecrogate à votre contexte"
-      ],
-      "optionsTitle": "Composition à la carte de votre solution avec les modules Meecrogate",
-      "options": [
-        "Meecrogate Serveur ID",
-        "Orchestrateur",
-        "Process Executor",
-        "Control Station",
-        "Migration, mode hybride & APIs spécifiques"
-      ],
-      "cta": "Nous contacter"
+    "footnote": "Une API correspond à un produit d'API exposé aux consommateurs — quel que soit le nombre de routes, de versions, d'opérations et de backends derrière. Un environnement de production est une plateforme logique, quel que soit le nombre d'instances, de nœuds ou de zones qui la composent. Des remises s'appliquent aux engagements pluriannuels."
+  },
+  "included": {
+    "eyebrow": "Ce qui est inclus",
+    "title": "Dans chaque édition, sans exception",
+    "subtitle": "Ce que les concurrents facturent au compteur — instances, appels, hors production, console — est ici purement et simplement inclus.",
+    "headers": {
+      "item": "Inclus",
+      "detail": "Détail"
+    },
+    "rows": [
+      {
+        "item": "Les cinq composants",
+        "detail": "API Gateway, Identity Server, Orchestrateur, Process Executor et Control Station."
+      },
+      {
+        "item": "Instances illimitées",
+        "detail": "Les pods, réplicas et nœuds ne sont jamais comptés. Montez en charge autant que votre cluster le permet."
+      },
+      {
+        "item": "Appels d'API illimités",
+        "detail": "Aucune facturation à l'appel, aucun forfait de requêtes, aucun dépassement."
+      },
+      {
+        "item": "Hors production illimité",
+        "detail": "Tous les environnements de dev, test, recette et pré-production sont gratuits."
+      },
+      {
+        "item": "Control Station",
+        "detail": "Console d'administration et portail développeur, pour toute la plateforme."
+      },
+      {
+        "item": "Support standard et SLA publié",
+        "detail": "Sur tickets, en heures ouvrées, avec des délais de première réponse engagés. Le premium 24/7 est inclus avec Enterprise."
+      },
+      {
+        "item": "Maintenance logicielle",
+        "detail": "Correctifs, correctifs de sécurité et toutes les nouvelles versions, pendant toute la durée de l'abonnement."
+      }
+    ]
+  },
+  "addons": {
+    "eyebrow": "Au-delà de votre édition",
+    "title": "Quatre options, une règle chacune",
+    "subtitle": "Aucune matrice par édition, aucune table de négociation. Chaque option obéit à une règle unique, valable pour toutes les éditions, que nous chiffrons avec vous.",
+    "items": [
+      {
+        "title": "APIs supplémentaires",
+        "description": "Vous publiez plus d'APIs que votre édition n'en inclut ? Elles s'ajoutent par lots. Et dès que l'édition supérieure devient moins chère, nous vous y faisons passer."
+      },
+      {
+        "title": "Environnement de production supplémentaire",
+        "description": "Une seconde région active, une filiale, un périmètre isolé : une plateforme de production de plus, avec instances illimitées à l'intérieur, comme toujours."
+      },
+      {
+        "title": "Support premium 24/7",
+        "description": "Couverture 24h/24 et 7j/7 des incidents critiques, hotline et canal d'escalade dédié. Inclus avec l'édition Enterprise."
+      },
+      {
+        "title": "Exploitation SaaS",
+        "description": "Nous hébergeons et exploitons la plateforme : hébergement, correctifs, montées de version et supervision. Même produit, même configuration qu'en on-premise."
+      }
+    ],
+    "note": "L'on-premise est la référence : c'est vous qui exploitez, et l'édition reste le seul coût plateforme récurrent."
+  },
+  "rules": {
+    "eyebrow": "Ce qui ne fait jamais bouger la facture",
+    "title": "Trois promesses, tenues par le modèle",
+    "subtitle": "La plupart des mauvaises surprises de facturation viennent de trois endroits : le trafic, la mise à l'échelle et les environnements de test. Ici, aucun des trois ne compte.",
+    "items": [
+      {
+        "label": "Trafic",
+        "value": "0",
+        "unit": "compteur",
+        "note": "Aucune facturation à l'appel, aucun forfait de requêtes, aucun dépassement. Votre facture ne suit pas votre courbe de trafic."
+      },
+      {
+        "label": "Mise à l'échelle",
+        "value": "∞",
+        "unit": "instances, pods, nœuds",
+        "note": "La haute disponibilité et l'autoscaling ne coûtent rien de plus. Montez en charge autant que votre cluster le permet."
+      },
+      {
+        "label": "Hors production",
+        "value": "Gratuit",
+        "unit": "et illimité",
+        "note": "Dev, test, recette et pré-production ne coûtent rien. La plupart des concurrents les facturent au tarif plein ou à demi-tarif."
+      }
+    ]
+  },
+  "predictability": {
+    "eyebrow": "Prévisibilité",
+    "title": "Trois chiffres, et vous avez le montant",
+    "subtitle": "Rien ne dépend du trafic, des utilisateurs, des appels ni des pods. À partir de votre feuille de route d'APIs, le montant de chaque année du contrat est connu avant la signature.",
+    "steps": [
+      {
+        "title": "Comptez vos APIs publiées",
+        "description": "Un produit d'API, quel que soit le nombre de routes et de versions derrière. Une API compte une fois, même déployée dans plusieurs régions."
+      },
+      {
+        "title": "Comptez vos environnements de production",
+        "description": "Le hors production ne compte pas — il est gratuit et illimité."
+      },
+      {
+        "title": "Choisissez votre durée d'engagement",
+        "description": "1, 3 ou 5 ans. Plus l'engagement est long, plus la remise est forte, et le prix est bloqué sur toute la durée."
+      }
+    ],
+    "cta": {
+      "label": "Votre montant",
+      "title": "Donnez-nous ces trois chiffres",
+      "description": "Nous vous renvoyons le montant annuel, sa projection sur la durée d'engagement et le détail de ce qu'il couvre — en une conversation, sans cycle de devis.",
+      "button": "Obtenir mon montant"
     }
   },
-  "comparison": {
-    "title": "Tableau comparatif",
-    "headers": { "feature": "Fonctionnalité", "pro": "Pro", "enterprise": "Entreprise" },
-    "option": "+ Option",
-    "options": "+ Options",
-    "rows": {
-      "apis": { "feature": "APIs sécurisées", "pro": "Jusqu'à 25", "enterprise": "Illimité" },
-      "orchestrators": { "feature": "Orchestrateurs", "pro": "10", "enterprise": "Illimité" },
-      "gatewayInstances": { "feature": "Instances Gateway", "pro": "Illimité", "enterprise": "Illimité" },
-      "onboarding": { "feature": "Intégration & onboarding", "pro": "5 jours inclus", "enterprise": "Équipe dédiée" },
-      "support": { "feature": "Support", "pro": "Standard par tickets", "enterprise": "Support dédié" },
-      "sla": { "feature": "SLA", "pro": "Standard", "enterprise": "Sur mesure" },
-      "idServer": { "feature": "Serveur ID", "pro": "@option", "enterprise": "@options" },
-      "orchestrator": { "feature": "Orchestrateur", "pro": "@option", "enterprise": "@options" },
-      "processExecutor": { "feature": "Process Executor", "pro": "@option", "enterprise": "@options" },
-      "roles": { "feature": "Control Station rôles utilisateurs", "pro": "3 rôles Builder, rôles \"Lecteur\" illimités", "enterprise": "@options" },
-      "price": { "feature": "Prix (HT / an)", "pro": "31 200 €", "enterprise": "Sur demande" }
-    }
-  },
-  "notes": {
-    "label": "Remarques :",
-    "text": "Les prix sont exprimés en <0>EUR HT / mois</0>. TVA en sus. La facturation est annuelle, engagement sur 1, 3 ou 5 ans."
+  "build": {
+    "eyebrow": "Intégration",
+    "title": "Mise en œuvre et exploitation, par les mêmes équipes",
+    "subtitle": "Les travaux d'intégration courants sont au catalogue, à prix forfaitaire : un nouvel orchestrateur ou une nouvelle connexion d'identité ne nécessite aucun cycle de devis.",
+    "items": [
+      {
+        "title": "Démarrage",
+        "description": "Déploiement sur votre infrastructure, raccordement de votre fournisseur d'identité, embarquement de vos premières APIs."
+      },
+      {
+        "title": "Projet au forfait",
+        "description": "Cadrage, conception, réalisation et mise en service, sur neuf chantiers et cinq jalons de paiement."
+      },
+      {
+        "title": "Run et maintenance",
+        "description": "Tierce maintenance applicative, assistance à l'exploitation et enveloppe annuelle de jours mobilisable au besoin."
+      }
+    ],
+    "note": "Les équipes qui construisent le produit peuvent aussi l'intégrer, vous conseiller et l'exploiter — un seul contrat, un seul responsable. Intégration assurée par les services IT de Yupiik."
   },
   "faq": {
     "title": "Questions fréquentes",
     "items": [
       {
-        "question": "Que comprend l'intégration ?",
-        "answer": "Paramétrage initial, connexion aux backends, tests, et formation des équipes (durée selon l'offre : ½ j → 2 j → projet sur mesure)."
+        "question": "Qu'est-ce qu'une API dans le décompte ?",
+        "answer": "Un produit d'API exposé aux consommateurs, quel que soit le nombre de routes, de versions, d'opérations et de backends derrière. C'est délibérément plus généreux que les éditeurs qui comptent chaque service séparément. Une API déployée dans plusieurs environnements de production compte une seule fois."
       },
       {
-        "question": "Peut-on monter d'un plan à l'autre sans coupure ?",
-        "answer": "Oui — montée en charge fluide, migration et hook d'intégration planifiés avec notre équipe pour éviter toute interruption."
+        "question": "Qu'est-ce qu'un environnement de production ?",
+        "answer": "Une plateforme Meecrogate logique qui sert du trafic de production : un déploiement dans une région cloud, ou dans un datacenter. Le nombre d'instances, de pods, de nœuds ou de zones de disponibilité n'entre jamais en compte, et un site de secours passif est inclus."
       },
       {
-        "question": "Y a-t-il une offre POC ?",
-        "answer": "Oui : pack POC disponible (forfait remboursable à la signature d'un contrat Pro/Entreprise). Contactez ventes pour les conditions."
+        "question": "Facturez-vous les instances, les pods ou les appels ?",
+        "answer": "Non. Les pods, réplicas et nœuds ne sont jamais comptés, et il n'y a aucune facturation à l'appel ni de dépassement. La métrique de licence est l'environnement de production."
+      },
+      {
+        "question": "Que se passe-t-il si je dépasse les APIs de mon édition ?",
+        "answer": "Les APIs supplémentaires s'ajoutent par lots, à un tarif unique valable pour toutes les éditions. Le modèle est construit pour que l'édition supérieure devienne moins chère avant que les lots ne s'accumulent : nous vous y faisons passer, au prorata, sans plafond ni surveillance."
+      },
+      {
+        "question": "Les environnements de dev, test et recette sont-ils facturés ?",
+        "answer": "Non. Le hors production est gratuit et illimité, quelle que soit l'édition."
+      },
+      {
+        "question": "La Control Station est-elle facturée séparément ?",
+        "answer": "Jamais. La console d'administration et le portail développeur sont inclus dans chaque édition."
+      },
+      {
+        "question": "Les mises à jour sont-elles comprises ?",
+        "answer": "Oui. Correctifs, correctifs de sécurité et nouvelles versions sont inclus pendant toute la durée de l'abonnement, avec un SLA publié sur les délais de réponse du support."
+      },
+      {
+        "question": "Pouvez-vous exploiter la plateforme pour nous ?",
+        "answer": "Oui. L'exploitation SaaS par Meecrogate couvre l'hébergement, les correctifs, les montées de version et la supervision, avec le même produit et la même configuration qu'en on-premise. Vous pouvez basculer dans les deux sens."
+      },
+      {
+        "question": "Peut-on acheter un seul composant ?",
+        "answer": "C'est possible, pour l'à la carte et les appels d'offres qui l'exigent. Dès deux composants, l'édition revient moins cher et apporte davantage. Parlons de votre périmètre."
+      },
+      {
+        "question": "Peut-on commencer par un pilote ?",
+        "answer": "Oui. Le scénario pilote type — une direction métier, une dizaine d'APIs, un environnement de production — s'appuie sur l'édition Launch, avec l'intégration correspondante au catalogue. Parlons-en."
       }
     ]
   },
+  "notes": {
+    "label": "Remarques :",
+    "text": "Tous les prix sont en <0>euros hors taxes, par an</0>. La TVA s'ajoute au taux en vigueur. Les licences sont facturées annuellement à terme à échoir, paiement à 60 jours date de facture. Les prix des éditions sont bloqués pendant la durée d'engagement. Cette page est indicative et ne constitue pas une offre commerciale."
+  },
   "contactStrip": {
-    "title": "Besoin d'un accompagnement sur-mesure ?",
-    "description": "Équipe dédiée, migration, conformité RGPD, ou déploiement on-premise : parlons-en.",
+    "title": "Un devis, en une conversation",
+    "description": "Donnez-nous votre nombre d'APIs et vos environnements de production : nous vous renvoyons le montant, avec ce qu'il couvre.",
     "cta": "Contact commercial"
   },
   "dialog": {
     "title": "Demande de contact",
-    "descriptionWithPlan": "Vous êtes intéressé par le plan {{plan}}. ",
+    "descriptionWithPlan": "Vous êtes intéressé par l'édition {{plan}}. ",
     "description": "Remplissez ce formulaire et notre équipe vous contactera rapidement.",
-    "defaultSubject": "Demande d'information - Plan {{plan}}",
-    "mailSubject": "[Tarifs Meecrogate] Demande pour le plan {{plan}} par {{name}}",
+    "defaultSubject": "Demande d'information - {{plan}}",
+    "mailSubject": "[Tarification Meecrogate] Demande pour {{plan}} par {{name}}",
     "submit": "Envoyer la demande",
     "submitting": "Envoi en cours..."
   },

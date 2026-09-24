@@ -1,116 +1,284 @@
 {
   "seo": {
-    "title": "Pricing — Meecrogate plans",
-    "description": "Meecrogate pricing: transparent plans to get started quickly and scale up, with no cloud lock-in."
+    "title": "Pricing — Meecrogate editions",
+    "description": "Meecrogate pricing: four editions, all five components included, unlimited instances and calls, free non-production. Count your APIs and the number is published."
   },
   "hero": {
-    "title": "Pricing — From prototype to production",
-    "subtitle": "Straightforward plans. Prices excluding VAT, per month — integration included depending on the plan.",
-    "subtitleStrong": "Get in touch",
-    "subtitleEnd": "for a demo or an Enterprise quote."
+    "eyebrow": "Pricing",
+    "title": "Count your APIs. That is the whole quote.",
+    "subtitle": "One edition covers all five components, every instance and every call. A single annual number, which you can forecast for every year of the contract."
   },
-  "labels": {
-    "included": "Included:",
-    "options": "Options:",
-    "choosePlan": "Choose this plan",
-    "contactUs": "Contact us"
+  "principles": {
+    "items": [
+      {
+        "title": "No per-call pricing",
+        "description": "Your bill does not move because your traffic did."
+      },
+      {
+        "title": "No per-instance pricing",
+        "description": "Pods, replicas and nodes are never counted. Scale freely."
+      },
+      {
+        "title": "Everything in the box",
+        "description": "All five components in every edition, Control Station included."
+      },
+      {
+        "title": "One number, not a matrix",
+        "description": "Your APIs and your production environments: that is all the calculation takes."
+      }
+    ]
   },
-  "plans": {
-    "pro": {
-      "name": "Pro",
-      "tagline": "For mid-sized companies going into production",
-      "price": "€2,600",
-      "priceNote": "excl. VAT / month (billed annually)",
-      "included": [
-        "Up to 25 APIs",
-        "10 orchestrators",
-        "5 days of integration and onboarding included",
-        "Standard ticket-based support",
-        "Unlimited gateway instances"
-      ],
-      "optionsTitle": "Options:",
-      "options": [
-        "Meecrogate ID Server",
-        "Multi-year licences: €31,200/year",
-        "3 years: €28,080/year",
-        "5 years: €24,960/year"
-      ],
-      "cta": "Choose this plan"
+  "editions": {
+    "eyebrow": "Editions",
+    "title": "One number covers the whole platform",
+    "subtitle": "Pick the edition that matches the number of APIs you publish and the production environments you run. Everything else is included.",
+    "priceUnit": "per year, excluding VAT",
+    "popular": "Most chosen",
+    "items": {
+      "launch": {
+        "name": "Launch",
+        "price": "€9,600",
+        "features": [
+          "10 APIs included",
+          "1 production environment",
+          "Standard support",
+          "All five components"
+        ],
+        "description": "First production APIs for one team or one business unit.",
+        "cta": "Request a quote"
+      },
+      "business": {
+        "name": "Business",
+        "price": "€24,000",
+        "features": [
+          "30 APIs included",
+          "1 production environment",
+          "Standard support",
+          "All five components"
+        ],
+        "description": "A department-wide API platform. The volume most first enterprise deals land on.",
+        "cta": "Request a quote"
+      },
+      "scale": {
+        "name": "Scale",
+        "price": "€54,000",
+        "features": [
+          "100 APIs included",
+          "2 production environments",
+          "Standard support",
+          "All five components"
+        ],
+        "description": "Several domains in production, with a second production environment for isolation or region.",
+        "cta": "Request a quote"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "from €96,000",
+        "features": [
+          "Unlimited APIs",
+          "Unlimited production environments",
+          "Premium 24/7 support",
+          "All five components"
+        ],
+        "description": "Group-wide platform. Unlimited APIs and production environments, custom SLA, dedicated team.",
+        "cta": "Contact us"
+      }
     },
-    "enterprise": {
-      "name": "Enterprise",
-      "tagline": "Built for large organisations: high security, compliance and heavy volumes.",
-      "price": "On request",
-      "priceNote": "",
-      "included": [
-        "Custom SLA",
-        "Identity management: Meecrogate ID Server",
-        "Dedicated integration project team",
-        "Dedicated support",
-        "Audit and a 4 to 6 week pilot to confirm Meecrogate fits your context"
-      ],
-      "optionsTitle": "Build your solution à la carte from the Meecrogate modules",
-      "options": [
-        "Meecrogate ID Server",
-        "Orchestrator",
-        "Process Executor",
-        "Control Station",
-        "Migration, hybrid mode & bespoke APIs"
-      ],
-      "cta": "Contact us"
+    "footnote": "One API is one API product exposed to consumers — with any number of routes, versions, operations and backends behind it. One production environment is one logical platform, whatever the number of instances, nodes or zones it runs on. Multi-year commitments carry a discount."
+  },
+  "included": {
+    "eyebrow": "What is included",
+    "title": "Every edition, no exceptions",
+    "subtitle": "The things competitors meter — instances, calls, non-production, the console — are simply included here.",
+    "headers": {
+      "item": "Included",
+      "detail": "Detail"
+    },
+    "rows": [
+      {
+        "item": "All five components",
+        "detail": "API Gateway, Identity Server, Orchestrator, Process Executor and Control Station."
+      },
+      {
+        "item": "Unlimited instances",
+        "detail": "Pods, replicas and nodes are never counted. Scale as far as your cluster allows."
+      },
+      {
+        "item": "Unlimited API calls",
+        "detail": "No per-call charge, no request bundles, no overage."
+      },
+      {
+        "item": "Unlimited non-production",
+        "detail": "Every dev, test, QA and staging environment is free."
+      },
+      {
+        "item": "Control Station",
+        "detail": "Administration console and developer portal, for the whole platform."
+      },
+      {
+        "item": "Standard support and a published SLA",
+        "detail": "Ticket-based, business hours, with committed first-response times. Premium 24/7 is included with Enterprise."
+      },
+      {
+        "item": "Software maintenance",
+        "detail": "Fixes, security patches and every new release, for the term of the subscription."
+      }
+    ]
+  },
+  "addons": {
+    "eyebrow": "Beyond your edition",
+    "title": "Four add-ons, one rule each",
+    "subtitle": "No per-edition matrix and no negotiation table. Each add-on follows a single rule that applies to every edition, and we price it with you.",
+    "items": [
+      {
+        "title": "Extra APIs",
+        "description": "Publishing more APIs than your edition includes? They are added in packs. And as soon as the larger edition becomes cheaper, we move you there."
+      },
+      {
+        "title": "Extra production environment",
+        "description": "A second active region, a subsidiary, an isolated estate: one more production platform, with unlimited instances inside it, as always."
+      },
+      {
+        "title": "Premium 24/7 support",
+        "description": "Round-the-clock coverage of critical incidents, hotline and dedicated escalation channel. Included with the Enterprise edition."
+      },
+      {
+        "title": "SaaS operation",
+        "description": "We host and operate the platform: hosting, patching, upgrades and monitoring. Same product, same configuration as on-premise."
+      }
+    ],
+    "note": "On-premise is the baseline: you operate it, and the edition stays the only recurring platform cost."
+  },
+  "rules": {
+    "eyebrow": "What never moves your bill",
+    "title": "Three promises, held by the model",
+    "subtitle": "Most billing surprises come from three places: traffic, scaling and test environments. Here, none of the three counts.",
+    "items": [
+      {
+        "label": "Traffic",
+        "value": "0",
+        "unit": "meters",
+        "note": "No per-call charge, no request bundles, no overage. Your bill does not follow your traffic curve."
+      },
+      {
+        "label": "Scaling",
+        "value": "∞",
+        "unit": "instances, pods, nodes",
+        "note": "High availability and autoscaling cost nothing extra. Scale as far as your cluster allows."
+      },
+      {
+        "label": "Non-production",
+        "value": "Free",
+        "unit": "and unlimited",
+        "note": "Dev, test, QA and staging cost nothing. Most competitors bill non-production at full or half rate."
+      }
+    ]
+  },
+  "predictability": {
+    "eyebrow": "Predictability",
+    "title": "Three figures, and you have the number",
+    "subtitle": "Nothing depends on traffic, users, calls or pods. Given your own API roadmap, every year of the contract is known before it is signed.",
+    "steps": [
+      {
+        "title": "Count your published APIs",
+        "description": "One API product, however many routes and versions sit behind it. An API counts once, even when deployed in several regions."
+      },
+      {
+        "title": "Count your production environments",
+        "description": "Non-production does not count — it is free and unlimited."
+      },
+      {
+        "title": "Choose your commitment term",
+        "description": "1, 3 or 5 years. The longer the term, the larger the discount, and the price is locked for the whole of it."
+      }
+    ],
+    "cta": {
+      "label": "Your number",
+      "title": "Give us those three figures",
+      "description": "We send back the annual number, what it becomes over the committed term and exactly what it covers — in one conversation, with no quotation cycle.",
+      "button": "Get my number"
     }
   },
-  "comparison": {
-    "title": "Comparison table",
-    "headers": { "feature": "Feature", "pro": "Pro", "enterprise": "Enterprise" },
-    "option": "+ Option",
-    "options": "+ Options",
-    "rows": {
-      "apis": { "feature": "Secured APIs", "pro": "Up to 25", "enterprise": "Unlimited" },
-      "orchestrators": { "feature": "Orchestrators", "pro": "10", "enterprise": "Unlimited" },
-      "gatewayInstances": { "feature": "Gateway instances", "pro": "Unlimited", "enterprise": "Unlimited" },
-      "onboarding": { "feature": "Integration & onboarding", "pro": "5 days included", "enterprise": "Dedicated team" },
-      "support": { "feature": "Support", "pro": "Standard, ticket-based", "enterprise": "Dedicated support" },
-      "sla": { "feature": "SLA", "pro": "Standard", "enterprise": "Custom" },
-      "idServer": { "feature": "ID Server", "pro": "@option", "enterprise": "@options" },
-      "orchestrator": { "feature": "Orchestrator", "pro": "@option", "enterprise": "@options" },
-      "processExecutor": { "feature": "Process Executor", "pro": "@option", "enterprise": "@options" },
-      "roles": { "feature": "Control Station user roles", "pro": "3 Builder roles, unlimited \"Reader\" roles", "enterprise": "@options" },
-      "price": { "feature": "Price (excl. VAT / year)", "pro": "€31,200", "enterprise": "On request" }
-    }
-  },
-  "notes": {
-    "label": "Notes:",
-    "text": "Prices are quoted in <0>EUR excluding VAT, per month</0>. VAT is charged on top. Billing is annual, on a 1, 3 or 5 year commitment."
+  "build": {
+    "eyebrow": "Integration",
+    "title": "Implementation and run, by the same teams",
+    "subtitle": "The recurring integration work is catalogued at a fixed price: a new orchestrator or a new identity connection never needs a quotation cycle.",
+    "items": [
+      {
+        "title": "Getting started",
+        "description": "Deployment onto your infrastructure, connection of your identity provider, onboarding of your first APIs."
+      },
+      {
+        "title": "Fixed-price project",
+        "description": "Framing, design, build and go-live, across nine work packages and five payment milestones."
+      },
+      {
+        "title": "Run and maintenance",
+        "description": "Application maintenance, run assistance and an annual envelope of days you draw down as needed."
+      }
+    ],
+    "note": "The same teams that build the product can integrate it, advise on it and support it — one contract, one accountable party. Integration delivered by Yupiik IT services."
   },
   "faq": {
     "title": "Frequently asked questions",
     "items": [
       {
-        "question": "What does the integration cover?",
-        "answer": "Initial setup, connection to your backends, testing and team training (duration depends on the plan: ½ day → 2 days → bespoke project)."
+        "question": "What counts as an API?",
+        "answer": "One API product exposed to consumers, with any number of routes, versions, operations and backends behind it. That is deliberately more generous than vendors who meter each service separately. An API deployed in several production environments counts once."
       },
       {
-        "question": "Can we move from one plan to another without downtime?",
-        "answer": "Yes — scaling up is smooth, and migration and integration hooks are planned with our team so nothing is interrupted."
+        "question": "What counts as a production environment?",
+        "answer": "One logical Meecrogate platform serving production traffic: one deployment in one cloud region, or in one datacentre. The number of instances, pods, nodes or availability zones never enters into it, and a passive standby site is included."
       },
       {
-        "question": "Is there a proof-of-concept offer?",
-        "answer": "Yes: a POC pack is available, and the fee is refunded when you sign a Pro or Enterprise contract. Contact sales for the terms."
+        "question": "Do you bill for instances, pods or calls?",
+        "answer": "No. Pods, replicas and nodes are never counted, and there is no per-call charge and no overage. The licence metric is the production environment."
+      },
+      {
+        "question": "What happens if I outgrow my edition's APIs?",
+        "answer": "Extra APIs are added in packs, at one rate that applies to every edition. The model is built so that the larger edition becomes cheaper before packs pile up: we move you there, pro-rated, with no cap and nothing to watch."
+      },
+      {
+        "question": "Are dev, test and QA environments billed?",
+        "answer": "No. Non-production is free and unlimited, whichever edition you are on."
+      },
+      {
+        "question": "Is the Control Station charged separately?",
+        "answer": "Never. The administration console and developer portal are included in every edition."
+      },
+      {
+        "question": "Are updates included?",
+        "answer": "Yes. Fixes, security patches and new releases are included for the term of the subscription, with a published SLA on support response times."
+      },
+      {
+        "question": "Can you operate the platform for us?",
+        "answer": "Yes. SaaS operation by Meecrogate covers hosting, patching, upgrades and monitoring, with the same product and the same configuration as on-premise. You can move either way."
+      },
+      {
+        "question": "Can we buy a single component?",
+        "answer": "It is possible, for à-la-carte and for tenders that require it. From two components on, the edition costs less and carries more. Let's talk about your scope."
+      },
+      {
+        "question": "Can we start with a pilot?",
+        "answer": "Yes. The typical pilot — one business unit, around ten APIs, one production environment — runs on the Launch edition, with the matching integration from the catalogue. Let's talk."
       }
     ]
   },
+  "notes": {
+    "label": "Notes:",
+    "text": "All prices are in <0>EUR excluding VAT, per year</0>. VAT is charged on top at the prevailing rate. Licences are invoiced annually in advance, payable 60 days from invoice date. Edition prices are locked for the committed term. This page is indicative and does not constitute a commercial offer."
+  },
   "contactStrip": {
-    "title": "Need support tailored to your context?",
-    "description": "Dedicated team, migration, GDPR compliance or on-premise deployment: let's talk.",
+    "title": "A quote, in one conversation",
+    "description": "Give us your API count and your production environments: we send back the number, and what it covers.",
     "cta": "Contact sales"
   },
   "dialog": {
     "title": "Contact request",
-    "descriptionWithPlan": "You are interested in the {{plan}} plan. ",
+    "descriptionWithPlan": "You are interested in the {{plan}} edition. ",
     "description": "Fill in this form and our team will get back to you shortly.",
-    "defaultSubject": "Information request - {{plan}} plan",
-    "mailSubject": "[Meecrogate pricing] Request for the {{plan}} plan from {{name}}",
+    "defaultSubject": "Information request - {{plan}}",
+    "mailSubject": "[Meecrogate pricing] Request for {{plan}} from {{name}}",
     "submit": "Send request",
     "submitting": "Sending..."
   },
