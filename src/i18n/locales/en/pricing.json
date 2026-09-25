@@ -218,51 +218,6 @@
     ],
     "note": "The same teams that build the product can integrate it, advise on it and support it — one contract, one accountable party. Integration delivered by Yupiik IT services."
   },
-  "faq": {
-    "title": "Frequently asked questions",
-    "items": [
-      {
-        "question": "What counts as an API?",
-        "answer": "One API product exposed to consumers, with any number of routes, versions, operations and backends behind it. That is deliberately more generous than vendors who meter each service separately. An API deployed in several production environments counts once."
-      },
-      {
-        "question": "What counts as a production environment?",
-        "answer": "One logical Meecrogate platform serving production traffic: one deployment in one cloud region, or in one datacentre. The number of instances, pods, nodes or availability zones never enters into it, and a passive standby site is included."
-      },
-      {
-        "question": "Do you bill for instances, pods or calls?",
-        "answer": "No. Pods, replicas and nodes are never counted, and there is no per-call charge and no overage. The licence metric is the production environment."
-      },
-      {
-        "question": "What happens if I outgrow my edition's APIs?",
-        "answer": "Extra APIs are added in packs, at one rate that applies to every edition. The model is built so that the larger edition becomes cheaper before packs pile up: we move you there, pro-rated, with no cap and nothing to watch."
-      },
-      {
-        "question": "Are dev, test and QA environments billed?",
-        "answer": "No. Non-production is free and unlimited, whichever edition you are on."
-      },
-      {
-        "question": "Is the Control Station charged separately?",
-        "answer": "Never. The administration console and developer portal are included in every edition."
-      },
-      {
-        "question": "Are updates included?",
-        "answer": "Yes. Fixes, security patches and new releases are included for the term of the subscription, with a published SLA on support response times."
-      },
-      {
-        "question": "Can you operate the platform for us?",
-        "answer": "Yes. SaaS operation by Meecrogate covers hosting, patching, upgrades and monitoring, with the same product and the same configuration as on-premise. You can move either way."
-      },
-      {
-        "question": "Can we buy a single component?",
-        "answer": "It is possible, for à-la-carte and for tenders that require it. From two components on, the edition costs less and carries more. Let's talk about your scope."
-      },
-      {
-        "question": "Can we start with a pilot?",
-        "answer": "Yes. The typical pilot — one business unit, around ten APIs, one production environment — runs on the Launch edition, with the matching integration from the catalogue. Let's talk."
-      }
-    ]
-  },
   "notes": {
     "label": "Notes:",
     "text": "All prices are in <0>EUR excluding VAT, per year</0>. VAT is charged on top at the prevailing rate. Licences are invoiced annually in advance, payable 60 days from invoice date. Edition prices are locked for the committed term. This page is indicative and does not constitute a commercial offer."

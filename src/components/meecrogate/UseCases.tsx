@@ -23,9 +23,10 @@ const UseCases = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="text-center mb-16">
-        <h2 className="text-5xl font-bold text-white mb-6">
+        <h2 className="text-5xl font-bold text-white mb-3">
           {t("title")}
         </h2>
+        <div className="w-16 h-1 bg-indigo-500 rounded-sm mx-auto mb-6"></div>
         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
           {t("subtitle")}
         </p>

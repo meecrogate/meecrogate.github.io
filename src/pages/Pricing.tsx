@@ -9,7 +9,6 @@ import PricingBuild from "@/components/pricing/PricingBuild";
 import PricingContactDialog from "@/components/pricing/PricingContactDialog";
 import PricingContactStrip from "@/components/pricing/PricingContactStrip";
 import PricingEditions from "@/components/pricing/PricingEditions";
-import PricingFaq from "@/components/pricing/PricingFaq";
 import PricingHero from "@/components/pricing/PricingHero";
 import PricingIncluded from "@/components/pricing/PricingIncluded";
 import PricingPredictability from "@/components/pricing/PricingPredictability";
@@ -43,7 +42,6 @@ const Pricing = () => {
         <PricingRules />
         <PricingPredictability onContact={handleContact} />
         <PricingBuild />
-        <PricingFaq />
         <PricingContactStrip onContact={handleContact} />
       </main>
       <Footer />

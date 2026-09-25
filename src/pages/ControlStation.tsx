@@ -88,9 +88,10 @@ const ControlStation = () => {
                 <span className="text-[#FFB300] font-medium">{t("hero.badge")}</span>
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
                 {t("hero.title")}
               </h1>
+              <div className="w-16 h-1 bg-indigo-500 rounded-sm mx-auto mb-6"></div>
               
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 {t("hero.description")}

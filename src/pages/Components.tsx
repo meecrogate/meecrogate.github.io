@@ -53,6 +53,7 @@ const ComponentsPage = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-brand-blue">
               {t("hero.title")}
             </h1>
+            <div className="w-16 h-1 bg-indigo-500 rounded-sm mx-auto mb-6"></div>
             <p className="text-xl text-brand-light/80 max-w-3xl mx-auto mb-12">
               {t("hero.subtitle")}
             </p>

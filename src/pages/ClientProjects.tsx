@@ -79,9 +79,10 @@ const ClientProjects = () => {
         {/* Hero Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-3">
               {t("index.titlePrefix")} <span className="text-[#FFB300]">{t("index.titleHighlight")}</span>
             </h1>
+            <div className="w-16 h-1 bg-indigo-500 rounded-sm mx-auto mb-6"></div>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               {t("index.subtitle")}
             </p>

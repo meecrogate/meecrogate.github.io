@@ -17,9 +17,10 @@ const Features = () => {
     <div className="min-h-screen bg-slate-900 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-3">
             {t("title")}
           </h1>
+          <div className="w-16 h-1 bg-indigo-500 rounded-sm mx-auto mb-6"></div>
           <p className="text-xl text-gray-400 max-w-4xl mx-auto">
             <span style={{ color: '#FFB300' }} className="font-extrabold">
               {t("subtitle")}

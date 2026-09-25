@@ -218,51 +218,6 @@
     ],
     "note": "Les équipes qui construisent le produit peuvent aussi l'intégrer, vous conseiller et l'exploiter — un seul contrat, un seul responsable. Intégration assurée par les services IT de Yupiik."
   },
-  "faq": {
-    "title": "Questions fréquentes",
-    "items": [
-      {
-        "question": "Qu'est-ce qu'une API dans le décompte ?",
-        "answer": "Un produit d'API exposé aux consommateurs, quel que soit le nombre de routes, de versions, d'opérations et de backends derrière. C'est délibérément plus généreux que les éditeurs qui comptent chaque service séparément. Une API déployée dans plusieurs environnements de production compte une seule fois."
-      },
-      {
-        "question": "Qu'est-ce qu'un environnement de production ?",
-        "answer": "Une plateforme Meecrogate logique qui sert du trafic de production : un déploiement dans une région cloud, ou dans un datacenter. Le nombre d'instances, de pods, de nœuds ou de zones de disponibilité n'entre jamais en compte, et un site de secours passif est inclus."
-      },
-      {
-        "question": "Facturez-vous les instances, les pods ou les appels ?",
-        "answer": "Non. Les pods, réplicas et nœuds ne sont jamais comptés, et il n'y a aucune facturation à l'appel ni de dépassement. La métrique de licence est l'environnement de production."
-      },
-      {
-        "question": "Que se passe-t-il si je dépasse les APIs de mon édition ?",
-        "answer": "Les APIs supplémentaires s'ajoutent par lots, à un tarif unique valable pour toutes les éditions. Le modèle est construit pour que l'édition supérieure devienne moins chère avant que les lots ne s'accumulent : nous vous y faisons passer, au prorata, sans plafond ni surveillance."
-      },
-      {
-        "question": "Les environnements de dev, test et recette sont-ils facturés ?",
-        "answer": "Non. Le hors production est gratuit et illimité, quelle que soit l'édition."
-      },
-      {
-        "question": "La Control Station est-elle facturée séparément ?",
-        "answer": "Jamais. La console d'administration et le portail développeur sont inclus dans chaque édition."
-      },
-      {
-        "question": "Les mises à jour sont-elles comprises ?",
-        "answer": "Oui. Correctifs, correctifs de sécurité et nouvelles versions sont inclus pendant toute la durée de l'abonnement, avec un SLA publié sur les délais de réponse du support."
-      },
-      {
-        "question": "Pouvez-vous exploiter la plateforme pour nous ?",
-        "answer": "Oui. L'exploitation SaaS par Meecrogate couvre l'hébergement, les correctifs, les montées de version et la supervision, avec le même produit et la même configuration qu'en on-premise. Vous pouvez basculer dans les deux sens."
-      },
-      {
-        "question": "Peut-on acheter un seul composant ?",
-        "answer": "C'est possible, pour l'à la carte et les appels d'offres qui l'exigent. Dès deux composants, l'édition revient moins cher et apporte davantage. Parlons de votre périmètre."
-      },
-      {
-        "question": "Peut-on commencer par un pilote ?",
-        "answer": "Oui. Le scénario pilote type — une direction métier, une dizaine d'APIs, un environnement de production — s'appuie sur l'édition Launch, avec l'intégration correspondante au catalogue. Parlons-en."
-      }
-    ]
-  },
   "notes": {
     "label": "Remarques :",
     "text": "Tous les prix sont en <0>euros hors taxes, par an</0>. La TVA s'ajoute au taux en vigueur. Les licences sont facturées annuellement à terme à échoir, paiement à 60 jours date de facture. Les prix des éditions sont bloqués pendant la durée d'engagement. Cette page est indicative et ne constitue pas une offre commerciale."
