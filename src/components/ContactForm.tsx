@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
+import { useMatomo } from "@jonkoops/matomo-tracker-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,6 +10,7 @@ import { Send, Loader2, CheckCircle } from "lucide-react";
 
 const ContactForm = () => {
   const { t } = useTranslation("forms");
+  const { trackEvent } = useMatomo();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
@@ -56,6 +58,8 @@ const ContactForm = () => {
       const result = await response.json();
 
       if (result.success) {
+        // Counted as a goal in Matomo: category "Lead", action "Demo request".
+        trackEvent({ category: "Lead", action: "Demo request" });
         toast.success(t("contact.success.toast"));
         setIsSuccess(true);
         // On vide le formulaire après succès

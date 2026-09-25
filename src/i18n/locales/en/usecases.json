@@ -213,7 +213,7 @@
           "description": "Security policies tailored to each environment"
         },
         {
-          "title": "Synchronisation",
+          "title": "Environment sync",
           "description": "Replication and synchronisation between environments"
         }
       ],

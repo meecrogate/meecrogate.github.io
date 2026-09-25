@@ -11,8 +11,10 @@ interface SeoProps {
 }
 
 const SITE_NAME = "Meecrogate";
+/** Link preview image (1200×630), used by every page that does not pass its own. */
+const DEFAULT_IMAGE = "https://www.meecrogate.com/og-image.png";
 
-const Seo = ({ title, description, canonical, image, type = "website" }: SeoProps) => {
+const Seo = ({ title, description, canonical, image = DEFAULT_IMAGE, type = "website" }: SeoProps) => {
   const { language, alternates } = useLocale();
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
 

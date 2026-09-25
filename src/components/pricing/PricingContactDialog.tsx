@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useMatomo } from "@jonkoops/matomo-tracker-react";
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -35,6 +36,7 @@ const PricingContactDialog = ({
 }) => {
   const { t } = useTranslation("pricing");
   const { toast } = useToast();
+  const { trackEvent } = useMatomo();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState(emptyForm);
 
@@ -71,6 +73,8 @@ const PricingContactDialog = ({
       const result = await response.json();
 
       if (result.success) {
+        // Counted as a goal in Matomo: category "Lead", action "Quote request", name = edition.
+        trackEvent({ category: "Lead", action: "Quote request", name: plan || undefined });
         toast({
           title: t("toast.successTitle"),
           description: t("toast.successDescription"),
