@@ -62,9 +62,7 @@ export const resolvePreferredLanguage = (): string =>
 export const resolveInitialLanguage = (): string => {
   if (typeof window === "undefined") return DEFAULT_LANGUAGE;
 
-  const hash = window.location.hash.replace(/^#/, "");
-  const pathname = hash.split("?")[0] || "/";
-  const fromUrl = splitLanguagePath(pathname).language;
+  const fromUrl = splitLanguagePath(window.location.pathname).language;
   if (fromUrl) return fromUrl;
 
   return resolvePreferredLanguage();
@@ -82,10 +80,7 @@ export const resolveInitialLanguage = (): string => {
 export const applyInitialLanguageRedirect = (): void => {
   if (typeof window === "undefined") return;
 
-  const hash = window.location.hash.replace(/^#/, "");
-  const separator = hash.search(/[?#]/);
-  const pathname = (separator === -1 ? hash : hash.slice(0, separator)) || "/";
-  const suffix = separator === -1 ? "" : hash.slice(separator);
+  const { pathname, search, hash } = window.location;
 
   if (splitLanguagePath(pathname).language) return;
 
@@ -95,6 +90,20 @@ export const applyInitialLanguageRedirect = (): void => {
   window.history.replaceState(
     window.history.state,
     "",
-    `${window.location.pathname}${window.location.search}#${localizePath(pathname, preferred)}${suffix}`,
+    `${localizePath(pathname, preferred)}${search}${hash}`,
   );
+};
+
+/**
+ * The site used to route behind the `#` (`/#/en/pricing`). Links shared
+ * or bookmarked back then are rewritten to the real path (`/en/pricing`)
+ * before anything reads the URL, so they keep landing on the right page.
+ */
+export const applyLegacyHashRedirect = (): void => {
+  if (typeof window === "undefined") return;
+
+  const { hash } = window.location;
+  if (!hash.startsWith("#/")) return;
+
+  window.history.replaceState(window.history.state, "", hash.slice(1));
 };

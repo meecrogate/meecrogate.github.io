@@ -27,8 +27,11 @@ const ArchitectureCard = ({ point }: { point: typeof architecturePoints[0] }) =>
             className={`w-full h-full object-cover transition-transform duration-500 ${isHovered ? 'scale-105' : ''}`}
             onError={(e) => { 
               const target = e.target as HTMLImageElement;
-              target.onerror = null; 
-              target.src = "https://placehold.co/400x300/1f2937/d1d5db?text=Image"; 
+              // React keeps calling this handler, so only swap once: a failing
+              // fallback would otherwise retry forever.
+              if (target.dataset.fallback) return;
+              target.dataset.fallback = "true";
+              target.src = "https://placehold.co/400x300/1f2937/d1d5db?text=Image";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />

@@ -30,7 +30,8 @@
   "cta": "Discuter de mon projet d'intégration",
   "dialog": {
     "title": "Demande d'intégration",
-    "submit": "Envoyer la demande"
+    "submit": "Envoyer la demande",
+    "mailSubject": "[Meecrogate] Demande d'intégration de {{name}} ({{company}})"
   },
   "toast": {
     "title": "Demande envoyée",

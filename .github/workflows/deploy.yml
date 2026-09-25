@@ -43,6 +43,10 @@ jobs:
           VITE_MATOMO_URL: ${{ secrets.VITE_MATOMO_URL }}
           VITE_MATOMO_SITE_ID: ${{ secrets.VITE_MATOMO_SITE_ID }}
 
+      - name: Prerender every page and write the sitemap
+        # Uses the Google Chrome preinstalled on ubuntu-latest.
+        run: npm run prerender
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 

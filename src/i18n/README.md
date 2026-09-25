@@ -57,7 +57,7 @@ resolves to `/pricing` in French and `/en/pricing` in English.
 
 ## How the language is chosen
 
-1. If the URL names a language (`#/en/...`), that wins, so a shared link
+1. If the URL names a language (`/en/...`), that wins, so a shared link
    always shows what the sender saw.
 2. Otherwise, the language the visitor last picked in the switcher,
    remembered in `localStorage`.

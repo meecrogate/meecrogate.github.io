@@ -6,17 +6,25 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
+import { useMatomo } from "@jonkoops/matomo-tracker-react";
+import { Loader2 } from "lucide-react";
+
+const WEB3FORMS_ACCESS_KEY = "081aaa9f-94c9-4b5b-8688-df70b9f15bb6";
+
+const emptyForm = {
+  nom: "",
+  email: "",
+  entreprise: "",
+  telephone: "",
+  message: ""
+};
 
 const Service = () => {
-  const [formData, setFormData] = useState({
-    nom: "",
-    email: "",
-    entreprise: "",
-    telephone: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState(emptyForm);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { t } = useTranslation(["service", "forms"]);
+  const { trackEvent } = useMatomo();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -26,21 +34,44 @@ const Service = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Formulaire soumis:", formData);
-    toast({
-      title: t("toast.title"),
-      description: t("toast.description"),
-    });
-    setFormData({
-      nom: "",
-      email: "",
-      entreprise: "",
-      telephone: "",
-      message: ""
-    });
-    setIsContactDialogOpen(false);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: t("dialog.mailSubject", { name: formData.nom, company: formData.entreprise }),
+          from_name: formData.nom,
+          ...formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Counted as a goal in Matomo: category "Lead", action "Integration request".
+        trackEvent({ category: "Lead", action: "Integration request" });
+        toast({
+          title: t("toast.title"),
+          description: t("toast.description"),
+        });
+        setFormData(emptyForm);
+        setIsContactDialogOpen(false);
+      } else {
+        toast({ title: t("forms:contact.errors.send"), variant: "destructive" });
+      }
+    } catch (error) {
+      toast({ title: t("forms:contact.errors.network"), variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -170,9 +201,17 @@ const Service = () => {
             <div className="flex gap-3 pt-4">
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white"
               >
-                {t("dialog.submit")}
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    {t("forms:contact.submitting")}
+                  </>
+                ) : (
+                  t("dialog.submit")
+                )}
               </Button>
             </div>
           </form>

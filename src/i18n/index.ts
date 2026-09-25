@@ -1,7 +1,11 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import { applyInitialLanguageRedirect, resolveInitialLanguage } from "./detect";
+import {
+  applyInitialLanguageRedirect,
+  applyLegacyHashRedirect,
+  resolveInitialLanguage,
+} from "./detect";
 import { DEFAULT_LANGUAGE, LANGUAGES } from "./languages";
 
 /**
@@ -28,6 +32,7 @@ for (const [path, module] of Object.entries(files)) {
 
 // Must happen before the language is resolved, and before the router reads
 // the URL, so that both already see the redirected location.
+applyLegacyHashRedirect();
 applyInitialLanguageRedirect();
 
 i18n.use(initReactI18next).init({

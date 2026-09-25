@@ -40,12 +40,16 @@ export const localizePath = (path: string, language: string): string => {
   return bare === "/" ? pathPrefix : `${pathPrefix}${bare}`;
 };
 
+/** Production origin, used for every URL search engines and link previews see. */
+export const SITE_ORIGIN = "https://www.meecrogate.com";
+
 /**
  * Absolute URL of a path in a given language, for canonical and
- * `hreflang` tags. The site is served by a HashRouter, so router paths
- * live behind the `#`.
+ * `hreflang` tags. Every page is prerendered as `<path>/index.html`, which
+ * GitHub Pages serves at `<path>/`, so the URL carries the trailing slash
+ * the server would otherwise redirect to.
  */
 export const absoluteUrl = (path: string, language: string): string => {
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
-  return `${origin}/#${localizePath(path, language)}`;
+  const localized = localizePath(path, language).replace(/\/+$/, "");
+  return `${SITE_ORIGIN}${localized}/`;
 };

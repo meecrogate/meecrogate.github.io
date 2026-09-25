@@ -42,8 +42,8 @@ import { LANGUAGES } from "./i18n/languages";
 import LanguageLayout from "./i18n/LanguageLayout";
 
 // Routes are declared once with paths relative to the language branch they
-// are mounted under, so `/features` is reachable as both `#/features` and
-// `#/en/features`. A fresh element tree is built per branch.
+// are mounted under, so `/features` is reachable as both `/features` and
+// `/en/features`. A fresh element tree is built per branch.
 const appRoutes = () => (
   <>
     <Route index element={<Index />} />
