@@ -19,7 +19,7 @@ const PricingHero = () => {
           {t("hero.title")}
         </h1>
         <div className="w-16 h-1 bg-indigo-500 rounded-sm mx-auto"></div>
-        <p className="mt-6 text-lg text-brand-light/75 max-w-3xl mx-auto text-center leading-relaxed">{t("hero.subtitle")}</p>
+        <p className="mt-6 text-lg text-brand-orange font-extrabold max-w-3xl mx-auto text-center leading-relaxed">{t("hero.subtitle")}</p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {principles.map((principle) => (

@@ -64,7 +64,7 @@ const ComparatifsPage = () => {
               {t("title")}
             </h1>
             <div className="w-16 h-1 bg-indigo-500 rounded-sm mx-auto mb-6"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-brand-orange font-extrabold max-w-3xl mx-auto">
               {t("subtitle")}
             </p>
           </div>

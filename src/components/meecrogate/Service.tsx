@@ -84,7 +84,7 @@ const Service = () => {
           </h2>
           <div className="w-16 h-1 bg-indigo-500 rounded-sm"></div>
         </div>
-        <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+        <p className="text-xl text-brand-orange font-extrabold max-w-3xl mx-auto">
           {t("subtitle")}
         </p>
       </div>

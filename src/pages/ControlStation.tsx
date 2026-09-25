@@ -93,7 +93,7 @@ const ControlStation = () => {
               </h1>
               <div className="w-16 h-1 bg-indigo-500 rounded-sm mx-auto mb-6"></div>
               
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-brand-orange font-extrabold mb-8 max-w-2xl mx-auto">
                 {t("hero.description")}
               </p>
               

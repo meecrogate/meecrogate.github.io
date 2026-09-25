@@ -272,7 +272,7 @@ const Architecture = () => {
           <h2 className="text-5xl sm:text-6xl font-extrabold text-white mb-3 tracking-tight">{t("title")}</h2>
           <div className="w-16 h-1 bg-indigo-500 rounded-sm"></div>
         </div>
-        <p className="text-xl text-slate-300 max-w-3xl mx-auto">{t("subtitle")}</p>
+        <p className="text-xl text-brand-orange font-extrabold max-w-3xl mx-auto">{t("subtitle")}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

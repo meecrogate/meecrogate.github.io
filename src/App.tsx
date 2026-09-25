@@ -27,16 +27,37 @@ const MatomoTracker = () => {
   const prevUrl = useRef('');
 
   useEffect(() => {
-    const currentUrl = `${window.location.origin}${location.pathname}`;
-
-    pushInstruction('setReferrerUrl', prevUrl.current);
-    pushInstruction('setCustomUrl', currentUrl);
-    pushInstruction('setDocumentTitle', document.title);
-    pushInstruction('trackPageView');
     pushInstruction('enableLinkTracking');
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    prevUrl.current = currentUrl;
-  }, [location]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    // `/pricing/` (a direct visit, served from pricing/index.html) and
+    // `/pricing` (in-app navigation) are the same page: report one URL.
+    // The query string stays, so campaign parameters (utm_*, mtm_*) count.
+    const path = location.pathname.replace(/\/+$/, '') || '/';
+    const currentUrl = `${window.location.origin}${path}${location.search}`;
+
+    // Helmet writes the new <title> on the next animation frame; waiting
+    // for it keeps the previous page's title off this page view.
+    let timeout: ReturnType<typeof setTimeout>;
+    const frame = requestAnimationFrame(() => {
+      timeout = setTimeout(() => {
+        // On the first page view Matomo keeps the real referrer (search
+        // engine, LinkedIn, ad...); later ones come from the previous page.
+        if (prevUrl.current) pushInstruction('setReferrerUrl', prevUrl.current);
+        pushInstruction('setCustomUrl', currentUrl);
+        pushInstruction('setDocumentTitle', document.title);
+        pushInstruction('trackPageView');
+
+        prevUrl.current = currentUrl;
+      });
+    });
+
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timeout);
+    };
+  }, [location.pathname, location.search]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return null;
 };
